@@ -14,5 +14,9 @@
     "@kurohyou/k-scaffold": "*",
     "@vitest/ui": "*",
     "vitest": "*"
+  },
+  "dependencies": {
+    "sass": "^1.77.5",
+    "sass-embedded": "^1.77.5"
   }
 }

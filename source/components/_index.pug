@@ -2,15 +2,28 @@
 //- include ./example-include.js
 include ./_constants.pug
 
+mixin attributeSkillMod({name,defaultValue,classAdd,trigger})
+	div(class=`attribute-skill-mod-container${classAdd ? classAdd : ''}`)
+		-
+			const trueDefault = defaultValue === undefined ?
+				0 :
+				defaultValue;
+		+hidden({name,class:'attribute-skill-mod',value:trueDefault,trigger})
+		+span({class:`attribute-skill-mod-display${classAdd ? ` ${classAdd}` : ''}`,name})
+			|#{trueDefault}
+//- End mixin
+
 mixin statContainer(divObj)
-  - divObj = divObj || {};
-  .stat-container&attributes(divObj)&attributes(attributes)
-    block
+	- divObj = divObj || {};
+	.stat-container&attributes(divObj)&attributes(attributes)
+		block
+//- End mixin
 
 //- build an attribute row
 mixin attributeHolder(name)
-	//- when something says it updates $affects, run $calculation
 	- const trigger = {calculation:'calcAttribute',affects:[`${name}`]};
+	//- when something says it updates $affects, run $calculation
+
 	//- wrap it in a container
 	+statContainer({class:name})&attributes(attributes)
 		//- provide a roll button
@@ -22,7 +35,8 @@ mixin attributeHolder(name)
 			divObj:{class:'stacked center no-gap'}
 	})
 	.parens-holder
-		//- print "(" + $calculation + ")"
+		//- print "(" + "+" + $calculation + ")"
 		span.parentheses (
-		+plusControl({name:`${name}`,value:0,trigger:{calculation:'calcAttributeMod'}})
+		+attributeSkillMod({name:`${name}`,value:0,trigger:{calculation:'calcAttributeSkillMod'}})
 		span.parentheses )
+//- End mixin
