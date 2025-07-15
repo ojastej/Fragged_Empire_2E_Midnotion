@@ -1,0 +1,56 @@
+section(data-i18n-aria-label="attributes")#attributes
+	.attributes.flex-box
+		h2(data-i18n='attributes')
+		//- call JS reduce() to iterate over the attributes array with the supplied function,
+		//-	array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+		//- returning a new array, wrapping a copy of the original array?
+		-
+			const attrHolder = attributes.reduce((acc,name) => {
+				const endIndex = Math.max(acc.length - 1,0)
+				if(!acc[endIndex] || acc[endIndex][1]) {
+					const dest = [];
+					dest.push(name);
+					acc.push(dest);
+				} else {
+					acc[endIndex].push(name);
+				}
+				return acc;
+			},[]);
+		each arr in attrHolder
+			.even-flow
+				each name in arr
+					+attributeHolder(name)
+
+		//- current strength, including attribute damage
+		+input-label({
+			label:'Current Strength',
+			inputObj:{name:'strength',type:'number'}
+		})
+		//- character strength with no damage
+		+input-label({
+			label:'Full Strength',
+			inputObj:{name:'strength_max',type:'number'}
+		})
+		//- strength limit (normally 5, but often altered by species)
+		+input-label({
+			label:'Strength Limit',
+			inputObj:{name:'strength_limit',type:'number'}
+		})
+		//- strength modifiers from traits
+		+input-label({
+			label:'Strength Modifiers',
+			inputObj:{name:'strength_mod',type:'number'}
+		})
+		//- the modifier applied to strength skills
+		//- calculate this instead: span strength_skill_mod
+		//- name of any selected strength trait
+		+input-label({
+			label:'Strength Trait',
+			inputObj:{name:'strength_trait',type:'text'}
+		})
+
+	span Reflexes
+	span Mobility
+	span Focus
+	span Intelligence
+	span Grit

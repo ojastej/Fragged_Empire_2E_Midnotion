@@ -1,0 +1,28 @@
+//- Include your component pug files here.
+//- include ./example-include.js
+include ./_constants.pug
+
+mixin statContainer(divObj)
+  - divObj = divObj || {};
+  .stat-container&attributes(divObj)&attributes(attributes)
+    block
+
+//- build an attribute row
+mixin attributeHolder(name)
+	//- when something says it updates $affects, run $calculation
+	- const trigger = {calculation:'calcAttribute',affects:[`${name}`]};
+	//- wrap it in a container
+	+statContainer({class:name})&attributes(attributes)
+		//- provide a roll button
+		+roller-label({
+			inputObj:{name:`${name} goal`,value:11,class:'underlined',type:'number',trigger},
+			buttonObj:{name,'data-i18n':name,role:'heading','aria-level':3,trigger:{
+				triggeredFuncs:['rollAttribute']
+			}},
+			divObj:{class:'stacked center no-gap'}
+	})
+	.parens-holder
+		//- print "(" + $calculation + ")"
+		span.parentheses (
+		+plusControl({name:`${name}`,value:0,trigger:{calculation:'calcAttributeMod'}})
+		span.parentheses )

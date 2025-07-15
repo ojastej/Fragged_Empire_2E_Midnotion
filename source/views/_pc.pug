@@ -1,0 +1,23 @@
+//- button:{content:'emoji_emotions PC',class:'material-icons'}
+h1 This is a PC!
+
++input-label({
+	label:'character name',
+	inputObj:{name:'character name',type:'text'}
+}).div-class
+
++select-label({
+	label:'character species',
+	inputObj:{name:'species'}
+})
++select({name:'species'})
+	+option({value:'','data-i18n':'select a species'})
+	+option({value:'Corporation','data-i18n':'corporation'})
+	+option({value:'Kaltoran','data-i18n':'kaltoran'})
+	+option({value:'Legion','data-i18n':'legion'})
+	+option({value:'Nephilim','data-i18n':'nephilim'})
+	+option({value:'Remnant','data-i18n':'remnant'})
+	+option({value:'Twi-Far','data-i18n':'twifar'})
+	+option({value:'Zhou','data-i18n':'zhou'})
+
+include ./_attributes.pug
