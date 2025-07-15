@@ -18,6 +18,10 @@
     border-color: var(--borderColor);
     border-width: var(--borderWidth);
   }
+  .attributes .grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
 }
 @mixin roll{
   @include generic;

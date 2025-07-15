@@ -1,42 +1,18 @@
 //- Include your component pug files here.
 //- include ./example-include.js
 include ./_constants.pug
+include ./_attributes.pug
 
-mixin attributeSkillMod({name,defaultValue,classAdd,trigger})
-	div(class=`attribute-skill-mod-container${classAdd ? classAdd : ''}`)
-		-
-			const trueDefault = defaultValue === undefined ?
-				0 :
-				defaultValue;
-		+hidden({name,class:'attribute-skill-mod',value:trueDefault,trigger})
-		+span({class:`attribute-skill-mod-display${classAdd ? ` ${classAdd}` : ''}`,name})
-			|#{trueDefault}
-//- End mixin
-
-mixin statContainer(divObj)
-	- divObj = divObj || {};
-	.stat-container&attributes(divObj)&attributes(attributes)
-		block
-//- End mixin
-
-//- build an attribute row
-mixin attributeHolder(name)
-	- const trigger = {calculation:'calcAttribute',affects:[`${name}`]};
-	//- when something says it updates $affects, run $calculation
-
-	//- wrap it in a container
-	+statContainer({class:name})&attributes(attributes)
-		//- provide a roll button
-		+roller-label({
-			inputObj:{name:`${name} goal`,value:11,class:'underlined',type:'number',trigger},
-			buttonObj:{name,'data-i18n':name,role:'heading','aria-level':3,trigger:{
-				triggeredFuncs:['rollAttribute']
-			}},
-			divObj:{class:'stacked center no-gap'}
-	})
-	.parens-holder
-		//- print "(" + "+" + $calculation + ")"
-		span.parentheses (
-		+attributeSkillMod({name:`${name}`,value:0,trigger:{calculation:'calcAttributeSkillMod'}})
-		span.parentheses )
-//- End mixin
+mixin label({label,divObj,spanObj})
+	if divObj
+		- divObj.class = divObj.class ? replaceProblems(divObj.class) : undefined;
+	//-if inputObj
+	//-	- inputObj.class = inputObj.class ? replaceProblems(inputObj.class) : undefined;
+	if spanObj
+		- spanObj.class = spanObj.class ? replaceProblems(spanObj.class) : undefined;
+	label.input-label&attributes(divObj)&attributes(attributes)
+		//- inputObj.name = inputObj.name.replace(/\s+/g,'_');
+		//- inputObj.class = inputObj.class ? `${inputObj.class} input-label__input` : 'input-label__input';
+		if spanObj
+			- spanObj.class = spanObj.class ? `${spanObj.class} input-label__text` : 'input-label__text';
+		span(data-i18n=label)&attributes(spanObj)

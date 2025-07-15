@@ -3341,6 +3341,10 @@ body .ui-dialog .tab-content .charsheet #main input:not(:where([type=checkbox], 
   border-color: var(--borderColor);
   border-width: var(--borderWidth);
 }
+body .ui-dialog .tab-content .charsheet .attributes .grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
 body.sheet-darkmode {
   --backColor:var(--dm-backColor);
   --selectedColor:var(--dm-selectedColor);

@@ -1,0 +1,31 @@
+mixin attributeSkillMod({name,defaultValue,classAdd,trigger})
+	span(class=`attribute-skill-mod-container${classAdd ? classAdd : ''}`)
+		-
+			const trueDefault = defaultValue === undefined ?
+				0 :
+				defaultValue;
+		+hidden({name,class:'attribute-skill-mod',value:trueDefault,trigger})
+		+span({class:`attribute-skill-mod-display${classAdd ? ` ${classAdd}` : ''}`,name})
+			|#{trueDefault}
+//- End mixin
+
+mixin statContainer(divObj)
+	- divObj = divObj || {};
+	.stat-container&attributes(divObj)&attributes(attributes)
+		block
+//- End mixin
+
+//- build an attribute row
+mixin attributeHolder(name)
+	- const trigger = {calculation:'calcAttribute',affects:[`${name}`]};
+	//- when something says it updates $affects, run $calculation
+
+	+label({label:name})
+	+input({name:name,type:'number'})
+
+	.parens-holder
+		//- print "(" + "+" + $calculation + ")"
+		span.parentheses (
+		+attributeSkillMod({name:`${name}`,value:0,trigger:{calculation:'calcAttributeSkillMod'}})
+		span.parentheses )
+//- End mixin

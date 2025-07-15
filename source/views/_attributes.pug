@@ -1,5 +1,5 @@
 section(data-i18n-aria-label="attributes")#attributes
-	.attributes.rows
+	.attributes
 		h2(data-i18n='attributes')
 		//- call JS reduce() to iterate over the attributes array with the supplied function,
 		//-	array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
@@ -16,8 +16,9 @@ section(data-i18n-aria-label="attributes")#attributes
 				}
 				return acc;
 			},[]);
-		each attr in attributes
-			+attributeHolder(name)
+		.grid
+			each attr in attributes
+				+attributeHolder(attr)
 
 		.row
 			//- current strength, including attribute damage
