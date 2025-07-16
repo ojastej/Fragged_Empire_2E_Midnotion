@@ -2,39 +2,10 @@ section(data-i18n-aria-label="attributes")#attributes
 	.attributes
 		h2(data-i18n='attributes')
 		.grid
+			div
+			+label({label:"Current"})
+			+label({label:"Modifier"})
+			+label({label:"Limit"})
+			+label({label:"Trait"})
 			each attr in baseAttributes
 				+attributeHolder(attr)
-		.row
-			//- current strength, including attribute damage
-			+input-label({
-				label:'Current Strength',
-				inputObj:{name:'strength',type:'number'}
-			})
-			//- character strength with no damage
-			+input-label({
-				label:'Full Strength',
-				inputObj:{name:'strength_max',type:'number'}
-			})
-			//- strength limit (normally 5, but often altered by species)
-			+input-label({
-				label:'Strength Limit',
-				inputObj:{name:'strength_limit',type:'number'}
-			})
-			//- strength modifiers from traits
-			+input-label({
-				label:'Strength Modifiers',
-				inputObj:{name:'strength_mod',type:'number'}
-			})
-			//- the modifier applied to strength skills
-			//- calculate this instead: span strength_skill_mod
-			//- name of any selected strength trait
-			+input-label({
-				label:'Strength Trait',
-				inputObj:{name:'strength_trait',type:'text'}
-			})
-
-	span Reflexes
-	span Mobility
-	span Focus
-	span Intelligence
-	span Grit

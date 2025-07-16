@@ -2,48 +2,59 @@
 @use './variables';
 
 @mixin variables{
-  @include variables.all;
+	@include variables.all;
 }
 @mixin darkVariables {
-  @include variables.dark;
+	@include variables.dark;
 }
 @mixin generic{
-  // Put generic styling that will be used in both the sheet and the roll template here
+	// Put generic styling that will be used in both the sheet and the roll template here
 }
 @mixin sheet{
-  @include generic;
-  // Put your generic sheet styling here
-  #main input:not(:where([type=checkbox],[type=radio]))
-  {
-    border-color: var(--borderColor);
-    border-width: var(--borderWidth);
+	@include generic;
+	@include variables;
+	// Put your generic sheet styling here
+	#main input:not(:where([type=checkbox],[type=radio]))
+	{
+		border-color: var(--borderColor);
+		border-width: var(--borderWidth);
+	}
+	#main .current-max
+	{
+		border-color: var(--borderColor);
+		border-width: var(--borderWidth);
+		border-style: solid;
+		box-sizing: border-box;
+		border-radius: 5px;
+		width: 7rem;
+		text-align: center;
+	}
+	#main .current-max input:not(:where([type=checkbox],[type=radio]))
+	{
+		border-width: 0;
+	}
+	.attributes .grid {
+		display: grid;
+		text-transform: capitalize;
+		// attribute, cur/max, skill mod, limit, trait
+		grid-template-columns: 6rem 8rem 4rem 4rem auto;
+	}
+	.parentheses::before { content: "("; }
+	.parentheses::after { content: ")"; }
+
+  .ui-dialog .tab-content .charsheet select,
+  .ui-dialog .tab-content .charsheet textarea,
+  .ui-dialog .tab-content .charsheet input,
+  .ui-dialog .tab-content .charsheet .uneditable-input,
+  .ui-dialog .tab-content .charsheet label,
+  .ui-dialog .tab-content .charsheet button {
+    font-family: var(--contentHeadFont);
   }
-  #main .current-max
-  {
-    border-color: var(--borderColor);
-    border-width: var(--borderWidth);
-    border-style: solid;
-    box-sizing: border-box;
-    border-radius: 5px;
-    width: 7rem;
-    text-align: center;
-  }
-  #main .current-max input:not(:where([type=checkbox],[type=radio]))
-  {
-    border-width: 0;
-  }
-  .attributes .grid {
-    display: grid;
-    // attribute, cur/max, skill mod, limit, trait
-    grid-template-columns: auto auto auto auto auto;
-  }
-  .parentheses::before { content: "("; }
-  .parentheses::after { content: ")"; }
 }
 @mixin roll{
-  @include generic;
-  // Put any generic roll template styling you have here
+	@include generic;
+	// Put any generic roll template styling you have here
 }
 .ui-dialog .tab-content .charsheet{
-  @include k.defaultStyles;
+	@include k.defaultStyles;
 }
