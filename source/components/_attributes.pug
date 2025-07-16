@@ -18,8 +18,12 @@ mixin statContainer(divObj)
 //- build an attribute row
 mixin attributeHolder(name)
 	+label({label:name})
-	//- when this is updated, must also update $affects
-	+input({name:name,type:'number',trigger:{affects:[`${name}_skill_mod`]}})
+
+	.current-max
+		//- when this is updated, must also update $affects
+		+input({name:name,type:'number',trigger:{affects:[`${name}_skill_mod`]}})
+		| /
+		+input({name:`${name}_max`,type:'number'})
 
 	//- print "(" + "+" + $calculation + ")"
 	+attributeSkillMod({
@@ -28,4 +32,10 @@ mixin attributeHolder(name)
 		classAdd:'parentheses',
 		trigger:{calculation:'calcAttributeSkillMod'}
 		})
+	
+	.limit
+		+input({name:`${name}_limit`,type:'number'})
+	
+	.trait
+		+input({name:`${name}_trait`,type:'text'})
 //- End mixin

@@ -3341,9 +3341,21 @@ body .ui-dialog .tab-content .charsheet #main input:not(:where([type=checkbox], 
   border-color: var(--borderColor);
   border-width: var(--borderWidth);
 }
+body .ui-dialog .tab-content .charsheet #main .current-max {
+  border-color: var(--borderColor);
+  border-width: var(--borderWidth);
+  border-style: solid;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 7rem;
+  text-align: center;
+}
+body .ui-dialog .tab-content .charsheet #main .current-max input:not(:where([type=checkbox], [type=radio])) {
+  border-width: 0;
+}
 body .ui-dialog .tab-content .charsheet .attributes .grid {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto auto;
 }
 body .ui-dialog .tab-content .charsheet .parentheses::before {
   content: "(";

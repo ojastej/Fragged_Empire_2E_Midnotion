@@ -18,9 +18,24 @@
     border-color: var(--borderColor);
     border-width: var(--borderWidth);
   }
+  #main .current-max
+  {
+    border-color: var(--borderColor);
+    border-width: var(--borderWidth);
+    border-style: solid;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 7rem;
+    text-align: center;
+  }
+  #main .current-max input:not(:where([type=checkbox],[type=radio]))
+  {
+    border-width: 0;
+  }
   .attributes .grid {
     display: grid;
-    grid-template-columns: auto auto auto;
+    // attribute, cur/max, skill mod, limit, trait
+    grid-template-columns: auto auto auto auto auto;
   }
   .parentheses::before { content: "("; }
   .parentheses::after { content: ")"; }
