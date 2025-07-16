@@ -1,0 +1,42 @@
+mixin skillHeader
+	.name.column
+	+label({label:"Trained", divObj:{class:"column"}, spanObj:{class:"column"}})
+	+label({label:"Toolbox", divObj:{class:"column"}, spanObj:{class:"column"}})
+	+label({label:"Workshop", divObj:{class:"column"}, spanObj:{class:"column"}})
+	+label({label:"Modifier", divObj:{class:"column"}, spanObj:{class:"column"}})
+	+label({label:"Trait", divObj:{class:"trait column"}, spanObj:{class:"column"}})
+
+
+mixin skillRow (skill)
+	- const skillName = skill.name;
+	- const attributeShort = skill.attribute.substring(0,3); // first 3 chars
+	.name
+		if attributeShort == ""
+			+label({label:skillName})
+		else
+			+label({label:`${skillName} (${attributeShort})`})
+
+		//- a place to store the total roll bonus
+		//- TODO: make it sensitive to the attribute bonus
+		+input({name:skillName,type:'hidden'})
+		
+	+checkbox({
+		name:`${skillName}_trained`,
+		value:1,
+		class:'display-control',
+		affects:[skillName]})
+
+	+checkbox({
+		name:`${skillName}_toolbox`,
+		value:1,
+		class:'display-control',
+		affects:[skillName]})
+
+	+checkbox({
+		name:`${skillName}_workshop`,
+		value:1,
+		class:'display-control',
+		affects:[skillName]})
+
+	+input({name:`${skillName}_modifier`,type:'number'})
+	+input({name:`${skillName}_trait`,type:'text'}).trait

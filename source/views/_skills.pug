@@ -1,0 +1,7 @@
+section(data-i18n-aria-label="skills")#skills
+	.skills
+		h2(data-i18n='skills')
+		.grid.tiny-gap
+			+skillHeader
+			each skill in primarySkills
+				+skillRow(skill)

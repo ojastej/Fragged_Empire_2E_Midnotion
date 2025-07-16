@@ -3514,6 +3514,10 @@ body .ui-dialog .tab-content .charsheet #main input:not(:where([type=checkbox], 
   border-color: var(--borderColor);
   border-width: var(--borderWidth);
 }
+body .ui-dialog .tab-content .charsheet #main input:where([type=checkbox], [type=radio]) {
+  border-color: var(--borderColor);
+  border-width: 1px;
+}
 body .ui-dialog .tab-content .charsheet #main .current-max {
   border-color: var(--borderColor);
   border-width: var(--borderWidth);
@@ -3527,15 +3531,27 @@ body .ui-dialog .tab-content .charsheet #main .current-max input:not(:where([typ
   border-width: 0;
   width: 2rem;
 }
-body .ui-dialog .tab-content .charsheet .attributes .grid {
+body .ui-dialog .tab-content .charsheet .attributes > .grid {
   text-transform: capitalize;
   grid-auto-columns: max-content;
 }
-body .ui-dialog .tab-content .charsheet .attributes .grid > .name {
+body .ui-dialog .tab-content .charsheet .attributes > .grid > .name {
   grid-column-start: 1;
 }
-body .ui-dialog .tab-content .charsheet .attributes .grid > .trait {
+body .ui-dialog .tab-content .charsheet .attributes > .grid > .trait {
   grid-column-end: 6;
+}
+body .ui-dialog .tab-content .charsheet .skills > .grid {
+  grid-auto-columns: max-content;
+}
+body .ui-dialog .tab-content .charsheet .skills > .grid input {
+  display: inline-block;
+}
+body .ui-dialog .tab-content .charsheet .skills > .grid .name {
+  grid-column-start: 1;
+}
+body .ui-dialog .tab-content .charsheet .skills > .grid .trait {
+  grid-column-end: 7;
 }
 body .ui-dialog .tab-content .charsheet .parentheses::before {
   content: "(";

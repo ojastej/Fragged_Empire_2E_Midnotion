@@ -1,20 +1,3 @@
-mixin attributeSkillMod({name,defaultValue,classAdd,trigger})
-	span(class=`attribute-skill-mod-container${classAdd ? classAdd : ''}`)
-		-
-			const trueDefault = defaultValue === undefined ?
-				0 :
-				defaultValue;
-		+hidden({name,class:'attribute-skill-mod',value:trueDefault,trigger})
-		+span({class:`attribute-skill-mod-display${classAdd ? ` ${classAdd}` : ''}`,name})
-			|#{trueDefault}
-//- End mixin
-
-mixin statContainer(divObj)
-	- divObj = divObj || {};
-	.stat-container&attributes(divObj)&attributes(attributes)
-		block
-//- End mixin
-
 mixin attributeHeader
 	.name.column
 	+label({label:"Current", divObj:{class:"column"}, spanObj:{class:"column"}})
@@ -45,4 +28,16 @@ mixin attributeRow(name)
 	
 	.trait
 		+input({name:`${name}_trait`,type:'text'})
+//- End mixin
+
+//- setup a field to store the skill mod numerically while displaying something fancier
+mixin attributeSkillMod({name,defaultValue,classAdd,trigger})
+	span(class=`attribute-skill-mod-container${classAdd ? classAdd : ''}`)
+		-
+			const trueDefault = defaultValue === undefined ?
+				0 :
+				defaultValue;
+		+hidden({name,class:'attribute-skill-mod',value:trueDefault,trigger})
+		+span({class:`attribute-skill-mod-display${classAdd ? ` ${classAdd}` : ''}`,name})
+			|#{trueDefault}
 //- End mixin

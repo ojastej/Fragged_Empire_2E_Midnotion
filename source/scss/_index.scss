@@ -19,6 +19,11 @@
 		border-color: var(--borderColor);
 		border-width: var(--borderWidth);
 	}
+	#main input:where([type=checkbox],[type=radio])
+	{
+		border-color: var(--borderColor);
+		border-width: 1px;
+	}
 	#main .current-max
 	{
 		border-color: var(--borderColor);
@@ -28,46 +33,52 @@
 		border-radius: 5px;
 		width: 5rem;
 		text-align: center;
+
+		input:not(:where([type=checkbox],[type=radio]))
+		{
+			border-width: 0;
+			width: 2rem;
+		}
 	}
-	#main .current-max input:not(:where([type=checkbox],[type=radio]))
-	{
-		border-width: 0;
-    width: 2rem;
-	}
-	.attributes .grid {
+	.attributes > .grid {
 		text-transform: capitalize;
 		// attribute, cur/max, skill mod, limit, trait
 		//grid-template-columns: 6rem 8rem 4rem 4rem auto;
-    //grid-template-columns: auto auto auto auto auto;
-    grid-auto-columns: max-content;
+		//grid-template-columns: auto auto auto auto auto;
+		grid-auto-columns: max-content;
 	}
-  .attributes .grid > .name {
-    grid-column-start: 1;
-  }
-  .attributes .grid > .trait {
-    grid-column-end: 6;
-  }
+	.attributes > .grid > .name {
+		grid-column-start: 1;
+	}
+	.attributes > .grid > .trait {
+		grid-column-end: 6;
+	}
+	.skills > .grid 
+	{
+		grid-auto-columns: max-content;
+		input {
+			display: inline-block;
+		}
+		.name {
+			grid-column-start: 1;
+		}
+		.trait {
+			grid-column-end: 7;
+		}
+	}
 	.parentheses::before { content: "("; }
 	.parentheses::after { content: ")"; }
-  .parentheses {
-    text-align: center;
-  }
-  .column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .column * {
-    align-items: center;
-  }
-  // .ui-dialog .tab-content .charsheet select,
-  // .ui-dialog .tab-content .charsheet textarea,
-  // .ui-dialog .tab-content .charsheet input,
-  // .ui-dialog .tab-content .charsheet .uneditable-input,
-  // .ui-dialog .tab-content .charsheet label,
-  // .ui-dialog .tab-content .charsheet button {
-  //   font-family: var(--contentHeadFont);
-  // }
+	.parentheses {
+		text-align: center;
+	}
+	.column {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.column * {
+		align-items: center;
+	}
 }
 @mixin roll{
 	@include generic;
