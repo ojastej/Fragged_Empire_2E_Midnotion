@@ -1,25 +1,9 @@
 section(data-i18n-aria-label="attributes")#attributes
 	.attributes
 		h2(data-i18n='attributes')
-		//- call JS reduce() to iterate over the attributes array with the supplied function,
-		//-	array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
-		//- returning a new array of two subarrays [['attr1','attr2'],['attr3','attr4']]
-		-
-			const attrHolder = attributes.reduce((acc,name) => {
-				const endIndex = Math.max(acc.length - 1,0)
-				if(!acc[endIndex] || acc[endIndex][1]) {
-					const dest = [];
-					dest.push(name);
-					acc.push(dest);
-				} else {
-					acc[endIndex].push(name);
-				}
-				return acc;
-			},[]);
 		.grid
-			each attr in attributes
+			each attr in baseAttributes
 				+attributeHolder(attr)
-
 		.row
 			//- current strength, including attribute damage
 			+input-label({

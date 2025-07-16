@@ -6,7 +6,10 @@
  * @param {object} casc - Expanded cascade object
  */
 const calcAttributeSkillMod = function({trigger,attributes,sections,casc}){
-	const baseName = `${trigger.name}_goal`;
+	// baseName == "intelligence_skill_mod", so split off first part
+	const baseName = `${trigger.name}`.split("_")[0];
+	console.log ('calcAttributeSkillMod()', trigger, attributes, sections, casc);
+
 	// An Attribute value of 1 or less gives -1 to specific Skills.
 	// An Attribute value of 4 or more gives +1 to specific Skills.
 	if (attributes[baseName] <= 1)
@@ -20,3 +23,5 @@ const calcAttributeSkillMod = function({trigger,attributes,sections,casc}){
 	return 0;
 };
 k.registerFuncs({calcAttributeSkillMod});
+
+console.log ("calculations workers registered");

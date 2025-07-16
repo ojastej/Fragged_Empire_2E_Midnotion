@@ -22,6 +22,8 @@
     display: grid;
     grid-template-columns: auto auto auto;
   }
+  .parentheses::before { content: "("; }
+  .parentheses::after { content: ")"; }
 }
 @mixin roll{
   @include generic;

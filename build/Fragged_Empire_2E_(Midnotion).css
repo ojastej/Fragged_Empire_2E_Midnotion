@@ -3345,6 +3345,12 @@ body .ui-dialog .tab-content .charsheet .attributes .grid {
   display: grid;
   grid-template-columns: auto auto auto;
 }
+body .ui-dialog .tab-content .charsheet .parentheses::before {
+  content: "(";
+}
+body .ui-dialog .tab-content .charsheet .parentheses::after {
+  content: ")";
+}
 body.sheet-darkmode {
   --backColor:var(--dm-backColor);
   --selectedColor:var(--dm-selectedColor);

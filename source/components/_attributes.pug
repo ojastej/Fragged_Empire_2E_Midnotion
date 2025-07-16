@@ -17,15 +17,15 @@ mixin statContainer(divObj)
 
 //- build an attribute row
 mixin attributeHolder(name)
-	- const trigger = {calculation:'calcAttribute',affects:[`${name}`]};
-	//- when something says it updates $affects, run $calculation
-
 	+label({label:name})
-	+input({name:name,type:'number'})
+	//- when this is updated, must also update $affects
+	+input({name:name,type:'number',trigger:{affects:[`${name}_skill_mod`]}})
 
-	.parens-holder
-		//- print "(" + "+" + $calculation + ")"
-		span.parentheses (
-		+attributeSkillMod({name:`${name}`,value:0,trigger:{calculation:'calcAttributeSkillMod'}})
-		span.parentheses )
+	//- print "(" + "+" + $calculation + ")"
+	+attributeSkillMod({
+		name:`${name}_skill_mod`,
+		value:0,
+		classAdd:'parentheses',
+		trigger:{calculation:'calcAttributeSkillMod'}
+		})
 //- End mixin
