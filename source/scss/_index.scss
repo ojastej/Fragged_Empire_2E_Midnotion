@@ -26,30 +26,48 @@
 		border-style: solid;
 		box-sizing: border-box;
 		border-radius: 5px;
-		width: 7rem;
+		width: 5rem;
 		text-align: center;
 	}
 	#main .current-max input:not(:where([type=checkbox],[type=radio]))
 	{
 		border-width: 0;
+    width: 2rem;
 	}
 	.attributes .grid {
-		display: grid;
 		text-transform: capitalize;
 		// attribute, cur/max, skill mod, limit, trait
-		grid-template-columns: 6rem 8rem 4rem 4rem auto;
+		//grid-template-columns: 6rem 8rem 4rem 4rem auto;
+    //grid-template-columns: auto auto auto auto auto;
+    grid-auto-columns: max-content;
 	}
+  .attributes .grid > .name {
+    grid-column-start: 1;
+  }
+  .attributes .grid > .trait {
+    grid-column-end: 6;
+  }
 	.parentheses::before { content: "("; }
 	.parentheses::after { content: ")"; }
-
-  .ui-dialog .tab-content .charsheet select,
-  .ui-dialog .tab-content .charsheet textarea,
-  .ui-dialog .tab-content .charsheet input,
-  .ui-dialog .tab-content .charsheet .uneditable-input,
-  .ui-dialog .tab-content .charsheet label,
-  .ui-dialog .tab-content .charsheet button {
-    font-family: var(--contentHeadFont);
+  .parentheses {
+    text-align: center;
   }
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .column * {
+    align-items: center;
+  }
+  // .ui-dialog .tab-content .charsheet select,
+  // .ui-dialog .tab-content .charsheet textarea,
+  // .ui-dialog .tab-content .charsheet input,
+  // .ui-dialog .tab-content .charsheet .uneditable-input,
+  // .ui-dialog .tab-content .charsheet label,
+  // .ui-dialog .tab-content .charsheet button {
+  //   font-family: var(--contentHeadFont);
+  // }
 }
 @mixin roll{
 	@include generic;

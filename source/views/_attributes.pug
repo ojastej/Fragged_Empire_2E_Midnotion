@@ -1,11 +1,7 @@
 section(data-i18n-aria-label="attributes")#attributes
 	.attributes
 		h2(data-i18n='attributes')
-		.grid
-			div
-			+label({label:"Current"})
-			+label({label:"Modifier"})
-			+label({label:"Limit"})
-			+label({label:"Trait"})
+		.grid.tiny-gap
+			+attributeHeader
 			each attr in baseAttributes
-				+attributeHolder(attr)
+				+attributeRow(attr)

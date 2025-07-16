@@ -1123,6 +1123,7 @@
   --kmodal-close-line-length:calc(var(--kmodal-close-width) * 1.5);
   --borderColor: black;
   --borderWidth: 1px;
+  --column-gap: 5px;
   --topHeadFont: "PT Sans Narrow", sans-serif;
   --midHeadFont: "PT Sans Narrow", sans-serif;
   --contentHeadFont: "PT Sans Narrow", sans-serif;
@@ -2362,6 +2363,7 @@ body {
   --kmodal-close-line-length:calc(var(--kmodal-close-width) * 1.5);
   --borderColor: black;
   --borderWidth: 1px;
+  --column-gap: 5px;
   --topHeadFont: "PT Sans Narrow", sans-serif;
   --midHeadFont: "PT Sans Narrow", sans-serif;
   --contentHeadFont: "PT Sans Narrow", sans-serif;
@@ -2540,6 +2542,7 @@ body .ui-dialog .tab-content .charsheet {
   --kmodal-close-line-length:calc(var(--kmodal-close-width) * 1.5);
   --borderColor: black;
   --borderWidth: 1px;
+  --column-gap: 5px;
   --topHeadFont: "PT Sans Narrow", sans-serif;
   --midHeadFont: "PT Sans Narrow", sans-serif;
   --contentHeadFont: "PT Sans Narrow", sans-serif;
@@ -3517,16 +3520,22 @@ body .ui-dialog .tab-content .charsheet #main .current-max {
   border-style: solid;
   box-sizing: border-box;
   border-radius: 5px;
-  width: 7rem;
+  width: 5rem;
   text-align: center;
 }
 body .ui-dialog .tab-content .charsheet #main .current-max input:not(:where([type=checkbox], [type=radio])) {
   border-width: 0;
+  width: 2rem;
 }
 body .ui-dialog .tab-content .charsheet .attributes .grid {
-  display: grid;
   text-transform: capitalize;
-  grid-template-columns: 6rem 8rem 4rem 4rem auto;
+  grid-auto-columns: max-content;
+}
+body .ui-dialog .tab-content .charsheet .attributes .grid > .name {
+  grid-column-start: 1;
+}
+body .ui-dialog .tab-content .charsheet .attributes .grid > .trait {
+  grid-column-end: 6;
 }
 body .ui-dialog .tab-content .charsheet .parentheses::before {
   content: "(";
@@ -3534,13 +3543,16 @@ body .ui-dialog .tab-content .charsheet .parentheses::before {
 body .ui-dialog .tab-content .charsheet .parentheses::after {
   content: ")";
 }
-body .ui-dialog .tab-content .charsheet .ui-dialog .tab-content .charsheet select,
-body .ui-dialog .tab-content .charsheet .ui-dialog .tab-content .charsheet textarea,
-body .ui-dialog .tab-content .charsheet .ui-dialog .tab-content .charsheet input,
-body .ui-dialog .tab-content .charsheet .ui-dialog .tab-content .charsheet .uneditable-input,
-body .ui-dialog .tab-content .charsheet .ui-dialog .tab-content .charsheet label,
-body .ui-dialog .tab-content .charsheet .ui-dialog .tab-content .charsheet button {
-  font-family: var(--contentHeadFont);
+body .ui-dialog .tab-content .charsheet .parentheses {
+  text-align: center;
+}
+body .ui-dialog .tab-content .charsheet .column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .ui-dialog .tab-content .charsheet .column * {
+  align-items: center;
 }
 body .ui-dialog .tab-content .charsheet label {
   font-family: var(--contentHeadFont);

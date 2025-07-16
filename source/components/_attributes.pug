@@ -15,9 +15,16 @@ mixin statContainer(divObj)
 		block
 //- End mixin
 
+mixin attributeHeader
+	.name.column
+	+label({label:"Current", divObj:{class:"column"}, spanObj:{class:"column"}})
+	+label({label:"Modifier", divObj:{class:"column"}, spanObj:{class:"column"}})
+	+label({label:"Limit", divObj:{class:"column"}, spanObj:{class:"column"}})
+	+label({label:"Trait", divObj:{class:"column"}, spanObj:{class:"column"}})
+
 //- build an attribute row
-mixin attributeHolder(name)
-	+label({label:name})
+mixin attributeRow(name)
+	+label({label:name}).name
 
 	.current-max
 		//- when this is updated, must also update $affects
@@ -29,7 +36,7 @@ mixin attributeHolder(name)
 	+attributeSkillMod({
 		name:`${name}_skill_mod`,
 		value:0,
-		classAdd:'parentheses',
+		classAdd:'column',
 		trigger:{calculation:'calcAttributeSkillMod'}
 		})
 	
