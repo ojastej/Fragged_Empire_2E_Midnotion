@@ -71,8 +71,8 @@
         <div class="current-max">
           <input name="attr_strength" type="number" title="@{strength}"/>/
           <input name="attr_strength_max" type="number" title="@{strength|max}"/>
-        </div><span class="attribute-skill-mod-containercolumn">
-          <input class="attribute-skill-mod" name="attr_strength_skill_mod" value="0" type="hidden" title="@{strength_skill_mod}"/><span class="attribute-skill-mod-display column" name="attr_strength_skill_mod" title="@{strength_skill_mod}">0</span></span>
+        </div><span class="attribute-skill-mod-container column">
+          <input class="attribute-skill-mod" name="attr_strength_skill_mod" value="0" type="hidden" title="@{strength_skill_mod}"/><span class="attribute-skill-mod-display  column" name="attr_strength_skill_mod" title="@{strength_skill_mod}">0</span></span>
         <div class="limit">
           <input name="attr_strength_limit" type="number" title="@{strength_limit}"/>
         </div>
@@ -84,8 +84,8 @@
         <div class="current-max">
           <input name="attr_reflexes" type="number" title="@{reflexes}"/>/
           <input name="attr_reflexes_max" type="number" title="@{reflexes|max}"/>
-        </div><span class="attribute-skill-mod-containercolumn">
-          <input class="attribute-skill-mod" name="attr_reflexes_skill_mod" value="0" type="hidden" title="@{reflexes_skill_mod}"/><span class="attribute-skill-mod-display column" name="attr_reflexes_skill_mod" title="@{reflexes_skill_mod}">0</span></span>
+        </div><span class="attribute-skill-mod-container column">
+          <input class="attribute-skill-mod" name="attr_reflexes_skill_mod" value="0" type="hidden" title="@{reflexes_skill_mod}"/><span class="attribute-skill-mod-display  column" name="attr_reflexes_skill_mod" title="@{reflexes_skill_mod}">0</span></span>
         <div class="limit">
           <input name="attr_reflexes_limit" type="number" title="@{reflexes_limit}"/>
         </div>
@@ -97,8 +97,8 @@
         <div class="current-max">
           <input name="attr_mobility" type="number" title="@{mobility}"/>/
           <input name="attr_mobility_max" type="number" title="@{mobility|max}"/>
-        </div><span class="attribute-skill-mod-containercolumn">
-          <input class="attribute-skill-mod" name="attr_mobility_skill_mod" value="0" type="hidden" title="@{mobility_skill_mod}"/><span class="attribute-skill-mod-display column" name="attr_mobility_skill_mod" title="@{mobility_skill_mod}">0</span></span>
+        </div><span class="attribute-skill-mod-container column">
+          <input class="attribute-skill-mod" name="attr_mobility_skill_mod" value="0" type="hidden" title="@{mobility_skill_mod}"/><span class="attribute-skill-mod-display  column" name="attr_mobility_skill_mod" title="@{mobility_skill_mod}">0</span></span>
         <div class="limit">
           <input name="attr_mobility_limit" type="number" title="@{mobility_limit}"/>
         </div>
@@ -110,8 +110,8 @@
         <div class="current-max">
           <input name="attr_focus" type="number" title="@{focus}"/>/
           <input name="attr_focus_max" type="number" title="@{focus|max}"/>
-        </div><span class="attribute-skill-mod-containercolumn">
-          <input class="attribute-skill-mod" name="attr_focus_skill_mod" value="0" type="hidden" title="@{focus_skill_mod}"/><span class="attribute-skill-mod-display column" name="attr_focus_skill_mod" title="@{focus_skill_mod}">0</span></span>
+        </div><span class="attribute-skill-mod-container column">
+          <input class="attribute-skill-mod" name="attr_focus_skill_mod" value="0" type="hidden" title="@{focus_skill_mod}"/><span class="attribute-skill-mod-display  column" name="attr_focus_skill_mod" title="@{focus_skill_mod}">0</span></span>
         <div class="limit">
           <input name="attr_focus_limit" type="number" title="@{focus_limit}"/>
         </div>
@@ -123,8 +123,8 @@
         <div class="current-max">
           <input name="attr_intelligence" type="number" title="@{intelligence}"/>/
           <input name="attr_intelligence_max" type="number" title="@{intelligence|max}"/>
-        </div><span class="attribute-skill-mod-containercolumn">
-          <input class="attribute-skill-mod" name="attr_intelligence_skill_mod" value="0" type="hidden" title="@{intelligence_skill_mod}"/><span class="attribute-skill-mod-display column" name="attr_intelligence_skill_mod" title="@{intelligence_skill_mod}">0</span></span>
+        </div><span class="attribute-skill-mod-container column">
+          <input class="attribute-skill-mod" name="attr_intelligence_skill_mod" value="0" type="hidden" title="@{intelligence_skill_mod}"/><span class="attribute-skill-mod-display  column" name="attr_intelligence_skill_mod" title="@{intelligence_skill_mod}">0</span></span>
         <div class="limit">
           <input name="attr_intelligence_limit" type="number" title="@{intelligence_limit}"/>
         </div>
@@ -136,8 +136,8 @@
         <div class="current-max">
           <input name="attr_grit" type="number" title="@{grit}"/>/
           <input name="attr_grit_max" type="number" title="@{grit|max}"/>
-        </div><span class="attribute-skill-mod-containercolumn">
-          <input class="attribute-skill-mod" name="attr_grit_skill_mod" value="0" type="hidden" title="@{grit_skill_mod}"/><span class="attribute-skill-mod-display column" name="attr_grit_skill_mod" title="@{grit_skill_mod}">0</span></span>
+        </div><span class="attribute-skill-mod-container column">
+          <input class="attribute-skill-mod" name="attr_grit_skill_mod" value="0" type="hidden" title="@{grit_skill_mod}"/><span class="attribute-skill-mod-display  column" name="attr_grit_skill_mod" title="@{grit_skill_mod}">0</span></span>
         <div class="limit">
           <input name="attr_grit_limit" type="number" title="@{grit_limit}"/>
         </div>
@@ -167,9 +167,15 @@
           </label>
           <input name="attr_wealth" type="hidden" title="@{wealth}"/>
         </div>
-        <input class="display-control" name="attr_wealth_trained" value="1" affects='["wealth"]' type="checkbox" title="@{wealth_trained}"/>
-        <input class="display-control" name="attr_wealth_toolbox" value="1" affects='["wealth"]' type="checkbox" title="@{wealth_toolbox}"/>
-        <input class="display-control" name="attr_wealth_workshop" value="1" affects='["wealth"]' type="checkbox" title="@{wealth_workshop}"/>
+        <div class="column">
+          <input class="column" name="attr_wealth_trained" value="1" affects='["wealth"]' type="checkbox" title="@{wealth_trained}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_wealth_toolbox" value="1" affects='["wealth"]' type="checkbox" title="@{wealth_toolbox}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_wealth_workshop" value="1" affects='["wealth"]' type="checkbox" title="@{wealth_workshop}"/>
+        </div>
         <input name="attr_wealth_modifier" type="number" title="@{wealth_modifier}"/>
         <input class="trait" name="attr_wealth_trait" type="text" title="@{wealth_trait}"/>
         <div class="name">
@@ -177,9 +183,15 @@
           </label>
           <input name="attr_persuasion" type="hidden" title="@{persuasion}"/>
         </div>
-        <input class="display-control" name="attr_persuasion_trained" value="1" affects='["persuasion"]' type="checkbox" title="@{persuasion_trained}"/>
-        <input class="display-control" name="attr_persuasion_toolbox" value="1" affects='["persuasion"]' type="checkbox" title="@{persuasion_toolbox}"/>
-        <input class="display-control" name="attr_persuasion_workshop" value="1" affects='["persuasion"]' type="checkbox" title="@{persuasion_workshop}"/>
+        <div class="column">
+          <input class="column" name="attr_persuasion_trained" value="1" affects='["persuasion"]' type="checkbox" title="@{persuasion_trained}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_persuasion_toolbox" value="1" affects='["persuasion"]' type="checkbox" title="@{persuasion_toolbox}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_persuasion_workshop" value="1" affects='["persuasion"]' type="checkbox" title="@{persuasion_workshop}"/>
+        </div>
         <input name="attr_persuasion_modifier" type="number" title="@{persuasion_modifier}"/>
         <input class="trait" name="attr_persuasion_trait" type="text" title="@{persuasion_trait}"/>
         <div class="name">
@@ -187,9 +199,15 @@
           </label>
           <input name="attr_leadership" type="hidden" title="@{leadership}"/>
         </div>
-        <input class="display-control" name="attr_leadership_trained" value="1" affects='["leadership"]' type="checkbox" title="@{leadership_trained}"/>
-        <input class="display-control" name="attr_leadership_toolbox" value="1" affects='["leadership"]' type="checkbox" title="@{leadership_toolbox}"/>
-        <input class="display-control" name="attr_leadership_workshop" value="1" affects='["leadership"]' type="checkbox" title="@{leadership_workshop}"/>
+        <div class="column">
+          <input class="column" name="attr_leadership_trained" value="1" affects='["leadership"]' type="checkbox" title="@{leadership_trained}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_leadership_toolbox" value="1" affects='["leadership"]' type="checkbox" title="@{leadership_toolbox}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_leadership_workshop" value="1" affects='["leadership"]' type="checkbox" title="@{leadership_workshop}"/>
+        </div>
         <input name="attr_leadership_modifier" type="number" title="@{leadership_modifier}"/>
         <input class="trait" name="attr_leadership_trait" type="text" title="@{leadership_trait}"/>
         <div class="name">
@@ -197,9 +215,15 @@
           </label>
           <input name="attr_psychology" type="hidden" title="@{psychology}"/>
         </div>
-        <input class="display-control" name="attr_psychology_trained" value="1" affects='["psychology"]' type="checkbox" title="@{psychology_trained}"/>
-        <input class="display-control" name="attr_psychology_toolbox" value="1" affects='["psychology"]' type="checkbox" title="@{psychology_toolbox}"/>
-        <input class="display-control" name="attr_psychology_workshop" value="1" affects='["psychology"]' type="checkbox" title="@{psychology_workshop}"/>
+        <div class="column">
+          <input class="column" name="attr_psychology_trained" value="1" affects='["psychology"]' type="checkbox" title="@{psychology_trained}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_psychology_toolbox" value="1" affects='["psychology"]' type="checkbox" title="@{psychology_toolbox}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_psychology_workshop" value="1" affects='["psychology"]' type="checkbox" title="@{psychology_workshop}"/>
+        </div>
         <input name="attr_psychology_modifier" type="number" title="@{psychology_modifier}"/>
         <input class="trait" name="attr_psychology_trait" type="text" title="@{psychology_trait}"/>
         <div class="name">
@@ -207,9 +231,15 @@
           </label>
           <input name="attr_culture" type="hidden" title="@{culture}"/>
         </div>
-        <input class="display-control" name="attr_culture_trained" value="1" affects='["culture"]' type="checkbox" title="@{culture_trained}"/>
-        <input class="display-control" name="attr_culture_toolbox" value="1" affects='["culture"]' type="checkbox" title="@{culture_toolbox}"/>
-        <input class="display-control" name="attr_culture_workshop" value="1" affects='["culture"]' type="checkbox" title="@{culture_workshop}"/>
+        <div class="column">
+          <input class="column" name="attr_culture_trained" value="1" affects='["culture"]' type="checkbox" title="@{culture_trained}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_culture_toolbox" value="1" affects='["culture"]' type="checkbox" title="@{culture_toolbox}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_culture_workshop" value="1" affects='["culture"]' type="checkbox" title="@{culture_workshop}"/>
+        </div>
         <input name="attr_culture_modifier" type="number" title="@{culture_modifier}"/>
         <input class="trait" name="attr_culture_trait" type="text" title="@{culture_trait}"/>
         <div class="name">
@@ -217,9 +247,15 @@
           </label>
           <input name="attr_physical" type="hidden" title="@{physical}"/>
         </div>
-        <input class="display-control" name="attr_physical_trained" value="1" affects='["physical"]' type="checkbox" title="@{physical_trained}"/>
-        <input class="display-control" name="attr_physical_toolbox" value="1" affects='["physical"]' type="checkbox" title="@{physical_toolbox}"/>
-        <input class="display-control" name="attr_physical_workshop" value="1" affects='["physical"]' type="checkbox" title="@{physical_workshop}"/>
+        <div class="column">
+          <input class="column" name="attr_physical_trained" value="1" affects='["physical"]' type="checkbox" title="@{physical_trained}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_physical_toolbox" value="1" affects='["physical"]' type="checkbox" title="@{physical_toolbox}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_physical_workshop" value="1" affects='["physical"]' type="checkbox" title="@{physical_workshop}"/>
+        </div>
         <input name="attr_physical_modifier" type="number" title="@{physical_modifier}"/>
         <input class="trait" name="attr_physical_trait" type="text" title="@{physical_trait}"/>
         <div class="name">
@@ -227,9 +263,15 @@
           </label>
           <input name="attr_resolve" type="hidden" title="@{resolve}"/>
         </div>
-        <input class="display-control" name="attr_resolve_trained" value="1" affects='["resolve"]' type="checkbox" title="@{resolve_trained}"/>
-        <input class="display-control" name="attr_resolve_toolbox" value="1" affects='["resolve"]' type="checkbox" title="@{resolve_toolbox}"/>
-        <input class="display-control" name="attr_resolve_workshop" value="1" affects='["resolve"]' type="checkbox" title="@{resolve_workshop}"/>
+        <div class="column">
+          <input class="column" name="attr_resolve_trained" value="1" affects='["resolve"]' type="checkbox" title="@{resolve_trained}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_resolve_toolbox" value="1" affects='["resolve"]' type="checkbox" title="@{resolve_toolbox}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_resolve_workshop" value="1" affects='["resolve"]' type="checkbox" title="@{resolve_workshop}"/>
+        </div>
         <input name="attr_resolve_modifier" type="number" title="@{resolve_modifier}"/>
         <input class="trait" name="attr_resolve_trait" type="text" title="@{resolve_trait}"/>
         <div class="name">
@@ -237,9 +279,15 @@
           </label>
           <input name="attr_awareness" type="hidden" title="@{awareness}"/>
         </div>
-        <input class="display-control" name="attr_awareness_trained" value="1" affects='["awareness"]' type="checkbox" title="@{awareness_trained}"/>
-        <input class="display-control" name="attr_awareness_toolbox" value="1" affects='["awareness"]' type="checkbox" title="@{awareness_toolbox}"/>
-        <input class="display-control" name="attr_awareness_workshop" value="1" affects='["awareness"]' type="checkbox" title="@{awareness_workshop}"/>
+        <div class="column">
+          <input class="column" name="attr_awareness_trained" value="1" affects='["awareness"]' type="checkbox" title="@{awareness_trained}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_awareness_toolbox" value="1" affects='["awareness"]' type="checkbox" title="@{awareness_toolbox}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_awareness_workshop" value="1" affects='["awareness"]' type="checkbox" title="@{awareness_workshop}"/>
+        </div>
         <input name="attr_awareness_modifier" type="number" title="@{awareness_modifier}"/>
         <input class="trait" name="attr_awareness_trait" type="text" title="@{awareness_trait}"/>
         <div class="name">
@@ -247,9 +295,15 @@
           </label>
           <input name="attr_stealth" type="hidden" title="@{stealth}"/>
         </div>
-        <input class="display-control" name="attr_stealth_trained" value="1" affects='["stealth"]' type="checkbox" title="@{stealth_trained}"/>
-        <input class="display-control" name="attr_stealth_toolbox" value="1" affects='["stealth"]' type="checkbox" title="@{stealth_toolbox}"/>
-        <input class="display-control" name="attr_stealth_workshop" value="1" affects='["stealth"]' type="checkbox" title="@{stealth_workshop}"/>
+        <div class="column">
+          <input class="column" name="attr_stealth_trained" value="1" affects='["stealth"]' type="checkbox" title="@{stealth_trained}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_stealth_toolbox" value="1" affects='["stealth"]' type="checkbox" title="@{stealth_toolbox}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_stealth_workshop" value="1" affects='["stealth"]' type="checkbox" title="@{stealth_workshop}"/>
+        </div>
         <input name="attr_stealth_modifier" type="number" title="@{stealth_modifier}"/>
         <input class="trait" name="attr_stealth_trait" type="text" title="@{stealth_trait}"/>
         <div class="name">
@@ -257,9 +311,15 @@
           </label>
           <input name="attr_mechanics" type="hidden" title="@{mechanics}"/>
         </div>
-        <input class="display-control" name="attr_mechanics_trained" value="1" affects='["mechanics"]' type="checkbox" title="@{mechanics_trained}"/>
-        <input class="display-control" name="attr_mechanics_toolbox" value="1" affects='["mechanics"]' type="checkbox" title="@{mechanics_toolbox}"/>
-        <input class="display-control" name="attr_mechanics_workshop" value="1" affects='["mechanics"]' type="checkbox" title="@{mechanics_workshop}"/>
+        <div class="column">
+          <input class="column" name="attr_mechanics_trained" value="1" affects='["mechanics"]' type="checkbox" title="@{mechanics_trained}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_mechanics_toolbox" value="1" affects='["mechanics"]' type="checkbox" title="@{mechanics_toolbox}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_mechanics_workshop" value="1" affects='["mechanics"]' type="checkbox" title="@{mechanics_workshop}"/>
+        </div>
         <input name="attr_mechanics_modifier" type="number" title="@{mechanics_modifier}"/>
         <input class="trait" name="attr_mechanics_trait" type="text" title="@{mechanics_trait}"/>
         <div class="name">
@@ -267,9 +327,15 @@
           </label>
           <input name="attr_electronics" type="hidden" title="@{electronics}"/>
         </div>
-        <input class="display-control" name="attr_electronics_trained" value="1" affects='["electronics"]' type="checkbox" title="@{electronics_trained}"/>
-        <input class="display-control" name="attr_electronics_toolbox" value="1" affects='["electronics"]' type="checkbox" title="@{electronics_toolbox}"/>
-        <input class="display-control" name="attr_electronics_workshop" value="1" affects='["electronics"]' type="checkbox" title="@{electronics_workshop}"/>
+        <div class="column">
+          <input class="column" name="attr_electronics_trained" value="1" affects='["electronics"]' type="checkbox" title="@{electronics_trained}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_electronics_toolbox" value="1" affects='["electronics"]' type="checkbox" title="@{electronics_toolbox}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_electronics_workshop" value="1" affects='["electronics"]' type="checkbox" title="@{electronics_workshop}"/>
+        </div>
         <input name="attr_electronics_modifier" type="number" title="@{electronics_modifier}"/>
         <input class="trait" name="attr_electronics_trait" type="text" title="@{electronics_trait}"/>
         <div class="name">
@@ -277,9 +343,15 @@
           </label>
           <input name="attr_computers" type="hidden" title="@{computers}"/>
         </div>
-        <input class="display-control" name="attr_computers_trained" value="1" affects='["computers"]' type="checkbox" title="@{computers_trained}"/>
-        <input class="display-control" name="attr_computers_toolbox" value="1" affects='["computers"]' type="checkbox" title="@{computers_toolbox}"/>
-        <input class="display-control" name="attr_computers_workshop" value="1" affects='["computers"]' type="checkbox" title="@{computers_workshop}"/>
+        <div class="column">
+          <input class="column" name="attr_computers_trained" value="1" affects='["computers"]' type="checkbox" title="@{computers_trained}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_computers_toolbox" value="1" affects='["computers"]' type="checkbox" title="@{computers_toolbox}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_computers_workshop" value="1" affects='["computers"]' type="checkbox" title="@{computers_workshop}"/>
+        </div>
         <input name="attr_computers_modifier" type="number" title="@{computers_modifier}"/>
         <input class="trait" name="attr_computers_trait" type="text" title="@{computers_trait}"/>
         <div class="name">
@@ -287,9 +359,15 @@
           </label>
           <input name="attr_biotech" type="hidden" title="@{biotech}"/>
         </div>
-        <input class="display-control" name="attr_biotech_trained" value="1" affects='["biotech"]' type="checkbox" title="@{biotech_trained}"/>
-        <input class="display-control" name="attr_biotech_toolbox" value="1" affects='["biotech"]' type="checkbox" title="@{biotech_toolbox}"/>
-        <input class="display-control" name="attr_biotech_workshop" value="1" affects='["biotech"]' type="checkbox" title="@{biotech_workshop}"/>
+        <div class="column">
+          <input class="column" name="attr_biotech_trained" value="1" affects='["biotech"]' type="checkbox" title="@{biotech_trained}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_biotech_toolbox" value="1" affects='["biotech"]' type="checkbox" title="@{biotech_toolbox}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_biotech_workshop" value="1" affects='["biotech"]' type="checkbox" title="@{biotech_workshop}"/>
+        </div>
         <input name="attr_biotech_modifier" type="number" title="@{biotech_modifier}"/>
         <input class="trait" name="attr_biotech_trait" type="text" title="@{biotech_trait}"/>
         <div class="name">
@@ -297,9 +375,15 @@
           </label>
           <input name="attr_medicine" type="hidden" title="@{medicine}"/>
         </div>
-        <input class="display-control" name="attr_medicine_trained" value="1" affects='["medicine"]' type="checkbox" title="@{medicine_trained}"/>
-        <input class="display-control" name="attr_medicine_toolbox" value="1" affects='["medicine"]' type="checkbox" title="@{medicine_toolbox}"/>
-        <input class="display-control" name="attr_medicine_workshop" value="1" affects='["medicine"]' type="checkbox" title="@{medicine_workshop}"/>
+        <div class="column">
+          <input class="column" name="attr_medicine_trained" value="1" affects='["medicine"]' type="checkbox" title="@{medicine_trained}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_medicine_toolbox" value="1" affects='["medicine"]' type="checkbox" title="@{medicine_toolbox}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_medicine_workshop" value="1" affects='["medicine"]' type="checkbox" title="@{medicine_workshop}"/>
+        </div>
         <input name="attr_medicine_modifier" type="number" title="@{medicine_modifier}"/>
         <input class="trait" name="attr_medicine_trait" type="text" title="@{medicine_trait}"/>
         <div class="name">
@@ -307,9 +391,15 @@
           </label>
           <input name="attr_astronomy" type="hidden" title="@{astronomy}"/>
         </div>
-        <input class="display-control" name="attr_astronomy_trained" value="1" affects='["astronomy"]' type="checkbox" title="@{astronomy_trained}"/>
-        <input class="display-control" name="attr_astronomy_toolbox" value="1" affects='["astronomy"]' type="checkbox" title="@{astronomy_toolbox}"/>
-        <input class="display-control" name="attr_astronomy_workshop" value="1" affects='["astronomy"]' type="checkbox" title="@{astronomy_workshop}"/>
+        <div class="column">
+          <input class="column" name="attr_astronomy_trained" value="1" affects='["astronomy"]' type="checkbox" title="@{astronomy_trained}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_astronomy_toolbox" value="1" affects='["astronomy"]' type="checkbox" title="@{astronomy_toolbox}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_astronomy_workshop" value="1" affects='["astronomy"]' type="checkbox" title="@{astronomy_workshop}"/>
+        </div>
         <input name="attr_astronomy_modifier" type="number" title="@{astronomy_modifier}"/>
         <input class="trait" name="attr_astronomy_trait" type="text" title="@{astronomy_trait}"/>
         <div class="name">
@@ -317,9 +407,15 @@
           </label>
           <input name="attr_planets" type="hidden" title="@{planets}"/>
         </div>
-        <input class="display-control" name="attr_planets_trained" value="1" affects='["planets"]' type="checkbox" title="@{planets_trained}"/>
-        <input class="display-control" name="attr_planets_toolbox" value="1" affects='["planets"]' type="checkbox" title="@{planets_toolbox}"/>
-        <input class="display-control" name="attr_planets_workshop" value="1" affects='["planets"]' type="checkbox" title="@{planets_workshop}"/>
+        <div class="column">
+          <input class="column" name="attr_planets_trained" value="1" affects='["planets"]' type="checkbox" title="@{planets_trained}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_planets_toolbox" value="1" affects='["planets"]' type="checkbox" title="@{planets_toolbox}"/>
+        </div>
+        <div class="column">
+          <input class="column" name="attr_planets_workshop" value="1" affects='["planets"]' type="checkbox" title="@{planets_workshop}"/>
+        </div>
         <input name="attr_planets_modifier" type="number" title="@{planets_modifier}"/>
         <input class="trait" name="attr_planets_trait" type="text" title="@{planets_trait}"/>
       </div>

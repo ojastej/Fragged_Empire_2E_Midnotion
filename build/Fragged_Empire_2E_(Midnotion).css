@@ -1123,6 +1123,12 @@
   --kmodal-close-line-length:calc(var(--kmodal-close-width) * 1.5);
   --borderColor: black;
   --borderWidth: 1px;
+  --checkboxBorderColor: black;
+  --checkboxWidth: 1rem;
+  --checkboxHeight: 1rem;
+  --checkedBackColor: lightgrey;
+  --checkContent: "+1";
+  --checkSize: 10pt;
   --column-gap: 5px;
   --topHeadFont: "PT Sans Narrow", sans-serif;
   --midHeadFont: "PT Sans Narrow", sans-serif;
@@ -2363,6 +2369,12 @@ body {
   --kmodal-close-line-length:calc(var(--kmodal-close-width) * 1.5);
   --borderColor: black;
   --borderWidth: 1px;
+  --checkboxBorderColor: black;
+  --checkboxWidth: 1rem;
+  --checkboxHeight: 1rem;
+  --checkedBackColor: lightgrey;
+  --checkContent: "+1";
+  --checkSize: 10pt;
   --column-gap: 5px;
   --topHeadFont: "PT Sans Narrow", sans-serif;
   --midHeadFont: "PT Sans Narrow", sans-serif;
@@ -2542,6 +2554,12 @@ body .ui-dialog .tab-content .charsheet {
   --kmodal-close-line-length:calc(var(--kmodal-close-width) * 1.5);
   --borderColor: black;
   --borderWidth: 1px;
+  --checkboxBorderColor: black;
+  --checkboxWidth: 1rem;
+  --checkboxHeight: 1rem;
+  --checkedBackColor: lightgrey;
+  --checkContent: "+1";
+  --checkSize: 10pt;
   --column-gap: 5px;
   --topHeadFont: "PT Sans Narrow", sans-serif;
   --midHeadFont: "PT Sans Narrow", sans-serif;
@@ -3518,6 +3536,10 @@ body .ui-dialog .tab-content .charsheet #main input:where([type=checkbox], [type
   border-color: var(--borderColor);
   border-width: 1px;
 }
+body .ui-dialog .tab-content .charsheet #main input:where([type=checkbox]):not(.collapse):not(.fill-left__radio):checked:before {
+  align-self: center;
+  justify-content: center;
+}
 body .ui-dialog .tab-content .charsheet #main .current-max {
   border-color: var(--borderColor);
   border-width: var(--borderWidth);
@@ -3535,10 +3557,10 @@ body .ui-dialog .tab-content .charsheet .attributes > .grid {
   text-transform: capitalize;
   grid-auto-columns: max-content;
 }
-body .ui-dialog .tab-content .charsheet .attributes > .grid > .name {
+body .ui-dialog .tab-content .charsheet .attributes > .grid .name {
   grid-column-start: 1;
 }
-body .ui-dialog .tab-content .charsheet .attributes > .grid > .trait {
+body .ui-dialog .tab-content .charsheet .attributes > .grid .trait {
   grid-column-end: 6;
 }
 body .ui-dialog .tab-content .charsheet .skills > .grid {
@@ -3549,6 +3571,9 @@ body .ui-dialog .tab-content .charsheet .skills > .grid input {
 }
 body .ui-dialog .tab-content .charsheet .skills > .grid .name {
   grid-column-start: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 body .ui-dialog .tab-content .charsheet .skills > .grid .trait {
   grid-column-end: 7;
@@ -3562,10 +3587,11 @@ body .ui-dialog .tab-content .charsheet .parentheses::after {
 body .ui-dialog .tab-content .charsheet .parentheses {
   text-align: center;
 }
-body .ui-dialog .tab-content .charsheet .column {
+body .ui-dialog .tab-content .charsheet .column, body .ui-dialog .tab-content .charsheet .grid .column {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 body .ui-dialog .tab-content .charsheet .column * {
   align-items: center;

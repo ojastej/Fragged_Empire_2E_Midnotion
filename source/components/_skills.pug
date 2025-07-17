@@ -19,24 +19,26 @@ mixin skillRow (skill)
 		//- a place to store the total roll bonus
 		//- TODO: make it sensitive to the attribute bonus
 		+input({name:skillName,type:'hidden'})
-		
-	+checkbox({
-		name:`${skillName}_trained`,
-		value:1,
-		class:'display-control',
-		affects:[skillName]})
+	
+	.column
+		+checkbox({
+			name:`${skillName}_trained`,
+			value:1,
+			class:'column',
+			affects:[skillName]})
+	.column
+		+checkbox({
+			name:`${skillName}_toolbox`,
+			value:1,
+			class:'column',
+			affects:[skillName]})
 
-	+checkbox({
-		name:`${skillName}_toolbox`,
-		value:1,
-		class:'display-control',
-		affects:[skillName]})
-
-	+checkbox({
-		name:`${skillName}_workshop`,
-		value:1,
-		class:'display-control',
-		affects:[skillName]})
+	.column
+		+checkbox({
+			name:`${skillName}_workshop`,
+			value:1,
+			class:'column',
+			affects:[skillName]})
 
 	+input({name:`${skillName}_modifier`,type:'number'})
 	+input({name:`${skillName}_trait`,type:'text'}).trait

@@ -51,16 +51,23 @@
 	--borderColor: black;
 	--borderWidth: 1px;
 
-  // spacing
-  --column-gap: 5px;
+	--checkboxBorderColor: black;
+	--checkboxWidth: 1rem;
+	--checkboxHeight: 1rem;
+	--checkedBackColor: lightgrey;
+	--checkContent: '+1';
+	--checkSize: 10pt;
 
-  // font selection
+	// spacing
+	--column-gap: 5px;
+
+	// font selection
 	--topHeadFont: 'PT Sans Narrow', sans-serif;
-  --midHeadFont: 'PT Sans Narrow', sans-serif;
+	--midHeadFont: 'PT Sans Narrow', sans-serif;
 	--contentHeadFont: 'PT Sans Narrow', sans-serif;
 	--contentFont: 'PT Sans Narrow', sans-serif;
 
-  // transformations
+	// transformations
 	--input-label-text-transform: capitalize;
 }
 
