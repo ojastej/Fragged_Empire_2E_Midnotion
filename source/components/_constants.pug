@@ -27,10 +27,18 @@
 		planets:{name:'planets',attribute:'reflexes'},
 	};
 -
-	const personalCombatSkills = [
-		'smallarms', 'heavyarms', 'tactical', 'exotic'
-	];
+	const personalCombatSkills = {
+		smallarms:{name:'smallarms'},
+		heavyarms:{name:'heavyarms'},
+		tactical:{name:'tactical'},
+		exotic:{name:'exotic'}
+	};
 -
-	const shipCombatSkills = [
-		'command', 'engineering', 'operations', 'gunnery'
-	];
+	const shipCombatSkills = {
+		command:{name:'command'},
+		engineering:{name:'engineering'},
+		operations:{name:'operations'},
+		gunnery:{name:'gunnery'}
+	};
+-
+	const allSkills = { ...primarySkills, ...personalCombatSkills, ...shipCombatSkills };

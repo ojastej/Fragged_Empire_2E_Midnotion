@@ -1,5 +1,6 @@
 mixin skillHeader
 	.name.column
+	.value.column
 	+label({label:"Trained", divObj:{class:"column"}, spanObj:{class:"column"}})
 	+label({label:"Toolbox", divObj:{class:"column"}, spanObj:{class:"column"}})
 	+label({label:"Workshop", divObj:{class:"column"}, spanObj:{class:"column"}})
@@ -10,15 +11,20 @@ mixin skillHeader
 mixin skillRow (skill)
 	- const skillName = skill.name;
 	- const attributeShort = skill.attribute.substring(0,3); // first 3 chars
+	- const display = attributeShort == "" ? skillName : `${skillName} (${attributeShort})`;
 	.name
-		if attributeShort == ""
-			+label({label:skillName})
-		else
-			+label({label:`${skillName} (${attributeShort})`})
+		//-'aria-level':3,
+		+roller({name:skillName,
+			role:'heading',
+			'data-i18n':display,
+			trigger:{triggeredFuncs:['rollSkill']}
+			})
 
+	.value.column
 		//- a place to store the total roll bonus
 		//- TODO: make it sensitive to the attribute bonus
-		+input({name:skillName,type:'hidden'})
+		+input({name:skillName,type:'number',disabled:true,
+			trigger:{calculation:'calcSkill'}})
 	
 	.column
 		+checkbox({

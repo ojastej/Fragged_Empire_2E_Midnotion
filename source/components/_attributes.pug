@@ -11,16 +11,17 @@ mixin attributeRow(name)
 
 	.current-max
 		//- when this is updated, must also update $affects
-		+input({name:name,type:'number',trigger:{affects:[`${name}_skill_mod`]}})
+		+input({name:name,type:'number',trigger:{affects:[`${name}_skill_modifier`]}})
 		| /
 		+input({name:`${name}_max`,type:'number'})
 
 	//- print "(" + "+" + $calculation + ")"
 	+attributeSkillMod({
-		name:`${name}_skill_mod`,
+		name:`${name}_skill_modifier`,
 		value:0,
 		classAdd:' column',
-		trigger:{calculation:'calcAttributeSkillMod'}
+		trigger:{calculation:'calcAttributeSkillMod'},
+		affects:[]
 		})
 	
 	.limit

@@ -24,4 +24,54 @@ const calcAttributeSkillMod = function({trigger,attributes,sections,casc}){
 };
 k.registerFuncs({calcAttributeSkillMod});
 
+/**
+ * Function to calculate the attribute modifier
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
+const calcSkill = function({trigger,attributes,sections,casc}){
+	const skillName = trigger.name;
+	console.log ('calcSkill()', trigger, attributes, sections, casc);
+
+	// attributeSkillMod + trained + toolbox + workshop + mod
+	console.log (
+		attributes[`${allSkills[skillName].attribute}_skill_modifier`],
+		`${skillName}_trained`,
+		`${skillName}_toolbox`,
+		`${skillName}_workshop`,
+		`${skillName}_modifier`,
+	);
+
+	return 0;
+};
+k.registerFuncs({calcSkill});
+
+/**
+ * Starts the process of rolling a basic skill check
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
+const rollSkill = async function({trigger,attributes,sections,casc}){
+	// const [section,rowID,button] = k.parseTriggerName(trigger.name);
+	// const row = section ?
+	// 	`${section}_${rowID}` :
+	// 	'';
+	// const rollName = button.replace(/-?action$/,'');
+	// const [modifier,,rollTransKey] = getSkillRollModifier(rollName,attributes,row);
+	// const rollObj = {
+	// 	title:section ?
+	// 		attributes[`${row}_name`]:
+	// 		`^{${rollTransKey}}`,
+	// 	roll:`[[@{roll_state}${modifier}]]]`
+	// 	};
+	// const roll = await executeRoll({rollObj,attributes,sections});
+	console.log("rollSkill()", trigger, attributes, sections, casc);
+	//finishRoll(roll.rollId);
+};
+k.registerFuncs({rollSkill});
+
 console.log ("calculations workers registered");
