@@ -7,7 +7,6 @@ mixin skillHeader
 	+label({label:"Modifier", divObj:{class:"column"}, spanObj:{class:"column"}})
 	+label({label:"Trait", divObj:{class:"trait column"}, spanObj:{class:"column"}})
 
-
 mixin skillRow (skill)
 	- const skillName = skill.name;
 	- const attributeShort = skill.attribute.substring(0,3); // first 3 chars
@@ -21,30 +20,48 @@ mixin skillRow (skill)
 			})
 
 	.value.column
+		//- easier to copy attribute mods here than to look them up later
+		+input({
+			name:`${skillName}_attribute_modifier`,
+			type:'number',
+			trigger:{formula:'@{skillAttribute}'}
+			})
 		//- a place to store the total roll bonus
-		//- TODO: make it sensitive to the attribute bonus
-		+input({name:skillName,type:'number',disabled:true,
-			trigger:{calculation:'calcSkill'}})
-	
+		+input({
+			name:skillName,
+			type:'number',
+			trigger:{calculation:'calcSkill'}
+			})
+	-
+		const trigger = {affects: [skillName]};
 	.column
 		+checkbox({
 			name:`${skillName}_trained`,
 			value:1,
 			class:'column',
-			affects:[skillName]})
+			trigger
+			})
 	.column
 		+checkbox({
 			name:`${skillName}_toolbox`,
 			value:1,
 			class:'column',
-			affects:[skillName]})
+			trigger
+			})
 
 	.column
 		+checkbox({
 			name:`${skillName}_workshop`,
 			value:1,
 			class:'column',
-			affects:[skillName]})
+			trigger
+			})
 
-	+input({name:`${skillName}_modifier`,type:'number'})
-	+input({name:`${skillName}_trait`,type:'text'}).trait
+	+input({name:`${skillName}_modifier`,
+		type:'number',
+		trigger
+		})
+	+input({name:`${skillName}_trait`,
+		type:'text',
+		trigger
+		}).trait

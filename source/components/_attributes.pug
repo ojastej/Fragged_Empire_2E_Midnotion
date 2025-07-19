@@ -10,22 +10,28 @@ mixin attributeRow(name)
 	+label({label:name}).name
 
 	.current-max
-		//- when this is updated, must also update $affects
+		//- when this is updated, we must also update $affects
 		+input({name:name,type:'number',trigger:{affects:[`${name}_skill_modifier`]}})
 		| /
 		+input({name:`${name}_max`,type:'number'})
 
-	//- print "(" + "+" + $calculation + ")"
+	-	console.log ("skillsByAttribute{}", name, skillsByAttribute[name]);
+
+	-
+		const trigger = {
+			calculation:'calcAttributeSkillMod',
+			affects: skillsByAttribute[name]
+			};
+
 	+attributeSkillMod({
 		name:`${name}_skill_modifier`,
 		value:0,
 		classAdd:' column',
-		trigger:{calculation:'calcAttributeSkillMod'},
-		affects:[]
+		trigger: trigger
 		})
 	
 	.limit
-		+input({name:`${name}_limit`,type:'number'})
+		+input({name:`${name}_limit`,type:'number',value:5})
 	
 	.trait
 		+input({name:`${name}_trait`,type:'text'})
