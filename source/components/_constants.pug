@@ -48,7 +48,7 @@
 	for (const skillName in primarySkills)
 	{
 		const skill = primarySkills[skillName];
-		console.log ("skill", skill);
+		//console.log ("skill", skill);
 		if (!skill.attribute) { continue; }
 		if (skillsByAttribute[skill.attribute] == null)
 		{
@@ -56,5 +56,5 @@
 		}
 		skillsByAttribute[skill.attribute].push(skill.name);
 	}
--	console.log ("skillsByAttribute{}", skillsByAttribute);
+//-	console.log ("skillsByAttribute{}", skillsByAttribute);
 

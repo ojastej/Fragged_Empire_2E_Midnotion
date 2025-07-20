@@ -66,8 +66,19 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 	// 	roll:`[[@{roll_state}${modifier}]]]`
 	// 	};
 	// const roll = await executeRoll({rollObj,attributes,sections});
-	console.log("rollSkill()", trigger, attributes, sections, casc);
+
+	//console.log("rollSkill()", trigger, attributes, sections, casc);
+
 	//finishRoll(roll.rollId);
+	const rollName = trigger.name.replace(/-action$/,'');
+	const rollAttr = rollName.replace(/-/g,'_');
+	const rollTransKey = rollName.replace(/-/g,' ');
+	const rollObj = {
+		title:`^{${rollName}}`,
+		roll:`[[@{roll_state} + ${attributes[rollAttr]}[${k.capitalize(getTranslationByKey(rollTransKey))}]]]`
+		};
+	const roll = await executeRoll({rollObj,attributes,sections});
+	finishRoll(roll.rollId);
 };
 k.registerFuncs({rollSkill});
 

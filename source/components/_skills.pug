@@ -13,17 +13,19 @@ mixin skillRow (skill)
 	- const display = attributeShort == "" ? skillName : `${skillName} (${attributeShort})`;
 	.name
 		//-'aria-level':3,
+		//-span.material-icons casino
+		//-trigger:{triggeredFuncs:['rollSkill']}
 		+roller({name:skillName,
 			role:'heading',
 			'data-i18n':display,
-			trigger:{triggeredFuncs:['rollSkill']}
+			value:"&{template:default} {{name=Test}} {{roll=3d6 + @{wealth}}}"
 			})
 
 	.value.column
-		//- easier to copy attribute mods here than to look them up later
+		//- it's easier to copy attribute mods here than to look them up later
 		+input({
 			name:`${skillName}_attribute_modifier`,
-			type:'number',
+			type:'hidden',
 			trigger:{formula:'@{skillAttribute}'}
 			})
 		//- a place to store the total roll bonus

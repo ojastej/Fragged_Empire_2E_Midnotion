@@ -99,8 +99,13 @@
 		font-family: var(--contentHeadFont);
 	}
 	.roller:before {
-		font-family: dicefontd6;
-		content:"F";
+		// font-family: dicefontd6;
+		// content:"F";
+		// content: '🞔';
+		font-family: 'Material Icons';
+		content: '\eb40';
+		// color: white;
+		// background: black;
 	}
 }
 @mixin roll{
