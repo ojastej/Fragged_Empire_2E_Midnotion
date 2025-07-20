@@ -551,6 +551,24 @@
     </div>
   </div>
   <input name="attr_template_start" value="@{whisper}&{template:FE2} {{character_name=@{character_name}}} {{character_id=@{character_id}}}" type="hidden" title="@{template_start}"/>
+  <rolltemplate class="sheet-rolltemplate-FE2">
+    <div class="template FE2">
+      <div class="image-border"></div>
+      <div class="sheet-content stacked center flex-box half-gap">{{#character_name}}{{#character_id}}
+        <h4 class="character_name">[{{character_name}}](http://journal.roll20.net/character/{{character_id}})</h4>{{/character_id}}{{^character_id}}
+        <h4 class="character_name">{{character_name}}</h4>{{/character_id}}{{/character_name}}{{#roll}}
+        <div class="flex-box results half-gap stacked center"><span class="result">{{#pure_success}}<span class="pure-success"></span>{{/pure_success}}{{computed::roll}}</span>{{#title}}
+          <h2>{{title}}</h2>{{/title}}
+        </div>{{/roll}}
+        <div class="header flex-box stacked center flex-wrap">{{#roll_name}}
+          <h3 class="title align-self-start">{{roll_name}}</h3>{{/roll_name}}
+        </div>{{#description}}
+        <div class="description flex-box stacked center align-self-stretch">
+          <p style="text-align:left">{{description}}</p>
+        </div>{{/description}}
+      </div>
+    </div>
+  </rolltemplate>
   <script type="text/worker">//# sourceURL=FE2.js
     
     const k = (function(){
@@ -2226,19 +2244,24 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 	const rollName = trigger.name.replace(/-action$/,'');
 	const rollAttr = rollName.replace(/-/g,'_');
 	const rollTransKey = rollName.replace(/-/g,' ');
+	//${attributes[rollAttr]}[${k.capitalize(getTranslationByKey(rollTransKey))}]]]
 	const rollObj = {
-		title:`^{${rollName}}`,
-		roll:`[[${attributes[rollAttr]}[${k.capitalize(getTranslationByKey(rollTransKey))}]]]`
+		title:`${rollName}`,
+		roll_name: 'roll_name',
+		description: 'description',
+		roll:`[[@{whisper} 3d6]]`
 		};
+	console.log ("rollSkill()", rollName, rollAttr, rollTransKey, rollObj);
 	const roll = await executeRoll({rollObj,attributes,sections});
 	finishRoll(roll.rollId);
 };
 k.registerFuncs({rollSkill});
 
 const assembleRoll = (rollObj,attributes,sections) => {
-  return Object.entries(rollObj).reduce((str,[field,content])=>{
-    return str += ` {{${field}=${content}}}`;
-  },'@{template_start}');
+	console.log ("assembleRoll()", attributes.template_start);
+	return Object.entries(rollObj).reduce((str,[field,content])=>{
+		return str += ` {{${field}=${content}}}`;
+	},'@{template_start}');
 };
 
 /**
@@ -2249,8 +2272,8 @@ const assembleRoll = (rollObj,attributes,sections) => {
  * @returns {Promise} - Resolves to the roll results object
  */
 const executeRoll = async ({rollObj,attributes,sections}) => {
-  const rollString = assembleRoll(rollObj,attributes,sections);
-  return startRoll(rollString);
+	const rollString = assembleRoll(rollObj,attributes,sections);
+	return startRoll(rollString);
 };
     /**
  * Sets the pc/npc specific button displays

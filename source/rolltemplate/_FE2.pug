@@ -1,0 +1,21 @@
++templateWrapper(templateName)
+	.image-border
+	.sheet-content.stacked.center.flex-box.half-gap
+		+characterLink
+
+		+templateConditionalDisplay('roll')
+			.flex-box.results.half-gap.stacked.center
+				span.result
+					+templateConditionalDisplay('pure_success')
+						span.pure-success
+					|{{computed::roll}}
+				+templateConditionalDisplay('title')
+					h2 {{title}}
+
+		.header.flex-box.stacked.center.flex-wrap
+			+templateConditionalDisplay('roll_name')
+				h3.title.align-self-start {{roll_name}}
+
+		+templateConditionalDisplay('description')
+			.description.flex-box.stacked.center.align-self-stretch
+				p(style="text-align:left") {{description}}

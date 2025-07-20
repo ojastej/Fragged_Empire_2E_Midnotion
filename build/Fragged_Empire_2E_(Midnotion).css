@@ -31,6 +31,13 @@ ul.nav-tabs.nav {
   color: var(--fontColor);
 }
 .ui-dialog .tab-content .charsheet .tabs > nav .tabs__button {
+  border-width: 1px 3px;
+  border-style: solid;
+  border-color: var(--borderColor);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.ui-dialog .tab-content .charsheet .tabs > nav .tabs__button {
   font-size: 1.5rem;
   border-color: transparent;
   padding-inline: 0;

@@ -26,19 +26,24 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 	const rollName = trigger.name.replace(/-action$/,'');
 	const rollAttr = rollName.replace(/-/g,'_');
 	const rollTransKey = rollName.replace(/-/g,' ');
+	//${attributes[rollAttr]}[${k.capitalize(getTranslationByKey(rollTransKey))}]]]
 	const rollObj = {
-		title:`^{${rollName}}`,
-		roll:`[[${attributes[rollAttr]}[${k.capitalize(getTranslationByKey(rollTransKey))}]]]`
+		title:`${rollName}`,
+		roll_name: 'roll_name',
+		description: 'description',
+		roll:`[[@{whisper} 3d6]]`
 		};
+	console.log ("rollSkill()", rollName, rollAttr, rollTransKey, rollObj);
 	const roll = await executeRoll({rollObj,attributes,sections});
 	finishRoll(roll.rollId);
 };
 k.registerFuncs({rollSkill});
 
 const assembleRoll = (rollObj,attributes,sections) => {
-  return Object.entries(rollObj).reduce((str,[field,content])=>{
-    return str += ` {{${field}=${content}}}`;
-  },'@{template_start}');
+	console.log ("assembleRoll()", attributes.template_start);
+	return Object.entries(rollObj).reduce((str,[field,content])=>{
+		return str += ` {{${field}=${content}}}`;
+	},'@{template_start}');
 };
 
 /**
@@ -49,6 +54,6 @@ const assembleRoll = (rollObj,attributes,sections) => {
  * @returns {Promise} - Resolves to the roll results object
  */
 const executeRoll = async ({rollObj,attributes,sections}) => {
-  const rollString = assembleRoll(rollObj,attributes,sections);
-  return startRoll(rollString);
+	const rollString = assembleRoll(rollObj,attributes,sections);
+	return startRoll(rollString);
 };
