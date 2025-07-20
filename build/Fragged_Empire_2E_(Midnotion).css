@@ -1,4 +1,70 @@
 @import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200|Material Icons|PT Sans Narrow&display=swap");
+ul.nav-tabs.nav {
+  position: sticky;
+  top: 0;
+  background-color: var(--backColor);
+  z-index: 9999;
+  margin-bottom: 0px;
+}
+
+.ui-dialog .tab-content .charsheet .tabs > nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  align-items: start;
+  gap: var(--half-gap);
+  position: sticky;
+  top: 44px;
+  margin-bottom: 10px;
+  padding-inline: 10px;
+  padding-block: var(--half-gap);
+  background-color: var(--backColor);
+  z-index: 1000;
+  transition-property: background-color;
+  transition-duration: var(--revealTime);
+}
+.ui-dialog .tab-content .charsheet .tabs > nav .no-list {
+  list-style: none;
+  margin: 0;
+}
+.ui-dialog .tab-content .charsheet .tabs > nav button {
+  color: var(--fontColor);
+}
+.ui-dialog .tab-content .charsheet .tabs > nav .tabs__button {
+  font-size: 1.5rem;
+  border-color: transparent;
+  padding-inline: 0;
+  transition-property: border-color, color, background-color, padding-inline;
+  transition-duration: var(--revealTime);
+  transition-timing-function: ease;
+}
+.ui-dialog .tab-content .charsheet .tabs > nav .tabs__button:not(.pictos) {
+  font-family: var(--topHeaderFont);
+  line-height: 1;
+}
+.ui-dialog .tab-content .charsheet .tabs > nav .tabs__button.k-active-button {
+  color: var(--backColor);
+  background-color: var(--borderColor);
+  border-color: var(--borderColor);
+  padding-inline: var(--tiny-gap);
+}
+.ui-dialog .tab-content .charsheet .tabs > nav .tabs__button.inactive {
+  display: none !important;
+}
+.ui-dialog .tab-content .charsheet .tabs > nav .roll-options,
+.ui-dialog .tab-content .charsheet .tabs > nav .basic-moves {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: var(--half-gap);
+}
+.ui-dialog .tab-content .charsheet .tabs > nav .basic-moves {
+  justify-content: space-between;
+}
+.ui-dialog .tab-content .charsheet .tabs > nav .roll-options {
+  grid-column: 1;
+  justify-content: center;
+}
+
 .ui-dialog .tab-content .charsheet {
   position: relative;
   top: 0;

@@ -1,5 +1,6 @@
 @use 'k-scaffold' as k;
 @use './variables';
+@use './nav';
 
 @mixin variables{
 	@include variables.all;

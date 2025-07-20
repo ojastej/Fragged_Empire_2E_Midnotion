@@ -13,18 +13,17 @@ include ./sections/_index.pug
 +googleFont('PT Sans Narrow')
 //-+googleFont('Barlow Condensed')
 
-
 //- Now, for our actual sheet. We'll wrap this in a main element and give it an ID of main.
 main#main
-	+tabs({name:'FE2',defaultActiveTab:'settings'})
+	+tabs({name:'sheet-tabs',defaultActiveTab:'pc',persistent:true})(class="outer")
 		//- Add additional tabs as needed
-		+tab({name:'pc',container:'article'})#pc
+		+tab({name:'pc',button:{content:'PC'},container:'article'})(class="tab_horizontal")
 			include ./views/_pc.pug
-		+tab({name:'npc',button:{content:'support_agent NPC',class:'material-icons'},container:'article'})
+		+tab({name:'npc',button:{content:'support_agent NPC',class:'material-icons'},container:'article'})(class="tab_horizontal")
 			include ./views/_npc.pug
-		+tab({name:'spacecraft',button:{content:'rocket_launch',class:'material-icons'},container:'article'})
+		+tab({name:'spacecraft',button:{content:'rocket_launch',class:'material-icons'},container:'article'})(class="tab_horizontal")
 			include ./views/_spacecraft.pug
-		+tab({name:'settings',button:{content:'settings',class:'material-icons'},container:'article'})
+		+tab({name:'settings',button:{class:'pictos',content:'y'},container:'article'})(class="tab_horizontal")
 			include ./views/_settings.pug
 
 	//- An input to contain template fields that should always be output with a roll.

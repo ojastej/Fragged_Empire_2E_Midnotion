@@ -14,11 +14,11 @@ mixin skillRow (skill)
 	.name
 		//-'aria-level':3,
 		//-span.material-icons casino
-		//-trigger:{triggeredFuncs:['rollSkill']}
 		+roller({name:skillName,
 			role:'heading',
 			'data-i18n':display,
-			value:"&{template:default} {{name=Test}} {{roll=3d6 + @{wealth}}}"
+			value:"&{template:default} {{name=Test}} {{roll=[[3d6]]}}}",
+			trigger:{triggeredFuncs:['rollSkill']}
 			})
 
 	.value.column
