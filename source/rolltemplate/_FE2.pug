@@ -1,5 +1,6 @@
 +templateWrapper(templateName)
 	.image-border
+	.roller
 	.sheet-content.stacked.center.flex-box.half-gap
 		+characterLink
 
@@ -19,3 +20,9 @@
 		+templateConditionalDisplay('description')
 			.description.flex-box.stacked.center.align-self-stretch
 				p(style="text-align:left") {{description}}
+
++scss.
+	.roller h2 {
+		text-transform: capitalize;
+		font-family: var(--contentHeadFont);
+	}

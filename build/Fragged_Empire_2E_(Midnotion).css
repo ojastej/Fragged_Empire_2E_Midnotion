@@ -1040,7 +1040,7 @@ ul.nav-tabs.nav {
   display: flex;
 }
 
-.sheet-rolltemplate-sheet-name {
+.sheet-rolltemplate-FE2 {
   --font1:var(--topHeadFont);
   --font2:var(--topHeadFont);
   --font3:var(--midHeadFont);
@@ -1209,7 +1209,7 @@ ul.nav-tabs.nav {
   --contentFont: "PT Sans Narrow", sans-serif;
   --input-label-text-transform: capitalize;
 }
-.sheet-rolltemplate-sheet-name.sheet-rolltemplate-darkmode {
+.sheet-rolltemplate-FE2.sheet-rolltemplate-darkmode {
   --backColor:var(--dm-backColor);
   --selectedColor:var(--dm-selectedColor);
   --unselectedColor1:var(--dm-unselectedColor1);
@@ -1220,7 +1220,7 @@ ul.nav-tabs.nav {
   --fontColor:var(--dm-fontColor);
   --disabledColor:var(--dm-disabledColor);
 }
-.sheet-rolltemplate-sheet-name .sheet-template {
+.sheet-rolltemplate-FE2 .sheet-template {
   position: relative;
   top: 0;
   bottom: 0;
@@ -1283,156 +1283,157 @@ ul.nav-tabs.nav {
     var(--inlineRollBorderRight)
     var(--inlineRollBorderBottom)
     var(--inlineRollBorderLeft);
-  /*No roll sfc used*/
+  background-color: yellow;
+  font-size: 10pt;
 }
-.sheet-rolltemplate-sheet-name .sheet-template select,
-.sheet-rolltemplate-sheet-name .sheet-template textarea,
-.sheet-rolltemplate-sheet-name .sheet-template input,
-.sheet-rolltemplate-sheet-name .sheet-template .uneditable-input,
-.sheet-rolltemplate-sheet-name .sheet-template label,
-.sheet-rolltemplate-sheet-name .sheet-template button {
+.sheet-rolltemplate-FE2 .sheet-template select,
+.sheet-rolltemplate-FE2 .sheet-template textarea,
+.sheet-rolltemplate-FE2 .sheet-template input,
+.sheet-rolltemplate-FE2 .sheet-template .uneditable-input,
+.sheet-rolltemplate-FE2 .sheet-template label,
+.sheet-rolltemplate-FE2 .sheet-template button {
   all: initial;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .flex-box,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-flex-box {
+.sheet-rolltemplate-FE2 .sheet-template .flex-box,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-flex-box {
   display: flex;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .flex-wrap,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-flex-wrap {
+.sheet-rolltemplate-FE2 .sheet-template .flex-wrap,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-flex-wrap {
   flex-wrap: wrap;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .justify-space-around,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-justify-space-around {
+.sheet-rolltemplate-FE2 .sheet-template .justify-space-around,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-justify-space-around {
   justify-content: space-around;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .justify-space-between,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-justify-space-between {
+.sheet-rolltemplate-FE2 .sheet-template .justify-space-between,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-justify-space-between {
   justify-content: space-between;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .justify-center,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-justify-center {
+.sheet-rolltemplate-FE2 .sheet-template .justify-center,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-justify-center {
   justify-content: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .flex-min-content,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-flex-min-content {
+.sheet-rolltemplate-FE2 .sheet-template .flex-min-content,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-flex-min-content {
   flex: 1 0 min-content;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .stacked {
+.sheet-rolltemplate-FE2 .sheet-template .stacked {
   flex-direction: column;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .stacked.center > * {
+.sheet-rolltemplate-FE2 .sheet-template .stacked.center > * {
   text-align: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .stacked:not(.center) {
+.sheet-rolltemplate-FE2 .sheet-template .stacked:not(.center) {
   align-items: start;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .stacked > [name]:not([type=number]):not([type=checkbox]):not([type=radio]) {
+.sheet-rolltemplate-FE2 .sheet-template .stacked > [name]:not([type=number]):not([type=checkbox]):not([type=radio]) {
   width: 100%;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .flex-column,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-flex-column {
+.sheet-rolltemplate-FE2 .sheet-template .flex-column,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-flex-column {
   flex-direction: column;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .flex-row-reverse,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-flex-row-revers {
+.sheet-rolltemplate-FE2 .sheet-template .flex-row-reverse,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-flex-row-revers {
   flex-direction: row-reverse;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .flex-column-reverse,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-flex-column-reverse {
+.sheet-rolltemplate-FE2 .sheet-template .flex-column-reverse,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-flex-column-reverse {
   flex-direction: column-reverse;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .normal-gap,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-normal-gap {
+.sheet-rolltemplate-FE2 .sheet-template .normal-gap,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-normal-gap {
   gap: var(--normal-gap);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .normal-gap-x,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-normal-gap-x {
+.sheet-rolltemplate-FE2 .sheet-template .normal-gap-x,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-normal-gap-x {
   column-gap: var(--normal-gap-x);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .normal-gap-y,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-normal-gap-y {
+.sheet-rolltemplate-FE2 .sheet-template .normal-gap-y,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-normal-gap-y {
   row-gap: var(--normal-gap-y);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .half-gap,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-half-gap {
+.sheet-rolltemplate-FE2 .sheet-template .half-gap,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-half-gap {
   gap: var(--half-gap);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .half-gap-x,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-half-gap-x {
+.sheet-rolltemplate-FE2 .sheet-template .half-gap-x,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-half-gap-x {
   column-gap: var(--half-gap-x);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .half-gap-y,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-half-gap-y {
+.sheet-rolltemplate-FE2 .sheet-template .half-gap-y,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-half-gap-y {
   row-gap: var(--half-gap-y);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .tiny-gap,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-tiny-gap {
+.sheet-rolltemplate-FE2 .sheet-template .tiny-gap,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-tiny-gap {
   gap: var(--tiny-gap);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .tiny-gap-x,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-tiny-gap-x {
+.sheet-rolltemplate-FE2 .sheet-template .tiny-gap-x,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-tiny-gap-x {
   column-gap: var(--tiny-gap-x);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .tiny-gap-y,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-tiny-gap-y {
+.sheet-rolltemplate-FE2 .sheet-template .tiny-gap-y,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-tiny-gap-y {
   row-gap: var(--tiny-gap-y);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .big-gap,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-big-gap {
+.sheet-rolltemplate-FE2 .sheet-template .big-gap,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-big-gap {
   gap: var(--big-gap);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .big-gap-x,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-big-gap-x {
+.sheet-rolltemplate-FE2 .sheet-template .big-gap-x,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-big-gap-x {
   column-gap: var(--big-gap-x);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .big-gap-y,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-big-gap-y {
+.sheet-rolltemplate-FE2 .sheet-template .big-gap-y,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-big-gap-y {
   row-gap: var(--big-gap-y);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .grid,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-grid {
+.sheet-rolltemplate-FE2 .sheet-template .grid,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-grid {
   display: grid;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .grid-span-2,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-grid-span-2 {
+.sheet-rolltemplate-FE2 .sheet-template .grid-span-2,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-grid-span-2 {
   grid-column: span 2;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .grid-span-all,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-grid-span-all {
+.sheet-rolltemplate-FE2 .sheet-template .grid-span-all,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-grid-span-all {
   grid-column: 1/-1;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .grid-column,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-grid-column {
+.sheet-rolltemplate-FE2 .sheet-template .grid-column,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-grid-column {
   grid-auto-flow: column;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .grid-dense,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-grid-dense {
+.sheet-rolltemplate-FE2 .sheet-template .grid-dense,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-grid-dense {
   grid-auto-flow: dense;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .boxed,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-boxed {
+.sheet-rolltemplate-FE2 .sheet-template .boxed,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-boxed {
   border: 2px solid var(--borderColor);
   border-radius: 0;
   box-sizing: border-box;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .boxed.thick-left,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-boxed.thick-left {
+.sheet-rolltemplate-FE2 .sheet-template .boxed.thick-left,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-boxed.thick-left {
   border-left-width: 5px;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .boxed.thick-bottom,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-boxed.thick-bottom {
+.sheet-rolltemplate-FE2 .sheet-template .boxed.thick-bottom,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-boxed.thick-bottom {
   border-bottom-width: 5px;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .boxed.thick-right,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-boxed.thick-right {
+.sheet-rolltemplate-FE2 .sheet-template .boxed.thick-right,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-boxed.thick-right {
   border-right-width: 5px;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .boxed.thick-top,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-boxed.thick-top {
+.sheet-rolltemplate-FE2 .sheet-template .boxed.thick-top,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-boxed.thick-top {
   border-top-width: 5px;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .underlined,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-underlined {
+.sheet-rolltemplate-FE2 .sheet-template .underlined,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-underlined {
   border-width: 1px 3px;
   border-style: solid;
   border-radius: 5px;
@@ -1442,83 +1443,83 @@ ul.nav-tabs.nav {
   border-bottom: 1px solid var(--borderColor);
   transition: border-radius border var(--revealTrans);
 }
-.sheet-rolltemplate-sheet-name .sheet-template :is(.underlined, .boxed):not([readonly]):not([type=checkbox]):not([type=radio]):is(:hover, :focus, :focus-within) {
+.sheet-rolltemplate-FE2 .sheet-template :is(.underlined, .boxed):not([readonly]):not([type=checkbox]):not([type=radio]):is(:hover, :focus, :focus-within) {
   border-width: 1px 3px;
   border-style: solid;
   border-color: var(--borderColor);
   border-radius: 5px;
   box-sizing: border-box;
 }
-.sheet-rolltemplate-sheet-name .sheet-template :is(.underlined, .boxed):not([readonly]):not([type=checkbox]):not([type=radio]):is(:focus, :focus-within) {
+.sheet-rolltemplate-FE2 .sheet-template :is(.underlined, .boxed):not([readonly]):not([type=checkbox]):not([type=radio]):is(:focus, :focus-within) {
   background-color: var(--disabledColor);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .underlined--invisible {
+.sheet-rolltemplate-FE2 .sheet-template .underlined--invisible {
   border-color: transparent !important;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .ratio1-1,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-ratio1-1 {
+.sheet-rolltemplate-FE2 .sheet-template .ratio1-1,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-ratio1-1 {
   aspect-ratio: 1/1;
 }
-.sheet-rolltemplate-sheet-name .sheet-template span,
-.sheet-rolltemplate-sheet-name .sheet-template input,
-.sheet-rolltemplate-sheet-name .sheet-template textarea,
-.sheet-rolltemplate-sheet-name .sheet-template button,
-.sheet-rolltemplate-sheet-name .sheet-template select {
+.sheet-rolltemplate-FE2 .sheet-template span,
+.sheet-rolltemplate-FE2 .sheet-template input,
+.sheet-rolltemplate-FE2 .sheet-template textarea,
+.sheet-rolltemplate-FE2 .sheet-template button,
+.sheet-rolltemplate-FE2 .sheet-template select {
   line-height: normal;
   color: inherit;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .text-1,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-text-1 {
+.sheet-rolltemplate-FE2 .sheet-template .text-1,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-text-1 {
   font-size: var(--size1);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .text-2,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-text-2 {
+.sheet-rolltemplate-FE2 .sheet-template .text-2,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-text-2 {
   font-size: var(--size2);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .text-3,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-text-3 {
+.sheet-rolltemplate-FE2 .sheet-template .text-3,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-text-3 {
   font-size: var(--size3);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .text-4,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-text-4 {
+.sheet-rolltemplate-FE2 .sheet-template .text-4,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-text-4 {
   font-size: var(--size4);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .text-5,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-text-5 {
+.sheet-rolltemplate-FE2 .sheet-template .text-5,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-text-5 {
   font-size: var(--size5);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .text-6,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-text-6 {
+.sheet-rolltemplate-FE2 .sheet-template .text-6,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-text-6 {
   font-size: var(--size6);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .text-7,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-text-7 {
+.sheet-rolltemplate-FE2 .sheet-template .text-7,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-text-7 {
   font-size: var(--size7);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .capitalize,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-capitalize {
+.sheet-rolltemplate-FE2 .sheet-template .capitalize,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-capitalize {
   text-transform: capitalize !important;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .lowercase,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-lowercase {
+.sheet-rolltemplate-FE2 .sheet-template .lowercase,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-lowercase {
   text-transform: lowercase !important;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .uppercase,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-uppercase {
+.sheet-rolltemplate-FE2 .sheet-template .uppercase,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-uppercase {
   text-transform: uppercase !important;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-material-icons,
-.sheet-rolltemplate-sheet-name .sheet-template .material-icons {
+.sheet-rolltemplate-FE2 .sheet-template .sheet-material-icons,
+.sheet-rolltemplate-FE2 .sheet-template .material-icons {
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   font-size: var(--icon-size); /* Preferred icon size */
 }
-.sheet-rolltemplate-sheet-name .sheet-template .material-symbol,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-material-symbol {
+.sheet-rolltemplate-FE2 .sheet-template .material-symbol,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-material-symbol {
   font-family: "Material Symbols Outlined";
   font-weight: normal;
   font-style: normal;
@@ -1532,12 +1533,12 @@ ul.nav-tabs.nav {
   direction: ltr;
   font-variation-settings: "FILL" 1;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-italics,
-.sheet-rolltemplate-sheet-name .sheet-template .italics {
+.sheet-rolltemplate-FE2 .sheet-template .sheet-italics,
+.sheet-rolltemplate-FE2 .sheet-template .italics {
   font-style: italic;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h1,
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="1"] {
+.sheet-rolltemplate-FE2 .sheet-template h1,
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="1"] {
   line-height: normal;
   color: var(--fontColor);
   display: block;
@@ -1549,12 +1550,12 @@ ul.nav-tabs.nav {
   font-size: var(--size1);
   font-family: var(--font1);
 }
-.sheet-rolltemplate-sheet-name .sheet-template h1:not(input),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="1"]:not(input) {
+.sheet-rolltemplate-FE2 .sheet-template h1:not(input),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="1"]:not(input) {
   text-align: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h1 *,
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="1"] * {
+.sheet-rolltemplate-FE2 .sheet-template h1 *,
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="1"] * {
   line-height: normal;
   color: var(--fontColor);
   display: block;
@@ -1566,12 +1567,12 @@ ul.nav-tabs.nav {
   font-size: var(--size1);
   font-family: var(--font1);
 }
-.sheet-rolltemplate-sheet-name .sheet-template h1 *:not(input),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="1"] *:not(input) {
+.sheet-rolltemplate-FE2 .sheet-template h1 *:not(input),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="1"] *:not(input) {
   text-align: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h2, .sheet-rolltemplate-sheet-name .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name], body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-sheet-name .sheet-template .input-label:not(.stacked).large > [name], .sheet-rolltemplate-sheet-name .sheet-template .input-label:not(.stacked).large > [name],
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="2"] {
+.sheet-rolltemplate-FE2 .sheet-template h2, .sheet-rolltemplate-FE2 .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name], body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-FE2 .sheet-template .input-label:not(.stacked).large > [name], .sheet-rolltemplate-FE2 .sheet-template .input-label:not(.stacked).large > [name],
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="2"] {
   line-height: normal;
   color: var(--fontColor);
   display: block;
@@ -1583,12 +1584,12 @@ ul.nav-tabs.nav {
   font-size: var(--size2);
   font-family: var(--font2);
 }
-.sheet-rolltemplate-sheet-name .sheet-template h2:not(input), .sheet-rolltemplate-sheet-name .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input), body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-sheet-name .sheet-template .input-label:not(.stacked).large > [name]:not(input), .sheet-rolltemplate-sheet-name .sheet-template .input-label:not(.stacked).large > [name]:not(input),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="2"]:not(input) {
+.sheet-rolltemplate-FE2 .sheet-template h2:not(input), .sheet-rolltemplate-FE2 .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input), body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-FE2 .sheet-template .input-label:not(.stacked).large > [name]:not(input), .sheet-rolltemplate-FE2 .sheet-template .input-label:not(.stacked).large > [name]:not(input),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="2"]:not(input) {
   text-align: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h2 *, .sheet-rolltemplate-sheet-name .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name] *, body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-sheet-name .sheet-template .input-label:not(.stacked).large > [name] *, .sheet-rolltemplate-sheet-name .sheet-template .input-label:not(.stacked).large > [name] *,
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="2"] * {
+.sheet-rolltemplate-FE2 .sheet-template h2 *, .sheet-rolltemplate-FE2 .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name] *, body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-FE2 .sheet-template .input-label:not(.stacked).large > [name] *, .sheet-rolltemplate-FE2 .sheet-template .input-label:not(.stacked).large > [name] *,
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="2"] * {
   line-height: normal;
   color: var(--fontColor);
   display: block;
@@ -1600,12 +1601,12 @@ ul.nav-tabs.nav {
   font-size: var(--size2);
   font-family: var(--font2);
 }
-.sheet-rolltemplate-sheet-name .sheet-template h2 *:not(input), .sheet-rolltemplate-sheet-name .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name] *:not(input), body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-sheet-name .sheet-template .input-label:not(.stacked).large > [name] *:not(input), .sheet-rolltemplate-sheet-name .sheet-template .input-label:not(.stacked).large > [name] *:not(input),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="2"] *:not(input) {
+.sheet-rolltemplate-FE2 .sheet-template h2 *:not(input), .sheet-rolltemplate-FE2 .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name] *:not(input), body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-FE2 .sheet-template .input-label:not(.stacked).large > [name] *:not(input), .sheet-rolltemplate-FE2 .sheet-template .input-label:not(.stacked).large > [name] *:not(input),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="2"] *:not(input) {
   text-align: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h3,
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="3"] {
+.sheet-rolltemplate-FE2 .sheet-template h3,
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="3"] {
   line-height: normal;
   color: var(--fontColor);
   display: block;
@@ -1617,12 +1618,12 @@ ul.nav-tabs.nav {
   font-size: var(--size3);
   font-family: var(--font3);
 }
-.sheet-rolltemplate-sheet-name .sheet-template h3:not(input),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="3"]:not(input) {
+.sheet-rolltemplate-FE2 .sheet-template h3:not(input),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="3"]:not(input) {
   text-align: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h3 *,
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="3"] * {
+.sheet-rolltemplate-FE2 .sheet-template h3 *,
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="3"] * {
   line-height: normal;
   color: var(--fontColor);
   display: block;
@@ -1634,12 +1635,12 @@ ul.nav-tabs.nav {
   font-size: var(--size3);
   font-family: var(--font3);
 }
-.sheet-rolltemplate-sheet-name .sheet-template h3 *:not(input),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="3"] *:not(input) {
+.sheet-rolltemplate-FE2 .sheet-template h3 *:not(input),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="3"] *:not(input) {
   text-align: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h4,
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="4"] {
+.sheet-rolltemplate-FE2 .sheet-template h4,
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="4"] {
   line-height: normal;
   color: var(--fontColor);
   display: block;
@@ -1650,16 +1651,16 @@ ul.nav-tabs.nav {
   font-size: var(--size4);
   font-family: var(--font4);
 }
-.sheet-rolltemplate-sheet-name .sheet-template h4:not(:where(input)),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="4"]:not(:where(input)) {
+.sheet-rolltemplate-FE2 .sheet-template h4:not(:where(input)),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="4"]:not(:where(input)) {
   text-transform: capitalize;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h4:not(input),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="4"]:not(input) {
+.sheet-rolltemplate-FE2 .sheet-template h4:not(input),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="4"]:not(input) {
   text-align: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h4 *,
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="4"] * {
+.sheet-rolltemplate-FE2 .sheet-template h4 *,
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="4"] * {
   line-height: normal;
   color: var(--fontColor);
   display: block;
@@ -1670,16 +1671,16 @@ ul.nav-tabs.nav {
   font-size: var(--size4);
   font-family: var(--font4);
 }
-.sheet-rolltemplate-sheet-name .sheet-template h4 *:not(:where(input)),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="4"] *:not(:where(input)) {
+.sheet-rolltemplate-FE2 .sheet-template h4 *:not(:where(input)),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="4"] *:not(:where(input)) {
   text-transform: capitalize;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h4 *:not(input),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="4"] *:not(input) {
+.sheet-rolltemplate-FE2 .sheet-template h4 *:not(input),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="4"] *:not(input) {
   text-align: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h5,
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="5"] {
+.sheet-rolltemplate-FE2 .sheet-template h5,
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="5"] {
   line-height: normal;
   color: var(--fontColor);
   display: block;
@@ -1691,16 +1692,16 @@ ul.nav-tabs.nav {
   font-style: normal;
   font-family: var(--font5);
 }
-.sheet-rolltemplate-sheet-name .sheet-template h5:not(:where(input)),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="5"]:not(:where(input)) {
+.sheet-rolltemplate-FE2 .sheet-template h5:not(:where(input)),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="5"]:not(:where(input)) {
   text-transform: capitalize;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h5:not(input),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="5"]:not(input) {
+.sheet-rolltemplate-FE2 .sheet-template h5:not(input),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="5"]:not(input) {
   text-align: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h5 *,
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="5"] * {
+.sheet-rolltemplate-FE2 .sheet-template h5 *,
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="5"] * {
   line-height: normal;
   color: var(--fontColor);
   display: block;
@@ -1712,16 +1713,16 @@ ul.nav-tabs.nav {
   font-style: normal;
   font-family: var(--font5);
 }
-.sheet-rolltemplate-sheet-name .sheet-template h5 *:not(:where(input)),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="5"] *:not(:where(input)) {
+.sheet-rolltemplate-FE2 .sheet-template h5 *:not(:where(input)),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="5"] *:not(:where(input)) {
   text-transform: capitalize;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h5 *:not(input),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="5"] *:not(input) {
+.sheet-rolltemplate-FE2 .sheet-template h5 *:not(input),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="5"] *:not(input) {
   text-align: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h6,
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="6"] {
+.sheet-rolltemplate-FE2 .sheet-template h6,
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="6"] {
   line-height: normal;
   color: var(--fontColor);
   display: block;
@@ -1733,16 +1734,16 @@ ul.nav-tabs.nav {
   font-style: normal;
   font-family: var(--font5);
 }
-.sheet-rolltemplate-sheet-name .sheet-template h6:not(:where(input)),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="6"]:not(:where(input)) {
+.sheet-rolltemplate-FE2 .sheet-template h6:not(:where(input)),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="6"]:not(:where(input)) {
   text-transform: capitalize;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h6:not(input),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="6"]:not(input) {
+.sheet-rolltemplate-FE2 .sheet-template h6:not(input),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="6"]:not(input) {
   text-align: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h6 *,
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="6"] * {
+.sheet-rolltemplate-FE2 .sheet-template h6 *,
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="6"] * {
   line-height: normal;
   color: var(--fontColor);
   display: block;
@@ -1754,65 +1755,65 @@ ul.nav-tabs.nav {
   font-style: normal;
   font-family: var(--font5);
 }
-.sheet-rolltemplate-sheet-name .sheet-template h6 *:not(:where(input)),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="6"] *:not(:where(input)) {
+.sheet-rolltemplate-FE2 .sheet-template h6 *:not(:where(input)),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="6"] *:not(:where(input)) {
   text-transform: capitalize;
 }
-.sheet-rolltemplate-sheet-name .sheet-template h6 *:not(input),
-.sheet-rolltemplate-sheet-name .sheet-template *[aria-level="6"] *:not(input) {
+.sheet-rolltemplate-FE2 .sheet-template h6 *:not(input),
+.sheet-rolltemplate-FE2 .sheet-template *[aria-level="6"] *:not(input) {
   text-align: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-pictos,
-.sheet-rolltemplate-sheet-name .sheet-template .pictos {
+.sheet-rolltemplate-FE2 .sheet-template .sheet-pictos,
+.sheet-rolltemplate-FE2 .sheet-template .pictos {
   font-family: pictos;
   text-transform: none;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .pictos3,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-pictos3 {
+.sheet-rolltemplate-FE2 .sheet-template .pictos3,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-pictos3 {
   font-family: pictos three;
   text-transform: none;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .pictoscustom,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-pictoscustom {
+.sheet-rolltemplate-FE2 .sheet-template .pictoscustom,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-pictoscustom {
   font-family: pictos custom;
   text-transform: none;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .d4,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-d4 {
+.sheet-rolltemplate-FE2 .sheet-template .d4,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-d4 {
   font-family: dicefontd4 !important;
   text-transform: none !important;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .d6,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-d6 {
+.sheet-rolltemplate-FE2 .sheet-template .d6,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-d6 {
   font-family: dicefontd6 !important;
   text-transform: none !important;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .d8,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-d8 {
+.sheet-rolltemplate-FE2 .sheet-template .d8,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-d8 {
   font-family: dicefontd8 !important;
   text-transform: none !important;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .d10,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-d10 {
+.sheet-rolltemplate-FE2 .sheet-template .d10,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-d10 {
   font-family: dicefontd10 !important;
   text-transform: none !important;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .d12,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-d12 {
+.sheet-rolltemplate-FE2 .sheet-template .d12,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-d12 {
   font-family: dicefontd12 !important;
   text-transform: none !important;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .d20,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-d20 {
+.sheet-rolltemplate-FE2 .sheet-template .d20,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-d20 {
   font-family: dicefontd20 !important;
   text-transform: none !important;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .d30,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-d30 {
+.sheet-rolltemplate-FE2 .sheet-template .d30,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-d30 {
   font-family: dicefontd30 !important;
   text-transform: none !important;
 }
-.sheet-rolltemplate-sheet-name .sheet-template input[type=checkbox] {
+.sheet-rolltemplate-FE2 .sheet-template input[type=checkbox] {
   border: 1px solid var(--checkboxBorderColor);
   cursor: pointer;
   -webkit-appearance: none;
@@ -1825,10 +1826,10 @@ ul.nav-tabs.nav {
   grid-template-columns: 1fr;
   grid-template-areas: "content";
 }
-.sheet-rolltemplate-sheet-name .sheet-template input[type=checkbox]:not(.collapse):not(.fill-left__radio):checked {
+.sheet-rolltemplate-FE2 .sheet-template input[type=checkbox]:not(.collapse):not(.fill-left__radio):checked {
   background-color: var(--checkedBackColor);
 }
-.sheet-rolltemplate-sheet-name .sheet-template input[type=checkbox]:not(.collapse):not(.fill-left__radio):checked:before {
+.sheet-rolltemplate-FE2 .sheet-template input[type=checkbox]:not(.collapse):not(.fill-left__radio):checked:before {
   content: var(--checkContent);
   grid-area: content;
   font-weight: var(--checkWeight);
@@ -1837,41 +1838,41 @@ ul.nav-tabs.nav {
   font-size: var(--checkSize);
   line-height: var(--checkLineHeight);
 }
-.sheet-rolltemplate-sheet-name .sheet-template input[type=number] {
+.sheet-rolltemplate-FE2 .sheet-template input[type=number] {
   width: 3rem;
   -moz-appearance: textfield !important;
   text-align: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template input[type=number]::-webkit-inner-spin-button, .sheet-rolltemplate-sheet-name .sheet-template input[type=number]::-webkit-outer-spin-button {
+.sheet-rolltemplate-FE2 .sheet-template input[type=number]::-webkit-inner-spin-button, .sheet-rolltemplate-FE2 .sheet-template input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.sheet-rolltemplate-sheet-name .sheet-template select,
-.sheet-rolltemplate-sheet-name .sheet-template .pseudo-select span,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-pseudo-select span,
-.sheet-rolltemplate-sheet-name .sheet-template textarea,
-.sheet-rolltemplate-sheet-name .sheet-template input:not(:is([type=radio], [type=checkbox])),
-.sheet-rolltemplate-sheet-name .sheet-template .uneditable-input {
+.sheet-rolltemplate-FE2 .sheet-template select,
+.sheet-rolltemplate-FE2 .sheet-template .pseudo-select span,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-pseudo-select span,
+.sheet-rolltemplate-FE2 .sheet-template textarea,
+.sheet-rolltemplate-FE2 .sheet-template input:not(:is([type=radio], [type=checkbox])),
+.sheet-rolltemplate-FE2 .sheet-template .uneditable-input {
   padding: var(--inputPadding);
 }
-.sheet-rolltemplate-sheet-name .sheet-template input:is([type=text], [type=number]), .sheet-rolltemplate-sheet-name .sheet-template textarea {
+.sheet-rolltemplate-FE2 .sheet-template input:is([type=text], [type=number]), .sheet-rolltemplate-FE2 .sheet-template textarea {
   cursor: auto;
 }
-.sheet-rolltemplate-sheet-name .sheet-template select,
-.sheet-rolltemplate-sheet-name .sheet-template .pseudo-select span,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-pseudo-select span,
-.sheet-rolltemplate-sheet-name .sheet-template input:not(:where([type=checkbox], [type=radio])),
-.sheet-rolltemplate-sheet-name .sheet-template .uneditable-input,
-.sheet-rolltemplate-sheet-name .sheet-template textarea {
+.sheet-rolltemplate-FE2 .sheet-template select,
+.sheet-rolltemplate-FE2 .sheet-template .pseudo-select span,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-pseudo-select span,
+.sheet-rolltemplate-FE2 .sheet-template input:not(:where([type=checkbox], [type=radio])),
+.sheet-rolltemplate-FE2 .sheet-template .uneditable-input,
+.sheet-rolltemplate-FE2 .sheet-template textarea {
   border-width: 1px 3px;
   border-style: solid;
   border-radius: 5px;
   border-color: transparent;
   box-sizing: border-box;
 }
-.sheet-rolltemplate-sheet-name .sheet-template select,
-.sheet-rolltemplate-sheet-name .sheet-template .sheet-pseudo-select span,
-.sheet-rolltemplate-sheet-name .sheet-template .pseudo-select span {
+.sheet-rolltemplate-FE2 .sheet-template select,
+.sheet-rolltemplate-FE2 .sheet-template .sheet-pseudo-select span,
+.sheet-rolltemplate-FE2 .sheet-template .pseudo-select span {
   -webkit-apperance: none;
   appearance: none;
   text-transform: var(--selectTextTransform);
@@ -1881,72 +1882,72 @@ ul.nav-tabs.nav {
   text-align: var(--selectTextAlign);
   color: var(--selectColor);
 }
-.sheet-rolltemplate-sheet-name .sheet-template input {
+.sheet-rolltemplate-FE2 .sheet-template input {
   width: auto;
 }
-.sheet-rolltemplate-sheet-name .sheet-template input:placeholder {
+.sheet-rolltemplate-FE2 .sheet-template input:placeholder {
   color: var(--placeholderColor);
 }
-.sheet-rolltemplate-sheet-name .sheet-template input.plus-control:not([value*="-"]) + span:before {
+.sheet-rolltemplate-FE2 .sheet-template input.plus-control:not([value*="-"]) + span:before {
   content: "+";
 }
-.sheet-rolltemplate-sheet-name .sheet-template textarea {
+.sheet-rolltemplate-FE2 .sheet-template textarea {
   resize: var(--textareaResize);
   white-space: pre-wrap;
 }
-.sheet-rolltemplate-sheet-name .sheet-template textarea.fixed {
+.sheet-rolltemplate-FE2 .sheet-template textarea.fixed {
   resize: none;
   overflow: auto;
 }
-.sheet-rolltemplate-sheet-name .sheet-template button {
+.sheet-rolltemplate-FE2 .sheet-template button {
   cursor: pointer;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .roller {
+.sheet-rolltemplate-FE2 .sheet-template .roller {
   display: flex;
   align-items: center;
   gap: var(--half-gap);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .roller:before {
+.sheet-rolltemplate-FE2 .sheet-template .roller:before {
   content: "T";
   font-family: dicefontd20;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .collapse-container {
+.sheet-rolltemplate-FE2 .sheet-template .collapse-container {
   display: grid;
   position: relative;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .text-collapse {
+.sheet-rolltemplate-FE2 .sheet-template .text-collapse {
   cursor: pointer;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .text-collapse:before {
+.sheet-rolltemplate-FE2 .sheet-template .text-collapse:before {
   content: var(--expandedSymbol);
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   font-size: var(--icon-size); /* Preferred icon size */
 }
-.sheet-rolltemplate-sheet-name .sheet-template .text-collapse__text {
+.sheet-rolltemplate-FE2 .sheet-template .text-collapse__text {
   display: inline;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .text-collapse__check:not(:checked) + .text-collapse {
+.sheet-rolltemplate-FE2 .sheet-template .text-collapse__check:not(:checked) + .text-collapse {
   border-width: 1px 3px;
   border-style: solid;
   border-color: var(--borderColor);
   border-radius: 5px;
   box-sizing: border-box;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .text-collapse__check:checked + .text-collapse:before {
+.sheet-rolltemplate-FE2 .sheet-template .text-collapse__check:checked + .text-collapse:before {
   content: var(--collapsedSymbol);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repitem:hover > .collapse, .sheet-rolltemplate-sheet-name .sheet-template .repitem:hover .roll-container,
-.sheet-rolltemplate-sheet-name .sheet-template .collapse-container:hover > .collapse,
-.sheet-rolltemplate-sheet-name .sheet-template .collapse-container:hover .roll-container {
+.sheet-rolltemplate-FE2 .sheet-template .repitem:hover > .collapse, .sheet-rolltemplate-FE2 .sheet-template .repitem:hover .roll-container,
+.sheet-rolltemplate-FE2 .sheet-template .collapse-container:hover > .collapse,
+.sheet-rolltemplate-FE2 .sheet-template .collapse-container:hover .roll-container {
   opacity: var(--collapseHoverOpacity);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repitem > .collapse,
-.sheet-rolltemplate-sheet-name .sheet-template .collapse-container > .collapse {
+.sheet-rolltemplate-FE2 .sheet-template .repitem > .collapse,
+.sheet-rolltemplate-FE2 .sheet-template .collapse-container > .collapse {
   opacity: var(--collapseBaseOpacity);
   position: absolute;
   right: -10px;
@@ -1957,45 +1958,45 @@ ul.nav-tabs.nav {
   text-transform: none;
   background-color: transparent;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repitem > .collapse:before,
-.sheet-rolltemplate-sheet-name .sheet-template .collapse-container > .collapse:before {
+.sheet-rolltemplate-FE2 .sheet-template .repitem > .collapse:before,
+.sheet-rolltemplate-FE2 .sheet-template .collapse-container > .collapse:before {
   content: "y";
   font-family: pictos;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repitem > .collapse:checked,
-.sheet-rolltemplate-sheet-name .sheet-template .collapse-container > .collapse:checked {
+.sheet-rolltemplate-FE2 .sheet-template .repitem > .collapse:checked,
+.sheet-rolltemplate-FE2 .sheet-template .collapse-container > .collapse:checked {
   color: var(--collapseCollapsedColor);
   background-color: transparent;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repitem > .collapse:checked ~ .expanded,
-.sheet-rolltemplate-sheet-name .sheet-template .repitem > .collapse:checked ~ .collapse-container .expanded,
-.sheet-rolltemplate-sheet-name .sheet-template .collapse-container > .collapse:checked ~ .expanded,
-.sheet-rolltemplate-sheet-name .sheet-template .collapse-container > .collapse:checked ~ .collapse-container .expanded {
+.sheet-rolltemplate-FE2 .sheet-template .repitem > .collapse:checked ~ .expanded,
+.sheet-rolltemplate-FE2 .sheet-template .repitem > .collapse:checked ~ .collapse-container .expanded,
+.sheet-rolltemplate-FE2 .sheet-template .collapse-container > .collapse:checked ~ .expanded,
+.sheet-rolltemplate-FE2 .sheet-template .collapse-container > .collapse:checked ~ .collapse-container .expanded {
   display: none !important;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repitem > .collapse:checked ~ .expanded--empty:is(:not([value]), [value=""]) + *,
-.sheet-rolltemplate-sheet-name .sheet-template .repitem > .collapse:checked ~ .collapse-container ~ .expanded--empty:is(:not([value]), [value=""]) + *,
-.sheet-rolltemplate-sheet-name .sheet-template .collapse-container > .collapse:checked ~ .expanded--empty:is(:not([value]), [value=""]) + *,
-.sheet-rolltemplate-sheet-name .sheet-template .collapse-container > .collapse:checked ~ .collapse-container ~ .expanded--empty:is(:not([value]), [value=""]) + * {
+.sheet-rolltemplate-FE2 .sheet-template .repitem > .collapse:checked ~ .expanded--empty:is(:not([value]), [value=""]) + *,
+.sheet-rolltemplate-FE2 .sheet-template .repitem > .collapse:checked ~ .collapse-container ~ .expanded--empty:is(:not([value]), [value=""]) + *,
+.sheet-rolltemplate-FE2 .sheet-template .collapse-container > .collapse:checked ~ .expanded--empty:is(:not([value]), [value=""]) + *,
+.sheet-rolltemplate-FE2 .sheet-template .collapse-container > .collapse:checked ~ .collapse-container ~ .expanded--empty:is(:not([value]), [value=""]) + * {
   display: none !important;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repitem > .collapse:not(:checked) ~ .collapsed,
-.sheet-rolltemplate-sheet-name .sheet-template .collapse-container > .collapse:not(:checked) ~ .collapsed {
+.sheet-rolltemplate-FE2 .sheet-template .repitem > .collapse:not(:checked) ~ .collapsed,
+.sheet-rolltemplate-FE2 .sheet-template .collapse-container > .collapse:not(:checked) ~ .collapsed {
   display: none !important;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repitem > .collapse:hover,
-.sheet-rolltemplate-sheet-name .sheet-template .collapse-container > .collapse:hover {
+.sheet-rolltemplate-FE2 .sheet-template .repitem > .collapse:hover,
+.sheet-rolltemplate-FE2 .sheet-template .collapse-container > .collapse:hover {
   color: var(--collapseExpandedColor);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repcontainer.editmode .collapse {
+.sheet-rolltemplate-FE2 .sheet-template .repcontainer.editmode .collapse {
   display: none;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .fill-left {
+.sheet-rolltemplate-FE2 .sheet-template .fill-left {
   display: var(--fillLeftDisplay);
   align-self: var(--fillLeftAlignment);
   box-sizing: border-box;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .fill-left__radio {
+.sheet-rolltemplate-FE2 .sheet-template .fill-left__radio {
   appearance: none;
   -webkit-appearance: none;
   background-color: var(--fillLeftSelectedColor);
@@ -2003,67 +2004,67 @@ ul.nav-tabs.nav {
   height: 100%;
   cursor: pointer;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .fill-left__radio[data-value]:checked:before {
+.sheet-rolltemplate-FE2 .sheet-template .fill-left__radio[data-value]:checked:before {
   content: attr(data-value);
   color: var(--fillLeftDataColor);
   font-size: var(--fillLeftDataSize);
   place-self: center;
   text-transform: var(--fillLeftDataTransform);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .fill-left__radio:checked ~ .fill-left__radio {
+.sheet-rolltemplate-FE2 .sheet-template .fill-left__radio:checked ~ .fill-left__radio {
   background-color: var(--fillLeftUnselectedColor);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .input-label {
+.sheet-rolltemplate-FE2 .sheet-template .input-label {
   display: inline-flex;
   gap: var(--input-label-gap);
   align-items: center;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .input-label:not(.stacked) > input[type=text] {
+.sheet-rolltemplate-FE2 .sheet-template .input-label:not(.stacked) > input[type=text] {
   flex: 1 1 0;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .input-label:not(.stacked) > :not([name]) {
+.sheet-rolltemplate-FE2 .sheet-template .input-label:not(.stacked) > :not([name]) {
   flex: 0 0 auto;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .input-label > :is(span, button) {
+.sheet-rolltemplate-FE2 .sheet-template .input-label > :is(span, button) {
   text-transform: var(--input-label-text-transform);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .input-label--dual {
+.sheet-rolltemplate-FE2 .sheet-template .input-label--dual {
   grid-template-columns: 1fr auto 1fr;
   grid-template-areas: "over 	over 	over" "under 	under 	under";
 }
-.sheet-rolltemplate-sheet-name .sheet-template .input-label--dual > span:last-of-type {
+.sheet-rolltemplate-FE2 .sheet-template .input-label--dual > span:last-of-type {
   grid-column: 1/-1;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .input-label--dual > input:not([type=number]):not([type=checkbox]):not([type=radio]) {
+.sheet-rolltemplate-FE2 .sheet-template .input-label--dual > input:not([type=number]):not([type=checkbox]):not([type=radio]) {
   width: 100%;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .input-label--dual > .slash {
+.sheet-rolltemplate-FE2 .sheet-template .input-label--dual > .slash {
   line-height: 0rem;
   font-weight: normal;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .headed-textarea {
+.sheet-rolltemplate-FE2 .sheet-template .headed-textarea {
   display: grid;
   grid-template-rows: auto 1fr;
   grid-template-columns: auto;
   grid-column: 1/-1;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .headed-textarea :not(textarea):not(.adaptive) {
+.sheet-rolltemplate-FE2 .sheet-template .headed-textarea :not(textarea):not(.adaptive) {
   justify-self: start;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .headed-textarea .headed-textarea__header {
+.sheet-rolltemplate-FE2 .sheet-template .headed-textarea .headed-textarea__header {
   grid-area: initial;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .adaptive {
+.sheet-rolltemplate-FE2 .sheet-template .adaptive {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
   grid-template-areas: "content";
   position: relative;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .adaptive > * {
+.sheet-rolltemplate-FE2 .sheet-template .adaptive > * {
   grid-area: content;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .adaptive > span {
+.sheet-rolltemplate-FE2 .sheet-template .adaptive > span {
   opacity: 0;
   z-index: -10;
   border-width: 1px 3px;
@@ -2074,66 +2075,66 @@ ul.nav-tabs.nav {
   text-transform: initial;
   border-radius: 0px;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .adaptive--text {
+.sheet-rolltemplate-FE2 .sheet-template .adaptive--text {
   min-height: 4rem;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .adaptive--text__span {
+.sheet-rolltemplate-FE2 .sheet-template .adaptive--text__span {
   white-space: pre-wrap;
   padding: 2px;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .adaptive--text__textarea {
+.sheet-rolltemplate-FE2 .sheet-template .adaptive--text__textarea {
   width: 100%;
   height: 100%;
   resize: none;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .adaptive--text__textarea,
-.sheet-rolltemplate-sheet-name .sheet-template .adaptive--input__input {
+.sheet-rolltemplate-FE2 .sheet-template .adaptive--text__textarea,
+.sheet-rolltemplate-FE2 .sheet-template .adaptive--input__input {
   position: absolute;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .adaptive--input__input {
+.sheet-rolltemplate-FE2 .sheet-template .adaptive--input__input {
   width: 100%;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .adaptive--input__span {
+.sheet-rolltemplate-FE2 .sheet-template .adaptive--input__span {
   padding: 2px;
   min-height: 1.5rem;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repitem > input:not([type=checkbox]) {
+.sheet-rolltemplate-FE2 .sheet-template .repitem > input:not([type=checkbox]) {
   width: 100%;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repitem .headed-textarea,
-.sheet-rolltemplate-sheet-name .sheet-template .repitem .description {
+.sheet-rolltemplate-FE2 .sheet-template .repitem .headed-textarea,
+.sheet-rolltemplate-FE2 .sheet-template .repitem .description {
   grid-column: 1/-1;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repcontainer {
+.sheet-rolltemplate-FE2 .sheet-template .repcontainer {
   display: grid;
   gap: var(--normal-gap);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repeating-container {
+.sheet-rolltemplate-FE2 .sheet-template .repeating-container {
   display: grid;
   grid-template-areas: "header";
   align-self: start;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repeating-container > .header {
+.sheet-rolltemplate-FE2 .sheet-template .repeating-container > .header {
   grid-area: header;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repeating-container :is(.repcontrol-button, .repcontrol_edit) {
+.sheet-rolltemplate-FE2 .sheet-template .repeating-container :is(.repcontrol-button, .repcontrol_edit) {
   opacity: 0;
   transition: var(--revealTrans);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repeating-container:is(:hover, :focus-within, :focus) :is(.repcontrol-button, .repcontrol_edit) {
+.sheet-rolltemplate-FE2 .sheet-template .repeating-container:is(:hover, :focus-within, :focus) :is(.repcontrol-button, .repcontrol_edit) {
   opacity: 1;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repcontrol-button {
+.sheet-rolltemplate-FE2 .sheet-template .repcontrol-button {
   align-self: start;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repcontrol-button ~ .repcontrol {
+.sheet-rolltemplate-FE2 .sheet-template .repcontrol-button ~ .repcontrol {
   justify-self: end;
   z-index: 100;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repcontrol-button ~ .repcontrol > .repcontrol_add {
+.sheet-rolltemplate-FE2 .sheet-template .repcontrol-button ~ .repcontrol > .repcontrol_add {
   display: none !important;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repcontrol-button--add {
+.sheet-rolltemplate-FE2 .sheet-template .repcontrol-button--add {
   justify-self: start;
   width: 15px;
   height: 15px;
@@ -2142,24 +2143,24 @@ ul.nav-tabs.nav {
   color: var(--col-alt);
   border: 1px solid var(--col-alt);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .repcontrol-button--add::before {
+.sheet-rolltemplate-FE2 .sheet-template .repcontrol-button--add::before {
   inset: 0;
   place-self: center;
   font-family: var(--font-icon);
   font-size: 12px;
   content: "add";
 }
-.sheet-rolltemplate-sheet-name .sheet-template .kmodal__button {
+.sheet-rolltemplate-FE2 .sheet-template .kmodal__button {
   all: initial;
   display: flex;
   margin: 0;
   padding: 0;
   cursor: pointer;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .kmodal__checkbox[type=checkbox] {
+.sheet-rolltemplate-FE2 .sheet-template .kmodal__checkbox[type=checkbox] {
   display: none;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .kmodal__outer {
+.sheet-rolltemplate-FE2 .sheet-template .kmodal__outer {
   opacity: 0;
   visibility: hidden;
   position: fixed;
@@ -2172,7 +2173,7 @@ ul.nav-tabs.nav {
   transition: opacity 0.25s ease;
   z-index: 999;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .kmodal__background {
+.sheet-rolltemplate-FE2 .sheet-template .kmodal__background {
   all: initial;
   margin: 0;
   padding: 0;
@@ -2183,7 +2184,7 @@ ul.nav-tabs.nav {
   left: 0;
   cursor: pointer;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .kmodal__inner {
+.sheet-rolltemplate-FE2 .sheet-template .kmodal__inner {
   position: fixed;
   width: var(--kmodal-width);
   height: var(--kmodal-height);
@@ -2198,7 +2199,7 @@ ul.nav-tabs.nav {
   transition: opacity 0.25s ease;
   box-shadow: var(--kmodal-box-shadow);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .kmodal__close {
+.sheet-rolltemplate-FE2 .sheet-template .kmodal__close {
   position: absolute;
   right: var(--kmodal-close-width);
   top: var(--kmodal-close-height);
@@ -2206,8 +2207,8 @@ ul.nav-tabs.nav {
   height: var(--kmodal-close-height);
   cursor: pointer;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .kmodal__close:after,
-.sheet-rolltemplate-sheet-name .sheet-template .kmodal__close:before {
+.sheet-rolltemplate-FE2 .sheet-template .kmodal__close:after,
+.sheet-rolltemplate-FE2 .sheet-template .kmodal__close:before {
   content: "";
   position: absolute;
   width: var(--kmodal-close-line-thickness);
@@ -2219,33 +2220,33 @@ ul.nav-tabs.nav {
   margin: -3px 0 0 -1px;
   top: 0;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .kmodal__close:hover:after,
-.sheet-rolltemplate-sheet-name .sheet-template .kmodal__close:hover:before {
+.sheet-rolltemplate-FE2 .sheet-template .kmodal__close:hover:after,
+.sheet-rolltemplate-FE2 .sheet-template .kmodal__close:hover:before {
   background: var(--kmodal-close-hover-color);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .kmodal__close:before {
+.sheet-rolltemplate-FE2 .sheet-template .kmodal__close:before {
   transform: rotate(-45deg);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .kmodal__checkbox:not(:checked) + .kmodal__outer {
+.sheet-rolltemplate-FE2 .sheet-template .kmodal__checkbox:not(:checked) + .kmodal__outer {
   display: none;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .kmodal__checkbox:checked + .kmodal__outer {
+.sheet-rolltemplate-FE2 .sheet-template .kmodal__checkbox:checked + .kmodal__outer {
   opacity: 1;
   visibility: visible;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .kmodal__checkbox:checked + .kmodal__outer .kmodal__inner {
+.sheet-rolltemplate-FE2 .sheet-template .kmodal__checkbox:checked + .kmodal__outer .kmodal__inner {
   top: 0;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .tabs__container:not(.k-active-tab) {
+.sheet-rolltemplate-FE2 .sheet-template .tabs__container:not(.k-active-tab) {
   display: none !important;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .tabs__nav-item {
+.sheet-rolltemplate-FE2 .sheet-template .tabs__nav-item {
   list-style: none;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .tabs__nav-list {
+.sheet-rolltemplate-FE2 .sheet-template .tabs__nav-list {
   display: flex;
 }
-.sheet-rolltemplate-sheet-name .sheet-template .inlinerollresult {
+.sheet-rolltemplate-FE2 .sheet-template .inlinerollresult {
   background-color: var(--inlineRollBackColor);
   color: var(--inlineRollColor);
   font-family: var(--inlineRollFont);
@@ -2254,7 +2255,7 @@ ul.nav-tabs.nav {
   border: var(--inlineRollBorder);
   margin: var(--inlineRollMargin);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .inlinerollresult.fullcrit {
+.sheet-rolltemplate-FE2 .sheet-template .inlinerollresult.fullcrit {
   background-color: var(--inlineRollCritBackColor);
   color: var(--inlineRollCritColor);
   font-family: var(--inlineRollCritFont);
@@ -2263,7 +2264,7 @@ ul.nav-tabs.nav {
   border: var(--inlineRollCritBorder);
   margin: var(--inlineRollCritMargin);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .inlinerollresult.fullfail {
+.sheet-rolltemplate-FE2 .sheet-template .inlinerollresult.fullfail {
   background-color: var(--inlineRollFumbleBackColor);
   color: var(--inlineRollFumbleColor);
   font-family: var(--inlineRollFumbleFont);
@@ -2272,7 +2273,7 @@ ul.nav-tabs.nav {
   border: var(--inlineRollFumbleBorder);
   margin: var(--inlineRollFumbleMargin);
 }
-.sheet-rolltemplate-sheet-name .sheet-template .inlinerollresult.importantroll {
+.sheet-rolltemplate-FE2 .sheet-template .inlinerollresult.importantroll {
   background-color: var(--inlineRollImportantBackColor);
   color: var(--inlineRollImportantColor);
   font-family: var(--inlineRollImportantFont);
@@ -2280,6 +2281,10 @@ ul.nav-tabs.nav {
   padding: var(--inlineRollImportantPadding);
   border: var(--inlineRollImportantBorder);
   margin: var(--inlineRollImportantMargin);
+}
+.sheet-rolltemplate-FE2 .sheet-template .roller h2, .sheet-rolltemplate-FE2 .sheet-template .roller body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name], body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-FE2 .sheet-template .roller .input-label:not(.stacked).large > [name], .sheet-rolltemplate-FE2 .sheet-template .roller .input-label:not(.stacked).large > [name] {
+  text-transform: capitalize;
+  font-family: var(--contentHeadFont);
 }
 
 html {
@@ -2639,7 +2644,6 @@ body .ui-dialog .tab-content .charsheet {
   --contentHeadFont: "PT Sans Narrow", sans-serif;
   --contentFont: "PT Sans Narrow", sans-serif;
   --input-label-text-transform: capitalize;
-  /*No sheet sfc used*/
 }
 body .ui-dialog .tab-content .charsheet select,
 body .ui-dialog .tab-content .charsheet textarea,
@@ -3680,6 +3684,10 @@ body .ui-dialog .tab-content .charsheet .roller {
 body .ui-dialog .tab-content .charsheet .roller:before {
   font-family: "Material Icons";
   content: "\eb40";
+}
+body .ui-dialog .tab-content .charsheet .roller h2, body .ui-dialog .tab-content .charsheet .roller .input-label:not(.stacked).large > [name] {
+  text-transform: capitalize;
+  font-family: var(--contentHeadFont);
 }
 body .ui-dialog .tab-content .charsheet label {
   font-family: var(--contentHeadFont);

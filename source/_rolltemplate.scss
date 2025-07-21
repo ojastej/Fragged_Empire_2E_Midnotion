@@ -3,7 +3,7 @@
 @use './scss';
 // use the K-scaffold's sfc export:
 @use 'sfc';
-.sheet-rolltemplate-sheet-name{
+.sheet-rolltemplate-FE2{
   @include scss.variables;
   &.sheet-rolltemplate-darkmode{
     @include scss.darkVariables;
@@ -13,5 +13,7 @@
     @include scss.roll;
     @include sfc.roll;
     // Additional styling as needed here.
+    background-color: yellow;
+    font-size: 10pt;
   }
 }

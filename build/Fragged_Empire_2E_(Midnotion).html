@@ -554,6 +554,7 @@
   <rolltemplate class="sheet-rolltemplate-FE2">
     <div class="template FE2">
       <div class="image-border"></div>
+      <div class="roller"></div>
       <div class="sheet-content stacked center flex-box half-gap">{{#character_name}}{{#character_id}}
         <h4 class="character_name">[{{character_name}}](http://journal.roll20.net/character/{{character_id}})</h4>{{/character_id}}{{^character_id}}
         <h4 class="character_name">{{character_name}}</h4>{{/character_id}}{{/character_name}}{{#roll}}
@@ -2253,7 +2254,12 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 		};
 	console.log ("rollSkill()", rollName, rollAttr, rollTransKey, rollObj);
 	const roll = await executeRoll({rollObj,attributes,sections});
-	finishRoll(roll.rollId);
+	// see https://wiki.roll20.net/Custom_Roll_Parsing
+	// replaces the 'roll' key above with "testing", where the hover shows the 3d6 results
+	const computedResults = {
+		roll: "testing"
+	};
+	finishRoll(roll.rollId, computedResults);
 };
 k.registerFuncs({rollSkill});
 
@@ -2305,4 +2311,6 @@ const sheetTypeDisplay = function({trigger,attributes,sections,casc}){
 k.registerFuncs({sheetTypeDisplay},{type:['opener']});
 
   </script>
+  
+  
 </main>

@@ -1943,7 +1943,12 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 		};
 	console.log ("rollSkill()", rollName, rollAttr, rollTransKey, rollObj);
 	const roll = await executeRoll({rollObj,attributes,sections});
-	finishRoll(roll.rollId);
+	// see https://wiki.roll20.net/Custom_Roll_Parsing
+	// replaces the 'roll' key above with "testing", where the hover shows the 3d6 results
+	const computedResults = {
+		roll: "testing"
+	};
+	finishRoll(roll.rollId, computedResults);
 };
 k.registerFuncs({rollSkill});
 
