@@ -1,28 +1,18 @@
 +templateWrapper(templateName)
-	.image-border
-	.roller
-	.sheet-content.stacked.center.flex-box.half-gap
-		+characterLink
+	span #{templateName}
 
-		+templateConditionalDisplay('roll')
-			.flex-box.results.half-gap.stacked.center
-				span.result
-					+templateConditionalDisplay('pure_success')
-						span.pure-success
-					|{{computed::roll}}
-				+templateConditionalDisplay('title')
-					h2 {{title}}
-
-		.header.flex-box.stacked.center.flex-wrap
+	+templateConditionalDisplay('title')
+		h2 {{title}}
+	+templateConditionalDisplay('roll')
+		.template-row
 			+templateConditionalDisplay('roll_name')
-				h3.title.align-self-start {{roll_name}}
+				h5 {{roll_name}}
+			+templateConditionalDisplay('roll_name','invert')
+				h5(data-i18n='roll')
 
-		+templateConditionalDisplay('description')
-			.description.flex-box.stacked.center.align-self-stretch
-				p(style="text-align:left") {{description}}
+			span.result
+				|{{computed::roll}}
 
-+scss.
-	.roller h2 {
-		text-transform: capitalize;
-		font-family: var(--contentHeadFont);
-	}
+	+templateConditionalDisplay('description')
+		.description
+			p(style="text-align:left") {{description}}
