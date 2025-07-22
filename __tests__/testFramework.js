@@ -1946,7 +1946,13 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 	// see https://wiki.roll20.net/Custom_Roll_Parsing
 	// replaces the 'roll' key above with "testing", where the hover shows the 3d6 results
 	const computedResults = {
-		roll: "testing"
+		roll: "Result",
+		roll1: "1",
+		roll2: "2",
+		roll3: "3",
+		roll4: 4,
+		roll5: 5,
+		roll6: 6
 	};
 	finishRoll(roll.rollId, computedResults);
 };

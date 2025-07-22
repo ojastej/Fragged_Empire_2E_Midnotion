@@ -1,8 +1,8 @@
 +templateWrapper(templateName)
-	span #{templateName}
+	//-span #{templateName}
 
 	+templateConditionalDisplay('title')
-		h2 {{title}}
+		h2.rt-title {{title}}
 	+templateConditionalDisplay('roll')
 		.template-row
 			+templateConditionalDisplay('roll_name')
@@ -12,6 +12,18 @@
 
 			span.result
 				|{{computed::roll}}
+			span.result
+				|{{computed::roll1}}
+			span.result
+				|{{computed::roll2}}
+			span.result
+				|{{computed::roll3}}
+			span.result
+				|{{computed::roll4}}
+			span.result
+				|{{computed::roll5}}
+			span.result
+				|{{computed::roll6}}
 
 	+templateConditionalDisplay('description')
 		.description

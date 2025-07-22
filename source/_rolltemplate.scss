@@ -1,21 +1,23 @@
 // ./scss/_rolltemplate.scss
-@use 'k-scaffold' as k;
-@use './scss';
+// @use 'k-scaffold' as k;
+// @use './scss';
 // use the K-scaffold's sfc export:
-@use 'sfc';
-.sheet-rolltemplate-fe2{
-	@include scss.variables;
-	&.sheet-rolltemplate-darkmode{
-		@include scss.darkVariables;
-	}
-	.sheet-template{
-		@include k.defaultRollStyling;
-		@include scss.roll;
-		@include sfc.roll;
-		// Additional styling as needed here.
-    h2 {
-		  background-color: lightgreen;
-		  font-size: 2em;
-    }
-	}
+//@use 'sfc';
+.sheet-rolltemplate-fe2 .sheet-rt-title {
+  background-color: lightgreen;
 }
+	// @include scss.variables;
+	// &.sheet-rolltemplate-darkmode{
+	// 	@include scss.darkVariables;
+	// }
+	// .sheet-template.sheet-fe2{
+	// 	@include k.defaultRollStyling;
+	// 	@include scss.roll;
+	// 	//@include sfc.roll;
+	// 	// Additional styling as needed here.
+  //   h2.sheet-rollresult {
+	// 	  background-color: lightgreen;
+	// 	  font-size: 2em;
+  //   }
+	// }
+//}

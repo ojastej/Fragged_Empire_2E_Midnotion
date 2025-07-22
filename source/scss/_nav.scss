@@ -41,7 +41,7 @@ ul.nav-tabs.nav{
 	.tabs__button{
 		font-size:1.5rem;
 		@extend %inputHighlight;
-		border-color:transparent;
+		border-color: transparent;
 		padding-inline:0;
 		transition: {
 			property: border-color, color, background-color, padding-inline;

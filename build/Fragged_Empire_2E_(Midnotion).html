@@ -552,11 +552,11 @@
   </div>
 </main>
 <rolltemplate class="sheet-rolltemplate-fe2">
-  <div class="template fe2"><span>fe2</span>{{#title}}
-    <h2>{{title}}</h2>{{/title}}{{#roll}}
+  <div class="template fe2">{{#title}}
+    <h2 class="rt-title">{{title}}</h2>{{/title}}{{#roll}}
     <div class="template-row">{{#roll_name}}
       <h5>{{roll_name}}</h5>{{/roll_name}}{{^roll_name}}
-      <h5 data-i18n="roll"></h5>{{/roll_name}}<span class="result">{{computed::roll}}</span>
+      <h5 data-i18n="roll"></h5>{{/roll_name}}<span class="result">{{computed::roll}}</span><span class="result">{{computed::roll1}}</span><span class="result">{{computed::roll2}}</span><span class="result">{{computed::roll3}}</span><span class="result">{{computed::roll4}}</span><span class="result">{{computed::roll5}}</span><span class="result">{{computed::roll6}}</span>
     </div>{{/roll}}{{#description}}
     <div class="description">
       <p style="text-align:left">{{description}}</p>
@@ -2250,7 +2250,13 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 	// see https://wiki.roll20.net/Custom_Roll_Parsing
 	// replaces the 'roll' key above with "testing", where the hover shows the 3d6 results
 	const computedResults = {
-		roll: "testing"
+		roll: "Result",
+		roll1: "1",
+		roll2: "2",
+		roll3: "3",
+		roll4: 4,
+		roll5: 5,
+		roll6: 6
 	};
 	finishRoll(roll.rollId, computedResults);
 };

@@ -99,15 +99,15 @@
 		text-transform: capitalize;
 		font-family: var(--contentHeadFont);
 	}
-	.roller:before {
-		// font-family: dicefontd6;
-		// content:"F";
-		// content: '🞔';
-		font-family: 'Material Icons';
-		content: '\eb40';
-		// color: white;
-		// background: black;
-	}
+	// .roller:before {
+	// 	// font-family: dicefontd6;
+	// 	// content:"F";
+	// 	// content: '🞔';
+	// 	font-family: 'Material Icons';
+
+	// 	// this interferes with the roll template styling
+	// 	//content: '\eb40';
+	// }
 }
 @mixin roll{
 	@include generic;

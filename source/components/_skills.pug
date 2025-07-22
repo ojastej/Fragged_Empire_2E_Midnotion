@@ -14,12 +14,12 @@ mixin skillRow (skill)
 	.name
 		//-'aria-level':3,
 		//-span.material-icons casino
-		+roller({name:skillName,
+		+roller({name: skillName,
 			role:'heading',
 			'data-i18n':display,
-			value:"&{template:default} {{name=Test}} {{roll=[[3d6]]}}}",
+			value:"&{template:default} {{name=Test}} {{roll=[[3d6]]}} {{roll1=11}} {{roll2=22}}}",
 			trigger:{triggeredFuncs:['rollSkill']}
-			})
+			})(class='material-icons')
 
 	.value.column
 		//- it's easier to copy attribute mods here than to look them up later
