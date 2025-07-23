@@ -1928,7 +1928,7 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 	// 	};
 	// const roll = await executeRoll({rollObj,attributes,sections});
 
-	//console.log("rollSkill()", trigger, attributes, sections, casc);
+	console.log("rollSkill()", trigger, attributes, sections, casc);
 
 	//finishRoll(roll.rollId);
 	const rollName = trigger.name.replace(/-action$/,'');
@@ -1937,14 +1937,19 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 	//${attributes[rollAttr]}[${k.capitalize(getTranslationByKey(rollTransKey))}]]]
 	const rollObj = {
 		title:`${rollName}`,
-		roll_name: 'roll_name',
+		//roll_name: 'roll_name',
 		description: 'description',
-		roll:`[[@{whisper} 3d6]]`
+		//roll:`[[@{whisper} 3d6]]`
+		//roll:`&{template:fe2} {{roll1=[[1d6]]}} {{roll2=[[1d6]]}} {{roll3=[[1d6]]}}`
+		//roll:`@{whisper} [[1d6]] [[1d6]] [[1d6]]`,
+		roll: `[[@{whisper} 1d6]]`,
+		roll1: `[[@{whisper} 1d6]]`,
+		roll2: `[[@{whisper} 1d6]]`
 		};
 	console.log ("rollSkill()", rollName, rollAttr, rollTransKey, rollObj);
 	const roll = await executeRoll({rollObj,attributes,sections});
 	// see https://wiki.roll20.net/Custom_Roll_Parsing
-	// replaces the 'roll' key above with "testing", where the hover shows the 3d6 results
+	// replaces the 'roll' key above with "Resule", where the hover shows the roll results
 	const computedResults = {
 		roll: "Result",
 		roll1: "1",

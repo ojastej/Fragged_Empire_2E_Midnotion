@@ -5,25 +5,27 @@
 		h2.rt-title {{title}}
 	+templateConditionalDisplay('roll')
 		.template-row
-			+templateConditionalDisplay('roll_name')
-				h5 {{roll_name}}
-			+templateConditionalDisplay('roll_name','invert')
-				h5(data-i18n='roll')
+			|Tr + Tb + Wb + Attr + Mod = +X
+		.template-row
+			//- +templateConditionalDisplay('roll_name')
+			//- 	h5 {{roll_name}}
+			//- +templateConditionalDisplay('roll_name','invert')
+			//- 	h5(data-i18n='roll')
 
-			span.result
-				|{{computed::roll}}
-			span.result
-				|{{computed::roll1}}
-			span.result
-				|{{computed::roll2}}
-			span.result
-				|{{computed::roll3}}
-			span.result
-				|{{computed::roll4}}
-			span.result
-				|{{computed::roll5}}
-			span.result
-				|{{computed::roll6}}
+			.result
+				|{{computed::roll}} / {{roll}}
+			.result
+				|{{computed::roll1}} / {{roll1}}
+			.result
+				|{{computed::roll2}} / {{roll2}}
+			.result
+				|{{computed::roll3}} / {{roll3}}
+			.result
+				|{{computed::roll4}} / {{roll4}}
+			.result
+				|{{computed::roll5}} / {{roll5}}
+			.result
+				|{{computed::roll6}} / {{roll6}}
 
 	+templateConditionalDisplay('description')
 		.description

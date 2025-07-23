@@ -17,9 +17,9 @@ mixin skillRow (skill)
 		+roller({name: skillName,
 			role:'heading',
 			'data-i18n':display,
-			value:"&{template:default} {{name=Test}} {{roll=[[3d6]]}} {{roll1=11}} {{roll2=22}}}",
+			value:"&{template:fe2} {{roll1=[[1d6]]}} {{roll2=[[1d6]]}} {{roll3=[[1d6]]}}",
 			trigger:{triggeredFuncs:['rollSkill']}
-			})(class='material-icons')
+			})
 
 	.value.column
 		//- it's easier to copy attribute mods here than to look them up later
