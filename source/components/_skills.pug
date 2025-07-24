@@ -1,6 +1,6 @@
 mixin skillHeader
 	.name.column
-	.value.column
+	+label({label:"Total", divObj:{class:"value column"}, spanObj:{class:"value column"}})
 	+label({label:"Trained", divObj:{class:"column"}, spanObj:{class:"column"}})
 	+label({label:"Toolbox", divObj:{class:"column"}, spanObj:{class:"column"}})
 	+label({label:"Workshop", divObj:{class:"column"}, spanObj:{class:"column"}})
@@ -26,7 +26,10 @@ mixin skillRow (skill)
 		+input({
 			name:`${skillName}_attribute_modifier`,
 			type:'hidden',
-			trigger:{formula:'@{skillAttribute}'}
+			trigger:{
+				affects:[`${skillName}`],
+				formula:'@{'+`${skill.attribute}`+'_skill_modifier}'
+				}
 			})
 		//- a place to store the total roll bonus
 		+input({

@@ -31,6 +31,8 @@
 	{
 		align-self: center;
 		justify-content: center;
+		margin-top:3px;
+		padding-bottom: 0px;
 	}
 	.current-max
 	{
@@ -64,7 +66,7 @@
 	.skills > .grid 
 	{
 		grid-auto-columns: max-content;
-		input {
+		input:not(:where([type=checkbox],[type=radio])) {
 			display: inline-block;
 		}
 		input[disabled=disabled] {
@@ -107,6 +109,7 @@
 
 	// 	// this interferes with the roll template styling
 	// 	//content: '\eb40';
+	//	content: '';
 	// }
 }
 @mixin roll{

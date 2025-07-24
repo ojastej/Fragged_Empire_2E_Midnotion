@@ -3621,6 +3621,8 @@ body .ui-dialog .tab-content .charsheet input:where([type=checkbox], [type=radio
 body .ui-dialog .tab-content .charsheet input:where([type=checkbox]):not(.collapse):not(.fill-left__radio):checked:before {
   align-self: center;
   justify-content: center;
+  margin-top: 3px;
+  padding-bottom: 0px;
 }
 body .ui-dialog .tab-content .charsheet .current-max {
   border-color: var(--borderColor);
@@ -3648,7 +3650,7 @@ body .ui-dialog .tab-content .charsheet .attributes > .grid .trait {
 body .ui-dialog .tab-content .charsheet .skills > .grid {
   grid-auto-columns: max-content;
 }
-body .ui-dialog .tab-content .charsheet .skills > .grid input {
+body .ui-dialog .tab-content .charsheet .skills > .grid input:not(:where([type=checkbox], [type=radio])) {
   display: inline-block;
 }
 body .ui-dialog .tab-content .charsheet .skills > .grid input[disabled=disabled] {
