@@ -19,7 +19,8 @@ mixin trait ({name, trigger})
 		.expanded
 			+input({
 				name:`${name}_requirements`,
-				type: 'text'
+				type: 'text',
+				'data-i18n-placeholder':'Requirements'
 				})
 			+adaptiveTextarea({
 				name:`${name}_text`,
