@@ -14,3 +14,14 @@ mixin trait ({name, trigger})
 				triggeredFuncs: ['toggleTrait']
 				}
 			})
+		+button({
+			name:`${name}_post`,
+			type:'action',
+			class:'pictos',
+			'data-i18n':'W',
+			trigger: {
+				triggeredFuncs: ['postTrait']
+				}
+			})
+		|requirement
+		|text

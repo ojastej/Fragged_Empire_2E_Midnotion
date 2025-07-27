@@ -1,0 +1,12 @@
+section(data-i18n-aria-label="combat skills")#combatSkills
+	.skills
+		h2(data-i18n='combat skills')
+
+		.grid.tiny-gap
+			+skillHeader (true)
+			each skill in personalCombatSkills
+				+skillRow (skill, true)
+		.grid.tiny-gap
+			+skillHeader (true)
+			each skill in shipCombatSkills
+				+skillRow (skill, true)

@@ -1,15 +1,16 @@
-mixin skillHeader
+mixin skillHeader (isCombat)
 	.name.column
 	+label({label:"Total", divObj:{class:"value column"}, spanObj:{class:"value column"}})
 	+label({label:"Trained", divObj:{class:"column"}, spanObj:{class:"column"}})
-	+label({label:"Toolbox", divObj:{class:"column"}, spanObj:{class:"column"}})
-	+label({label:"Workshop", divObj:{class:"column"}, spanObj:{class:"column"}})
+	if !isCombat
+		+label({label:"Toolbox", divObj:{class:"column"}, spanObj:{class:"column"}})
+		+label({label:"Workshop", divObj:{class:"column"}, spanObj:{class:"column"}})
 	+label({label:"Modifier", divObj:{class:"column"}, spanObj:{class:"column"}})
 	+label({label:"Trait", divObj:{class:"trait column"}, spanObj:{class:"column"}})
 
-mixin skillRow (skill)
+mixin skillRow (skill, isCombat)
 	- const skillName = skill.name;
-	- const attributeShort = skill.attribute.substring(0,3); // first 3 chars
+	- const attributeShort = skill.attribute ? skill.attribute.substring(0,3) : ""; // first 3 chars
 	- const display = attributeShort == "" ? skillName : `${skillName} (${attributeShort})`;
 	.name
 		//-'aria-level':3,
@@ -26,6 +27,7 @@ mixin skillRow (skill)
 		+input({
 			name:`${skillName}_attribute_modifier`,
 			type:'hidden',
+			value:0,
 			trigger:{
 				affects:[`${skillName}`],
 				formula:'@{'+`${skill.attribute}`+'_skill_modifier}'
@@ -37,8 +39,7 @@ mixin skillRow (skill)
 			type:'number',
 			trigger:{calculation:'calcSkill'}
 			})
-	-
-		const trigger = {affects: [skillName]};
+	- const trigger = {affects: [skillName]};
 	.column
 		+checkbox({
 			name:`${skillName}_trained`,
@@ -46,21 +47,22 @@ mixin skillRow (skill)
 			class:'column',
 			trigger
 			})
-	.column
-		+checkbox({
-			name:`${skillName}_toolbox`,
-			value:1,
-			class:'column',
-			trigger
-			})
+	if !isCombat
+		.column
+			+checkbox({
+				name:`${skillName}_toolbox`,
+				value:1,
+				class:'column',
+				trigger
+				})
 
-	.column
-		+checkbox({
-			name:`${skillName}_workshop`,
-			value:1,
-			class:'column',
-			trigger
-			})
+		.column
+			+checkbox({
+				name:`${skillName}_workshop`,
+				value:1,
+				class:'column',
+				trigger
+				})
 
 	+input({name:`${skillName}_modifier`,
 		type:'number',
@@ -70,3 +72,8 @@ mixin skillRow (skill)
 		type:'text',
 		trigger
 		}).trait
+	if isCombat
+		+input({name:`${skillName}_trait2`,
+			type:'text',
+			trigger
+			}).trait

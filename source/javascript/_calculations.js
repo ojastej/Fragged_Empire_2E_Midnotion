@@ -36,12 +36,14 @@ const calcSkill = function({trigger,attributes,sections,casc}){
 	const skillName = trigger.name;
 
 	// attributeSkillMod + trained/untrained + toolbox + workshop + mod
+	const primaryModifiers =
+		(attributes[`${skillName}_attribute_modifier`] ? attributes[`${skillName}_attribute_modifier`] : 0) +
+		(attributes[`${skillName}_toolbox`] ? attributes[`${skillName}_toolbox`] : 0) +
+		(attributes[`${skillName}_workshop`] ? attributes[`${skillName}_workshop`] : 0);
 
 	return (attributes[`${skillName}_trained`] ? 1 : attributes['untrained']) +
-		attributes[`${skillName}_toolbox`] +
-		attributes[`${skillName}_workshop`] +
-		attributes[`${skillName}_modifier`] +
-		attributes[`${skillName}_attribute_modifier`];
+		primaryModifiers +
+		attributes[`${skillName}_modifier`];
 };
 k.registerFuncs({calcSkill});
 

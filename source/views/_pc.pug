@@ -4,11 +4,11 @@
 	inputObj:{name:'character name',type:'text'}
 }).div-class
 
+//-+select({name:'species'})
 +select-label({
 	label:'character species',
 	inputObj:{name:'species'}
-})
-+select({name:'species'})
+	})
 	+option({value:'','data-i18n':'select a species'})
 	+option({value:'Corporation','data-i18n':'corporation'})
 	+option({value:'Kaltoran','data-i18n':'kaltoran'})
@@ -17,7 +17,36 @@
 	+option({value:'Remnant','data-i18n':'remnant'})
 	+option({value:'Twi-Far','data-i18n':'twifar'})
 	+option({value:'Zhou','data-i18n':'zhou'})
+|Resources spent/cur/limit
+|Influence cur/limit
+|Grit Re-rolls cur/max
+|Spare Time cur/max
 
 //-|Here:&#xEB40;:shoes
 include ./_attributes.pug
-include ./_skills.pug 
+include ./_skills.pug
+include ./_combatSkills.pug
+
+h2 Perks and Complications
++customControlFieldset({
+	name:'perkComplication',
+	trigger:{triggeredFuncs:['removePerkComplication']}
+	})
+
+h2 Specializations
++customControlFieldset({
+	name:'specializations',
+	trigger:{triggeredFuncs:['removeSpecialization']}
+	})
+
+h2 Trade Goods, Research, and Knowledge
++customControlFieldset({
+	name:'tradeGoods',
+	trigger:{triggeredFuncs:['removeTradeGoods']}
+	})
+
+h2 Equipment
++customControlFieldset({
+	name:'equipment',
+	trigger:{triggeredFuncs:['removeEquipment']}
+	})
