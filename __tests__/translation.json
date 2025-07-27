@@ -1,5 +1,4 @@
 {
-  "`": "`",
   "always": "always",
   "astronomy (int)": "astronomy (int)",
   "attributes": "attributes",
@@ -54,8 +53,9 @@
   "Total": "Total",
   "Trained": "Trained",
   "Trait": "Trait",
+  "Trait details": "Trait details",
   "twifar": "twifar",
-  "W": "W",
+  "w": "w",
   "wealth": "wealth",
   "whisper rolls to gm": "whisper rolls to gm",
   "Workshop": "Workshop",

@@ -17,7 +17,8 @@
 	// Put your generic sheet styling here
 	// #main
 	// {
-	input:not(:where([type=checkbox],[type=radio]))
+	input:not(:where([type=checkbox],[type=radio])),
+	textarea
 	{
 		border-color: var(--borderColor);
 		border-width: var(--borderWidth);
@@ -33,6 +34,11 @@
 		justify-content: center;
 		margin-top:3px;
 		padding-bottom: 0px;
+	}
+	.collapse-container > .collapse
+	{
+		margin-top: 2px;
+		right: 23px;
 	}
 	.current-max
 	{

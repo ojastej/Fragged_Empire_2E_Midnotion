@@ -3605,7 +3605,8 @@ body .ui-dialog .tab-content .charsheet .tabs__nav-item {
 body .ui-dialog .tab-content .charsheet .tabs__nav-list {
   display: flex;
 }
-body .ui-dialog .tab-content .charsheet input:not(:where([type=checkbox], [type=radio])) {
+body .ui-dialog .tab-content .charsheet input:not(:where([type=checkbox], [type=radio])),
+body .ui-dialog .tab-content .charsheet textarea {
   border-color: var(--borderColor);
   border-width: var(--borderWidth);
 }
@@ -3618,6 +3619,10 @@ body .ui-dialog .tab-content .charsheet input:where([type=checkbox]):not(.collap
   justify-content: center;
   margin-top: 3px;
   padding-bottom: 0px;
+}
+body .ui-dialog .tab-content .charsheet .collapse-container > .collapse {
+  margin-top: 2px;
+  right: 23px;
 }
 body .ui-dialog .tab-content .charsheet .current-max {
   border-color: var(--borderColor);

@@ -1,27 +1,26 @@
 mixin trait ({name, trigger})
-	.trait-container
-		+input({name,
-			type:'text',
-			trigger
-			}).trait
+	.trait-container.collapse-container
 		+collapse(`${name}_toggle_collapse`)
-		+button({
-			name:`${name}_toggle`,
-			type:'action',
-			class:'pictos',
-			'data-i18n':'`',
-			trigger: {
-				triggeredFuncs: ['toggleTrait']
-				}
-			})
-		+button({
-			name:`${name}_post`,
-			type:'action',
-			class:'pictos',
-			'data-i18n':'W',
-			trigger: {
-				triggeredFuncs: ['postTrait']
-				}
-			})
-		|requirement
-		|text
+		.trait
+			+input({name,
+				type:'text',
+				trigger
+				})
+			+button({
+				name:`${name}_post`,
+				type:'action',
+				class:'pictos',
+				'data-i18n':'w',
+				trigger: {
+					triggeredFuncs: ['postTrait']
+					}
+				})
+		.expanded
+			+input({
+				name:`${name}_requirement`,
+				type: 'text'
+				})
+			+adaptiveTextarea({
+				name:`${name}_traitText`,
+				'data-i18n-placeholder':'Trait details'
+				})
