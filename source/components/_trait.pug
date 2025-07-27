@@ -1,0 +1,16 @@
+mixin trait ({name, trigger})
+	.trait-container
+		+input({name,
+			type:'text',
+			trigger
+			}).trait
+		+collapse(`${name}_toggle_collapse`)
+		+button({
+			name:`${name}_toggle`,
+			type:'action',
+			class:'pictos',
+			'data-i18n':'`',
+			trigger: {
+				triggeredFuncs: ['toggleTrait']
+				}
+			})

@@ -33,8 +33,9 @@ mixin attributeRow(name)
 	.limit
 		+input({name:`${name}_limit`,type:'number',value:5})
 	
-	.trait
-		+input({name:`${name}_trait`,type:'text'})
+	+trait({name:`${name}_trait`})
+	//- .trait
+	//- 	+input({name:`${name}_trait`,type:'text'})
 //- End mixin
 
 //- setup a field to store the skill mod numerically while displaying something fancier

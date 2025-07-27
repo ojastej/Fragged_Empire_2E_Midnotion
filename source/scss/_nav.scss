@@ -13,13 +13,15 @@ ul.nav-tabs.nav{
 	justify-content:end;
 	align-items:start;
 	gap:var(--half-gap);
-	position:sticky;
-	top:44px;
+	top:0px;
+	// keep the tab selector on-screen, regardless of scroll
+	// position:sticky;
+	// top:44px;
+	// z-index:1000;
 	margin-bottom:10px;
 	padding-inline:10px;
 	padding-block:var(--half-gap);
 	background-color:var(--backColor);
-	z-index:1000;
 	transition: {
 		property:background-color;
 		duration:var(--revealTime);
@@ -32,11 +34,11 @@ ul.nav-tabs.nav{
 		color:var(--fontColor);
 	}
 	%inputHighlight{
-	border-width: 1px 3px;
-	border-style: solid;
-	border-color: var(--borderColor);
-	border-radius: 5px;
-	box-sizing: border-box;
+		border-width: 1px 3px;
+		border-style: solid;
+		border-color: var(--borderColor);
+		border-radius: 5px;
+		box-sizing: border-box;
 	}
 	.tabs__button{
 		font-size:1.5rem;

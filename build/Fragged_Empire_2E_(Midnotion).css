@@ -13,13 +13,11 @@ ul.nav-tabs.nav {
   justify-content: end;
   align-items: start;
   gap: var(--half-gap);
-  position: sticky;
-  top: 44px;
+  top: 0px;
   margin-bottom: 10px;
   padding-inline: 10px;
   padding-block: var(--half-gap);
   background-color: var(--backColor);
-  z-index: 1000;
   transition-property: background-color;
   transition-duration: var(--revealTime);
 }
@@ -2467,10 +2465,7 @@ body {
   font-size: 1rem;
 }
 body .ui-dialog .nav-tabs {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: var(--backColor);
+  position: relative;
 }
 body .ui-dialog .nav-tabs a {
   font-family: var(--font3);
@@ -3644,7 +3639,7 @@ body .ui-dialog .tab-content .charsheet .attributes > .grid {
 body .ui-dialog .tab-content .charsheet .attributes > .grid .name {
   grid-column-start: 1;
 }
-body .ui-dialog .tab-content .charsheet .attributes > .grid .trait {
+body .ui-dialog .tab-content .charsheet .attributes > .grid .trait-container {
   grid-column-end: 6;
 }
 body .ui-dialog .tab-content .charsheet .skills > .grid {
@@ -3690,6 +3685,15 @@ body .ui-dialog .tab-content .charsheet .roller {
 }
 body .ui-dialog .tab-content .charsheet label {
   font-family: var(--contentHeadFont);
+}
+body .ui-dialog .tab-content .charsheet h2:not(input), body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input) {
+  background-color: var(--fontColor);
+  color: var(--backColor);
+  text-align: left;
+  font-size: 1em;
+  padding-left: 1em;
+  margin-top: 1ex;
+  margin-bottom: 1ex;
 }
 body.sheet-darkmode {
   --backColor:var(--dm-backColor);

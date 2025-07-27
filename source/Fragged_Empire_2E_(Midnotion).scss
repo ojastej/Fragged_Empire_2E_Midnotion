@@ -27,10 +27,11 @@ body{
       // Apply positioning to the Roll20 sheet nav bar so the 
       // nav bar sticks to the top of the sheet.
       // Remove the next 4 lines if you don't want this behavior
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background-color:var(--backColor);
+      position:relative;
+      // position: sticky;
+      // top: 0;
+      // z-index: 1000;
+      // background-color:var(--backColor);
       a{
         // extend our font selection to the Roll20 interface
         font-family:var(--font3);
@@ -43,6 +44,15 @@ body{
         @include sfc.sheet;
         label {
           font-family: var(--contentHeadFont);
+        }
+        h2:not(input) {
+          background-color: var(--fontColor);
+          color: var(--backColor);
+          text-align: left;
+          font-size: 1em;
+          padding-left: 1em;
+          margin-top: 1ex;
+          margin-bottom: 1ex;
         }
       }
     }
