@@ -2281,12 +2281,23 @@ ul.nav-tabs.nav {
   border: var(--inlineRollImportantBorder);
   margin: var(--inlineRollImportantMargin);
 }
-.sheet-rolltemplate-fe2 .sheet-template h2:not(input), .sheet-rolltemplate-fe2 .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input), body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input), .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input) {
+.sheet-rolltemplate-fe2 .sheet-template h2:not(input), .sheet-rolltemplate-fe2 .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input), body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input), .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input), .sheet-rolltemplate-fe2 .sheet-template h2:not(input) *, .sheet-rolltemplate-fe2 .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input) *, body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input) *, .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input) * {
+  display: flex;
   font-size: 1em;
   text-transform: capitalize;
   text-align: left;
-  background-color: black;
-  color: white;
+  background-color: var(--fontColor);
+  color: var(--backColor);
+}
+.sheet-rolltemplate-fe2 .sheet-template h2 > .sheet-source:before, .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name] > .sheet-source:before {
+  content: "[";
+}
+.sheet-rolltemplate-fe2 .sheet-template h2 > .sheet-source:after, .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name] > .sheet-source:after {
+  content: "]";
+}
+.sheet-rolltemplate-fe2 .sheet-template h2 > .sheet-source, .sheet-rolltemplate-fe2 .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name] > .sheet-source, body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name] > .sheet-source, .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name] > .sheet-source {
+  display: inline-block;
+  margin-left: auto;
 }
 
 html {

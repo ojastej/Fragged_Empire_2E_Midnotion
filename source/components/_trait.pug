@@ -7,7 +7,7 @@ mixin trait ({name, trigger})
 				trigger
 				})
 			+button({
-				name:`${name}_post`,
+				name:name,
 				type:'action',
 				class:'pictos',
 				'data-i18n':'w',
@@ -15,12 +15,13 @@ mixin trait ({name, trigger})
 					triggeredFuncs: ['postTrait']
 					}
 				})
+			//-span('data-i18n'='w',).pictos w
 		.expanded
 			+input({
-				name:`${name}_requirement`,
+				name:`${name}_requirements`,
 				type: 'text'
 				})
 			+adaptiveTextarea({
-				name:`${name}_traitText`,
+				name:`${name}_text`,
 				'data-i18n-placeholder':'Trait details'
 				})

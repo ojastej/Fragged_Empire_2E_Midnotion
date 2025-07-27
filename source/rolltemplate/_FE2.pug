@@ -2,7 +2,12 @@
 	//-span #{templateName}
 
 	+templateConditionalDisplay('title')
-		h2.rt-title {{title}}
+		h2.rt-title
+			span.title {{title}}
+			span.source {{source}}
+	+templateConditionalDisplay('requirements')
+		.requirements
+			p(style="text-align:left") {{requirements}}
 	+templateConditionalDisplay('roll')
 		.template-row
 			|Tr + Tb + Wb + Attr + Mod = +X

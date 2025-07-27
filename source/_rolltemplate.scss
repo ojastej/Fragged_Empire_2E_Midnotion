@@ -14,14 +14,21 @@
 		@include scss.roll;
 		@include sfc.roll;
 		// Additional styling as needed here.
-    border: 1px solid black;
-    font-size: 1em;
-    h2:not(input) {
-      font-size: 1em;
-      text-transform: capitalize;
-      text-align: left;
-      background-color: black;
-      color: white;
-    }
+		border: 1px solid black;
+		font-size: 1em;
+		h2:not(input), h2:not(input) * {
+			display: flex;
+			font-size: 1em;
+			text-transform: capitalize;
+			text-align: left;
+			background-color: var(--fontColor);
+			color: var(--backColor);
+		}
+		h2 > .sheet-source:before { content:'['; }
+		h2 > .sheet-source:after { content:']'; }
+		h2 > .sheet-source {
+			display: inline-block;
+			margin-left: auto;	
+		}
 	}
 }
