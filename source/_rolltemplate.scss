@@ -13,7 +13,9 @@
 		@include k.defaultRollStyling;
 		@include scss.roll;
 		@include sfc.roll;
-		// Additional styling as needed here.
+
+		--inlineRollFumbleColor: #c70000;
+
 		border: 1px solid black;
 		font-size: 1em;
 		h2:not(input), h2:not(input) * {

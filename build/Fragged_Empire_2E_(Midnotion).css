@@ -1282,6 +1282,7 @@ ul.nav-tabs.nav {
     var(--inlineRollBorderBottom)
     var(--inlineRollBorderLeft);
   /*No roll sfc used*/
+  --inlineRollFumbleColor: #c70000;
   border: 1px solid black;
   font-size: 1em;
 }
