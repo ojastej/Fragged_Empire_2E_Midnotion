@@ -6,17 +6,12 @@
 			span.title {{title}}
 			span.source {{source}}
 	+templateConditionalDisplay('requirements')
-		.requirements
-			p(style="text-align:left") {{requirements}}
+		.template-row.requirements
+			span(style="text-align:left") {{requirements}}
 	+templateConditionalDisplay('roll')
 		.template-row
 			|Tr + Tb + Wb + Attr + Mod = +X
 		.template-row
-			//- +templateConditionalDisplay('roll_name')
-			//- 	h5 {{roll_name}}
-			//- +templateConditionalDisplay('roll_name','invert')
-			//- 	h5(data-i18n='roll')
-
 			.result
 				|{{computed::roll}} / {{roll}}
 			.result
@@ -33,5 +28,5 @@
 				|{{computed::roll6}} / {{roll6}}
 
 	+templateConditionalDisplay('description')
-		.description
-			p(style="text-align:left") {{description}}
+		.template-row.description
+			span(style="text-align:left") {{description}}

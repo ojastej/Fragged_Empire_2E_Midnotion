@@ -68,12 +68,6 @@ mixin skillRow (skill, isCombat)
 		type:'number',
 		trigger
 		})
-	+input({name:`${skillName}_trait`,
-		type:'text',
-		trigger
-		}).trait
+	+trait({name:`${skillName}_trait`})
 	if isCombat
-		+input({name:`${skillName}_trait2`,
-			type:'text',
-			trigger
-			}).trait
+		+trait({name:`${skillName}_trait2`})

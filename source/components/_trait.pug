@@ -1,6 +1,6 @@
 mixin trait ({name, trigger})
 	.trait-container.collapse-container
-		+collapse(`${name}_toggle_collapse`)
+		+collapse(`${name}_toggle_collapse`)(checked=0)
 		.trait
 			+input({name,
 				type:'text',
@@ -15,7 +15,6 @@ mixin trait ({name, trigger})
 					triggeredFuncs: ['postTrait']
 					}
 				})
-			//-span('data-i18n'='w',).pictos w
 		.expanded
 			+input({
 				name:`${name}_requirements`,

@@ -2299,6 +2299,9 @@ ul.nav-tabs.nav {
   display: inline-block;
   margin-left: auto;
 }
+.sheet-rolltemplate-fe2 .sheet-template .sheet-requirements {
+  border-bottom: 1px solid;
+}
 
 html {
   font-size: 16px;
@@ -3674,7 +3677,7 @@ body .ui-dialog .tab-content .charsheet .skills > .grid .name {
   flex-direction: column;
   justify-content: center;
 }
-body .ui-dialog .tab-content .charsheet .skills > .grid .trait {
+body .ui-dialog .tab-content .charsheet .skills > .grid .trait-container {
   grid-column-end: 8;
 }
 body .ui-dialog .tab-content .charsheet .parentheses::before {
