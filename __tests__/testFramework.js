@@ -1933,22 +1933,18 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 	console.log("rollSkill()", trigger, attributes, sections, casc);
 
 	//finishRoll(roll.rollId);
-	const rollName = trigger.name.replace(/-action$/,'');
-	const rollAttr = rollName.replace(/-/g,'_');
-	const rollTransKey = rollName.replace(/-/g,' ');
+	const skillName = trigger.name.replace(/-action$/,'');
+	const skillDetails = getSkillRollModifiers(skillName,attributes);
+	const rollAttr = skillName.replace(/-/g,'_');
+	const rollTransKey = skillName.replace(/-/g,' ');
 	//${attributes[rollAttr]}[${k.capitalize(getTranslationByKey(rollTransKey))}]]]
-	const rollObj = {
-		title:`${rollName}`,
-		//roll_name: 'roll_name',
-		description: 'description',
-		//roll:`[[@{whisper} 3d6]]`
-		//roll:`&{template:fe2} {{roll1=[[1d6]]}} {{roll2=[[1d6]]}} {{roll3=[[1d6]]}}`
-		//roll:`@{whisper} [[1d6]] [[1d6]] [[1d6]]`,
+	const rollObj = Object.assign({
+		title:`${skillName}`,
 		roll: `[[@{whisper} 1d6]]`,
 		roll1: `[[@{whisper} 1d6]]`,
 		roll2: `[[@{whisper} 1d6]]`
-		};
-	console.log ("rollSkill()", rollName, rollAttr, rollTransKey, rollObj);
+		}, skillDetails);
+	console.log ("rollSkill()", skillName, rollAttr, rollTransKey, rollObj);
 	const roll = await executeRoll({rollObj,attributes,sections});
 	// see https://wiki.roll20.net/Custom_Roll_Parsing
 	// replaces the 'roll' key above with "Resule", where the hover shows the roll results
@@ -1964,6 +1960,18 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 	finishRoll(roll.rollId, computedResults);
 };
 k.registerFuncs({rollSkill});
+
+const getSkillRollModifiers = (skillName,attributes) => {
+	return {
+		trained: attributes[`${skillName}_trained`] ? 1 : attributes['untrained'],
+		toolbox: attributes[`${skillName}_toolbox`],
+		workshop: attributes[`${skillName}_workshop`],
+		//attribute: allSkills[skillName],
+		attributeModifier: attributes[`${skillName}_attribute_modifier`],
+		modifier: attributes[`${skillName}_modifier`],
+		total: attributes[skillName]
+	};
+};
 
 const assembleRoll = (rollObj,attributes,sections) => {
 	console.log ("assembleRoll()", attributes.template_start);

@@ -4,28 +4,42 @@
 	+templateConditionalDisplay('title')
 		h2.rt-title
 			span.title {{title}}
-			span.source {{source}}
+			+templateConditionalDisplay('source')
+				span.source {{source}}
+			//- {{attribute}}
 	+templateConditionalDisplay('requirements')
 		.template-row.requirements
 			span(style="text-align:left") {{requirements}}
 	+templateConditionalDisplay('roll')
 		.template-row
-			|Tr + Tb + Wb + Attr + Mod = +X
+			span {{trained}} Tr +
+			span {{toolbox}} Tb +
+			span {{workshop}} Ws +
+			span {{attributeModifier}} Attr +
+			span {{modifier}} Mod =
+			span {{total}}
 		.template-row
-			.result
-				|{{computed::roll}} / {{roll}}
-			.result
-				|{{computed::roll1}} / {{roll1}}
-			.result
-				|{{computed::roll2}} / {{roll2}}
-			.result
-				|{{computed::roll3}} / {{roll3}}
-			.result
-				|{{computed::roll4}} / {{roll4}}
-			.result
-				|{{computed::roll5}} / {{roll5}}
-			.result
-				|{{computed::roll6}} / {{roll6}}
+			+templateConditionalDisplay('roll')
+				.result
+					|{{computed::roll}}: {{roll}}
+			+templateConditionalDisplay('roll1')
+				.result
+					|{{computed::roll1}}: {{roll1}}
+			+templateConditionalDisplay('roll2')
+				.result
+					|{{computed::roll2}}: {{roll2}}
+			+templateConditionalDisplay('roll3')
+				.result
+					|{{computed::roll3}}: {{roll3}}
+			+templateConditionalDisplay('roll4')
+				.result
+					|{{computed::roll4}}: {{roll4}}
+			+templateConditionalDisplay('roll5')
+				.result
+					|{{computed::roll5}}: {{roll5}}
+			+templateConditionalDisplay('roll6')
+				.result
+					|{{computed::roll6}}: {{roll6}}
 
 	+templateConditionalDisplay('description')
 		.template-row.description
