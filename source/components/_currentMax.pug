@@ -1,0 +1,5 @@
+mixin currentMax (baseName, currentTrigger)
+	.current-max
+		+input({name:baseName,type:'number',trigger:currentTrigger})
+		| /
+		+input({name:`${baseName}_max`,type:'number'})

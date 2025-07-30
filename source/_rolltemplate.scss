@@ -16,7 +16,7 @@
 
 		--inlineRollFumbleColor: #c70000;
 
-		border: 1px solid black;
+		border: 1px solid var(--fontColor);
 		font-size: 1em;
 		h2:not(input), h2:not(input) * {
 			display: flex;

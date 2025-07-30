@@ -9,11 +9,12 @@ mixin attributeHeader
 mixin attributeRow(name)
 	+label({label:name}).name
 
-	.current-max
-		//- when this is updated, we must also update $affects
-		+input({name:name,type:'number',trigger:{affects:[`${name}_skill_modifier`]}})
-		| /
-		+input({name:`${name}_max`,type:'number'})
+	+currentMax(name,{affects:[`${name}_skill_modifier`]})
+	//- .current-max
+	//- 	//- when this is updated, we must also update $affects
+	//- 	+input({name:name,type:'number',trigger:{affects:[`${name}_skill_modifier`]}})
+	//- 	| /
+	//- 	+input({name:`${name}_max`,type:'number'})
 
 	//-	console.log ("skillsByAttribute{}", name, skillsByAttribute[name]);
 
