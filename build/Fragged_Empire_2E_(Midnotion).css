@@ -3645,7 +3645,7 @@ body .ui-dialog .tab-content .charsheet .current-max {
   border-style: solid;
   box-sizing: border-box;
   border-radius: 5px;
-  width: 5rem;
+  width: 4.25rem;
   text-align: center;
 }
 body .ui-dialog .tab-content .charsheet .current-max input:not(:where([type=checkbox], [type=radio])) {
@@ -3681,6 +3681,9 @@ body .ui-dialog .tab-content .charsheet .skills > .grid .name {
 body .ui-dialog .tab-content .charsheet .skills > .grid .trait-container {
   grid-column-end: 8;
 }
+body .ui-dialog .tab-content .charsheet .combat > .grid .trait-container {
+  grid-column-end: 6;
+}
 body .ui-dialog .tab-content .charsheet .parentheses::before {
   content: "(";
 }
@@ -3714,6 +3717,9 @@ body .ui-dialog .tab-content .charsheet h2:not(input), body .ui-dialog .tab-cont
   padding-left: 1em;
   margin-top: 1ex;
   margin-bottom: 1ex;
+}
+body .ui-dialog .tab-content .charsheet div.current-max {
+  display: inline-flex;
 }
 body.sheet-darkmode {
   --backColor:var(--dm-backColor);

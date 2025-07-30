@@ -1,52 +1,63 @@
-//- button:{content:'emoji_emotions PC',class:'material-icons'}
-+input-label({
-	label:'character name',
-	inputObj:{name:'character name',type:'text'}
-}).div-class
+section(data-i18n-aria-label="pc")#pc
+	.flex
+		//- button:{content:'emoji_emotions PC',class:'material-icons'}
+		+input-label({
+			label:'Name',
+			inputObj:{name:'name',type:'text'}
+		}).div-class
 
-//-+select({name:'species'})
-+select-label({
-	label:'character species',
-	inputObj:{name:'species'}
-	})
-	+option({value:'','data-i18n':'select a species'})
-	+option({value:'Corporation','data-i18n':'corporation'})
-	+option({value:'Kaltoran','data-i18n':'kaltoran'})
-	+option({value:'Legion','data-i18n':'legion'})
-	+option({value:'Nephilim','data-i18n':'nephilim'})
-	+option({value:'Remnant','data-i18n':'remnant'})
-	+option({value:'Twi-Far','data-i18n':'twifar'})
-	+option({value:'Zhou','data-i18n':'zhou'})
-|Resources spent/cur/limit
-|Influence cur/limit
-|Grit Re-rolls cur/max
-|Spare Time cur/max
+		//-+select({name:'species'})
+		+select-label({
+			label:'Species',
+			inputObj:{name:'species'}
+			})
+			+option({value:'','data-i18n':'select a species'})
+			+option({value:'Corporation','data-i18n':'corporation'})
+			+option({value:'Kaltoran','data-i18n':'kaltoran'})
+			+option({value:'Legion','data-i18n':'legion'})
+			+option({value:'Nephilim','data-i18n':'nephilim'})
+			+option({value:'Remnant','data-i18n':'remnant'})
+			+option({value:'Twi-Far','data-i18n':'twifar'})
+			+option({value:'Zhou','data-i18n':'zhou'})
 
-//-|Here:&#xEB40;:shoes
-include ./_attributes.pug
-include ./_skills.pug
-include ./_combatSkills.pug
+		span
+			+label({label:'Resources'})
+			+currentMax({name:'resources'})
+		span
+			+label({label:'Influence'})
+			+currentMax({name:'influence'})
+		span
+			+label({label:'Grit re-rolls'})
+			+currentMax({name:'grit_rolls'})
+		span
+			+label({label:'Spare time'})
+			+currentMax({name:'spare_time'})
 
-h2 Perks and Complications
-+customControlFieldset({
-	name:'perkComplication',
-	trigger:{triggeredFuncs:['removePerkComplication']}
-	})
+		//-|Here:&#xEB40;:shoes
+		include ./_attributes.pug
+		include ./_skills.pug
+		include ./_combatSkills.pug
 
-h2 Specializations
-+customControlFieldset({
-	name:'specializations',
-	trigger:{triggeredFuncs:['removeSpecialization']}
-	})
+		h2 Perks and Complications
+		+customControlFieldset({
+			name:'perkComplication',
+			trigger:{triggeredFuncs:['removePerkComplication']}
+			})
 
-h2 Trade Goods, Research, and Knowledge
-+customControlFieldset({
-	name:'tradeGoods',
-	trigger:{triggeredFuncs:['removeTradeGoods']}
-	})
+		h2 Specializations
+		+customControlFieldset({
+			name:'specializations',
+			trigger:{triggeredFuncs:['removeSpecialization']}
+			})
 
-h2 Equipment
-+customControlFieldset({
-	name:'equipment',
-	trigger:{triggeredFuncs:['removeEquipment']}
-	})
+		h2 Trade Goods, Research, and Knowledge
+		+customControlFieldset({
+			name:'tradeGoods',
+			trigger:{triggeredFuncs:['removeTradeGoods']}
+			})
+
+		h2 Equipment
+		+customControlFieldset({
+			name:'equipment',
+			trigger:{triggeredFuncs:['removeEquipment']}
+			})

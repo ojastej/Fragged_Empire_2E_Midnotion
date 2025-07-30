@@ -1,22 +1,13 @@
 mixin attributeHeader
 	.name.column
-	+label({label:"Current", divObj:{class:"column"}, spanObj:{class:"column"}})
 	+label({label:"Modifier", divObj:{class:"column"}, spanObj:{class:"column"}})
+	+label({label:"Current", divObj:{class:"column"}, spanObj:{class:"column"}})
 	+label({label:"Limit", divObj:{class:"column"}, spanObj:{class:"column"}})
 	+label({label:"Trait", divObj:{class:"column"}, spanObj:{class:"column"}})
 
 //- build an attribute row
 mixin attributeRow(name)
 	+label({label:name}).name
-
-	+currentMax(name,{affects:[`${name}_skill_modifier`]})
-	//- .current-max
-	//- 	//- when this is updated, we must also update $affects
-	//- 	+input({name:name,type:'number',trigger:{affects:[`${name}_skill_modifier`]}})
-	//- 	| /
-	//- 	+input({name:`${name}_max`,type:'number'})
-
-	//-	console.log ("skillsByAttribute{}", name, skillsByAttribute[name]);
 
 	-
 		const trigger = {
@@ -30,13 +21,11 @@ mixin attributeRow(name)
 		classAdd:' column',
 		trigger: trigger
 		})
+	//-	console.log ("skillsByAttribute{}", name, skillsByAttribute[name]);
 	
-	.limit
-		+input({name:`${name}_limit`,type:'number',value:5})
-	
+	+currentMaxLimit({name,trigger:{affects:[`${name}_skill_modifier`]}})
+
 	+trait({name:`${name}_trait`})
-	//- .trait
-	//- 	+input({name:`${name}_trait`,type:'text'})
 //- End mixin
 
 //- setup a field to store the skill mod numerically while displaying something fancier

@@ -1,5 +1,12 @@
-mixin currentMax (baseName, currentTrigger)
+//- render a combination current/max input box
+mixin currentMax({name, trigger})
 	.current-max
-		+input({name:baseName,type:'number',trigger:currentTrigger})
-		| /
-		+input({name:`${baseName}_max`,type:'number'})
+		+input({name:name,type:'number',trigger:trigger})
+		span.divider
+		+input({name:`${name}_max`,type:'number',trigger:trigger})
+
+//- render a combination current/max input box with a limit box
+mixin currentMaxLimit({name, trigger})
+	+currentMax({name, trigger})
+	.limit
+		+input({name:`${name}_limit`,type:'number',trigger:trigger})
