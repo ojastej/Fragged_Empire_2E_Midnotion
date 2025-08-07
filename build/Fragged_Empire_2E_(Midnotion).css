@@ -3708,6 +3708,13 @@ body .ui-dialog .tab-content .charsheet .skills > .grid .name {
   flex-direction: column;
   justify-content: center;
 }
+body .ui-dialog .tab-content .charsheet .skills > .grid .tilt.column {
+  align-items: end;
+}
+body .ui-dialog .tab-content .charsheet .skills > .grid .tilt.column > span {
+  align-items: end;
+  transform: rotate(-90deg);
+}
 body .ui-dialog .tab-content .charsheet .skills > .grid .trait-container {
   grid-column-end: 8;
 }

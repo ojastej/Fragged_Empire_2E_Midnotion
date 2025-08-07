@@ -76,7 +76,7 @@
 			padding-right: 2px;
 		}
 	}
-	.limit,.column {
+	.limit, .column {
 		input:where([type=number])
 		{
 			width: calc(1.25 * var(--numberWidth));
@@ -110,6 +110,16 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+		}
+		.tilt.column
+		{
+			//text-align: left;
+			align-items: end;
+		}
+		.tilt.column >span {
+			//text-align: left;
+			align-items: end;
+			transform: rotate(-90deg);
 		}
 		.trait-container {
 			grid-column-end: 8;

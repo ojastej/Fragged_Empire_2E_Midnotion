@@ -1,10 +1,10 @@
 mixin skillHeader (isCombat)
 	.name.column
 	+label({label:"Total", divObj:{class:"value column"}, spanObj:{class:"value column"}})
-	+label({label:"Trained", divObj:{class:"column"}, spanObj:{class:"column"}})
+	+label({label:"Trained", divObj:{class:"column tilt"}, spanObj:{class:"column"}})
 	if !isCombat
-		+label({label:"Toolbox", divObj:{class:"column"}, spanObj:{class:"column"}})
-		+label({label:"Workshop", divObj:{class:"column"}, spanObj:{class:"column"}})
+		+label({label:"Toolbox", divObj:{class:"column tilt"}, spanObj:{class:"column"}})
+		+label({label:"Workshop", divObj:{class:"column tilt"}, spanObj:{class:"column"}})
 	+label({label:"Modifier", divObj:{class:"column"}, spanObj:{class:"column"}})
 	+label({label:"Trait", divObj:{class:"trait column"}, spanObj:{class:"column"}})
 
