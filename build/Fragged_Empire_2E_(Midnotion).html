@@ -30,53 +30,65 @@
       <article class="tabs__container tabs--sheet-tabs__container tabs--sheet-tabs__container--pc tab_horizontal" data-container-tab="sheet-tabs" data-tab="pc">
   <section data-i18n-aria-label="pc" id="pc">
     <div class="flex">
-      <label class="input-label div-class"><span data-i18n="Name"></span>
-        <input class="input-label__input" name="attr_name" type="text" title="@{name}"/>
-      </label>
-      <label class="input-label"><span data-i18n="Species"></span>
-        <select class="input-label__input" name="attr_species" title="@{species}">
-          <option value="" data-i18n="select a species">
-          </option>
-          <option value="Corporation" data-i18n="corporation">
-          </option>
-          <option value="Kaltoran" data-i18n="kaltoran">
-          </option>
-          <option value="Legion" data-i18n="legion">
-          </option>
-          <option value="Nephilim" data-i18n="nephilim">
-          </option>
-          <option value="Remnant" data-i18n="remnant">
-          </option>
-          <option value="Twi-Far" data-i18n="twifar">
-          </option>
-          <option value="Zhou" data-i18n="zhou">
-          </option>
-        </select>
-      </label><span>
+      <div class="flow">
+        <label class="input-label"><span data-i18n="Name"></span>
+          <input class="input-label__input" name="attr_name" type="text" title="@{name}"/>
+        </label>
+      </div>
+      <div class="flow">
+        <label class="input-label"><span data-i18n="Species"></span>
+          <select class="input-label__input" name="attr_species" title="@{species}">
+            <option value="" data-i18n="select a species">
+            </option>
+            <option value="Corporation" data-i18n="corporation">
+            </option>
+            <option value="Kaltoran" data-i18n="kaltoran">
+            </option>
+            <option value="Legion" data-i18n="legion">
+            </option>
+            <option value="Nephilim" data-i18n="nephilim">
+            </option>
+            <option value="Remnant" data-i18n="remnant">
+            </option>
+            <option value="Twi-Far" data-i18n="twifar">
+            </option>
+            <option value="Zhou" data-i18n="zhou">
+            </option>
+          </select>
+        </label>
+      </div>
+      <div class="flow">
         <label class="input-label"><span data-i18n="Resources"></span>
+          <div class="current-max">
+            <input name="attr_resources" type="number" title="@{resources}"/><span class="divider"></span>
+            <input name="attr_resources_max" type="number" title="@{resources|max}"/>
+          </div>
         </label>
-        <div class="current-max">
-          <input name="attr_resources" type="number" title="@{resources}"/><span class="divider"></span>
-          <input name="attr_resources_max" type="number" title="@{resources|max}"/>
-        </div></span><span>
+      </div>
+      <div class="flow">
         <label class="input-label"><span data-i18n="Influence"></span>
+          <div class="current-max">
+            <input name="attr_influence" type="number" title="@{influence}"/><span class="divider"></span>
+            <input name="attr_influence_max" type="number" title="@{influence|max}"/>
+          </div>
         </label>
-        <div class="current-max">
-          <input name="attr_influence" type="number" title="@{influence}"/><span class="divider"></span>
-          <input name="attr_influence_max" type="number" title="@{influence|max}"/>
-        </div></span><span>
+      </div>
+      <div class="flow">
         <label class="input-label"><span data-i18n="Grit re-rolls"></span>
+          <div class="current-max">
+            <input name="attr_grit_rolls" type="number" title="@{grit_rolls}"/><span class="divider"></span>
+            <input name="attr_grit_rolls_max" type="number" title="@{grit_rolls|max}"/>
+          </div>
         </label>
-        <div class="current-max">
-          <input name="attr_grit_rolls" type="number" title="@{grit_rolls}"/><span class="divider"></span>
-          <input name="attr_grit_rolls_max" type="number" title="@{grit_rolls|max}"/>
-        </div></span><span>
+      </div>
+      <div class="flow">
         <label class="input-label"><span data-i18n="Spare time"></span>
+          <div class="current-max">
+            <input name="attr_spare_time" type="number" title="@{spare_time}"/><span class="divider"></span>
+            <input name="attr_spare_time_max" type="number" title="@{spare_time|max}"/>
+          </div>
         </label>
-        <div class="current-max">
-          <input name="attr_spare_time" type="number" title="@{spare_time}"/><span class="divider"></span>
-          <input name="attr_spare_time_max" type="number" title="@{spare_time|max}"/>
-        </div></span>
+      </div>
       <section data-i18n-aria-label="attributes" id="attributes">
         <div class="attributes">
           <h2 data-i18n="attributes"></h2>
@@ -240,7 +252,9 @@
       <section data-i18n-aria-label="skills" id="skills">
         <div class="skills">
           <h2 data-i18n="skills"></h2>
-          <input name="attr_untrained" type="number" value="-2" title="@{untrained}"/>
+          <label class="input-label"><span data-i18n="untrained"></span>
+            <input class="input-label__input" name="attr_untrained" type="number" value="-2" title="@{untrained}"/>
+          </label>
           <div class="grid tiny-gap">
             <div class="name column"></div>
             <label class="input-label value column"><span class="value column input-label__text" data-i18n="Total"></span>

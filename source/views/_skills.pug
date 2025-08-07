@@ -1,10 +1,14 @@
 section(data-i18n-aria-label="skills")#skills
 	.skills
 		h2(data-i18n='skills')
-		+input({name:'untrained',
-			type:'number',
-			value: -2,
-			trigger
+		+input-label( {
+			label:'untrained',
+			inputObj: {
+				name:'untrained',
+				type:'number',
+				value: -2,
+				trigger
+				}
 			})
 
 		.grid.tiny-gap

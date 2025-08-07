@@ -3621,6 +3621,7 @@ body .ui-dialog .tab-content .charsheet .tabs__nav-list {
   display: flex;
 }
 body .ui-dialog .tab-content .charsheet input:not(:where([type=checkbox], [type=radio])),
+body .ui-dialog .tab-content .charsheet select,
 body .ui-dialog .tab-content .charsheet textarea {
   border-color: var(--borderColor);
   border-width: var(--borderWidth);
@@ -3706,8 +3707,17 @@ body .ui-dialog .tab-content .charsheet .roller {
   text-transform: capitalize;
   font-family: var(--contentHeadFont);
 }
+body .ui-dialog .tab-content .charsheet .flow {
+  display: inline-flex;
+}
+body .ui-dialog .tab-content .charsheet .flow label > span {
+  margin-right: 5px;
+}
 body .ui-dialog .tab-content .charsheet label {
   font-family: var(--contentHeadFont);
+}
+body .ui-dialog .tab-content .charsheet input, body .ui-dialog .tab-content .charsheet select, body .ui-dialog .tab-content .charsheet textarea {
+  font-family: var(--contentFont);
 }
 body .ui-dialog .tab-content .charsheet h2:not(input), body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input) {
   background-color: var(--fontColor);

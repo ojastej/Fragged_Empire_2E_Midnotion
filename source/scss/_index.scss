@@ -18,6 +18,7 @@
 	// #main
 	// {
 	input:not(:where([type=checkbox],[type=radio])),
+	select,
 	textarea
 	{
 		border-color: var(--borderColor);

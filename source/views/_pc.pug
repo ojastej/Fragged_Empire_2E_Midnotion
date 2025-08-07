@@ -1,37 +1,47 @@
 section(data-i18n-aria-label="pc")#pc
 	.flex
 		//- button:{content:'emoji_emotions PC',class:'material-icons'}
-		+input-label({
-			label:'Name',
-			inputObj:{name:'name',type:'text'}
-		}).div-class
+		.flow
+			+input-label({
+				label:'Name',
+				inputObj:{name:'name',type:'text'}
+			})
 
 		//-+select({name:'species'})
-		+select-label({
-			label:'Species',
-			inputObj:{name:'species'}
-			})
-			+option({value:'','data-i18n':'select a species'})
-			+option({value:'Corporation','data-i18n':'corporation'})
-			+option({value:'Kaltoran','data-i18n':'kaltoran'})
-			+option({value:'Legion','data-i18n':'legion'})
-			+option({value:'Nephilim','data-i18n':'nephilim'})
-			+option({value:'Remnant','data-i18n':'remnant'})
-			+option({value:'Twi-Far','data-i18n':'twifar'})
-			+option({value:'Zhou','data-i18n':'zhou'})
+		.flow
+			+select-label({
+				label:'Species',
+				inputObj:{name:'species'}
+				})
+				+option({value:'','data-i18n':'select a species'})
+				+option({value:'Corporation','data-i18n':'corporation'})
+				+option({value:'Kaltoran','data-i18n':'kaltoran'})
+				+option({value:'Legion','data-i18n':'legion'})
+				+option({value:'Nephilim','data-i18n':'nephilim'})
+				+option({value:'Remnant','data-i18n':'remnant'})
+				+option({value:'Twi-Far','data-i18n':'twifar'})
+				+option({value:'Zhou','data-i18n':'zhou'})
 
-		span
-			+label({label:'Resources'})
-			+currentMax({name:'resources'})
-		span
-			+label({label:'Influence'})
-			+currentMax({name:'influence'})
-		span
-			+label({label:'Grit re-rolls'})
-			+currentMax({name:'grit_rolls'})
-		span
-			+label({label:'Spare time'})
-			+currentMax({name:'spare_time'})
+		div.flow
+			+currentMax-label({
+				label:'Resources',
+				inputObj:{name:'resources'}
+			})
+		div.flow
+			+currentMax-label({
+				label:'Influence',
+				inputObj:{name:'influence'}
+				})
+		div.flow
+			+currentMax-label({
+				label:'Grit re-rolls',
+				inputObj:{name:'grit_rolls'}
+				})
+		div.flow
+			+currentMax-label({
+				label:'Spare time',
+				inputObj:{name:'spare_time'}
+				})
 
 		//-|Here:&#xEB40;:shoes
 		include ./_attributes.pug

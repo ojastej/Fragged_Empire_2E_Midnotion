@@ -41,9 +41,19 @@ body{
       .charsheet{
         @include k.defaultStyles;
         @include scss.sheet;
+        // @include scss.variables;
         @include sfc.sheet;
+        .flow {
+          display: inline-flex;
+          label>span {
+            margin-right: 5px;
+          }
+        }
         label {
           font-family: var(--contentHeadFont);
+        }
+        input, select, textarea {
+          font-family: var(--contentFont);
         }
         h2:not(input) {
           background-color: var(--fontColor);
