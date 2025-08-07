@@ -17,6 +17,9 @@
 	// Put your generic sheet styling here
 	// #main
 	// {
+	.flow > label {
+		margin-right: 0.5rem;
+	}
 	input:not(:where([type=checkbox],[type=radio])),
 	select,
 	textarea
@@ -73,10 +76,10 @@
 			padding-right: 2px;
 		}
 	}
-	.limit {
+	.limit,.column {
 		input:where([type=number])
 		{
-			width: calc(2 * var(--numberWidth));
+			width: calc(1.25 * var(--numberWidth));
 		}
 	}
 	// }
@@ -149,7 +152,7 @@
 @mixin roll{
 	@include generic;
 	// Put any generic roll template styling you have here
-	/* HTML: <div class="hexagon"></div> */
+	/* HTML: div class="hexagon"/div */
 	.hexagon {
 		height: 100px; /* adjust to control the size  */
 		aspect-ratio: 1/cos(30deg);

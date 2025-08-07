@@ -47,6 +47,7 @@ mixin skillRow (skill, isCombat)
 			class:'column',
 			trigger
 			})
+
 	if !isCombat
 		.column
 			+checkbox({
@@ -64,10 +65,12 @@ mixin skillRow (skill, isCombat)
 				trigger
 				})
 
-	+input({name:`${skillName}_modifier`,
-		type:'number',
-		trigger
-		})
+	.column
+		+input({name:`${skillName}_modifier`,
+			type:'number',
+			trigger
+			})
+
 	+trait({name:`${skillName}_trait`})
 	if isCombat
 		+trait({name:`${skillName}_trait2`})

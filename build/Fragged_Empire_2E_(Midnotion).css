@@ -1282,7 +1282,7 @@ ul.nav-tabs.nav {
     var(--inlineRollBorderRight)
     var(--inlineRollBorderBottom)
     var(--inlineRollBorderLeft);
-  /* HTML: <div class="hexagon"></div> */
+  /* HTML: div class="hexagon"/div */
   /*No roll sfc used*/
   --inlineRollFumbleColor: #c70000;
   border: 1px solid var(--fontColor);
@@ -3630,6 +3630,9 @@ body .ui-dialog .tab-content .charsheet .tabs__nav-item {
 body .ui-dialog .tab-content .charsheet .tabs__nav-list {
   display: flex;
 }
+body .ui-dialog .tab-content .charsheet .flow > label {
+  margin-right: 0.5rem;
+}
 body .ui-dialog .tab-content .charsheet input:not(:where([type=checkbox], [type=radio])),
 body .ui-dialog .tab-content .charsheet select,
 body .ui-dialog .tab-content .charsheet textarea {
@@ -3676,8 +3679,8 @@ body .ui-dialog .tab-content .charsheet .current-max :first-child {
   border-radius: 0;
   padding-right: 2px;
 }
-body .ui-dialog .tab-content .charsheet .limit input:where([type=number]) {
-  width: calc(2 * var(--numberWidth));
+body .ui-dialog .tab-content .charsheet .limit input:where([type=number]), body .ui-dialog .tab-content .charsheet .column input:where([type=number]) {
+  width: calc(1.25 * var(--numberWidth));
 }
 body .ui-dialog .tab-content .charsheet .attributes > .grid {
   text-transform: capitalize;
