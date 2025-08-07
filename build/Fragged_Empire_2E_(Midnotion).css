@@ -1200,6 +1200,7 @@ ul.nav-tabs.nav {
   --checkedBackColor: lightgrey;
   --checkContent: "+1";
   --checkSize: 10pt;
+  --numberWidth: 1.25rem;
   --column-gap: 5px;
   --topHeadFont: "PT Sans Narrow", sans-serif;
   --midHeadFont: "PT Sans Narrow", sans-serif;
@@ -1281,6 +1282,7 @@ ul.nav-tabs.nav {
     var(--inlineRollBorderRight)
     var(--inlineRollBorderBottom)
     var(--inlineRollBorderLeft);
+  /* HTML: <div class="hexagon"></div> */
   /*No roll sfc used*/
   --inlineRollFumbleColor: #c70000;
   border: 1px solid var(--fontColor);
@@ -2282,6 +2284,12 @@ ul.nav-tabs.nav {
   border: var(--inlineRollImportantBorder);
   margin: var(--inlineRollImportantMargin);
 }
+.sheet-rolltemplate-fe2 .sheet-template .hexagon {
+  height: 100px; /* adjust to control the size  */
+  aspect-ratio: 1/0.8660254038;
+  clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
+  background: #3B8686;
+}
 .sheet-rolltemplate-fe2 .sheet-template h2:not(input), .sheet-rolltemplate-fe2 .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input), body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input), .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input), .sheet-rolltemplate-fe2 .sheet-template h2:not(input) *, .sheet-rolltemplate-fe2 .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input) *, body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input) *, .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input) * {
   display: flex;
   font-size: 1em;
@@ -2470,6 +2478,7 @@ body {
   --checkedBackColor: lightgrey;
   --checkContent: "+1";
   --checkSize: 10pt;
+  --numberWidth: 1.25rem;
   --column-gap: 5px;
   --topHeadFont: "PT Sans Narrow", sans-serif;
   --midHeadFont: "PT Sans Narrow", sans-serif;
@@ -2652,6 +2661,7 @@ body .ui-dialog .tab-content .charsheet {
   --checkedBackColor: lightgrey;
   --checkContent: "+1";
   --checkSize: 10pt;
+  --numberWidth: 1.25rem;
   --column-gap: 5px;
   --topHeadFont: "PT Sans Narrow", sans-serif;
   --midHeadFont: "PT Sans Narrow", sans-serif;
@@ -3636,22 +3646,38 @@ body .ui-dialog .tab-content .charsheet input:where([type=checkbox]):not(.collap
   margin-top: 3px;
   padding-bottom: 0px;
 }
+body .ui-dialog .tab-content .charsheet input:where([type=number]) {
+  width: var(--numberWidth);
+}
 body .ui-dialog .tab-content .charsheet .collapse-container > .collapse {
   margin-top: 2px;
   right: 23px;
 }
 body .ui-dialog .tab-content .charsheet .current-max {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  column-gap: 0px;
+  align-items: center;
   border-color: var(--borderColor);
   border-width: var(--borderWidth);
   border-style: solid;
   box-sizing: border-box;
   border-radius: 5px;
-  width: 4.25rem;
+  width: calc(2 * var(--numberWidth) + 2);
   text-align: center;
 }
-body .ui-dialog .tab-content .charsheet .current-max input:not(:where([type=checkbox], [type=radio])) {
+body .ui-dialog .tab-content .charsheet .current-max input:where([type=number]) {
+  display: block;
   border-width: 0;
-  width: 2rem;
+  width: var(--numberWidth);
+}
+body .ui-dialog .tab-content .charsheet .current-max :first-child {
+  border-right: 1px solid;
+  border-radius: 0;
+  padding-right: 2px;
+}
+body .ui-dialog .tab-content .charsheet .limit input:where([type=number]) {
+  width: calc(2 * var(--numberWidth));
 }
 body .ui-dialog .tab-content .charsheet .attributes > .grid {
   text-transform: capitalize;
@@ -3727,9 +3753,6 @@ body .ui-dialog .tab-content .charsheet h2:not(input), body .ui-dialog .tab-cont
   padding-left: 1em;
   margin-top: 1ex;
   margin-bottom: 1ex;
-}
-body .ui-dialog .tab-content .charsheet div.current-max {
-  display: inline-flex;
 }
 body.sheet-darkmode {
   --backColor:var(--dm-backColor);

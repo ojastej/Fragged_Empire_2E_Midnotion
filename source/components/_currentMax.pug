@@ -2,7 +2,7 @@
 mixin currentMax({name, trigger})
 	.current-max
 		+input({name:name,type:'number',trigger:trigger})
-		span.divider
+		//- span.divider
 		+input({name:`${name}_max`,type:'number',trigger:trigger})
 
 //- render a combination current/max input box with a limit box

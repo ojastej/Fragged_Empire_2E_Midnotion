@@ -36,6 +36,10 @@
 		margin-top:3px;
 		padding-bottom: 0px;
 	}
+	input:where([type=number])
+	{
+		width: var(--numberWidth);
+	}
 	.collapse-container > .collapse
 	{
 		margin-top: 2px;
@@ -43,18 +47,36 @@
 	}
 	.current-max
 	{
+		display: inline-grid;
+		grid-template-columns: auto auto;
+		column-gap: 0px;
+		
+		align-items: center;
 		border-color: var(--borderColor);
 		border-width: var(--borderWidth);
 		border-style: solid;
 		box-sizing: border-box;
 		border-radius: 5px;
-		width: 4.25rem;
+		width: calc(2 * var(--numberWidth) + 2);
 		text-align: center;
 
-		input:not(:where([type=checkbox],[type=radio]))
+		input:where([type=number])
 		{
+			display: block;
 			border-width: 0;
-			width: 2rem;
+			width: var(--numberWidth);
+		}
+
+		:first-child {
+			border-right: 1px solid;
+			border-radius: 0;
+			padding-right: 2px;
+		}
+	}
+	.limit {
+		input:where([type=number])
+		{
+			width: calc(2 * var(--numberWidth));
 		}
 	}
 	// }
@@ -127,6 +149,13 @@
 @mixin roll{
 	@include generic;
 	// Put any generic roll template styling you have here
+	/* HTML: <div class="hexagon"></div> */
+	.hexagon {
+		height: 100px; /* adjust to control the size  */
+		aspect-ratio: 1/cos(30deg);
+		clip-path: polygon(50% -50%,100% 50%,50% 150%,0 50%);
+		background: #3B8686;
+	}
 }
 .ui-dialog .tab-content .charsheet{
 	@include k.defaultStyles;
