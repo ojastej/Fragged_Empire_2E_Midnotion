@@ -111,15 +111,31 @@
 			flex-direction: column;
 			justify-content: center;
 		}
-		.tilt.column
-		{
-			//text-align: left;
-			align-items: end;
+		// .tilt.column
+		// {
+		// 	//text-align: left;
+		// 	align-items: end;
+		// 	justify-content: left;
+		// }
+		.skill-mod {
+			font-family: var(--contentFont);
+			width: calc(1.25 * var(--numberWidth));
+			text-align: center;
+			border-color: lightskyblue;
+			border-width: var(--borderWidth);
+			border-style: solid;
+			box-sizing: border-box;
+			padding: 2px;
+			border-radius: 5px;
 		}
 		.tilt.column >span {
 			//text-align: left;
-			align-items: end;
-			transform: rotate(-90deg);
+			//align-items: end;
+			margin-bottom: -1.5rem;
+			margin-right: -1rem;
+			width: 2rem;
+			transform-origin: left top;
+			transform: rotate(-60deg);
 		}
 		.trait-container {
 			grid-column-end: 8;
@@ -140,9 +156,6 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-	}
-	.column * {
-		align-items: center;
 	}
 	.roller {
 		text-transform: capitalize;

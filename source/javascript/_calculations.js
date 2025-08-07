@@ -32,7 +32,7 @@ k.registerFuncs({calcAttributeSkillMod});
  * @param {object} casc - Expanded cascade object
  */
 const calcSkill = function({trigger,attributes,sections,casc}){
-	console.log ('calcSkill()', trigger, attributes, sections, casc);
+	//console.log ('calcSkill()', trigger, attributes, sections, casc);
 	const skillName = trigger.name;
 
 	// attributeSkillMod + trained/untrained + toolbox + workshop + mod

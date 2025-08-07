@@ -28,6 +28,7 @@
   "mechanics (str)": "mechanics (str)",
   "medicine (ref)": "medicine (ref)",
   "mobility": "mobility",
+  "Mod": "Mod",
   "Modifier": "Modifier",
   "Name": "Name",
   "nephilim": "nephilim",
@@ -54,9 +55,9 @@
   "stealth (mob)": "stealth (mob)",
   "strength": "strength",
   "tactical": "tactical",
-  "Toolbox": "Toolbox",
+  "TB": "TB",
   "Total": "Total",
-  "Trained": "Trained",
+  "Tr": "Tr",
   "Trait": "Trait",
   "Trait details": "Trait details",
   "twifar": "twifar",
@@ -64,6 +65,6 @@
   "w": "w",
   "wealth": "wealth",
   "whisper rolls to gm": "whisper rolls to gm",
-  "Workshop": "Workshop",
+  "WS": "WS",
   "zhou": "zhou"
 }

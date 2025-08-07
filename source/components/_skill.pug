@@ -1,12 +1,26 @@
 mixin skillHeader (isCombat)
 	.name.column
 	+label({label:"Total", divObj:{class:"value column"}, spanObj:{class:"value column"}})
-	+label({label:"Trained", divObj:{class:"column tilt"}, spanObj:{class:"column"}})
+	+label({label:"Tr", divObj:{class:"column"}, spanObj:{class:"column"}})
 	if !isCombat
-		+label({label:"Toolbox", divObj:{class:"column tilt"}, spanObj:{class:"column"}})
-		+label({label:"Workshop", divObj:{class:"column tilt"}, spanObj:{class:"column"}})
-	+label({label:"Modifier", divObj:{class:"column"}, spanObj:{class:"column"}})
+		+label({label:"TB", divObj:{class:"column"}, spanObj:{class:"column"}})
+		+label({label:"WS", divObj:{class:"column"}, spanObj:{class:"column"}})
+	+label({label:"Mod", divObj:{class:"column"}, spanObj:{class:"column"}})
 	+label({label:"Trait", divObj:{class:"trait column"}, spanObj:{class:"column"}})
+
+mixin skillMod({name,defaultValue,classAdd})
+	span(class='skill-mod')
+		-
+			const trueDefault = defaultValue === undefined ?
+				0 :
+				defaultValue;
+		+input({
+			name: name,
+			type:'hidden',
+			trigger:{calculation:'calcSkill'}
+			})
+		+span({class:`skill-mod-display${classAdd ? ` ${classAdd}` : ''}`, name})
+			|#{trueDefault}
 
 mixin skillRow (skill, isCombat)
 	- const skillName = skill.name;
@@ -34,17 +48,16 @@ mixin skillRow (skill, isCombat)
 				}
 			})
 		//- a place to store the total roll bonus
-		+input({
-			name:skillName,
-			type:'number',
-			trigger:{calculation:'calcSkill'}
-			})
+		+skillMod({
+			name: skillName,
+			defaultValue: 0
+		})
+
 	- const trigger = {affects: [skillName]};
 	.column
 		+checkbox({
 			name:`${skillName}_trained`,
 			value:1,
-			class:'column',
 			trigger
 			})
 
@@ -53,7 +66,6 @@ mixin skillRow (skill, isCombat)
 			+checkbox({
 				name:`${skillName}_toolbox`,
 				value:1,
-				class:'column',
 				trigger
 				})
 
@@ -61,7 +73,6 @@ mixin skillRow (skill, isCombat)
 			+checkbox({
 				name:`${skillName}_workshop`,
 				value:1,
-				class:'column',
 				trigger
 				})
 

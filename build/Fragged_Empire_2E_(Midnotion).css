@@ -3708,12 +3708,23 @@ body .ui-dialog .tab-content .charsheet .skills > .grid .name {
   flex-direction: column;
   justify-content: center;
 }
-body .ui-dialog .tab-content .charsheet .skills > .grid .tilt.column {
-  align-items: end;
+body .ui-dialog .tab-content .charsheet .skills > .grid .skill-mod {
+  font-family: var(--contentFont);
+  width: calc(1.25 * var(--numberWidth));
+  text-align: center;
+  border-color: lightskyblue;
+  border-width: var(--borderWidth);
+  border-style: solid;
+  box-sizing: border-box;
+  padding: 2px;
+  border-radius: 5px;
 }
 body .ui-dialog .tab-content .charsheet .skills > .grid .tilt.column > span {
-  align-items: end;
-  transform: rotate(-90deg);
+  margin-bottom: -1.5rem;
+  margin-right: -1rem;
+  width: 2rem;
+  transform-origin: left top;
+  transform: rotate(-60deg);
 }
 body .ui-dialog .tab-content .charsheet .skills > .grid .trait-container {
   grid-column-end: 8;
@@ -3735,9 +3746,6 @@ body .ui-dialog .tab-content .charsheet .column, body .ui-dialog .tab-content .c
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-body .ui-dialog .tab-content .charsheet .column * {
-  align-items: center;
 }
 body .ui-dialog .tab-content .charsheet .roller {
   text-transform: capitalize;
