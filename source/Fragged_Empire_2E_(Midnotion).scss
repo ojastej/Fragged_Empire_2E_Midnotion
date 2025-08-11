@@ -19,6 +19,7 @@ html {
 body{
   @include scss.variables;
   // While these SHOULD be inherited from the html, we need to override some Roll20 styling
+  font-family: var(--contentFont);
   color: var(--fontColor);
   font-size: 1rem;
   .ui-dialog{
@@ -43,6 +44,7 @@ body{
         @include scss.sheet;
         // @include scss.variables;
         @include sfc.sheet;
+        padding: 0;
         .flow {
           display: inline-flex;
           label>span {
@@ -59,10 +61,10 @@ body{
           background-color: var(--fontColor);
           color: var(--backColor);
           text-align: left;
-          font-size: 1em;
+          font-size: 1rem;
           padding-left: 1em;
-          margin-top: 1ex;
-          margin-bottom: 1ex;
+          margin-top: 0;
+          margin-bottom: var(--half-gap);
         }
       }
     }

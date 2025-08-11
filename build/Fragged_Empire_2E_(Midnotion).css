@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200|Material Icons|PT Sans Narrow&display=swap");
+ul.tabs__nav-list {
+  margin-bottom: 0px;
+}
+
 ul.nav-tabs.nav {
   position: sticky;
   top: 0;
@@ -14,9 +18,7 @@ ul.nav-tabs.nav {
   align-items: start;
   gap: var(--half-gap);
   top: 0px;
-  margin-bottom: 10px;
-  padding-inline: 10px;
-  padding-block: var(--half-gap);
+  padding-block: var(--tiny-gap);
   background-color: var(--backColor);
   transition-property: background-color;
   transition-duration: var(--revealTime);
@@ -2485,6 +2487,7 @@ body {
   --contentHeadFont: "PT Sans Narrow", sans-serif;
   --contentFont: "PT Sans Narrow", sans-serif;
   --input-label-text-transform: capitalize;
+  font-family: var(--contentFont);
   color: var(--fontColor);
   font-size: 1rem;
 }
@@ -2669,6 +2672,7 @@ body .ui-dialog .tab-content .charsheet {
   --contentFont: "PT Sans Narrow", sans-serif;
   --input-label-text-transform: capitalize;
   /*No sheet sfc used*/
+  padding: 0;
 }
 body .ui-dialog .tab-content .charsheet select,
 body .ui-dialog .tab-content .charsheet textarea,
@@ -3630,6 +3634,20 @@ body .ui-dialog .tab-content .charsheet .tabs__nav-item {
 body .ui-dialog .tab-content .charsheet .tabs__nav-list {
   display: flex;
 }
+body .ui-dialog .tab-content .charsheet article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+body .ui-dialog .tab-content .charsheet #skills, body .ui-dialog .tab-content .charsheet #combatSkills {
+  flex-grow: 2;
+}
+body .ui-dialog .tab-content .charsheet .flex.vertical {
+  display: flex;
+  flex-direction: column;
+}
 body .ui-dialog .tab-content .charsheet .flow > label {
   margin-right: 0.5rem;
 }
@@ -3681,6 +3699,9 @@ body .ui-dialog .tab-content .charsheet .current-max :first-child {
 }
 body .ui-dialog .tab-content .charsheet .limit input:where([type=number]), body .ui-dialog .tab-content .charsheet .column input:where([type=number]) {
   width: calc(1.25 * var(--numberWidth));
+}
+body .ui-dialog .tab-content .charsheet .attributes {
+  margin: 0;
 }
 body .ui-dialog .tab-content .charsheet .attributes > .grid {
   text-transform: capitalize;
@@ -3767,10 +3788,10 @@ body .ui-dialog .tab-content .charsheet h2:not(input), body .ui-dialog .tab-cont
   background-color: var(--fontColor);
   color: var(--backColor);
   text-align: left;
-  font-size: 1em;
+  font-size: 1rem;
   padding-left: 1em;
-  margin-top: 1ex;
-  margin-bottom: 1ex;
+  margin-top: 0;
+  margin-bottom: var(--half-gap);
 }
 body.sheet-darkmode {
   --backColor:var(--dm-backColor);

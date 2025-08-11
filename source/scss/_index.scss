@@ -17,6 +17,20 @@
 	// Put your generic sheet styling here
 	// #main
 	// {
+	article {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 10px;
+	}
+	#skills, #combatSkills {
+		flex-grow: 2;
+	}
+	.flex.vertical {
+		display: flex;
+		flex-direction: column;
+	}
 	.flow > label {
 		margin-right: 0.5rem;
 	}
@@ -82,7 +96,9 @@
 			width: calc(1.25 * var(--numberWidth));
 		}
 	}
-	// }
+	.attributes {
+		margin: 0;
+	}
 	.attributes > .grid {
 		text-transform: capitalize;
 		// attribute, cur/max, skill mod, limit, trait

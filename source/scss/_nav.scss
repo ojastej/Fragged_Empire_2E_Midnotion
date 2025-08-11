@@ -1,5 +1,8 @@
 //Sets the bio/charsheet/a&a tab container to be sticky and float at the top
 //@use '../placeholders/borderPlaceholders';
+ul.tabs__nav-list {
+	margin-bottom: 0px;
+}
 ul.nav-tabs.nav{
 	position:sticky;
 	top:0;
@@ -18,9 +21,9 @@ ul.nav-tabs.nav{
 	// position:sticky;
 	// top:44px;
 	// z-index:1000;
-	margin-bottom:10px;
-	padding-inline:10px;
-	padding-block:var(--half-gap);
+	// margin-bottom:10px;
+	// padding-inline:10px;
+	padding-block: var(--tiny-gap);
 	background-color:var(--backColor);
 	transition: {
 		property:background-color;
