@@ -1208,6 +1208,7 @@ ul.nav-tabs.nav {
   --midHeadFont: "PT Sans Narrow", sans-serif;
   --contentHeadFont: "PT Sans Narrow", sans-serif;
   --contentFont: "PT Sans Narrow", sans-serif;
+  --fontSize: 16px;
   --input-label-text-transform: capitalize;
 }
 .sheet-rolltemplate-fe2.sheet-rolltemplate-darkmode {
@@ -2486,6 +2487,7 @@ body {
   --midHeadFont: "PT Sans Narrow", sans-serif;
   --contentHeadFont: "PT Sans Narrow", sans-serif;
   --contentFont: "PT Sans Narrow", sans-serif;
+  --fontSize: 16px;
   --input-label-text-transform: capitalize;
   font-family: var(--contentFont);
   color: var(--fontColor);
@@ -2670,6 +2672,7 @@ body .ui-dialog .tab-content .charsheet {
   --midHeadFont: "PT Sans Narrow", sans-serif;
   --contentHeadFont: "PT Sans Narrow", sans-serif;
   --contentFont: "PT Sans Narrow", sans-serif;
+  --fontSize: 16px;
   --input-label-text-transform: capitalize;
   /*No sheet sfc used*/
   padding: 0;
@@ -3712,6 +3715,11 @@ body .ui-dialog .tab-content .charsheet .current-max :first-child {
 body .ui-dialog .tab-content .charsheet .limit input:where([type=number]), body .ui-dialog .tab-content .charsheet .column input:where([type=number]) {
   width: calc(1.25 * var(--numberWidth));
 }
+body .ui-dialog .tab-content .charsheet .grid.column-2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: var(--tiny-gap);
+}
 body .ui-dialog .tab-content .charsheet .attributes {
   margin: 0;
 }
@@ -3795,6 +3803,7 @@ body .ui-dialog .tab-content .charsheet label {
 }
 body .ui-dialog .tab-content .charsheet input, body .ui-dialog .tab-content .charsheet select, body .ui-dialog .tab-content .charsheet textarea {
   font-family: var(--contentFont);
+  font-size: var(--fontSize);
 }
 body .ui-dialog .tab-content .charsheet h2:not(input), body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input) {
   background-color: var(--fontColor);
