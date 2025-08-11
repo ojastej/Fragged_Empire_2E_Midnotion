@@ -3647,6 +3647,11 @@ body .ui-dialog .tab-content .charsheet article {
 }
 body .ui-dialog .tab-content .charsheet article section {
   min-width: 20rem;
+  padding: var(--tiny-gap);
+}
+body .ui-dialog .tab-content .charsheet article section h2, body .ui-dialog .tab-content .charsheet article section .input-label:not(.stacked).large > [name] {
+  margin-left: -5px;
+  margin-right: -5px;
 }
 body .ui-dialog .tab-content .charsheet #skills, body .ui-dialog .tab-content .charsheet #combatSkills {
   flex-grow: 2;

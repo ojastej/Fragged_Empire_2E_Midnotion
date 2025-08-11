@@ -29,6 +29,11 @@
 
 		section {
 			min-width: 20rem;
+			padding: var(--tiny-gap);
+			h2 {
+				margin-left: -5px;
+				margin-right: -5px;
+			}
 		}
 	}
 	#skills, #combatSkills {
