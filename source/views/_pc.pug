@@ -49,27 +49,7 @@ section(data-i18n-aria-label="pc")#pc
 //-|Here:&#xEB40;:shoes
 include ./_skills.pug
 include ./_combatSkills.pug
-
-h2 Perks and Complications
-+customControlFieldset({
-	name:'perkComplication',
-	trigger:{triggeredFuncs:['removePerkComplication']}
-	})
-
-h2 Specializations
-+customControlFieldset({
-	name:'specializations',
-	trigger:{triggeredFuncs:['removeSpecialization']}
-	})
-
-h2 Trade Goods, Research, and Knowledge
-+customControlFieldset({
-	name:'tradeGoods',
-	trigger:{triggeredFuncs:['removeTradeGoods']}
-	})
-
-h2 Equipment
-+customControlFieldset({
-	name:'equipment',
-	trigger:{triggeredFuncs:['removeEquipment']}
-	})
+include ./_perks.pug
+include ./_specialization.pug
+include ./_trade.pug
+include ./_equipment.pug

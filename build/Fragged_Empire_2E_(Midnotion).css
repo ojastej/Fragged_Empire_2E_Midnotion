@@ -3634,12 +3634,19 @@ body .ui-dialog .tab-content .charsheet .tabs__nav-item {
 body .ui-dialog .tab-content .charsheet .tabs__nav-list {
   display: flex;
 }
+body .ui-dialog .tab-content .charsheet #main {
+  position: relative;
+  top: -20px;
+}
 body .ui-dialog .tab-content .charsheet article {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 10px;
+}
+body .ui-dialog .tab-content .charsheet article section {
+  min-width: 20rem;
 }
 body .ui-dialog .tab-content .charsheet #skills, body .ui-dialog .tab-content .charsheet #combatSkills {
   flex-grow: 2;

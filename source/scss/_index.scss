@@ -15,14 +15,21 @@
 	@include generic;
 	@include variables;
 	// Put your generic sheet styling here
-	// #main
-	// {
+	#main
+	{
+		position: relative;
+		top: -20px;
+	}
 	article {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-start;
 		align-items: flex-start;
 		gap: 10px;
+
+		section {
+			min-width: 20rem;
+		}
 	}
 	#skills, #combatSkills {
 		flex-grow: 2;
