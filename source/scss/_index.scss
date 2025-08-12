@@ -206,6 +206,10 @@
 			grid-column-end: 6;
 		}
 	}
+	.grid.weapon {
+		grid-auto-columns: max-content;
+		grid-template-columns: auto auto auto auto auto auto auto auto auto;
+	}
 	.parentheses::before { content: "("; }
 	.parentheses::after { content: ")"; }
 	.parentheses {

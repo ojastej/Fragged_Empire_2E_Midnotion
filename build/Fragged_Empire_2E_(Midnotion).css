@@ -3796,6 +3796,10 @@ body .ui-dialog .tab-content .charsheet .skills > .grid .trait-container {
 body .ui-dialog .tab-content .charsheet .combat > .grid .trait-container {
   grid-column-end: 6;
 }
+body .ui-dialog .tab-content .charsheet .grid.weapon {
+  grid-auto-columns: max-content;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto;
+}
 body .ui-dialog .tab-content .charsheet .parentheses::before {
   content: "(";
 }
