@@ -3699,11 +3699,14 @@ body .ui-dialog .tab-content .charsheet .select {
   display: inline-block;
 }
 body .ui-dialog .tab-content .charsheet .select::after {
-  content: "}";
-  font-family: pictos;
-  position: relative;
-  margin-left: -1.1rem;
+  display: inline-block;
+  content: "keyboard_arrow_down";
+  font-family: "Material Icons";
+  margin-left: -20px;
+  margin-bottom: -5px;
+  vertical-align: baseline;
   pointer-events: none;
+  transform: translateY(2.5px);
 }
 body .ui-dialog .tab-content .charsheet .collapse-container > .collapse {
   margin-top: 2px;
