@@ -1278,22 +1278,28 @@
     <button class="repcontrol-button repcontrol-button--add" name="act_add-tradeGoods" type="action">
     </button>
     <fieldset class="repeating_tradeGoods">
-      <select name="attr_type" title="@{repeating_tradeGoods_$X_type}">
-        <option data-i18n="type" selected="">
-        </option>
-        <option data-i18n="trade good (money)">
-        </option>
-        <option data-i18n="trade good (loot)">
-        </option>
-        <option data-i18n="trade good (freight)">
-        </option>
-        <option data-i18n="network">
-        </option>
-        <option data-i18n="research">
-        </option>
-      </select>
-      <input name="attr_detail" data-i18n-placeholder="Detail" type="text" title="@{repeating_tradeGoods_$X_detail}"/>
-      <input name="attr_quantity" type="number" data-i18n-placeholder="Quantity" title="@{repeating_tradeGoods_$X_quantity}"/>
+      <div class="row">
+        <div class="select">
+          <select name="attr_type" title="@{repeating_tradeGoods_$X_type}">
+            <option data-i18n="type" selected="">
+            </option>
+            <option data-i18n="freight">
+            </option>
+            <option data-i18n="loot">
+            </option>
+            <option data-i18n="money">
+            </option>
+            <option data-i18n="network">
+            </option>
+            <option data-i18n="knowledge">
+            </option>
+            <option data-i18n="research">
+            </option>
+          </select>
+        </div>
+        <input name="attr_detail" data-i18n-placeholder="Detail" type="text" title="@{repeating_tradeGoods_$X_detail}"/>
+        <input name="attr_quantity" type="number" data-i18n-placeholder="#" title="@{repeating_tradeGoods_$X_quantity}"/>
+      </div>
     </fieldset>
   </section>
   <section data-i18n-aria-label="equipment">
@@ -1301,19 +1307,23 @@
     <button class="repcontrol-button repcontrol-button--add" name="act_add-equipment" type="action">
     </button>
     <fieldset class="repeating_equipment">
-      <input name="attr_item" data-i18n-placeholder="Item" type="text" title="@{repeating_equipment_$X_item}"/>
-      <select name="attr_itemSize" title="@{repeating_equipment_$X_itemSize}">
-        <option data-i18n="size" selected="">
-        </option>
-        <option data-i18n="negligible" value="0">
-        </option>
-        <option data-i18n="small" value="0.25">
-        </option>
-        <option data-i18n="normal" value="1">
-        </option>
-        <option data-i18n="large" value="4">
-        </option>
-      </select>
+      <div class="row">
+        <input name="attr_item" data-i18n-placeholder="Item" type="text" title="@{repeating_equipment_$X_item}"/>
+        <div class="select">
+          <select name="attr_itemSize" title="@{repeating_equipment_$X_itemSize}">
+            <option data-i18n="size" selected="">
+            </option>
+            <option data-i18n="negligible" value="0">
+            </option>
+            <option data-i18n="small" value="0.25">
+            </option>
+            <option data-i18n="normal" value="1">
+            </option>
+            <option data-i18n="large" value="4">
+            </option>
+          </select>
+        </div>
+      </div>
     </fieldset>
   </section>
       </article>

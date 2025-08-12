@@ -58,6 +58,9 @@ body{
           font-family: var(--contentFont);
           font-size: var(--fontSize);
         }
+        input[type=number] {
+          width: calc(1.25 * var(--numberWidth));
+        }
         h2:not(input) {
           background-color: var(--fontColor);
           color: var(--backColor);

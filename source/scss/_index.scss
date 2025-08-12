@@ -69,6 +69,27 @@
 	{
 		width: var(--numberWidth);
 	}
+	.repcontainer {
+		gap: var(--tiny-gap);
+	}
+	.repitem > .row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	select {
+		padding-right: 1.3rem;
+	}
+	.select {
+		display: inline-block;
+	}
+	.select::after {
+		content: '}';
+		font-family: pictos;
+		position: relative;
+		margin-left: -1.1rem;
+		pointer-events: none;
+		//transform: rotate(-30deg);
+	}
 	.collapse-container > .collapse
 	{
 		margin-top: 2px;

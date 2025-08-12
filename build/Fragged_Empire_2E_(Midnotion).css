@@ -3685,6 +3685,26 @@ body .ui-dialog .tab-content .charsheet input:where([type=checkbox]):not(.collap
 body .ui-dialog .tab-content .charsheet input:where([type=number]) {
   width: var(--numberWidth);
 }
+body .ui-dialog .tab-content .charsheet .repcontainer {
+  gap: var(--tiny-gap);
+}
+body .ui-dialog .tab-content .charsheet .repitem > .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+body .ui-dialog .tab-content .charsheet select {
+  padding-right: 1.3rem;
+}
+body .ui-dialog .tab-content .charsheet .select {
+  display: inline-block;
+}
+body .ui-dialog .tab-content .charsheet .select::after {
+  content: "}";
+  font-family: pictos;
+  position: relative;
+  margin-left: -1.1rem;
+  pointer-events: none;
+}
 body .ui-dialog .tab-content .charsheet .collapse-container > .collapse {
   margin-top: 2px;
   right: 23px;
@@ -3804,6 +3824,9 @@ body .ui-dialog .tab-content .charsheet label {
 body .ui-dialog .tab-content .charsheet input, body .ui-dialog .tab-content .charsheet select, body .ui-dialog .tab-content .charsheet textarea {
   font-family: var(--contentFont);
   font-size: var(--fontSize);
+}
+body .ui-dialog .tab-content .charsheet input[type=number] {
+  width: calc(1.25 * var(--numberWidth));
 }
 body .ui-dialog .tab-content .charsheet h2:not(input), body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input) {
   background-color: var(--fontColor);

@@ -4,12 +4,14 @@ section(data-i18n-aria-label="equipment")
 		name:'equipment',
 		trigger:{triggeredFuncs:['removeEquipment']}
 		})
-		+text({name:'item', 'data-i18n-placeholder':'Item'})
-		+select({name:'itemSize',
-			trigger:{triggeredFuncs:['calculateBulk']}
-			})
-			+option({'data-i18n':'size',selected:''})
-			+option({'data-i18n':'negligible',value:'0'})
-			+option({'data-i18n':'small',value:'0.25'})
-			+option({'data-i18n':'normal',value:'1'})
-			+option({'data-i18n':'large',value:'4'})
+		.row
+			+text({name:'item', 'data-i18n-placeholder':'Item'})
+			.select
+				+select({name:'itemSize',
+					trigger:{triggeredFuncs:['calculateBulk']}
+					})
+					+option({'data-i18n':'size',selected:''})
+					+option({'data-i18n':'negligible',value:'0'})
+					+option({'data-i18n':'small',value:'0.25'})
+					+option({'data-i18n':'normal',value:'1'})
+					+option({'data-i18n':'large',value:'4'})
