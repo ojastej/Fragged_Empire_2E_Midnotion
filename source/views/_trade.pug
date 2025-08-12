@@ -4,3 +4,12 @@ section(data-i18n-aria-label="trade")
 		name:'tradeGoods',
 		trigger:{triggeredFuncs:['removeTradeGoods']}
 		})
+		+select({name:'type'})
+			+option({'data-i18n':'type',selected:''})
+			+option({'data-i18n':'trade good (money)'})
+			+option({'data-i18n':'trade good (loot)'})
+			+option({'data-i18n':'trade good (freight)'})
+			+option({'data-i18n':'network'})
+			+option({'data-i18n':'research'})
+		+text({name:'detail', 'data-i18n-placeholder':'Detail'})
+		+input({name:'quantity',type:'number','data-i18n-placeholder':'Quantity'})
