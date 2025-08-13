@@ -20,7 +20,7 @@
 		font-size: 1em;
 		h2:not(input), h2:not(input) * {
 			display: flex;
-			font-size: 1em;
+			font-size: 1rem;
 			text-transform: capitalize;
 			text-align: left;
 			background-color: var(--fontColor);
@@ -34,6 +34,17 @@
 		}
 		.sheet-requirements {
 			border-bottom: 1px solid;
+		}
+		.sheet-template-row {
+			display: block;
+		}
+		.sheet-roll-total {
+			font-size: 2rem;
+			line-height: normal;
+			text-align: center;
+		}
+		.sheet-strong-hits {
+			text-align: center;
 		}
 	}
 }

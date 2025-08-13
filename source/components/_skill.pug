@@ -39,6 +39,11 @@ mixin skillRow (skill, isCombat)
 	.value.column
 		//- it's easier to copy attribute mods here than to look them up later
 		+input({
+			name:`${skillName}_attribute`,
+			type:'hidden',
+			value:skill.attribute
+		})
+		+input({
 			name:`${skillName}_attribute_modifier`,
 			type:'hidden',
 			value:0,

@@ -11,44 +11,21 @@
 		.template-row.requirements
 			span(style="text-align:left") {{requirements}}
 	+templateConditionalDisplay('roll')
+		//- .template-row
+		//- 	span {{trained}} Tr +
+		//- 	+templateConditionalDisplay('toolbox')
+		//- 		span {{toolbox}} Tb +
+		//- 	+templateConditionalDisplay('workshop')
+		//- 		span {{workshop}} Ws +
+		//- 	span {{attributeModifier}} Attr +
+		//- 	span {{modifier}} Mod =
+		//- 	span {{total}}
 		.template-row
-			span {{trained}} Tr +
-			+templateConditionalDisplay('toolbox')
-				span {{toolbox}} Tb +
-			+templateConditionalDisplay('workshop')
-				span {{workshop}} Ws +
-			span {{attributeModifier}} Attr +
-			span {{modifier}} Mod =
-			span {{total}}
-		+templateConditionalDisplay('result')
-			.template-row
-				.result
-					|{{computed::result}}: {{result}}
+			.roll-total
+				|{{roll}}
 		.template-row
-			.result
-				|Strong Hits: {{computed::roll1}}
-		.template-row
-			+templateConditionalDisplay('roll')
-				.result
-					|roll {{computed::roll}}: {{roll}}
-			+templateConditionalDisplay('roll1')
-				.result
-					|roll1 {{computed::roll1}}: {{roll1}}
-			+templateConditionalDisplay('roll2')
-				.result
-					|roll2 {{computed::roll2}}: {{roll2}}
-			+templateConditionalDisplay('roll3')
-				.result
-					|roll3 {{computed::roll3}}: {{roll3}}
-			+templateConditionalDisplay('roll4')
-				.result
-					|roll4 {{computed::roll4}}: {{roll4}}
-			+templateConditionalDisplay('roll5')
-				.result
-					|roll5 {{computed::roll5}}: {{roll5}}
-			+templateConditionalDisplay('roll6')
-				.result
-					|roll6 {{computed::roll6}}: {{roll6}}
+			.strong-hits
+				|Strong Hits: {{computed::strong_hits}}
 
 	+templateConditionalDisplay('description')
 		.template-row.description

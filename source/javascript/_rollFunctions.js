@@ -13,21 +13,19 @@ const rollAttack = async function({trigger,attributes,sections,casc}){
 	const rollName = attributes[`${row}_weapon`];
 	const skillName = attributes[`${row}_skill`];
 	const skillDetails = getSkillRollModifiers(skillName,attributes);
-	console.log (skillDetails);
+	//console.log (skillDetails);
 	const rollObj = Object.assign({
 		title:rollName,
 		source:skillName,
-		roll: `[[(2+?{Munitions|0})d6 + ${skillDetails.total}]]`,
-		roll1: '[[0]]'
+		roll: `[[(2 + ?{Munitions|0})d6cf<0sd + ${skillDetails.trained} [trained] + ${skillDetails.modifier} [modifier]]]`,
+		strong_hits: '[[0]]'
 		}, skillDetails);
 
 	const roll = await executeRoll({rollObj,attributes,sections});
 
-	const strongHits = countStrongHits(roll);
-	console.log("rollAttack().roll", roll);
+	//console.log("rollAttack().roll", roll);
 	const computedResults = {
-		roll: "100",
-		roll1: strongHits
+		strong_hits: countStrongHits(roll)
 	}
 	finishRoll(roll.rollId, computedResults); //, computedResults
 	console.groupEnd();
@@ -42,46 +40,26 @@ k.registerFuncs({rollAttack});
  * @param {object} casc - Expanded cascade object
  */
 const rollSkill = async function({trigger,attributes,sections,casc}){
-	// const [section,rowID,button] = k.parseTriggerName(trigger.name);
-	// const row = section ?
-	// 	`${section}_${rowID}` :
-	// 	'';
-	// const rollName = button.replace(/-?action$/,'');
-	// const [modifier,,rollTransKey] = getSkillRollModifier(rollName,attributes,row);
-	// const rollObj = {
-	// 	title:section ?
-	// 		attributes[`${row}_name`]:
-	// 		`^{${rollTransKey}}`,
-	// 	roll:`[[@{roll_state}${modifier}]]]`
-	// 	};
-	// const roll = await executeRoll({rollObj,attributes,sections});
-
 	console.log("rollSkill()", trigger, attributes, sections, casc);
 
-	//finishRoll(roll.rollId);
 	const skillName = trigger.name.replace(/-action$/,'');
 	const skillDetails = getSkillRollModifiers(skillName,attributes);
 	const rollAttr = skillName.replace(/-/g,'_');
 	const rollTransKey = skillName.replace(/-/g,' ');
 	//${attributes[rollAttr]}[${k.capitalize(getTranslationByKey(rollTransKey))}]]]
+	const rollAttribute = attributes[`${skillName}_attribute`];
 	const rollObj = Object.assign({
-		title:`${skillName}`,
-		roll: `[[@{whisper} 1d6]]`,
-		roll1: `[[@{whisper} 1d6]]`,
-		roll2: `[[@{whisper} 1d6]]`
+		title:skillName,
+		source:rollAttribute,
+		roll: `[[3d6cf<0sd + ${skillDetails.trained} [trained] + ${skillDetails.toolbox} [toolbox] + ${skillDetails.workshop} [workshop] + ${skillDetails.attributeModifier} [attribute] + ${skillDetails.modifier} [modifier]]]`,
+		strong_hits: '[[0]]'
 		}, skillDetails);
-	console.log ("rollSkill()", skillName, rollAttr, rollTransKey, rollObj);
+	console.log ("rollSkill()", skillName, rollAttr, rollTransKey, skillDetails, rollObj);
 	const roll = await executeRoll({rollObj,attributes,sections});
 	// see https://wiki.roll20.net/Custom_Roll_Parsing
 	// replaces the 'roll' key above with "Result", where the hover shows the roll results
 	const computedResults = {
-		roll: "Result",
-		roll1: "1",
-		roll2: "2",
-		roll3: "3",
-		roll4: 4,
-		roll5: 5,
-		roll6: 6
+		strong_hits: countStrongHits(roll)
 	};
 	finishRoll(roll.rollId, computedResults);
 };

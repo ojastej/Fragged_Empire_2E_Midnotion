@@ -2295,7 +2295,7 @@ ul.nav-tabs.nav {
 }
 .sheet-rolltemplate-fe2 .sheet-template h2:not(input), .sheet-rolltemplate-fe2 .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input), body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input), .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input), .sheet-rolltemplate-fe2 .sheet-template h2:not(input) *, .sheet-rolltemplate-fe2 .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input) *, body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input) *, .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input) * {
   display: flex;
-  font-size: 1em;
+  font-size: 1rem;
   text-transform: capitalize;
   text-align: left;
   background-color: var(--fontColor);
@@ -2313,6 +2313,17 @@ ul.nav-tabs.nav {
 }
 .sheet-rolltemplate-fe2 .sheet-template .sheet-requirements {
   border-bottom: 1px solid;
+}
+.sheet-rolltemplate-fe2 .sheet-template .sheet-template-row {
+  display: block;
+}
+.sheet-rolltemplate-fe2 .sheet-template .sheet-roll-total {
+  font-size: 2rem;
+  line-height: normal;
+  text-align: center;
+}
+.sheet-rolltemplate-fe2 .sheet-template .sheet-strong-hits {
+  text-align: center;
 }
 
 html {
