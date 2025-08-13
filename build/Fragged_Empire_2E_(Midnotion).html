@@ -1430,18 +1430,22 @@
     <h2 class="rt-title"><span class="title">{{title}}</span>{{#source}}<span class="source">{{source}}</span>{{/source}}
     </h2>{{/title}}{{#requirements}}
     <div class="template-row requirements"><span style="text-align:left">{{requirements}}</span></div>{{/requirements}}{{#roll}}
-    <div class="template-row"><span>{{trained}} Tr +</span><span>{{toolbox}} Tb +</span><span>{{workshop}} Ws +</span><span>{{attributeModifier}} Attr +</span><span>{{modifier}} Mod =</span><span>{{total}}</span></div>
-    <div class="template-row">{{#result}}
-      <div class="result">{{computed::result}}: {{result}}</div>{{/result}}
+    <div class="template-row"><span>{{trained}} Tr +</span>{{#toolbox}}<span>{{toolbox}} Tb +</span>{{/toolbox}}{{#workshop}}<span>{{workshop}} Ws +</span>{{/workshop}}<span>{{attributeModifier}} Attr +</span><span>{{modifier}} Mod =</span><span>{{total}}</span>
+    </div>{{#result}}
+    <div class="template-row">
+      <div class="result">{{computed::result}}: {{result}}</div>
+    </div>{{/result}}
+    <div class="template-row">
+      <div class="result">Strong Hits: {{computed::roll1}}</div>
     </div>
     <div class="template-row">{{#roll}}
-      <div class="result">{{computed::roll}}: {{roll}}</div>{{/roll}}{{#roll1}}
-      <div class="result">{{computed::roll1}}: {{roll1}}</div>{{/roll1}}{{#roll2}}
-      <div class="result">{{computed::roll2}}: {{roll2}}</div>{{/roll2}}{{#roll3}}
-      <div class="result">{{computed::roll3}}: {{roll3}}</div>{{/roll3}}{{#roll4}}
-      <div class="result">{{computed::roll4}}: {{roll4}}</div>{{/roll4}}{{#roll5}}
-      <div class="result">{{computed::roll5}}: {{roll5}}</div>{{/roll5}}{{#roll6}}
-      <div class="result">{{computed::roll6}}: {{roll6}}</div>{{/roll6}}
+      <div class="result">roll {{computed::roll}}: {{roll}}</div>{{/roll}}{{#roll1}}
+      <div class="result">roll1 {{computed::roll1}}: {{roll1}}</div>{{/roll1}}{{#roll2}}
+      <div class="result">roll2 {{computed::roll2}}: {{roll2}}</div>{{/roll2}}{{#roll3}}
+      <div class="result">roll3 {{computed::roll3}}: {{roll3}}</div>{{/roll3}}{{#roll4}}
+      <div class="result">roll4 {{computed::roll4}}: {{roll4}}</div>{{/roll4}}{{#roll5}}
+      <div class="result">roll5 {{computed::roll5}}: {{roll5}}</div>{{/roll5}}{{#roll6}}
+      <div class="result">roll6 {{computed::roll6}}: {{roll6}}</div>{{/roll6}}
     </div>{{/roll}}{{#description}}
     <div class="template-row description"><span style="text-align:left">{{description}}</span></div>{{/description}}
   </div>
@@ -3103,22 +3107,31 @@ console.log ("calculations workers registered");
  * @param {object} casc - Expanded cascade object
  */
 const rollAttack = async function({trigger,attributes,sections,casc}){
+	console.group("rollAttack()");
 	console.log("rollAttack()", trigger, attributes, sections, casc);
 	const [section,rowID] = k.parseTriggerName(trigger.name);
 	const row = `${section}_${rowID}`;
 	const rollName = attributes[`${row}_weapon`];
 	const skillName = attributes[`${row}_skill`];
 	const skillDetails = getSkillRollModifiers(skillName,attributes);
+	console.log (skillDetails);
 	const rollObj = Object.assign({
 		title:rollName,
 		source:skillName,
-		roll: `[[(2+?{Munitions|0})d6]]`
+		roll: `[[(2+?{Munitions|0})d6 + ${skillDetails.total}]]`,
+		roll1: '[[0]]'
 		}, skillDetails);
+
 	const roll = await executeRoll({rollObj,attributes,sections});
+
+	const strongHits = countStrongHits(roll);
+	console.log("rollAttack().roll", roll);
 	const computedResults = {
-		roll: "100"
+		roll: "100",
+		roll1: strongHits
 	}
-	finishRoll(roll.rollId); //, computedResults
+	finishRoll(roll.rollId, computedResults); //, computedResults
+	console.groupEnd();
 };
 k.registerFuncs({rollAttack});
 
@@ -3175,16 +3188,28 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 };
 k.registerFuncs({rollSkill});
 
+const countStrongHits = (roll) => {
+	const strongHits = roll.results.roll.dice.reduce(
+		(accumulator, current) => accumulator + (current == 6 ? 1 : 0),
+		0
+	);
+	console.log ("countStrongHits()", roll, strongHits);
+	return strongHits;
+}
+
 const getSkillRollModifiers = (skillName,attributes) => {
-	return {
-		trained: attributes[`${skillName}_trained`] ? 1 : attributes['untrained'],
+	const primary = {
 		toolbox: attributes[`${skillName}_toolbox`],
-		workshop: attributes[`${skillName}_workshop`],
-		//attribute: allSkills[skillName],
+		workshop: attributes[`${skillName}_workshop`]
+	};
+	const value = Object.assign({
+		trained: attributes[`${skillName}_trained`] ? 1 : attributes['untrained'],
 		attributeModifier: attributes[`${skillName}_attribute_modifier`],
 		modifier: attributes[`${skillName}_modifier`],
 		total: attributes[skillName]
-	};
+	}, attributes[`${skillName}_toolbox`] === undefined ? {} : primary);
+	// console.log ("getSkillRollModifiers()", skillName, attributes[`${skillName}_toolbox`], value);
+	return value;
 };
 
 const assembleRoll = (rollObj,attributes,sections) => {

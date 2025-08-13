@@ -6,22 +6,31 @@
  * @param {object} casc - Expanded cascade object
  */
 const rollAttack = async function({trigger,attributes,sections,casc}){
+	console.group("rollAttack()");
 	console.log("rollAttack()", trigger, attributes, sections, casc);
 	const [section,rowID] = k.parseTriggerName(trigger.name);
 	const row = `${section}_${rowID}`;
 	const rollName = attributes[`${row}_weapon`];
 	const skillName = attributes[`${row}_skill`];
 	const skillDetails = getSkillRollModifiers(skillName,attributes);
+	console.log (skillDetails);
 	const rollObj = Object.assign({
 		title:rollName,
 		source:skillName,
-		roll: `[[(2+?{Munitions|0})d6]]`
+		roll: `[[(2+?{Munitions|0})d6 + ${skillDetails.total}]]`,
+		roll1: '[[0]]'
 		}, skillDetails);
+
 	const roll = await executeRoll({rollObj,attributes,sections});
+
+	const strongHits = countStrongHits(roll);
+	console.log("rollAttack().roll", roll);
 	const computedResults = {
-		roll: "100"
+		roll: "100",
+		roll1: strongHits
 	}
-	finishRoll(roll.rollId); //, computedResults
+	finishRoll(roll.rollId, computedResults); //, computedResults
+	console.groupEnd();
 };
 k.registerFuncs({rollAttack});
 
@@ -78,16 +87,28 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 };
 k.registerFuncs({rollSkill});
 
+const countStrongHits = (roll) => {
+	const strongHits = roll.results.roll.dice.reduce(
+		(accumulator, current) => accumulator + (current == 6 ? 1 : 0),
+		0
+	);
+	console.log ("countStrongHits()", roll, strongHits);
+	return strongHits;
+}
+
 const getSkillRollModifiers = (skillName,attributes) => {
-	return {
-		trained: attributes[`${skillName}_trained`] ? 1 : attributes['untrained'],
+	const primary = {
 		toolbox: attributes[`${skillName}_toolbox`],
-		workshop: attributes[`${skillName}_workshop`],
-		//attribute: allSkills[skillName],
+		workshop: attributes[`${skillName}_workshop`]
+	};
+	const value = Object.assign({
+		trained: attributes[`${skillName}_trained`] ? 1 : attributes['untrained'],
 		attributeModifier: attributes[`${skillName}_attribute_modifier`],
 		modifier: attributes[`${skillName}_modifier`],
 		total: attributes[skillName]
-	};
+	}, attributes[`${skillName}_toolbox`] === undefined ? {} : primary);
+	// console.log ("getSkillRollModifiers()", skillName, attributes[`${skillName}_toolbox`], value);
+	return value;
 };
 
 const assembleRoll = (rollObj,attributes,sections) => {
