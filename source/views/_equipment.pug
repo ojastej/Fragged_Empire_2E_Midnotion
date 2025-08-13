@@ -1,15 +1,15 @@
 section(data-i18n-aria-label="equipment")
 	h2(data-i18n='equipment')
 	+customControlFieldset({
-		name:'equipment',
-		trigger:{triggeredFuncs:['removeEquipment']}
+		name:'equipment'
 		})
+		//- trigger:{triggeredFuncs:['removeEquipment']}
 		.row
 			+text({name:'item', 'data-i18n-placeholder':'Item'})
 			.select
-				+select({name:'itemSize',
-					trigger:{triggeredFuncs:['calculateBulk']}
+				+select({name:'itemSize'
 					})
+					//- trigger:{triggeredFuncs:['calculateBulk']}
 					+option({'data-i18n':'size',selected:''})
 					+option({'data-i18n':'negligible',value:'0'})
 					+option({'data-i18n':'small',value:'0.25'})

@@ -16,18 +16,10 @@ section(data-i18n-aria-label="weapons")
 			+label({label:'Res'}).column
 
 			div
-				//- +roller({
-				//- 	name:'rollAttack',
-				//- 	trigger:{triggeredFuncs:['rollAttack']}
-				//- 	})
 				+roller({
-					name:'repeating_weapons_$X_roll',
-					role:'heading',
-					'data-i18n':'atk',
+					name:'roll',
 					value:"&{template:fe2} {{roll1=[[1d6]]}} {{roll2=[[1d6]]}} {{roll3=[[1d6]]}}",
-					trigger:{
-						triggeredFuncs:['rollSkill']
-						}
+					trigger:{triggeredFuncs:['rollAttack']}
 					})
 				+text({
 					name:'weapon',

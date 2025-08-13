@@ -5,19 +5,23 @@
  * @param {object[]} sections - All the repeating section IDs
  * @param {object} casc - Expanded cascade object
  */
-const rollAttack = function({trigger,attributes,sections,casc}){
+const rollAttack = async function({trigger,attributes,sections,casc}){
 	console.log("rollAttack()", trigger, attributes, sections, casc);
-	const skillName = trigger.name.replace(/-action$/,'');
+	const [section,rowID] = k.parseTriggerName(trigger.name);
+	const row = `${section}_${rowID}`;
+	const rollName = attributes[`${row}_weapon`];
+	const skillName = attributes[`${row}_skill`];
 	const skillDetails = getSkillRollModifiers(skillName,attributes);
 	const rollObj = Object.assign({
-		title:'Weapon attack',
+		title:rollName,
+		source:skillName,
 		roll: `[[(2+?{Munitions|0})d6]]`
 		}, skillDetails);
-	// const roll = await executeRoll({rollObj,attributes,sections});
-	// const computedResults = {
-	// 	roll: "100"
-	// }
-	// finishRoll(roll.rollId, computedResults);
+	const roll = await executeRoll({rollObj,attributes,sections});
+	const computedResults = {
+		roll: "100"
+	}
+	finishRoll(roll.rollId); //, computedResults
 };
 k.registerFuncs({rollAttack});
 
