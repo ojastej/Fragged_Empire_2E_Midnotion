@@ -1,4 +1,27 @@
 /**
+ * Starts the process of rolling an attack check
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
+const rollAttack = function({trigger,attributes,sections,casc}){
+	console.log("rollAttack()", trigger, attributes, sections, casc);
+	const skillName = trigger.name.replace(/-action$/,'');
+	const skillDetails = getSkillRollModifiers(skillName,attributes);
+	const rollObj = Object.assign({
+		title:'Weapon attack',
+		roll: `[[(2+?{Munitions|0})d6]]`
+		}, skillDetails);
+	// const roll = await executeRoll({rollObj,attributes,sections});
+	// const computedResults = {
+	// 	roll: "100"
+	// }
+	// finishRoll(roll.rollId, computedResults);
+};
+k.registerFuncs({rollAttack});
+
+/**
  * Starts the process of rolling a basic skill check
  * @param {object} trigger - The trigger that caused the function to be called
  * @param {object} attributes - The attribute values of the character
@@ -37,7 +60,7 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 	console.log ("rollSkill()", skillName, rollAttr, rollTransKey, rollObj);
 	const roll = await executeRoll({rollObj,attributes,sections});
 	// see https://wiki.roll20.net/Custom_Roll_Parsing
-	// replaces the 'roll' key above with "Resule", where the hover shows the roll results
+	// replaces the 'roll' key above with "Result", where the hover shows the roll results
 	const computedResults = {
 		roll: "Result",
 		roll1: "1",

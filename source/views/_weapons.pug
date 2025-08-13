@@ -1,9 +1,9 @@
 section(data-i18n-aria-label="weapons")
 	h2(data-i18n='weapons')
 	+customControlFieldset({
-		name:'tradeGoods',
-		trigger:{triggeredFuncs:['removeTradeGoods']}
+		name:'weapons'
 		})
+		//- trigger:{triggeredFuncs:['removeTradeGoods']}
 		.grid.weapon
 			+label({label:'Weapon'})
 			+label({label:'Skill'})
@@ -15,7 +15,20 @@ section(data-i18n-aria-label="weapons")
 			+label({label:'Crit'}).column
 			+label({label:'Res'}).column
 
-			.roll
+			div
+				//- +roller({
+				//- 	name:'rollAttack',
+				//- 	trigger:{triggeredFuncs:['rollAttack']}
+				//- 	})
+				+roller({
+					name:'repeating_weapons_$X_roll',
+					role:'heading',
+					'data-i18n':'atk',
+					value:"&{template:fe2} {{roll1=[[1d6]]}} {{roll2=[[1d6]]}} {{roll3=[[1d6]]}}",
+					trigger:{
+						triggeredFuncs:['rollSkill']
+						}
+					})
 				+text({
 					name:'weapon',
 					'data-i18n-placeholder':'Weapon'

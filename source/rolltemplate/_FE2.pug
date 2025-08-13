@@ -19,6 +19,10 @@
 			span {{modifier}} Mod =
 			span {{total}}
 		.template-row
+			+templateConditionalDisplay('result')
+				.result
+					|{{computed::result}}: {{result}}
+		.template-row
 			+templateConditionalDisplay('roll')
 				.result
 					|{{computed::roll}}: {{roll}}
