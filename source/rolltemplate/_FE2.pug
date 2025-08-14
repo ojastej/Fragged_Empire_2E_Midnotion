@@ -10,23 +10,32 @@
 	+templateConditionalDisplay('requirements')
 		.template-row.requirements
 			span(style="text-align:left") {{requirements}}
-	+templateConditionalDisplay('roll')
-		//- .template-row
-		//- 	span {{trained}} Tr +
-		//- 	+templateConditionalDisplay('toolbox')
-		//- 		span {{toolbox}} Tb +
-		//- 	+templateConditionalDisplay('workshop')
-		//- 		span {{workshop}} Ws +
-		//- 	span {{attributeModifier}} Attr +
-		//- 	span {{modifier}} Mod =
-		//- 	span {{total}}
+	+templateConditionalDisplay('range')
 		.template-row
-			.roll-total
-				|{{roll}}
-		.template-row
-			.strong-hits
-				|Strong Hits: {{computed::strong_hits}}
-
+			.attack
+				.range
+					|Range
+				|{{range}}
+				.roll-total
+					|{{roll}}
+					.strong-hits
+						|Strong Hits: {{computed::strong_hits}}
+				.munitions
+					|Munitions
+				|{{munitions}}
+				.endurance
+					|End
+				|{{endurance}}
+				.critical
+					|Crit
+				|{{critical}}
+	+templateConditionalDisplay('range', true)
+		+templateConditionalDisplay('roll')
+			.template-row
+				.roll-total
+					|{{roll}}
+					.strong-hits
+						|Strong Hits: {{computed::strong_hits}}
 	+templateConditionalDisplay('description')
 		.template-row.description
 			span(style="text-align:left") {{description}}

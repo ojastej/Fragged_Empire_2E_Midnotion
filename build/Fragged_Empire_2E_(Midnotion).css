@@ -2295,7 +2295,11 @@ ul.nav-tabs.nav {
 }
 .sheet-rolltemplate-fe2 .sheet-template h2:not(input), .sheet-rolltemplate-fe2 .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input), body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input), .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input), .sheet-rolltemplate-fe2 .sheet-template h2:not(input) *, .sheet-rolltemplate-fe2 .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input) *, body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input) *, .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input) * {
   display: flex;
-  font-size: 1rem;
+  font-size: var(--fontSize);
+  padding-left: var(--tiny-gap);
+  padding-right: var(--tiny-gap);
+  padding-top: 1px;
+  padding-bottom: 1px;
   text-transform: capitalize;
   text-align: left;
   background-color: var(--fontColor);
@@ -2313,6 +2317,9 @@ ul.nav-tabs.nav {
 }
 .sheet-rolltemplate-fe2 .sheet-template .sheet-requirements {
   border-bottom: 1px solid;
+  padding: var(--half-gap);
+  padding-top: var(--tiny-gap);
+  padding-bottom: var(--tiny-gap);
 }
 .sheet-rolltemplate-fe2 .sheet-template .sheet-template-row {
   display: block;
@@ -2324,6 +2331,26 @@ ul.nav-tabs.nav {
 }
 .sheet-rolltemplate-fe2 .sheet-template .sheet-strong-hits {
   text-align: center;
+  font-size: var(--fontSize);
+}
+.sheet-rolltemplate-fe2 .sheet-template .sheet-attack {
+  padding: var(--half-gap);
+  border-bottom: 1px solid var(--fontColor);
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.sheet-rolltemplate-fe2 .sheet-template .sheet-attack .sheet-range, .sheet-rolltemplate-fe2 .sheet-template .sheet-attack .sheet-munitions, .sheet-rolltemplate-fe2 .sheet-template .sheet-attack .sheet-endurance, .sheet-rolltemplate-fe2 .sheet-template .sheet-attack .sheet-critical {
+  display: block;
+  width: auto;
+  justify-self: start;
+}
+.sheet-rolltemplate-fe2 .sheet-template .sheet-attack .sheet-roll-total {
+  grid-row-end: span 4;
+  justify-self: stretch;
+  border-left: 1px solid var(--fontColor);
+}
+.sheet-rolltemplate-fe2 .sheet-template .sheet-description {
+  padding: var(--half-gap);
 }
 
 html {

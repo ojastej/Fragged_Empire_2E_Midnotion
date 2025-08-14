@@ -7,7 +7,7 @@
  */
 const calcAttributeSkillMod = function({trigger,attributes,sections,casc}){
 	// baseName == "intelligence_skill_mod", so split off first part
-	const baseName = `${trigger.name}`.split("_")[0];
+	const baseName = `${trigger.name}`.split("_")[0] + '_max';
 	console.log ('calcAttributeSkillMod()', trigger, attributes, sections, casc);
 
 	// An Attribute value of 1 or less gives -1 to specific Skills.
