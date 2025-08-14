@@ -31,11 +31,11 @@
       <article class="tabs__container tabs--sheet-tabs__container tabs--sheet-tabs__container--pc tab_horizontal" data-container-tab="sheet-tabs" data-tab="pc">
   <section data-i18n-aria-label="pc" id="pc">
     <h2 data-i18n="character"></h2>
-    <div class="grid column-3">
+    <div class="grid column-4">
       <label class="input-label" for="character_name"><span data-i18n="name"></span></label>
-      <input class="span-2" name="attr_character_name" type="text" title="@{character_name}"/>
+      <input class="span-3" name="attr_character_name" type="text" title="@{character_name}"/>
       <label class="input-label" for="species"><span data-i18n="species"></span></label>
-      <div class="select span-2">
+      <div class="select span-3">
         <select name="attr_species" title="@{species}">
           <option value="" data-i18n="select">
           </option>
@@ -60,7 +60,7 @@
         <input name="attr_level" type="number" title="@{level}"/>
         <input name="attr_sessions" type="number" title="@{sessions}"/>
       </div>
-      <div class="trait-container collapse-container">
+      <div class="trait-container collapse-container span-2">
         <input class="collapse" name="attr_level_trait_toggle_collapse" value="1" type="checkbox" title="@{level_trait_toggle_collapse}" checked="0"/>
         <div class="trait">
           <input name="attr_level_trait" type="text" title="@{level_trait}"/>
@@ -79,7 +79,7 @@
         <input name="attr_resources" type="number" title="@{resources}"/>
         <input name="attr_resources_max" type="number" title="@{resources|max}"/>
       </div>
-      <div class="trait-container collapse-container">
+      <div class="trait-container collapse-container span-2">
         <input class="collapse" name="attr_resources_trait_toggle_collapse" value="1" type="checkbox" title="@{resources_trait_toggle_collapse}" checked="0"/>
         <div class="trait">
           <input name="attr_resources_trait" type="text" title="@{resources_trait}"/>
@@ -98,7 +98,7 @@
         <input name="attr_influence" type="number" title="@{influence}"/>
         <input name="attr_influence_max" type="number" title="@{influence|max}"/>
       </div>
-      <div class="trait-container collapse-container">
+      <div class="trait-container collapse-container span-2">
         <input class="collapse" name="attr_influence_trait_toggle_collapse" value="1" type="checkbox" title="@{influence_trait_toggle_collapse}" checked="0"/>
         <div class="trait">
           <input name="attr_influence_trait" type="text" title="@{influence_trait}"/>
@@ -113,30 +113,30 @@
         </div>
       </div>
       <label class="input-label" for="grit_rolls"><span data-i18n="grit re-rolls"></span></label>
-      <div class="current-max span-2">
+      <div class="current-max">
         <input name="attr_grit_rolls" type="number" title="@{grit_rolls}"/>
         <input name="attr_grit_rolls_max" type="number" title="@{grit_rolls|max}"/>
       </div>
       <label class="input-label" for="spare_time"><span data-i18n="spare time"></span></label>
-      <div class="current-max span-2">
+      <div class="current-max">
         <input name="attr_spare_time" type="number" title="@{spare_time}"/>
         <input name="attr_spare_time_max" type="number" title="@{spare_time|max}"/>
       </div>
       <label class="input-label" for="endurance"><span data-i18n="endurance"></span></label>
-      <div class="current-max span-2">
+      <div class="current-max">
         <input name="attr_endurance" type="number" title="@{endurance}"/>
         <input name="attr_endurance_max" type="number" title="@{endurance|max}"/>
       </div>
       <label class="input-label" for="defence"><span data-i18n="defence"></span></label>
-      <input class="span-2" name="attr_defence" type="number" title="@{defence}"/>
+      <input name="attr_defence" type="number" title="@{defence}"/>
       <label class="input-label" for="recovery"><span data-i18n="recovery"></span></label>
-      <input class="span-2" name="attr_recovery" type="number" title="@{recovery}"/>
+      <input name="attr_recovery" type="number" title="@{recovery}"/>
       <label class="input-label" for="combat order"><span data-i18n="combat order"></span></label>
-      <input class="span-2" name="attr_combat_order" type="number" title="@{combat_order}"/>
+      <input name="attr_combat_order" type="number" title="@{combat_order}"/>
       <label class="input-label" for="armour"><span data-i18n="armour"></span></label>
-      <input class="span-2" name="attr_armour" type="number" title="@{armour}"/>
+      <input name="attr_armour" type="number" title="@{armour}"/>
       <label class="input-label" for="munition"><span data-i18n="munition"></span></label>
-      <input class="span-2" name="attr_munition" type="number" title="@{munition}"/>
+      <input name="attr_munition" type="number" title="@{munition}"/>
     </div>
   </section>
   <section data-i18n-aria-label="attributes" id="attributes">
@@ -323,7 +323,7 @@
         </label>
         <label class="input-label column"><span data-i18n="Res"></span>
         </label>
-        <div>
+        <div class="nowrap">
           <button class="roller" name="roll_roll" value="@{action}" type="roll">
           </button>
           <button name="act_action" hidden="" type="action">

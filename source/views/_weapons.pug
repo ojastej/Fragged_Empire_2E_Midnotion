@@ -15,10 +15,9 @@ section(data-i18n-aria-label="weapons")
 			+label({label:'Crit'}).column
 			+label({label:'Res'}).column
 
-			div
+			.nowrap
 				+roller({
 					name:'roll',
-					value:"&{template:fe2} {{roll1=[[1d6]]}} {{roll2=[[1d6]]}} {{roll3=[[1d6]]}}",
 					trigger:{triggeredFuncs:['rollAttack']}
 					})
 				+text({

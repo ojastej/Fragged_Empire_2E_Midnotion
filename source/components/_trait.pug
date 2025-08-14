@@ -1,5 +1,5 @@
 mixin trait ({name, trigger})
-	.trait-container.collapse-container
+	.trait-container.collapse-container&attributes(attributes)
 		+collapse(`${name}_toggle_collapse`)(checked=0)
 		.trait
 			+input({name,
