@@ -7,7 +7,7 @@
 		'intelligence',
 		'grit'
 	];
--
+
 	const primarySkills = {
 		wealth:{name:'wealth',attribute:''},
 		persuasion:{name:'persuasion',attribute:'focus'},
@@ -26,25 +26,26 @@
 		astronomy:{name:'astronomy',attribute:'intelligence'},
 		planets:{name:'planets',attribute:'reflexes'},
 	};
--
+
 	const personalCombatSkills = {
 		smallarms:{name:'smallarms'},
 		heavyarms:{name:'heavyarms'},
 		tactical:{name:'tactical'},
 		exotic:{name:'exotic'}
 	};
--
+
 	const shipCombatSkills = {
 		command:{name:'command'},
 		engineering:{name:'engineering'},
 		operations:{name:'operations'},
 		gunnery:{name:'gunnery'}
 	};
--
+
 	const allSkills = { ...primarySkills, ...personalCombatSkills, ...shipCombatSkills };
--
+	const allSkillNames = Object.keys(allSkills);
+
+	// create a mapping from attributes to associated skills as an array of skill names
 	const skillsByAttribute = {};
--
 	for (const skillName in primarySkills)
 	{
 		const skill = primarySkills[skillName];
@@ -56,5 +57,3 @@
 		}
 		skillsByAttribute[skill.attribute].push(skill.name);
 	}
-//-	console.log ("skillsByAttribute{}", skillsByAttribute);
-
