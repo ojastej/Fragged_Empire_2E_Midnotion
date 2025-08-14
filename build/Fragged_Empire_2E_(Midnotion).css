@@ -3694,6 +3694,9 @@ body .ui-dialog .tab-content .charsheet article section h2, body .ui-dialog .tab
   margin-left: -5px;
   margin-right: -5px;
 }
+body .ui-dialog .tab-content .charsheet article section.narrow {
+  max-width: 20rem;
+}
 body .ui-dialog .tab-content .charsheet #skills, body .ui-dialog .tab-content .charsheet #combatSkills {
   flex-grow: 2;
 }
@@ -3780,6 +3783,14 @@ body .ui-dialog .tab-content .charsheet .grid.column-2 {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: var(--tiny-gap);
+}
+body .ui-dialog .tab-content .charsheet .grid.column-3 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: var(--tiny-gap);
+}
+body .ui-dialog .tab-content .charsheet .span-2 {
+  grid-column-end: span 2;
 }
 body .ui-dialog .tab-content .charsheet .attributes {
   margin: 0;

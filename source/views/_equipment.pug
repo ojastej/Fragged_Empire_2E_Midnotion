@@ -1,5 +1,10 @@
 section(data-i18n-aria-label="equipment")
 	h2(data-i18n='equipment')
+	.header
+		label(for='equipment slots').input-label
+			span(data-i18n='equipment slots')
+		+number({name:'equipment slots'}).span-2
+
 	+customControlFieldset({
 		name:'equipment'
 		})

@@ -1,6 +1,6 @@
 //- render a combination current/max input box
 mixin currentMax({name, trigger})
-	.current-max
+	.current-max&attributes(attributes)
 		+input({name:name,type:'number',trigger:trigger})
 		//- span.divider
 		+input({name:`${name}_max`,type:'number',trigger:trigger})

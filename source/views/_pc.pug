@@ -1,13 +1,13 @@
 section(data-i18n-aria-label="pc")#pc
 	h2(data-i18n='character')
-	.grid.column-2
+	.grid.column-3
 		label(for='character_name').input-label
 			span(data-i18n='name')
-		+text({name:'character_name'})
+		+text({name:'character_name'}).span-2
 
 		label(for='species').input-label
 			span(data-i18n='species')
-		.select
+		.select.span-2
 			+select({name:'species'})
 				+option({value:'','data-i18n':'select'})
 				+option({value:'Corporation','data-i18n':'corporation'})
@@ -18,30 +18,14 @@ section(data-i18n-aria-label="pc")#pc
 				+option({value:'Twi-Far','data-i18n':'twifar'})
 				+option({value:'Zhou','data-i18n':'zhou'})
 
-		label(for='resources').input-label
-			span(data-i18n='resources')
-		+currentMax({name:'resources'})
-
-		label(for='influence').input-label
-			span(data-i18n='influence')
-		+currentMax({name:'influence'})
-
-		label(for='grit_rolls').input-label
-			span(data-i18n='grit re-rolls')
-		+currentMax({name:'grit_rolls'})
-
-		label(for='spare_time').input-label
-			span(data-i18n='spare time')
-		+currentMax({name:'spare_time'})
-
-		|Secondary stats: endurance, equipment capacity
-
+		include ./_characterBits.pug
 
 include ./_attributes.pug
+include ./_weapons.pug
 include ./_skills.pug
 include ./_combatSkills.pug
 include ./_perks.pug
 include ./_specialization.pug
 include ./_trade.pug
 include ./_equipment.pug
-include ./_weapons.pug
+//- include ./_notes.pug
