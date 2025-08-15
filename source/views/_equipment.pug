@@ -9,10 +9,11 @@ section(data-i18n-aria-label="equipment")
 		name:'equipment'
 		})
 		//- trigger:{triggeredFuncs:['removeEquipment']}
+		//- description, resource cost
 		.row
 			+text({name:'item', 'data-i18n-placeholder':'Item'})
 			.select
-				+select({name:'itemSize'
+				+select({name:'size'
 					})
 					//- trigger:{triggeredFuncs:['calculateBulk']}
 					+option({'data-i18n':'size',selected:''})
@@ -20,3 +21,6 @@ section(data-i18n-aria-label="equipment")
 					+option({'data-i18n':'small',value:'0.25'})
 					+option({'data-i18n':'normal',value:'1'})
 					+option({'data-i18n':'large',value:'4'})
+			+number({name:'resources'})
+		.row
+			+textarea({name:'description','data-i18n-placeholder':'Description'})

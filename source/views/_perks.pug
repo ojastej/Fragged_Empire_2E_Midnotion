@@ -1,11 +1,11 @@
-section(data-i18n-aria-label="perks")
+section(data-i18n-aria-label="perks").narrow
 	h2(data-i18n='perks & complications')
 	+customControlFieldset({
 		name:'perkComplication'
 		})
 		//- trigger:{triggeredFuncs:['removePerkComplication']}
 		+text({name:'perk', 'data-i18n-placeholder':'Name'})
-		+adaptiveTextarea({
+		+textarea({
 			name:'description',
 			'data-i18n-placeholder':'Description'
 			})

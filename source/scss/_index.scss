@@ -243,6 +243,9 @@
 		text-transform: capitalize;
 		font-family: var(--contentHeadFont);
 	}
+	textarea {
+		width: 20rem;
+	}
 	// .roller:before {
 	// 	// font-family: dicefontd6;
 	// 	// content:"F";

@@ -3879,6 +3879,9 @@ body .ui-dialog .tab-content .charsheet .roller {
   text-transform: capitalize;
   font-family: var(--contentHeadFont);
 }
+body .ui-dialog .tab-content .charsheet textarea {
+  width: 20rem;
+}
 body .ui-dialog .tab-content .charsheet .flow {
   display: inline-flex;
 }

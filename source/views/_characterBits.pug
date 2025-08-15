@@ -21,7 +21,7 @@ label(for='grit_rolls').input-label
 
 label(for='spare_time').input-label
 	span(data-i18n='spare time')
-+currentMax({name:'spare_time'})
++number({name:'spare_time'})
 
 label(for='endurance').input-label
 	span(data-i18n='endurance')
@@ -37,7 +37,7 @@ label(for='recovery').input-label
 
 label(for='combat order').input-label
 	span(data-i18n='combat order')
-+number({name:'combat order'})
++number({name:'combat order', step:'0.1'})
 
 label(for='armour').input-label
 	span(data-i18n='armour')
@@ -46,3 +46,11 @@ label(for='armour').input-label
 label(for='munition').input-label
 	span(data-i18n='munition')
 +number({name:'munition'})
+
+//- languages? workaround: racial details
+//- racial details? workaround: perks
+//- outfit/weapon variations and mods? workaround: description
+//- don't like adaptiveText spreading horizontally
+//- initiative button
+//- roll template attack skill overflowing on long weapon names
+//- default values missing
