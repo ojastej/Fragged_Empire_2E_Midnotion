@@ -1289,6 +1289,7 @@ ul.nav-tabs.nav {
   /*No roll sfc used*/
   --inlineRollFumbleColor: #c70000;
   border: 1px solid var(--fontColor);
+  font-family: var(--contentFont);
   font-size: 1em;
 }
 .sheet-rolltemplate-fe2 .sheet-template select,
@@ -2295,6 +2296,8 @@ ul.nav-tabs.nav {
 }
 .sheet-rolltemplate-fe2 .sheet-template h2:not(input), .sheet-rolltemplate-fe2 .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input), body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input), .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input), .sheet-rolltemplate-fe2 .sheet-template h2:not(input) *, .sheet-rolltemplate-fe2 .sheet-template body .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input) *, body .ui-dialog .tab-content .charsheet .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input) *, .sheet-rolltemplate-fe2 .sheet-template .input-label:not(.stacked).large > [name]:not(input) * {
   display: flex;
+  flex-wrap: wrap;
+  font-family: var(--contentHeadFont);
   font-size: var(--fontSize);
   padding-left: var(--tiny-gap);
   padding-right: var(--tiny-gap);
@@ -3800,6 +3803,9 @@ body .ui-dialog .tab-content .charsheet .span-2 {
 body .ui-dialog .tab-content .charsheet .span-3 {
   grid-column-end: span 3;
 }
+body .ui-dialog .tab-content .charsheet .span-9 {
+  grid-column-end: span 9;
+}
 body .ui-dialog .tab-content .charsheet .attributes {
   margin: 0;
 }
@@ -3860,6 +3866,9 @@ body .ui-dialog .tab-content .charsheet .grid.weapon {
   grid-auto-columns: max-content;
   grid-template-columns: auto auto auto auto auto auto auto auto auto;
 }
+body .ui-dialog .tab-content .charsheet .grid.weapon textarea {
+  width: 31rem;
+}
 body .ui-dialog .tab-content .charsheet .parentheses::before {
   content: "(";
 }
@@ -3881,6 +3890,10 @@ body .ui-dialog .tab-content .charsheet .roller {
 }
 body .ui-dialog .tab-content .charsheet textarea {
   width: 20rem;
+}
+body .ui-dialog .tab-content .charsheet .expanded textarea {
+  display: block;
+  width: 10rem;
 }
 body .ui-dialog .tab-content .charsheet .flow {
   display: inline-flex;

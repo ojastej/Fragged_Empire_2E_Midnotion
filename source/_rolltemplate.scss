@@ -17,9 +17,12 @@
 		--inlineRollFumbleColor: #c70000;
 
 		border: 1px solid var(--fontColor);
+		font-family: var(--contentFont);
 		font-size: 1em;
 		h2:not(input), h2:not(input) * {
 			display: flex;
+			flex-wrap:wrap;
+			font-family: var(--contentHeadFont);
 			font-size: var(--fontSize);
 			padding-left: var(--tiny-gap);
 			padding-right: var(--tiny-gap);
