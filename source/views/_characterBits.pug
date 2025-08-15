@@ -37,7 +37,12 @@ label(for='recovery').input-label
 
 label(for='combat order').input-label
 	span(data-i18n='combat order')
-+number({name:'combat order', step:'0.1'})
+.nowrap
+	+number({name:'combat order', step:'0.1'})
+	+roller({
+		name:'rollCombatOrder',
+		trigger:{triggeredFuncs:['rollInitiative']}
+		})
 
 label(for='armour').input-label
 	span(data-i18n='armour')

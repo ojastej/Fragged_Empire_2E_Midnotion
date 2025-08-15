@@ -34,8 +34,9 @@
 			.template-row
 				.roll-total
 					|{{roll}}
-					.strong-hits
-						|Strong Hits: {{computed::strong_hits}}
+					+templateConditionalDisplay('strong_hits')
+						.strong-hits
+							|Strong Hits: {{computed::strong_hits}}
 	+templateConditionalDisplay('description')
 		.template-row.description
 			span(style="text-align:left") {{description}}

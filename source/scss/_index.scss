@@ -221,12 +221,12 @@
 			grid-column-end: 6;
 		}
 	}
+	.flex, .nowrap {
+		display: flex;
+	}
 	.grid.weapon {
 		grid-auto-columns: max-content;
 		grid-template-columns: auto auto auto auto auto auto auto auto auto;
-		.nowrap {
-			display: flex;
-		}
 	}
 	.parentheses::before { content: "("; }
 	.parentheses::after { content: ")"; }

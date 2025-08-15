@@ -46,6 +46,27 @@ k.registerFuncs({rollAttack});
  * @param {object[]} sections - All the repeating section IDs
  * @param {object} casc - Expanded cascade object
  */
+const rollInitiative = async function({trigger,attributes,sections,casc}){
+	console.log("rollInitiative()", trigger, attributes, sections, casc);
+	const combatOrder = attributes['combat_order'];
+	const rollObj = Object.assign({
+		title:'Combat order',
+		roll: `[[${combatOrder} &{tracker}]]`
+		});
+	const roll = await executeRoll({rollObj,attributes,sections});
+	// see https://wiki.roll20.net/Custom_Roll_Parsing
+	// replaces the 'roll' key above with "Result", where the hover shows the roll results
+	finishRoll(roll.rollId);
+};
+k.registerFuncs({rollInitiative});
+
+/**
+ * Starts the process of rolling a basic skill check
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
 const rollSkill = async function({trigger,attributes,sections,casc}){
 	console.log("rollSkill()", trigger, attributes, sections, casc);
 
