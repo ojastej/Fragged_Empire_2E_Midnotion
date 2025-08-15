@@ -61,16 +61,24 @@
 		border-color: var(--borderColor);
 		border-width: 1px;
 	}
-	input:where([type=checkbox]):not(.collapse):not(.fill-left__radio):checked:before
+	input:where([type=checkbox]):not(.collapse):not(.fill-left__radio):checked:before,
+	.skills input[type=checkbox]:not(.collapse):not(.fill-left__radio):checked:before
 	{
 		align-self: center;
 		justify-content: center;
-		margin-top:3px;
-		padding-bottom: 0px;
+		margin-top:1px;
+		padding-bottom: 1px;
 	}
 	input:where([type=number])
 	{
 		width: var(--numberWidth);
+	}
+	button.roller {
+		padding-left: var(--half-gap);
+		padding-right: var(--half-gap);
+	}
+	button.roller:first-child {
+		padding-left: 0;
 	}
 	.repcontainer {
 		gap: var(--tiny-gap);
@@ -179,7 +187,7 @@
 		}
 		input[disabled=disabled] {
 			border-width:0;
-			color: darkgrey;
+			color: var(--disabledColor);
 		}
 		.name {
 			grid-column-start: 1;
@@ -197,7 +205,7 @@
 			font-family: var(--contentFont);
 			width: calc(1.25 * var(--numberWidth));
 			text-align: center;
-			border-color: lightskyblue;
+			border-color: var(--calculationColor);
 			border-width: var(--borderWidth);
 			border-style: solid;
 			box-sizing: border-box;
@@ -254,6 +262,10 @@
 		display: block;
 		width: 10rem;
 	}
+	.wide textarea {
+		width: 41rem;
+		min-height: 10rem;
+	}
 	// .roller:before {
 	// 	// font-family: dicefontd6;
 	// 	// content:"F";
@@ -278,4 +290,12 @@
 }
 .ui-dialog .tab-content .charsheet{
 	@include k.defaultStyles;
+}
+.sheet-darkmode .ui-dialog .tab-content .charsheet {
+	@include darkVariables;
+	background-color: var(--backColor);
+	color: var(--fontColor);
+	label, select {
+		color: var(--fontColor);
+	}
 }

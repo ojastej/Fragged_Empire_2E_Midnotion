@@ -1040,6 +1040,36 @@ ul.nav-tabs.nav {
   display: flex;
 }
 
+.sheet-darkmode .ui-dialog .tab-content .charsheet {
+  --backColor:var(--dm-backColor);
+  --selectedColor:var(--dm-selectedColor);
+  --unselectedColor1:var(--dm-unselectedColor1);
+  --unselectedColor2:var(--dm-unselectedColor2);
+  --checkColor:var(--dm-checkColor);
+  --checkedBackColor:var(--dm-checkedBackColor);
+  --borderColor:var(--dm-borderColor);
+  --fontColor:var(--dm-fontColor);
+  --disabledColor:var(--dm-disabledColor);
+  --borderColor: white;
+  --fontColor: #eee;
+  --backColor: #1f1f1f;
+  --subHeadBackColor:grey;
+  --unselectedColor1:lightgrey;
+  --unselectedColor2:transparent;
+  --selectedColor:white;
+  --checkColor:white;
+  --darkCheck:#1f1f1f;
+  --dark-secondarytext:#eee;
+  --checkboxBorderColor:white;
+  --checkColor:var(--fontColor);
+  --checkedBackColor:#444;
+  background-color: var(--backColor);
+  color: var(--fontColor);
+}
+.sheet-darkmode .ui-dialog .tab-content .charsheet label, .sheet-darkmode .ui-dialog .tab-content .charsheet select {
+  color: var(--fontColor);
+}
+
 .sheet-rolltemplate-fe2 {
   --font1:var(--topHeadFont);
   --font2:var(--topHeadFont);
@@ -1221,6 +1251,19 @@ ul.nav-tabs.nav {
   --borderColor:var(--dm-borderColor);
   --fontColor:var(--dm-fontColor);
   --disabledColor:var(--dm-disabledColor);
+  --borderColor: white;
+  --fontColor: #eee;
+  --backColor: #1f1f1f;
+  --subHeadBackColor:grey;
+  --unselectedColor1:lightgrey;
+  --unselectedColor2:transparent;
+  --selectedColor:white;
+  --checkColor:white;
+  --darkCheck:#1f1f1f;
+  --dark-secondarytext:#eee;
+  --checkboxBorderColor:white;
+  --checkColor:var(--fontColor);
+  --checkedBackColor:#444;
 }
 .sheet-rolltemplate-fe2 .sheet-template {
   position: relative;
@@ -3720,14 +3763,22 @@ body .ui-dialog .tab-content .charsheet input:where([type=checkbox], [type=radio
   border-color: var(--borderColor);
   border-width: 1px;
 }
-body .ui-dialog .tab-content .charsheet input:where([type=checkbox]):not(.collapse):not(.fill-left__radio):checked:before {
+body .ui-dialog .tab-content .charsheet input:where([type=checkbox]):not(.collapse):not(.fill-left__radio):checked:before,
+body .ui-dialog .tab-content .charsheet .skills input[type=checkbox]:not(.collapse):not(.fill-left__radio):checked:before {
   align-self: center;
   justify-content: center;
-  margin-top: 3px;
-  padding-bottom: 0px;
+  margin-top: 1px;
+  padding-bottom: 1px;
 }
 body .ui-dialog .tab-content .charsheet input:where([type=number]) {
   width: var(--numberWidth);
+}
+body .ui-dialog .tab-content .charsheet button.roller {
+  padding-left: var(--half-gap);
+  padding-right: var(--half-gap);
+}
+body .ui-dialog .tab-content .charsheet button.roller:first-child {
+  padding-left: 0;
 }
 body .ui-dialog .tab-content .charsheet .repcontainer {
   gap: var(--tiny-gap);
@@ -3827,7 +3878,7 @@ body .ui-dialog .tab-content .charsheet .skills > .grid input:not(:where([type=c
 }
 body .ui-dialog .tab-content .charsheet .skills > .grid input[disabled=disabled] {
   border-width: 0;
-  color: darkgrey;
+  color: var(--disabledColor);
 }
 body .ui-dialog .tab-content .charsheet .skills > .grid .name {
   grid-column-start: 1;
@@ -3839,7 +3890,7 @@ body .ui-dialog .tab-content .charsheet .skills > .grid .skill-mod {
   font-family: var(--contentFont);
   width: calc(1.25 * var(--numberWidth));
   text-align: center;
-  border-color: lightskyblue;
+  border-color: var(--calculationColor);
   border-width: var(--borderWidth);
   border-style: solid;
   box-sizing: border-box;
@@ -3895,6 +3946,10 @@ body .ui-dialog .tab-content .charsheet .expanded textarea {
   display: block;
   width: 10rem;
 }
+body .ui-dialog .tab-content .charsheet .wide textarea {
+  width: 41rem;
+  min-height: 10rem;
+}
 body .ui-dialog .tab-content .charsheet .flow {
   display: inline-flex;
 }
@@ -3930,4 +3985,17 @@ body.sheet-darkmode {
   --borderColor:var(--dm-borderColor);
   --fontColor:var(--dm-fontColor);
   --disabledColor:var(--dm-disabledColor);
+  --borderColor: white;
+  --fontColor: #eee;
+  --backColor: #1f1f1f;
+  --subHeadBackColor:grey;
+  --unselectedColor1:lightgrey;
+  --unselectedColor2:transparent;
+  --selectedColor:white;
+  --checkColor:white;
+  --darkCheck:#1f1f1f;
+  --dark-secondarytext:#eee;
+  --checkboxBorderColor:white;
+  --checkColor:var(--fontColor);
+  --checkedBackColor:#444;
 }

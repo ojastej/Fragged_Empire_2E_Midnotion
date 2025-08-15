@@ -25,6 +25,20 @@ const calcAttributeSkillMod = function({trigger,attributes,sections,casc}){
 k.registerFuncs({calcAttributeSkillMod});
 
 /**
+ * Function to calculate total equipment bulk
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
+const calcBulk = function({trigger,attributes,sections,casc}){
+	console.log ('calcBulk()', trigger, attributes, sections, casc);
+	// loop over equipment
+};
+k.registerFuncs({calcBulk});
+
+
+/**
  * Function to calculate the attribute modifier
  * @param {object} trigger - The trigger that caused the function to be called
  * @param {object} attributes - The attribute values of the character

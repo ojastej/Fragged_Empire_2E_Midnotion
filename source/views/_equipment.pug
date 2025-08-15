@@ -11,16 +11,26 @@ section(data-i18n-aria-label="equipment")
 		//- trigger:{triggeredFuncs:['removeEquipment']}
 		//- description, resource cost
 		.row
+			.select
+				+select({name:'type'
+					})
+					//- trigger:{triggeredFuncs:['calcBulk']}
+					+option({'data-i18n':'type',selected:''})
+					+option({'data-i18n':'misc',value:'misc'})
+					+option({'data-i18n':'outfit',value:'outfit'})
+					+option({'data-i18n':'utility',value:'utility'})
+					+option({'data-i18n':'weapon',value:'weapon'})
 			+text({name:'item', 'data-i18n-placeholder':'Item'})
 			.select
 				+select({name:'size'
 					})
-					//- trigger:{triggeredFuncs:['calculateBulk']}
+					//- trigger:{triggeredFuncs:['calcBulk']}
 					+option({'data-i18n':'size',selected:''})
-					+option({'data-i18n':'negligible',value:'0'})
+					+option({'data-i18n':'innate',value:'i'})
+					+option({'data-i18n':'trinket',value:'0'})
 					+option({'data-i18n':'small',value:'0.25'})
 					+option({'data-i18n':'normal',value:'1'})
 					+option({'data-i18n':'large',value:'4'})
-			+number({name:'resources'})
+			+number({name:'resources','data-i18n-placeholder':'Res'})
 		.row
 			+textarea({name:'description','data-i18n-placeholder':'Description'})

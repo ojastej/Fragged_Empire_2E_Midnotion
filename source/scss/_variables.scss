@@ -33,6 +33,8 @@
 	--selectedColor:black;
 	--checkColor:black;
 	--darkCheck:white;
+	--disabledColor:grey;
+	--calculationColor: lightskyblue;
 
 	// Border sizing variables
 	--displayBorderWidth: 2px;//Our default border width
@@ -77,4 +79,17 @@
 @mixin dark {
 	@include k.darkMode;
 	// Customize your darkmode variable states and styling here.
+	--borderColor: white;//Our basic border color
+	--fontColor: #eee;//Our basic font color
+	--backColor: #1f1f1f;//Our basic background color
+	--subHeadBackColor:grey;//Our sub header background color
+	--unselectedColor1:lightgrey;//Our default font color for items that are currently inactive
+	--unselectedColor2:transparent;
+	--selectedColor:white;
+	--checkColor:white;
+	--darkCheck:#1f1f1f;
+	--dark-secondarytext:#eee;
+	--checkboxBorderColor:white;
+	--checkColor:var(--fontColor);
+	--checkedBackColor:#444;
 }
