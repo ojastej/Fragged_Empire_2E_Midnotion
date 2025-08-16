@@ -1,11 +1,11 @@
 mixin skillHeader (isCombat)
 	.name.column
 	+label({label:"Total", divObj:{class:"value column"}, spanObj:{class:"value column"}})
-	+label({label:"Tr", divObj:{class:"column"}, spanObj:{class:"column"}})
+	+label({label:"Tr", divObj:{class:"column"}, spanObj:{class:"column", 'data-i18n-title':'Trained'}})
 	if !isCombat
-		+label({label:"TB", divObj:{class:"column"}, spanObj:{class:"column"}})
-		+label({label:"WS", divObj:{class:"column"}, spanObj:{class:"column"}})
-	+label({label:"Mod", divObj:{class:"column"}, spanObj:{class:"column"}})
+		+label({label:"TB", fullText:"Toolbox", divObj:{class:"column"}, spanObj:{class:"column", 'data-i18n-title':'Has a toolbox'}})
+		+label({label:"WS", fullText:"Workshop", divObj:{class:"column"}, spanObj:{class:"column", 'data-i18n-title':'Has access to a workshop'}})
+	+label({label:"Mod", divObj:{class:"column"}, spanObj:{class:"column", 'data-i18n-title':'Modifiers from traits and equipment'}})
 	+label({label:"Trait", divObj:{class:"trait column"}, spanObj:{class:"column"}})
 
 mixin skillMod({name,defaultValue,classAdd})

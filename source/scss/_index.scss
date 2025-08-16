@@ -39,6 +39,9 @@
 			max-width: 20rem;
 		}
 	}
+	abbr[title] {
+		border-bottom: inherit;
+	}
 	#skills, #combatSkills {
 		flex-grow: 2;
 	}
@@ -164,6 +167,7 @@
 	.span-2 { grid-column-end: span 2; }
 	.span-3 { grid-column-end: span 3; }
 	.span-9 { grid-column-end: span 9; }
+	.span-10 { grid-column-end: span 10; }
 	.attributes {
 		margin: 0;
 	}
@@ -235,7 +239,7 @@
 	}
 	.grid.weapon {
 		grid-auto-columns: max-content;
-		grid-template-columns: auto auto auto auto auto auto auto auto auto;
+		grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
 		textarea {
 			width: 31rem;
 		}
@@ -295,7 +299,11 @@
 	@include darkVariables;
 	background-color: var(--backColor);
 	color: var(--fontColor);
-	label, select {
+	label {
+		color: var(--fontColor);
+	}
+	select {
+		background-color: var(--backColor);
 		color: var(--fontColor);
 	}
 }

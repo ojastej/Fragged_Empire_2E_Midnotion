@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200|Material Icons|PT Sans Narrow&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap");
 ul.tabs__nav-list {
   margin-bottom: 0px;
 }
@@ -1066,7 +1066,11 @@ ul.nav-tabs.nav {
   background-color: var(--backColor);
   color: var(--fontColor);
 }
-.sheet-darkmode .ui-dialog .tab-content .charsheet label, .sheet-darkmode .ui-dialog .tab-content .charsheet select {
+.sheet-darkmode .ui-dialog .tab-content .charsheet label {
+  color: var(--fontColor);
+}
+.sheet-darkmode .ui-dialog .tab-content .charsheet select {
+  background-color: var(--backColor);
   color: var(--fontColor);
 }
 
@@ -1232,6 +1236,7 @@ ul.nav-tabs.nav {
   --checkedBackColor: lightgrey;
   --checkContent: "+1";
   --checkSize: 10pt;
+  --calculationColor: lightskyblue;
   --numberWidth: 1.25rem;
   --column-gap: 5px;
   --topHeadFont: "PT Sans Narrow", sans-serif;
@@ -2565,6 +2570,7 @@ body {
   --checkedBackColor: lightgrey;
   --checkContent: "+1";
   --checkSize: 10pt;
+  --calculationColor: lightskyblue;
   --numberWidth: 1.25rem;
   --column-gap: 5px;
   --topHeadFont: "PT Sans Narrow", sans-serif;
@@ -2750,6 +2756,7 @@ body .ui-dialog .tab-content .charsheet {
   --checkedBackColor: lightgrey;
   --checkContent: "+1";
   --checkSize: 10pt;
+  --calculationColor: lightskyblue;
   --numberWidth: 1.25rem;
   --column-gap: 5px;
   --topHeadFont: "PT Sans Narrow", sans-serif;
@@ -3743,6 +3750,9 @@ body .ui-dialog .tab-content .charsheet article section h2, body .ui-dialog .tab
 body .ui-dialog .tab-content .charsheet article section.narrow {
   max-width: 20rem;
 }
+body .ui-dialog .tab-content .charsheet abbr[title] {
+  border-bottom: inherit;
+}
 body .ui-dialog .tab-content .charsheet #skills, body .ui-dialog .tab-content .charsheet #combatSkills {
   flex-grow: 2;
 }
@@ -3857,6 +3867,9 @@ body .ui-dialog .tab-content .charsheet .span-3 {
 body .ui-dialog .tab-content .charsheet .span-9 {
   grid-column-end: span 9;
 }
+body .ui-dialog .tab-content .charsheet .span-10 {
+  grid-column-end: span 10;
+}
 body .ui-dialog .tab-content .charsheet .attributes {
   margin: 0;
 }
@@ -3915,7 +3928,7 @@ body .ui-dialog .tab-content .charsheet .flex, body .ui-dialog .tab-content .cha
 }
 body .ui-dialog .tab-content .charsheet .grid.weapon {
   grid-auto-columns: max-content;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
 }
 body .ui-dialog .tab-content .charsheet .grid.weapon textarea {
   width: 31rem;

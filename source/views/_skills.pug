@@ -1,17 +1,27 @@
 section(data-i18n-aria-label="skills")#skills
 	.skills
 		h2(data-i18n='skills')
-		+input-label( {
-			label:'untrained',
-			inputObj: {
-				name:'untrained',
-				type:'number',
-				value: -2,
-				trigger:{
-					affects:allSkillNames
+		.flex.tiny-gap
+			+input-label( {
+				label:'untrained',
+				inputObj: {
+					name:'untrained',
+					type:'number',
+					value: -2,
+					trigger:{
+						affects:allSkillNames
+						}
 					}
+				})
+			+input-label({
+				label:'acquistion',
+				inputObj: {
+					name:'acquisition_modifier',
+					type:'number',
+					value:0
 				}
 			})
+			+checkbox({name:'acquisition_apply',value:0})
 
 		.grid.tiny-gap
 			+skillHeader

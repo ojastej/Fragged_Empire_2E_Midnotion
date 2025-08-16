@@ -8,6 +8,7 @@ section(data-i18n-aria-label="weapons")
 			+label({label:'Weapon'})
 			+label({label:'Skill'})
 			+label({label:'Type'})
+			+label({label:'Mun'}).column
 			+label({label:'d6'}).column
 			+label({label:'Hit'}).column
 			+label({label:'Rng'}).column
@@ -39,7 +40,8 @@ section(data-i18n-aria-label="weapons")
 					+option({'data-i18n':'melee'})
 					+option({'data-i18n':'shell'})
 					+option({'data-i18n':'special'})
-			+number({name:'hitDice'})
+			+number({name:'munitions'})
+			+number({name:'hit_dice'})
 			+number({name:'hit'})
 			+number({name:'range'})
 			+number({name:'endurance_damage'})
@@ -48,4 +50,4 @@ section(data-i18n-aria-label="weapons")
 			+textarea({
 				name:'features',
 				'data-i18n-placeholder':'Features'
-				}).span-9
+				}).span-10

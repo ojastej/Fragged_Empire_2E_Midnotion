@@ -5,17 +5,4 @@ include ./_attribute.pug
 include ./_skill.pug
 include ./_trait.pug
 include ./_currentMax.pug
-
-mixin label({label,divObj,spanObj})
-	if divObj
-		- divObj.class = divObj.class ? replaceProblems(divObj.class) : undefined;
-	//-if inputObj
-	//-	- inputObj.class = inputObj.class ? replaceProblems(inputObj.class) : undefined;
-	if spanObj
-		- spanObj.class = spanObj.class ? replaceProblems(spanObj.class) : undefined;
-	label.input-label&attributes(divObj)&attributes(attributes)
-		//- inputObj.name = inputObj.name.replace(/\s+/g,'_');
-		//- inputObj.class = inputObj.class ? `${inputObj.class} input-label__input` : 'input-label__input';
-		if spanObj
-			- spanObj.class = spanObj.class ? `${spanObj.class} input-label__text` : 'input-label__text';
-		span(data-i18n=label)&attributes(spanObj)
+include ./_label.pug

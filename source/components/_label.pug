@@ -1,0 +1,26 @@
+mixin label({label,divObj,spanObj})
+	if divObj
+		- divObj.class = divObj.class ? replaceProblems(divObj.class) : undefined;
+	//-if inputObj
+	//-	- inputObj.class = inputObj.class ? replaceProblems(inputObj.class) : undefined;
+	if spanObj
+		- spanObj.class = spanObj.class ? replaceProblems(spanObj.class) : undefined;
+	label.input-label&attributes(divObj)&attributes(attributes)
+		//- inputObj.name = inputObj.name.replace(/\s+/g,'_');
+		//- inputObj.class = inputObj.class ? `${inputObj.class} input-label__input` : 'input-label__input';
+		if spanObj
+			- spanObj.class = spanObj.class ? `${spanObj.class} input-label__text` : 'input-label__text';
+		span(data-i18n=label)&attributes(spanObj)
+
+mixin labelAbbr({label,fullText,divObj,spanObj})
+	//- console.log ("+labelAbbr", label, fullText, divObj, spanObj);
+	//- console.log (k);
+	//- let text = kFuncs.getTranslationByKey(fullText);
+	if divObj
+		- divObj.class = divObj.class ? replaceProblems(divObj.class) : undefined;
+	if spanObj
+		- spanObj.class = spanObj.class ? replaceProblems(spanObj.class) : undefined;
+	label.input-label&attributes(divObj)&attributes(attributes)
+		if spanObj
+			- spanObj.class = spanObj.class ? `${spanObj.class} input-label__text` : 'input-label__text';
+		abbr(data-i18n=label,title=fullText)&attributes(spanObj)

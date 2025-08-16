@@ -13,13 +13,14 @@ const rollAttack = async function({trigger,attributes,sections,casc}){
 	const rollName = attributes[`${row}_weapon`];
 	const skillName = attributes[`${row}_skill`];
 	const skillDetails = getSkillRollModifiers(skillName,attributes);
+	const hitDice = attributes[`${row}_hit_dice`];
 	const endDmg = attributes[`${row}_endurance_damage`];
 	const focus = attributes['focus'];
 	//console.log (skillDetails);
 	const rollObj = Object.assign({
 		title:rollName,
 		source:skillName,
-		roll: `[[2d6sd [weapon] + ?{Munitions|0}d6sd [munitions] + ${skillDetails.trained} [trained] + ${skillDetails.modifier} [modifier]]]`,
+		roll: `[[${hitDice}d6sd [weapon] + ?{Munitions|0}d6sd [munitions] + ${skillDetails.trained} [trained] + ${skillDetails.modifier} [modifier]]]`,
 		strong_hits: '[[0]]',
 		munitions: '[[?{Munitions}]]',
 		range: attributes[`${row}_range`],
@@ -76,10 +77,12 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 	const rollTransKey = skillName.replace(/-/g,' ');
 	//${attributes[rollAttr]}[${k.capitalize(getTranslationByKey(rollTransKey))}]]]
 	const rollAttribute = attributes[`${skillName}_attribute`];
+	const isCombatSkill = rollAttribute == '';
+	const insertModifiers = isCombatSkill ? '' : ` + ${skillDetails.toolbox} [toolbox] + ${skillDetails.workshop} [workshop] + ${skillDetails.attributeModifier} [attribute]`;
 	const rollObj = Object.assign({
 		title:skillName,
 		source:rollAttribute,
-		roll: `[[3d6cf<0sd + ${skillDetails.trained} [trained] + ${skillDetails.toolbox} [toolbox] + ${skillDetails.workshop} [workshop] + ${skillDetails.attributeModifier} [attribute] + ${skillDetails.modifier} [modifier]]]`,
+		roll: `[[3d6cf<0sd + ${skillDetails.trained} [trained] ${insertModifiers} + ${skillDetails.modifier} [modifier]]]`,
 		strong_hits: '[[0]]'
 		}, skillDetails);
 	console.log ("rollSkill()", skillName, rollAttr, rollTransKey, skillDetails, rollObj);
