@@ -6,10 +6,10 @@
 * racial details? workaround: perks
 * outfit/weapon variations and mods? workaround: description
 * default values missing (skill total, blue)
-* perks to chat
-* equipment to chat
-* show numerical bulk
-* calculate bulk
+* send perk to chat
+* send equipment to chat
+* show numerical bulk in dropdown
+* calculate bulk used
 * calculate max secondaries with mod (final = calc + mod)
 * level/session not intuitive
 

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200|Material Icons|PT Sans Narrow&display=swap");
 ul.tabs__nav-list {
   margin-bottom: 0px;
 }
@@ -3813,6 +3813,9 @@ body .ui-dialog .tab-content .charsheet .select::after {
   pointer-events: none;
   transform: translateY(2.5px);
 }
+body .ui-dialog .tab-content .charsheet .small {
+  font-size: 80%;
+}
 body .ui-dialog .tab-content .charsheet .collapse-container > .collapse {
   margin-top: 2px;
   right: 23px;
@@ -3842,6 +3845,17 @@ body .ui-dialog .tab-content .charsheet .current-max :first-child {
 }
 body .ui-dialog .tab-content .charsheet .limit input:where([type=number]), body .ui-dialog .tab-content .charsheet .column input:where([type=number]) {
   width: calc(1.25 * var(--numberWidth));
+}
+body .ui-dialog .tab-content .charsheet .readonly, body .ui-dialog .tab-content .charsheet .skill-mod {
+  font-family: var(--contentFont);
+  width: calc(1.25 * var(--numberWidth));
+  text-align: center;
+  border-color: var(--calculationColor);
+  border-width: var(--borderWidth);
+  border-style: solid;
+  box-sizing: border-box;
+  padding: 2px;
+  border-radius: 5px;
 }
 body .ui-dialog .tab-content .charsheet .grid.column-2 {
   display: grid;
@@ -3899,17 +3913,6 @@ body .ui-dialog .tab-content .charsheet .skills > .grid .name {
   flex-direction: column;
   justify-content: center;
 }
-body .ui-dialog .tab-content .charsheet .skills > .grid .skill-mod {
-  font-family: var(--contentFont);
-  width: calc(1.25 * var(--numberWidth));
-  text-align: center;
-  border-color: var(--calculationColor);
-  border-width: var(--borderWidth);
-  border-style: solid;
-  box-sizing: border-box;
-  padding: 2px;
-  border-radius: 5px;
-}
 body .ui-dialog .tab-content .charsheet .skills > .grid .tilt.column > span {
   margin-bottom: -1.5rem;
   margin-right: -1rem;
@@ -3925,6 +3928,7 @@ body .ui-dialog .tab-content .charsheet .combat > .grid .trait-container {
 }
 body .ui-dialog .tab-content .charsheet .flex, body .ui-dialog .tab-content .charsheet .nowrap {
   display: flex;
+  align-items: center;
 }
 body .ui-dialog .tab-content .charsheet .grid.weapon {
   grid-auto-columns: max-content;

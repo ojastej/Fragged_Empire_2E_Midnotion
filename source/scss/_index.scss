@@ -109,6 +109,9 @@
 		transform:translateY(2.5px);
 		//transform: rotate(-30deg);
 	}
+	.small {
+		font-size: 80%;
+	}
 	.collapse-container > .collapse
 	{
 		margin-top: 2px;
@@ -147,6 +150,17 @@
 		{
 			width: calc(1.25 * var(--numberWidth));
 		}
+	}
+	.readonly, .skill-mod {
+		font-family: var(--contentFont);
+		width: calc(1.25 * var(--numberWidth));
+		text-align: center;
+		border-color: var(--calculationColor);
+		border-width: var(--borderWidth);
+		border-style: solid;
+		box-sizing: border-box;
+		padding: 2px;
+		border-radius: 5px;
 	}
 	.grid.column-2
 	{
@@ -199,23 +213,6 @@
 			flex-direction: column;
 			justify-content: center;
 		}
-		// .tilt.column
-		// {
-		// 	//text-align: left;
-		// 	align-items: end;
-		// 	justify-content: left;
-		// }
-		.skill-mod {
-			font-family: var(--contentFont);
-			width: calc(1.25 * var(--numberWidth));
-			text-align: center;
-			border-color: var(--calculationColor);
-			border-width: var(--borderWidth);
-			border-style: solid;
-			box-sizing: border-box;
-			padding: 2px;
-			border-radius: 5px;
-		}
 		.tilt.column >span {
 			//text-align: left;
 			//align-items: end;
@@ -236,6 +233,7 @@
 	}
 	.flex, .nowrap {
 		display: flex;
+		align-items: center;
 	}
 	.grid.weapon {
 		grid-auto-columns: max-content;

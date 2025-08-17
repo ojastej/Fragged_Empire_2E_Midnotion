@@ -1,0 +1,13 @@
+mixin readOnly({name,defaultValue,trigger})
+	span(class='readonly')
+		-
+			const trueDefault = defaultValue === undefined ?
+				0 :
+				defaultValue;
+		+input({
+			name: name,
+			type:'hidden',
+			trigger:trigger
+			})
+		+span({name, class:'readonly-display'})
+			|#{trueDefault}

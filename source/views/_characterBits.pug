@@ -35,13 +35,25 @@ label(for='recovery').input-label
 	span(data-i18n='recovery')
 +number({name:'recovery'})
 
-label(for='combat order').input-label
+label(for='combat_order').input-label
 	span(data-i18n='combat order')
 .nowrap
-	+number({name:'combat order', step:'0.1'})
+	//-		step:'0.1',
+	+readOnly({
+		name:'combat_order',
+		trigger: {
+			formula:'@{intelligence_max} + (@{reflexes_max}/10) + @{combat_order_modifier}'
+			}
+		})
 	+roller({
 		name:'rollCombatOrder',
 		trigger:{triggeredFuncs:['rollInitiative']}
+		})
+	span.small = Int + Ref/10 +
+	+number({
+		name:'combat_order_modifier',
+		step:'0.1',
+		trigger: { affects:['combat_order']}
 		})
 
 label(for='armour').input-label
