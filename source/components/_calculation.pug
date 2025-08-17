@@ -1,0 +1,10 @@
+mixin calculation({name,formula,formulaText})
+	+readOnly({
+		name,
+		trigger: {formula}
+		})
+	span.small.padded= formulaText
+	+number({
+		name:`${name}_modifier`,
+		trigger:{affects:[name]}
+		})

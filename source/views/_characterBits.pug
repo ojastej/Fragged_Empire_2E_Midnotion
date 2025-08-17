@@ -23,22 +23,9 @@ label(for='spare_time').input-label
 	span(data-i18n='spare time')
 +number({name:'spare_time'})
 
-label(for='endurance').input-label
-	span(data-i18n='endurance')
-+currentMax({name:'endurance'})
-
-label(for='defence').input-label
-	span(data-i18n='defence')
-+number({name:'defence'})
-
-label(for='recovery').input-label
-	span(data-i18n='recovery')
-+number({name:'recovery'})
-
 label(for='combat_order').input-label
 	span(data-i18n='combat order')
-.nowrap
-	//-		step:'0.1',
+.nowrap.span-3
 	+readOnly({
 		name:'combat_order',
 		trigger: {
@@ -56,6 +43,29 @@ label(for='combat_order').input-label
 		trigger: { affects:['combat_order']}
 		})
 
+label(for='defence').input-label
+	span(data-i18n='defence')
+.nowrap.span-3
+	+calculation({
+		name:'defence',
+		formula:`10 + @{reflexes} + @{defence_modifier}`,
+		formulaText:' = 10 + Reflexes + '
+		})
+
+label(for='endurance').input-label
+	span(data-i18n='endurance')
++currentMax({name:'endurance'})
+
 label(for='armour').input-label
 	span(data-i18n='armour')
 +number({name:'armour'})
+
+label(for='recovery').input-label
+	span(data-i18n='recovery')
+.nowrap
+	+calculation({
+		name:'recovery',
+		formula:`@{grit} + @{recovery_modifier}`,
+		formulaText:' = Grit + '
+		})
+

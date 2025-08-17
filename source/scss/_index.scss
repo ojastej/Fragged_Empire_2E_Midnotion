@@ -151,6 +151,10 @@
 			width: calc(1.25 * var(--numberWidth));
 		}
 	}
+	.padded {
+		padding-left: var(--tiny-gap);
+		padding-right: var(--tiny-gap);
+	}
 	.readonly, .skill-mod {
 		font-family: var(--contentFont);
 		width: calc(1.25 * var(--numberWidth));

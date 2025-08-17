@@ -29,5 +29,6 @@
 * fixed combat skill rolls with undefined tb/ws in roll template
 * fixed blue borders for auto-calculated fields in light mode
 * fixed illegible dropdown colours in dark mode
+* added calculations for combat order, defence, recovery
 
 ## Release 0 (2025-08-15)

@@ -3846,6 +3846,10 @@ body .ui-dialog .tab-content .charsheet .current-max :first-child {
 body .ui-dialog .tab-content .charsheet .limit input:where([type=number]), body .ui-dialog .tab-content .charsheet .column input:where([type=number]) {
   width: calc(1.25 * var(--numberWidth));
 }
+body .ui-dialog .tab-content .charsheet .padded {
+  padding-left: var(--tiny-gap);
+  padding-right: var(--tiny-gap);
+}
 body .ui-dialog .tab-content .charsheet .readonly, body .ui-dialog .tab-content .charsheet .skill-mod {
   font-family: var(--contentFont);
   width: calc(1.25 * var(--numberWidth));
