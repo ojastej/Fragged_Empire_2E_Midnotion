@@ -72,8 +72,9 @@
 		margin-top:1px;
 		padding-bottom: 1px;
 	}
-	input:where([type=number])
+	input:where([type=number]), .number
 	{
+		display: inline-block;
 		width: var(--numberWidth);
 	}
 	button.roller {

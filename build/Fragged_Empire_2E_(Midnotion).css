@@ -3780,7 +3780,8 @@ body .ui-dialog .tab-content .charsheet .skills input[type=checkbox]:not(.collap
   margin-top: 1px;
   padding-bottom: 1px;
 }
-body .ui-dialog .tab-content .charsheet input:where([type=number]) {
+body .ui-dialog .tab-content .charsheet input:where([type=number]), body .ui-dialog .tab-content .charsheet .number {
+  display: inline-block;
   width: var(--numberWidth);
 }
 body .ui-dialog .tab-content .charsheet button.roller {

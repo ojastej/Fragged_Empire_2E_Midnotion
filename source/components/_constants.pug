@@ -1,12 +1,12 @@
 -
-	const baseAttributes = [
-		'strength',
-		'reflexes',
-		'mobility',
-		'focus',
-		'intelligence',
-		'grit'
-	];
+	const baseAttributes = {
+		strength:{name:'strength',affects:['endurance_max','equipment_slots_max']},
+		reflexes:{name:'reflexes',affects:['combat_order','defence']},
+		mobility:{name:'mobility',affects:[]},
+		focus:{name:'focus',affects:[]},
+		intelligence:{name:'intelligence',affects:['combat_order']},
+		grit:{name:'grit',affects:['grit_rolls_max','recovery']}
+	};
 
 	const primarySkills = {
 		wealth:{name:'wealth',attribute:''},

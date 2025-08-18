@@ -7,21 +7,41 @@ label(for='level').input-label
 
 label(for='resources').input-label
 	span(data-i18n='resources')
-+currentMax({name:'resources'})
+.span-3
+	+number({name:'resources'})
+	+calculation({
+		name:'resources_max',
+		formula:`@{level} + 3 + @{resources_max_modifier}`,
+		formulaText:' = Level + 3 +'
+		})
+.span-2
 +trait({name:'resources_trait'}).span-2
 
 label(for='influence').input-label
 	span(data-i18n='influence')
-+currentMax({name:'influence'})
+.span-3
+	+number({name:'influence'})
+	+calculation({
+		name:'influence_max',
+		formula:`@{level} + 3 + @{influence_max_modifier}`,
+		formulaText:' = Level + 3 +'
+		})
+.span-2
 +trait({name:'influence_trait'}).span-2
-
-label(for='grit_rolls').input-label
-	span(data-i18n='grit re-rolls')
-+currentMax({name:'grit_rolls'})
 
 label(for='spare_time').input-label
 	span(data-i18n='spare time')
-+number({name:'spare_time'})
++number({name:'spare_time'}).span-3
+
+label(for='grit_rolls').input-label
+	span(data-i18n='grit re-rolls')
+.span-3
+	+number({name:'grit_rolls'})
+	+calculation({
+		name:'grit_rolls_max',
+		formula:`@{grit} + @{grit_rolls_max_modifier}`,
+		formulaText:' = Grit +'
+		})
 
 label(for='combat_order').input-label
 	span(data-i18n='combat order')
@@ -36,7 +56,7 @@ label(for='combat_order').input-label
 		name:'rollCombatOrder',
 		trigger:{triggeredFuncs:['rollInitiative']}
 		})
-	span.small = Int + Ref/10 +
+	span.small.padded = Int + Ref/10 +
 	+number({
 		name:'combat_order_modifier',
 		step:'0.1',
@@ -49,16 +69,22 @@ label(for='defence').input-label
 	+calculation({
 		name:'defence',
 		formula:`10 + @{reflexes} + @{defence_modifier}`,
-		formulaText:' = 10 + Reflexes + '
+		formulaText:' = 10 + Ref +'
 		})
 
 label(for='endurance').input-label
 	span(data-i18n='endurance')
-+currentMax({name:'endurance'})
+.span-3
+	+number({name:'endurance'})
+	+calculation({
+		name:'endurance_max',
+		formula:`10 + 5 * @{strength_max} + @{endurance_max_modifier}`,
+		formulaText:' = 10 + 5 * Str +'
+		})
 
 label(for='armour').input-label
 	span(data-i18n='armour')
-+number({name:'armour'})
++number({name:'armour'}).span-3
 
 label(for='recovery').input-label
 	span(data-i18n='recovery')
@@ -66,6 +92,6 @@ label(for='recovery').input-label
 	+calculation({
 		name:'recovery',
 		formula:`@{grit} + @{recovery_modifier}`,
-		formulaText:' = Grit + '
+		formulaText:' = Grit +'
 		})
 

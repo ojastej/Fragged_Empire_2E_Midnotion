@@ -8,10 +8,13 @@
 * default values missing (skill total, blue)
 * send perk to chat
 * send equipment to chat
-* show numerical bulk in dropdown
 * calculate bulk used
 * calculate max secondaries with mod (final = calc + mod)
+  * equipment slots= 6+str
+  * armour= (outfit)
+  * perks= influence/5
 * level/session not intuitive
+* clean up Character section UI; maybe collapse the calculations with a button?
 
 ## In progress
 
@@ -29,6 +32,15 @@
 * fixed combat skill rolls with undefined tb/ws in roll template
 * fixed blue borders for auto-calculated fields in light mode
 * fixed illegible dropdown colours in dark mode
-* added calculations for combat order, defence, recovery
+* added calculations for
+  * resources max= level+3
+  * influence max= level+3
+  * combat order= int + ref/10
+  * defence= 10 + ref
+  * endurance= 10+(str*5)
+  * recovery= grit
+* showing numerical bulk in dropdown
+* added calculation outline to attribute modifiers
+* shortened attribute modifier column heading and added tooltip
 
 ## Release 0 (2025-08-15)

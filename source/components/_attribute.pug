@@ -1,41 +1,47 @@
 mixin attributeHeader
 	.name.column
-	+label({label:"Modifier", divObj:{class:"column"}, spanObj:{class:"column"}})
-	+label({label:"Current", divObj:{class:"column"}, spanObj:{class:"column"}})
-	+label({label:"Limit", divObj:{class:"column"}, spanObj:{class:"column"}})
-	+label({label:"Trait", divObj:{class:"column"}, spanObj:{class:"column"}})
+	+label({label:"mod",
+		divObj:{class:"column"},
+		spanObj:{class:"column",'data-i18n-title':'Skill modifier'}
+		})
+	+label({label:"current", divObj:{class:"column"}, spanObj:{class:"column"}})
+	+label({label:"limit", divObj:{class:"column"}, spanObj:{class:"column"}})
+	+label({label:"trait", divObj:{class:""}, spanObj:{class:""}})
 
 //- build an attribute row
-mixin attributeRow(name)
-	+label({label:name}).name
+mixin attributeRow(attr)
+	+label({label:attr.name}).name
 
 	-
 		const trigger = {
 			calculation:'calcAttributeSkillMod',
-			affects: skillsByAttribute[name]
+			affects: skillsByAttribute[attr.name]
 			};
 
 	+attributeSkillMod({
-		name:`${name}_skill_modifier`,
+		name:`${attr.name}_skill_modifier`,
 		value:0,
 		classAdd:' column',
 		trigger: trigger
 		})
 	//-	console.log ("skillsByAttribute{}", name, skillsByAttribute[name]);
+	- const mod = [`${attr.name}_skill_modifier`];
+	- const affecting = [...mod, ...attr.affects];
 	
-	+currentMaxLimit({name,trigger:{affects:[`${name}_skill_modifier`]}})
+	+currentMaxLimit({name:attr.name,trigger:{affects:affecting}})
+	//- console.log ("+attributeRow", attr, affecting);
 
 	+trait({name:`${name}_trait`})
 //- End mixin
 
 //- setup a field to store the skill mod numerically while displaying something fancier
-mixin attributeSkillMod({name,defaultValue,classAdd,trigger})
-	span(class=`attribute-skill-mod-container${classAdd ? classAdd : ''}`)
+mixin attributeSkillMod({name,defaultValue,trigger})
+	span(class='readonly')
 		-
 			const trueDefault = defaultValue === undefined ?
 				0 :
 				defaultValue;
 		+hidden({name,class:'attribute-skill-mod',value:trueDefault,trigger})
-		+span({class:`attribute-skill-mod-display${classAdd ? ` ${classAdd}` : ''}`,name})
+		+span({class:'readonly-display',name})
 			|#{trueDefault}
 //- End mixin
