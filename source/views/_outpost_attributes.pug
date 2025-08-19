@@ -1,7 +1,7 @@
 section(data-i18n-aria-label="attributes")
-	.attributes
+	.attributes.column-4
 		h2(data-i18n='attributes')
 		.grid.tiny-gap
-			+attributeHeader
+			+attributeHeader(false)
 			each attr in outpostAttributes
-				+attributeRow(attr)
+				+attributeRow(attr, false)

@@ -202,9 +202,11 @@
 			grid-column-end: 6;
 		}
 	}
-	.calculated > .grid {
-		grid-auto-columns: max-content;
-		grid-template-columns: auto auto auto;
+	.calculated, .production {
+		 > .grid {
+			grid-auto-columns: max-content;
+			grid-template-columns: auto auto auto;
+		}
 	}
 	.skills > .grid 
 	{

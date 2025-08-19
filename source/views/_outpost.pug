@@ -1,25 +1,4 @@
-section(data-i18n-aria-label="outpost")
-	h2(data-i18n='outpost')
-
-	.grid.column-4
-		label(for='character_name').input-label
-			span(data-i18n='name')
-		+text({name:'character_name'}).span-3
-
-		label(for='population').input-label
-			span(data-i18n='population')
-		.select.span-3
-			+select({name:'species'})
-				+option({value:'','data-i18n':'select'})
-				+option({value:'Corporation','data-i18n':'corporation'})
-				+option({value:'Kaltoran','data-i18n':'kaltoran'})
-				+option({value:'Legion','data-i18n':'legion'})
-				+option({value:'Mixed','data-i18n':'mixed'})
-				+option({value:'Nephilim','data-i18n':'nephilim'})
-				+option({value:'Palantor','data-i18n':'palantor'})
-				+option({value:'Remnant','data-i18n':'remnant'})
-				+option({value:'Twi-Far','data-i18n':'twifar'})
-				+option({value:'Zhou','data-i18n':'zhou'})
-
+include ./_outpost_id.pug
 include ./_outpost_attributes.pug
 include ./_outpost_calculated.pug
+include ./_outpost_production.pug

@@ -1,3 +1,9 @@
 {
-  "cargo_space": "cargo space"
+  "cargo_space": "cargo space",
+  "produce_food": "produce food",
+  "produce_organisms": "produce organisms",
+  "produce_ore": "produce food",
+  "produce_energy": "produce energy",
+  "produce_machinery": "produce machinery",
+  "produce_tech": "produce tech"
 }

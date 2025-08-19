@@ -1,29 +1,31 @@
-mixin attributeHeader
+mixin attributeHeader(showModifier=true)
 	.name.column
-	+label({label:"mod",
-		divObj:{class:"column"},
-		spanObj:{class:"column",'data-i18n-title':'Skill modifier'}
-		})
+	if showModifier
+		+label({label:"mod",
+			divObj:{class:"column"},
+			spanObj:{class:"column",'data-i18n-title':'Skill modifier'}
+			})
 	+label({label:"current", divObj:{class:"column"}, spanObj:{class:"column"}})
 	+label({label:"limit", divObj:{class:"column"}, spanObj:{class:"column"}})
 	+label({label:"trait", divObj:{class:""}, spanObj:{class:""}})
 
 //- build an attribute row
-mixin attributeRow(attr)
+mixin attributeRow(attr, showModifier=true)
 	+label({label:attr.name}).name
 
-	-
-		const trigger = {
-			calculation:'calcAttributeSkillMod',
-			affects: skillsByAttribute[attr.name]
-			};
+	if showModifier
+		-
+			const trigger = {
+				calculation:'calcAttributeSkillMod',
+				affects: skillsByAttribute[attr.name]
+				};
+		+attributeSkillMod({
+			name:`${attr.name}_skill_modifier`,
+			value:0,
+			classAdd:' column',
+			trigger: trigger
+			})
 
-	+attributeSkillMod({
-		name:`${attr.name}_skill_modifier`,
-		value:0,
-		classAdd:' column',
-		trigger: trigger
-		})
 	//-	console.log ("skillsByAttribute{}", name, skillsByAttribute[name]);
 	- const mod = [`${attr.name}_skill_modifier`];
 	- const affecting = [...mod, ...attr.affects];

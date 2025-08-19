@@ -16,10 +16,18 @@
 		order:{name:'order',affects:['wealth','workforce']}
 	};
 	const outpostCalculated = {
-		cargo_space:{name:'cargo_space',formula:`2*@{prosperity}`,formulaText:'= 2 * Pro +'},
-		wealth:{name:'wealth',formula:`@{prosperity}+@{order}`,formulaText:'= Pro + Ord +'},
-		workforce:{name:'workforce',formula:`@{security}+@{order}`,formulaText:'= Sec + Ord +'},
-		soldiers:{name:'soldiers',formula:`@{prosperity}+@{security}`,formulaText:'= Pro + Sec +'}
+		cargo_space:{name:'cargo_space',formula:`2*@{prosperity}+@{cargo_space_modifier}`,formulaText:'= 2 * Pro +'},
+		wealth:{name:'wealth',formula:`@{prosperity}+@{order}+@{wealth_modifier}`,formulaText:'= Pro + Ord +'},
+		workforce:{name:'workforce',formula:`@{security}+@{order}+@{workforce_modifier}`,formulaText:'= Sec + Ord +'},
+		soldiers:{name:'soldiers',formula:`@{prosperity}+@{security}+@{soldiers_modifier}`,formulaText:'= Pro + Sec +'}
+	};
+	const outpostProduction = {
+		produce_food:{name:'produce_food',formula:`2*@{farms}+@{produce_food_modifier}`,formulaText:'= 2 * Farms +'},
+		produce_organisms:{name:'produce_organisms',formula:`@{farms}-2+@{produce_organisms_modifier}`,formulaText:'= Farms - 2 +'},
+		produce_ore:{name:'produce_ore',formula:`2*@{mines}+@{produce_ore_modifier}`,formulaText:'= 2 * Mines +'},
+		produce_energy:{name:'produce_energy',formula:`@{mines}-2+@{produce_energy_modifier}`,formulaText:'= Mines - 2 +'},
+		produce_machinery:{name:'produce_machinery',formula:`2*@{industry}+@{produce_machinery_modifier}`,formulaText:'= 2 * Industry +'},
+		produce_tech:{name:'produce_tech',formula:`@{industry}-2+@{produce_tech_modifier}`,formulaText:'= Industry - 2 +'}
 	};
 
 	const primarySkills = {

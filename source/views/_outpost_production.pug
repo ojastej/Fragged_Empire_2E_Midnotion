@@ -1,0 +1,7 @@
+section(data-i18n-aria-label="production")
+	.production
+		h2(data-i18n='production')
+		.grid.tiny-gap
+			+calculatedHeader
+			each attr in outpostProduction
+				+calculatedRow(attr)

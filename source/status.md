@@ -2,8 +2,8 @@
 
 ## Todo
 
-* Outpost sheet
 * NPC sheet
+  * NPC type?
 * Spacecraft sheet
 * languages? workaround: racial details
 * racial details? workaround: perks
@@ -25,6 +25,9 @@
   * fix checkbox appearance
   * update rollSkill() to refer to the field
 * updater script to copy weapon hitDice to hit_dice
+* Outpost sheet
+  * cargo space contents
+  * mass combat stuff
 
 ## Release 1 (TBD)
 
@@ -45,5 +48,9 @@
 * showing numerical bulk in dropdown
 * added calculation outline to attribute modifiers
 * shortened attribute modifier column heading and added tooltip
+* Outpost sheet
+  * Outpost attributes
+  * Outpost calculated stats
+  * Outpost production
 
 ## Release 0 (2025-08-15)
