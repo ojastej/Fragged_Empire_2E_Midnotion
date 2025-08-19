@@ -22,9 +22,11 @@ main#main
 		//- Add additional tabs as needed
 		+tab({name:'pc',button:{content:'PC'},container:'article'})(class="tab_horizontal")
 			include ./views/_pc.pug
-		+tab({name:'npc',button:{content:'support_agent NPC',class:'material-icons'},container:'article'})(class="tab_horizontal")
+		+tab({name:'npc',button:{content:'NPC',class:'material-icons'},container:'article'})(class="tab_horizontal")
 			include ./views/_npc.pug
-		+tab({name:'spacecraft',button:{content:'rocket_launch',class:'material-icons'},container:'article'})(class="tab_horizontal")
+		+tab({name:'outpost',button:{content:'outpost'},container:'article'})(class="tab_horizontal")
+			include ./views/_outpost.pug
+		+tab({name:'spacecraft',button:{content:'spacecraft',class:'material-icons'},container:'article'})(class="tab_horizontal")
 			include ./views/_spacecraft.pug
 		+tab({name:'settings',button:{class:'pictos',content:'y'},container:'article'})(class="tab_horizontal")
 			include ./views/_settings.pug

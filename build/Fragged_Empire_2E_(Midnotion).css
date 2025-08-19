@@ -3902,6 +3902,10 @@ body .ui-dialog .tab-content .charsheet .attributes > .grid .name {
 body .ui-dialog .tab-content .charsheet .attributes > .grid .trait-container {
   grid-column-end: 6;
 }
+body .ui-dialog .tab-content .charsheet .calculated > .grid {
+  grid-auto-columns: max-content;
+  grid-template-columns: auto auto auto;
+}
 body .ui-dialog .tab-content .charsheet .skills > .grid {
   grid-auto-columns: max-content;
 }

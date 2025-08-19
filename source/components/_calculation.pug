@@ -1,10 +1,24 @@
+mixin calculatedHeader
+	.name.column
+	+label({label:"val",
+		divObj:{class:"column"},
+		spanObj:{class:"column",'data-i18n-title':'Calculated value'}
+		})
+	+label({label:"calculation", divObj:{class:"column"}, spanObj:{class:"column"}})
+
+mixin calculatedRow(attr)
+	+label({label:attr.name}).name
+	+calculation({name:attr.name, formula:attr.formula, formulaText:attr.formulaText})
+	-console.log ("calculatedRow()", attr);
+
 mixin calculation({name,formula,formulaText})
 	+readOnly({
 		name,
 		trigger: {formula}
 		})
-	span.small.padded= formulaText
-	+number({
-		name:`${name}_modifier`,
-		trigger:{affects:[name]}
-		})
+	div
+		span.small.padded= formulaText
+		+number({
+			name:`${name}_modifier`,
+			trigger:{affects:[name]}
+			})

@@ -1,0 +1,7 @@
+section(data-i18n-aria-label="calculated")
+	.calculated
+		h2(data-i18n='calculated')
+		.grid.tiny-gap
+			+calculatedHeader
+			each attr in outpostCalculated
+				+calculatedRow(attr)

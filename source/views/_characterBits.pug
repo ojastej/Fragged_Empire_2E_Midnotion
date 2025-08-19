@@ -95,3 +95,11 @@ label(for='recovery').input-label
 		formulaText:' = Grit +'
 		})
 
+label(for='equipment_slots').input-label
+	span(data-i18n='equipment_slots')
+.nowrap
+	+calculation({
+		name:'equipment_slots',
+		formula:`@{strength} + @{equipment_slots_modifier}`,
+		formulaText:' = Str +'
+		})

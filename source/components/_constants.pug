@@ -7,6 +7,20 @@
 		intelligence:{name:'intelligence',affects:['combat_order']},
 		grit:{name:'grit',affects:['grit_rolls_max','recovery']}
 	};
+	const outpostAttributes = {
+		farms:{name:'farms',affects:[]},
+		mines:{name:'mines',affects:[]},
+		industry:{name:'industry',affects:[]},
+		prosperity:{name:'prosperity',affects:['cargo_space','wealth','soldiers']},
+		security:{name:'security',affects:['workforce','soldiers']},
+		order:{name:'order',affects:['wealth','workforce']}
+	};
+	const outpostCalculated = {
+		cargo_space:{name:'cargo_space',formula:`2*@{prosperity}`,formulaText:'= 2 * Pro +'},
+		wealth:{name:'wealth',formula:`@{prosperity}+@{order}`,formulaText:'= Pro + Ord +'},
+		workforce:{name:'workforce',formula:`@{security}+@{order}`,formulaText:'= Sec + Ord +'},
+		soldiers:{name:'soldiers',formula:`@{prosperity}+@{security}`,formulaText:'= Pro + Sec +'}
+	};
 
 	const primarySkills = {
 		wealth:{name:'wealth',attribute:''},

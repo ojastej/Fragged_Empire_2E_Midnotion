@@ -2,6 +2,9 @@
 
 ## Todo
 
+* Outpost sheet
+* NPC sheet
+* Spacecraft sheet
 * languages? workaround: racial details
 * racial details? workaround: perks
 * outfit/weapon variations and mods? workaround: description
@@ -10,7 +13,6 @@
 * send equipment to chat
 * calculate bulk used
 * calculate max secondaries with mod (final = calc + mod)
-  * equipment slots= 6+str
   * armour= (outfit)
   * perks= influence/5
 * level/session not intuitive
@@ -39,6 +41,7 @@
   * defence= 10 + ref
   * endurance= 10+(str*5)
   * recovery= grit
+  * equipment slots= 6+str
 * showing numerical bulk in dropdown
 * added calculation outline to attribute modifiers
 * shortened attribute modifier column heading and added tooltip
