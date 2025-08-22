@@ -409,7 +409,7 @@
         <label class="input-label"><span data-i18n="acquistion"></span>
           <input class="input-label__input" name="attr_acquisition_modifier" type="number" value="0" title="@{acquisition_modifier}"/>
         </label>
-        <input name="attr_acquisition_apply" value="0" type="checkbox" title="@{acquisition_apply}"/>
+        <input name="attr_acquisition_apply" value="1" type="checkbox" title="@{acquisition_apply}"/>
       </div>
       <div class="grid tiny-gap">
         <div class="name column"></div>
@@ -3533,10 +3533,12 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 	const rollAttribute = attributes[`${skillName}_attribute`];
 	const isCombatSkill = rollAttribute == '';
 	const insertModifiers = isCombatSkill ? '' : ` + ${skillDetails.toolbox} [toolbox] + ${skillDetails.workshop} [workshop] + ${skillDetails.attributeModifier} [attribute]`;
+	console.log ("rollSkill()", attributes['acquisition_apply'], attributes['acquisition_modifier']);
+	const acquisition = attributes['acquisition_apply'] ? ` + ${attributes['acquisition_modifier']} [acquisition]` : '';
 	const rollObj = Object.assign({
 		title:skillName,
 		source:rollAttribute,
-		roll: `[[3d6cf<0sd + ${skillDetails.trained} [trained] ${insertModifiers} + ${skillDetails.modifier} [modifier]]]`,
+		roll: `[[3d6cf<0sd + ${skillDetails.trained} [trained] ${insertModifiers} + ${skillDetails.modifier} [modifier] ${acquisition}]]`,
 		strong_hits: '[[0]]'
 		}, skillDetails);
 	console.log ("rollSkill()", skillName, rollAttr, rollTransKey, skillDetails, rollObj);
