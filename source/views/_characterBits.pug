@@ -2,7 +2,10 @@ label(for='level').input-label
 	span(data-i18n='level')
 .value
 	+number({name:'level'})
+	span.small.padded
+		|+
 	+number({name:'sessions'})
+	span(data-i18n='sessions').small.padded
 +trait({name:'level_trait'})
 
 label(for='resources').input-label

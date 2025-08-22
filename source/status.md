@@ -15,16 +15,12 @@
 * calculate max secondaries with mod (final = calc + mod)
   * armour= (outfit)
   * perks= influence/5
-* level/session not intuitive
-* clean up Character section UI; maybe collapse the calculations with a button?
 * hexagonal checkboxes
 
 ## In progress
 
 * acquisition modifier and checkbox to apply or not
-  * layout needs to be cleaned up
   * fix checkbox appearance
-  * update rollSkill() to refer to the field
 * updater script to copy weapon hitDice to hit_dice
 * Outpost sheet
   * cargo space contents
@@ -53,5 +49,8 @@
   * Outpost attributes
   * Outpost calculated stats
   * Outpost production
+* moved combat-related calculated stats to a separate section
+* added acquisition modifier and checkbox
+* clarified level and session inputs
 
 ## Release 0 (2025-08-15)
