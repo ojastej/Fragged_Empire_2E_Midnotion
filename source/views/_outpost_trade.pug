@@ -1,0 +1,18 @@
+section(data-i18n-aria-label='trade')
+	h2(data-i18n='trade') Trade Goods
+	+customControlFieldset({
+		name:'outpostTradeGoods'
+		})
+		//- trigger:{triggeredFuncs:['removeTradeGoods']}
+		.row
+			.select
+				+select({name:'type'})
+					+option({'data-i18n':'type',selected:''})
+					+option({'data-i18n':'food'})
+					+option({'data-i18n':'organisms'})
+					+option({'data-i18n':'ore'})
+					+option({'data-i18n':'energy'})
+					+option({'data-i18n':'machinery'})
+					+option({'data-i18n':'tech'})
+			+text({name:'detail', 'data-i18n-placeholder':'Detail'})
+			+input({name:'quantity',type:'number','data-i18n-placeholder':'#'})

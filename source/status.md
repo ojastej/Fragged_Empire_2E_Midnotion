@@ -46,9 +46,11 @@
 * added calculation outline to attribute modifiers
 * shortened attribute modifier column heading and added tooltip
 * Outpost sheet
-  * Outpost attributes
-  * Outpost calculated stats
-  * Outpost production
+  * attributes
+  * calculated stats
+  * production
+  * trade goods
+  * notes
 * moved combat-related calculated stats to a separate section
 * added acquisition modifier and checkbox
 * clarified level and session inputs
