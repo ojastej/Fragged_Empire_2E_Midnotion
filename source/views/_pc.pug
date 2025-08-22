@@ -1,13 +1,13 @@
 section(data-i18n-aria-label="pc")#pc
 	h2(data-i18n='character')
-	.grid.column-4
+	.grid.column-3
 		label(for='character_name').input-label
 			span(data-i18n='name')
-		+text({name:'character_name'}).span-3
+		+text({name:'character_name'}).span-2
 
 		label(for='species').input-label
 			span(data-i18n='species')
-		.select.span-3
+		.select.span-2
 			+select({name:'species'})
 				+option({value:'','data-i18n':'select'})
 				+option({value:'Corporation','data-i18n':'corporation'})
@@ -22,6 +22,7 @@ section(data-i18n-aria-label="pc")#pc
 		include ./_characterBits.pug
 
 include ./_attributes.pug
+include ./_combat.pug
 include ./_weapons.pug
 include ./_skills.pug
 include ./_combatSkills.pug

@@ -17,6 +17,7 @@
   * perks= influence/5
 * level/session not intuitive
 * clean up Character section UI; maybe collapse the calculations with a button?
+* hexagonal checkboxes
 
 ## In progress
 

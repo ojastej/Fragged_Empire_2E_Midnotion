@@ -16,7 +16,7 @@ mixin calculation({name,formula,formulaText})
 		name,
 		trigger: {formula}
 		}).column
-	div
+	.inline
 		span.small.padded= formulaText
 		+number({
 			name:`${name}_modifier`,

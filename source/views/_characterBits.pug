@@ -3,39 +3,37 @@ label(for='level').input-label
 .value
 	+number({name:'level'})
 	+number({name:'sessions'})
-+trait({name:'level_trait'}).span-2
++trait({name:'level_trait'})
 
 label(for='resources').input-label
 	span(data-i18n='resources')
-.span-3
+.span-1
 	+number({name:'resources'})
 	+calculation({
 		name:'resources_max',
 		formula:`@{level} + 3 + @{resources_max_modifier}`,
 		formulaText:' = Level + 3 +'
 		})
-.span-2
-+trait({name:'resources_trait'}).span-2
++trait({name:'resources_trait'})
 
 label(for='influence').input-label
 	span(data-i18n='influence')
-.span-3
+.span-1
 	+number({name:'influence'})
 	+calculation({
 		name:'influence_max',
 		formula:`@{level} + 3 + @{influence_max_modifier}`,
 		formulaText:' = Level + 3 +'
 		})
-.span-2
-+trait({name:'influence_trait'}).span-2
++trait({name:'influence_trait'})
 
 label(for='spare_time').input-label
 	span(data-i18n='spare time')
-+number({name:'spare_time'}).span-3
++number({name:'spare_time'}).span-2
 
 label(for='grit_rolls').input-label
 	span(data-i18n='grit re-rolls')
-.span-3
+.span-2
 	+number({name:'grit_rolls'})
 	+calculation({
 		name:'grit_rolls_max',
@@ -43,61 +41,9 @@ label(for='grit_rolls').input-label
 		formulaText:' = Grit +'
 		})
 
-label(for='combat_order').input-label
-	span(data-i18n='combat order')
-.nowrap.span-3
-	+readOnly({
-		name:'combat_order',
-		trigger: {
-			formula:'@{intelligence_max} + (@{reflexes_max}/10) + @{combat_order_modifier}'
-			}
-		})
-	+roller({
-		name:'rollCombatOrder',
-		trigger:{triggeredFuncs:['rollInitiative']}
-		})
-	span.small.padded = Int + Ref/10 +
-	+number({
-		name:'combat_order_modifier',
-		step:'0.1',
-		trigger: { affects:['combat_order']}
-		})
-
-label(for='defence').input-label
-	span(data-i18n='defence')
-.nowrap.span-3
-	+calculation({
-		name:'defence',
-		formula:`10 + @{reflexes} + @{defence_modifier}`,
-		formulaText:' = 10 + Ref +'
-		})
-
-label(for='endurance').input-label
-	span(data-i18n='endurance')
-.span-3
-	+number({name:'endurance'})
-	+calculation({
-		name:'endurance_max',
-		formula:`10 + 5 * @{strength_max} + @{endurance_max_modifier}`,
-		formulaText:' = 10 + 5 * Str +'
-		})
-
-label(for='armour').input-label
-	span(data-i18n='armour')
-+number({name:'armour'}).span-3
-
-label(for='recovery').input-label
-	span(data-i18n='recovery')
-.nowrap
-	+calculation({
-		name:'recovery',
-		formula:`@{grit} + @{recovery_modifier}`,
-		formulaText:' = Grit +'
-		})
-
 label(for='equipment_slots').input-label
 	span(data-i18n='equipment_slots')
-.nowrap
+.nowrap.span-2
 	+calculation({
 		name:'equipment_slots',
 		formula:`@{strength} + @{equipment_slots_modifier}`,

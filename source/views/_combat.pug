@@ -1,0 +1,54 @@
+section(data-i18n-aria-label='combat').narrow
+	h2(data-i18n='combat')
+	.grid.column-2
+		label(for='combat_order').input-label
+			span(data-i18n='combat order')
+		.nowrap
+			+readOnly({
+				name:'combat_order',
+				trigger: {
+					formula:'@{intelligence_max} + (@{reflexes_max}/10) + @{combat_order_modifier}'
+					}
+				})
+			+roller({
+				name:'rollCombatOrder',
+				trigger:{triggeredFuncs:['rollInitiative']}
+				})
+			span.small.padded = Int + Ref/10 +
+			+number({
+				name:'combat_order_modifier',
+				step:'0.1',
+				trigger: { affects:['combat_order']}
+				})
+
+		label(for='defence').input-label
+			span(data-i18n='defence')
+		.nowrap
+			+calculation({
+				name:'defence',
+				formula:`10 + @{reflexes} + @{defence_modifier}`,
+				formulaText:' = 10 + Ref +'
+				})
+
+		label(for='endurance').input-label
+			span(data-i18n='endurance')
+		.span-1
+			+number({name:'endurance'})
+			+calculation({
+				name:'endurance_max',
+				formula:`10 + 5 * @{strength_max} + @{endurance_max_modifier}`,
+				formulaText:' = 10 + 5 * Str +'
+				})
+
+		label(for='armour').input-label
+			span(data-i18n='armour')
+		+number({name:'armour'})
+
+		label(for='recovery').input-label
+			span(data-i18n='recovery')
+		.nowrap
+			+calculation({
+				name:'recovery',
+				formula:`@{grit} + @{recovery_modifier}`,
+				formulaText:' = Grit +'
+				})

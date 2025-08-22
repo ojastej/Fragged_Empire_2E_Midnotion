@@ -29,6 +29,11 @@ ul.nav-tabs.nav {
 }
 .ui-dialog .tab-content .charsheet .tabs > nav button {
   color: var(--fontColor);
+  text-transform: capitalize;
+}
+.ui-dialog .tab-content .charsheet .tabs > nav button.pictos {
+  text-transform: none;
+  margin-top: -5px;
 }
 .ui-dialog .tab-content .charsheet .tabs > nav .tabs__button {
   border-width: 1px 3px;
@@ -3740,7 +3745,7 @@ body .ui-dialog .tab-content .charsheet article {
   gap: 10px;
 }
 body .ui-dialog .tab-content .charsheet article section {
-  min-width: 20rem;
+  min-width: 15rem;
   padding: var(--tiny-gap);
 }
 body .ui-dialog .tab-content .charsheet article section h2, body .ui-dialog .tab-content .charsheet article section .input-label:not(.stacked).large > [name] {
@@ -3748,7 +3753,7 @@ body .ui-dialog .tab-content .charsheet article section h2, body .ui-dialog .tab
   margin-right: -5px;
 }
 body .ui-dialog .tab-content .charsheet article section.narrow {
-  max-width: 20rem;
+  max-width: 15rem;
 }
 body .ui-dialog .tab-content .charsheet abbr[title] {
   border-bottom: inherit;
@@ -3790,6 +3795,9 @@ body .ui-dialog .tab-content .charsheet button.roller {
 }
 body .ui-dialog .tab-content .charsheet button.roller:first-child {
   padding-left: 0;
+}
+body .ui-dialog .tab-content .charsheet .inline {
+  display: inline-block;
 }
 body .ui-dialog .tab-content .charsheet .repcontainer {
   gap: var(--tiny-gap);

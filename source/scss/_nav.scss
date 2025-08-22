@@ -35,6 +35,11 @@ ul.nav-tabs.nav{
 	}
 	button{
 		color:var(--fontColor);
+		text-transform:capitalize;
+		&.pictos {
+			text-transform:none;
+			margin-top: -5px;
+		}
 	}
 	%inputHighlight{
 		border-width: 1px 3px;

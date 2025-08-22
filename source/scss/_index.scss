@@ -28,7 +28,7 @@
 		gap: 10px;
 
 		section {
-			min-width: 20rem;
+			min-width: 15rem;
 			padding: var(--tiny-gap);
 			h2 {
 				margin-left: -5px;
@@ -36,7 +36,7 @@
 			}
 		}
 		section.narrow {
-			max-width: 20rem;
+			max-width: 15rem;
 		}
 	}
 	abbr[title] {
@@ -83,6 +83,9 @@
 	}
 	button.roller:first-child {
 		padding-left: 0;
+	}
+	.inline {
+		display: inline-block;
 	}
 	.repcontainer {
 		gap: var(--tiny-gap);

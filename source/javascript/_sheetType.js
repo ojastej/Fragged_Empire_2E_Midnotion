@@ -12,16 +12,25 @@ const sheetTypeDisplay = function({trigger,attributes,sections,casc}){
 		case 'npc':
 			$20('.tabs--sheet-tabs__button--pc').addClass('inactive');
 			$20('.tabs--sheet-tabs__button--npc').removeClass('inactive');
+			$20('.tabs--sheet-tabs__button--outpost').addClass('inactive');
+			$20('.tabs--sheet-tabs__button--spacecraft').addClass('inactive');
+			break;
+		case 'outpost':
+			$20('.tabs--sheet-tabs__button--pc').addClass('inactive');
+			$20('.tabs--sheet-tabs__button--npc').addClass('inactive');
+			$20('.tabs--sheet-tabs__button--outpost').removeClass('inactive');
 			$20('.tabs--sheet-tabs__button--spacecraft').addClass('inactive');
 			break;
 		case 'spacecraft':
 			$20('.tabs--sheet-tabs__button--pc').addClass('inactive');
 			$20('.tabs--sheet-tabs__button--npc').addClass('inactive');
+			$20('.tabs--sheet-tabs__button--outpost').addClass('inactive');
 			$20('.tabs--sheet-tabs__button--spacecraft').removeClass('inactive');
 			break;
 		default:	// pc
 			$20('.tabs--sheet-tabs__button--pc').removeClass('inactive');
 			$20('.tabs--sheet-tabs__button--npc').addClass('inactive');
+			$20('.tabs--sheet-tabs__button--outpost').addClass('inactive');
 			$20('.tabs--sheet-tabs__button--spacecraft').addClass('inactive');
 	}
 };
