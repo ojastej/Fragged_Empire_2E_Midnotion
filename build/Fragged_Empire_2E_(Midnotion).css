@@ -3753,7 +3753,7 @@ body .ui-dialog .tab-content .charsheet article section h2, body .ui-dialog .tab
   margin-right: -5px;
 }
 body .ui-dialog .tab-content .charsheet article section.narrow {
-  max-width: 15rem;
+  max-width: 20rem;
 }
 body .ui-dialog .tab-content .charsheet abbr[title] {
   border-bottom: inherit;
@@ -3767,6 +3767,9 @@ body .ui-dialog .tab-content .charsheet .flex.vertical {
 }
 body .ui-dialog .tab-content .charsheet .flow > label {
   margin-right: 0.5rem;
+}
+body .ui-dialog .tab-content .charsheet .input-label > span {
+  padding-right: var(--tiny-gap);
 }
 body .ui-dialog .tab-content .charsheet input:not(:where([type=checkbox], [type=radio])),
 body .ui-dialog .tab-content .charsheet select,

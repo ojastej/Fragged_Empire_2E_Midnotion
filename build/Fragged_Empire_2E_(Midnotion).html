@@ -402,14 +402,16 @@
   <section data-i18n-aria-label="skills" id="skills">
     <div class="skills">
       <h2 data-i18n="skills"></h2>
-      <div class="flex tiny-gap">
+      <div class="flex big-gap narrow">
         <label class="input-label"><span data-i18n="untrained"></span>
           <input class="input-label__input" name="attr_untrained" type="number" value="-2" title="@{untrained}"/>
         </label>
-        <label class="input-label"><span data-i18n="acquistion"></span>
-          <input class="input-label__input" name="attr_acquisition_modifier" type="number" value="0" title="@{acquisition_modifier}"/>
-        </label>
-        <input name="attr_acquisition_apply" value="1" type="checkbox" title="@{acquisition_apply}"/>
+        <div class="nowrap half-gap">
+          <label class="input-label half-gap"><span data-i18n="acquistion"></span>
+            <input class="input-label__input" name="attr_acquisition_modifier" type="number" value="0" title="@{acquisition_modifier}"/>
+          </label>
+          <input name="attr_acquisition_apply" value="1" type="checkbox" title="@{acquisition_apply}"/>
+        </div>
       </div>
       <div class="grid tiny-gap">
         <div class="name column"></div>

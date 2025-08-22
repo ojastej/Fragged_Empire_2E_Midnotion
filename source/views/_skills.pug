@@ -1,7 +1,7 @@
 section(data-i18n-aria-label="skills")#skills
 	.skills
 		h2(data-i18n='skills')
-		.flex.tiny-gap
+		.flex.big-gap.narrow
 			+input-label( {
 				label:'untrained',
 				inputObj: {
@@ -13,15 +13,17 @@ section(data-i18n-aria-label="skills")#skills
 						}
 					}
 				})
-			+input-label({
-				label:'acquistion',
-				inputObj: {
-					name:'acquisition_modifier',
-					type:'number',
-					value:0
-				}
-			})
-			+checkbox({name:'acquisition_apply',value:1})
+			.nowrap.half-gap
+				+input-label({
+					label:'acquistion',
+					divObj: {class: 'half-gap'},
+					inputObj: {
+						name:'acquisition_modifier',
+						type:'number',
+						value:0
+					}
+				})
+				+checkbox({name:'acquisition_apply',value:1})
 
 		.grid.tiny-gap
 			+skillHeader

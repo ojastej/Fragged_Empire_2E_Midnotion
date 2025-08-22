@@ -36,7 +36,7 @@
 			}
 		}
 		section.narrow {
-			max-width: 15rem;
+			max-width: 20rem;
 		}
 	}
 	abbr[title] {
@@ -51,6 +51,9 @@
 	}
 	.flow > label {
 		margin-right: 0.5rem;
+	}
+	.input-label > span {
+		padding-right: var(--tiny-gap);
 	}
 	input:not(:where([type=checkbox],[type=radio])),
 	select,
