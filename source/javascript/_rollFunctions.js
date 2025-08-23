@@ -13,6 +13,7 @@ const rollAttack = async function({trigger,attributes,sections,casc}){
 	const rollName = attributes[`${row}_weapon`];
 	const skillName = attributes[`${row}_skill`];
 	const skillDetails = getSkillRollModifiers(skillName,attributes);
+	const hitBonus = attributes[`${row}_hit`];
 	const hitDice = attributes[`${row}_hit_dice`];
 	const endDmg = attributes[`${row}_endurance_damage`];
 	const focus = attributes['focus'];
@@ -20,7 +21,7 @@ const rollAttack = async function({trigger,attributes,sections,casc}){
 	const rollObj = Object.assign({
 		title:rollName,
 		source:skillName,
-		roll: `[[${hitDice}d6sd [weapon] + ?{Munitions|0}d6sd [munitions] + ${skillDetails.trained} [trained] + ${skillDetails.modifier} [modifier]]]`,
+		roll: `[[${hitDice}d6sd + ${hitBonus} [weapon] + ?{Munitions|0}d6sd [munitions] + ${skillDetails.trained} [trained] + ${skillDetails.modifier} [modifier]]]`,
 		strong_hits: '[[0]]',
 		munitions: '[[?{Munitions}]]',
 		range: attributes[`${row}_range`],

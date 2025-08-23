@@ -26,7 +26,12 @@
   * cargo space contents
   * mass combat stuff
 
-## Release 1 (TBD)
+## Release 2
+
+* fixed attribute trait display
+* fixed weapon hit bonus not showing up in rolls
+
+## Release 1 (2025-08-22)
 
 * fixed munitions per weapon instead of per-char
 * renamed weapon hitDice to hit_dice for consistency

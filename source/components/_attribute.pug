@@ -33,7 +33,7 @@ mixin attributeRow(attr, showModifier=true)
 	+currentMaxLimit({name:attr.name,trigger:{affects:affecting}})
 	//- console.log ("+attributeRow", attr, affecting);
 
-	+trait({name:`${name}_trait`})
+	+trait({name:`${attr.name}_trait`})
 //- End mixin
 
 //- setup a field to store the skill mod numerically while displaying something fancier
