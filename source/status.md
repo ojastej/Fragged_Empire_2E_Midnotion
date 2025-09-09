@@ -13,9 +13,19 @@
 * send equipment to chat
 * calculate bulk used
 * calculate max secondaries with mod (final = calc + mod)
-  * armour= (outfit)
+  * armour= (outfit) + mod
   * perks= influence/5
 * hexagonal checkboxes
+* expanding a trait box also extends some but not all controls vertically
+* placeholder text for Trait box
+* when setting a currentMax control, default the other part to the same value if empty
+* trait details for outpost population
+* no place to put in stats for outfit
+  * def mod
+  * endurance
+  * armour
+  * at 0 endurance
+  * type
 
 ## In progress
 
@@ -25,6 +35,10 @@
 * Outpost sheet
   * cargo space contents
   * mass combat stuff
+
+## Release 3
+
+* Outpost Wealth not calculating properly; getting confused with player skill Wealth
 
 ## Release 2
 

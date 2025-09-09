@@ -46,6 +46,10 @@ k.registerFuncs({calcBulk});
  * @param {object} casc - Expanded cascade object
  */
 const calcSkill = function({trigger,attributes,sections,casc}){
+	if (attributes['character_type'] != 'pc' && attributes['character_type'] != 'npc')
+	{
+		return;
+	}
 	//console.log ('calcSkill()', trigger, attributes, sections, casc);
 	const skillName = trigger.name;
 
