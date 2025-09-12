@@ -15,7 +15,6 @@
 * calculate max secondaries with mod (final = calc + mod)
   * armour= (outfit) + mod
   * perks= influence/5
-* hexagonal checkboxes
 * expanding a trait box also extends some but not all controls vertically
 * placeholder text for Trait box
 * when setting a currentMax control, default the other part to the same value if empty
@@ -35,6 +34,8 @@
 * Outpost sheet
   * cargo space contents
   * mass combat stuff
+* hexagonal checkboxes ⬡⬢＋
+  * material School, Build, Home Work/Store
 
 ## Release 3
 
