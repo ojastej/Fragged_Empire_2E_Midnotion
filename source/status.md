@@ -25,7 +25,6 @@
   * armour
   * at 0 endurance
   * type
-* consider Bodies when making a combat roll
 
 ## In progress
 
@@ -41,6 +40,8 @@
 ## Release 4 2025-09-19
 
 * always display acquisition bonus instead of conditionally adding it in
+* added a Bodies field to the character bits
+* if Bodies > 0, prompt for number of attacking bodies when making an attack roll
 
 ## Release 3 2025-09-12
 

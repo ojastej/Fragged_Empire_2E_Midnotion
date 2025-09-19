@@ -16,16 +16,18 @@ const rollAttack = async function({trigger,attributes,sections,casc}){
 	const hitBonus = attributes[`${row}_hit`];
 	const hitDice = attributes[`${row}_hit_dice`];
 	const endDmg = attributes[`${row}_endurance_damage`];
+	const bodies = attributes['bodies'] > 0 ? `?{Attacking Bodies|${attributes['bodies']}}`: '0';
 	const focus = attributes['focus'];
 	//console.log (skillDetails);
+	//console.log ('bodies', bodies, attributes['bodies'], attributes);
 	const rollObj = Object.assign({
 		title:rollName,
 		source:skillName,
-		roll: `[[${hitDice}d6cf<0sd + ${hitBonus} [weapon] + ?{Munitions|0}d6cf<0sd [munitions] + ${skillDetails.trained} [trained] + ${skillDetails.modifier} [modifier]]]`,
+		roll: `[[${hitDice}d6cf0sd + ${hitBonus} [weapon] + ?{Munitions|0}d6cf0sd [munitions] + ${bodies}d6cf0sd [bodies] + ${skillDetails.trained} [trained] + ${skillDetails.modifier} [skill modifier]]]`,
 		strong_hits: '[[0]]',
 		munitions: '[[?{Munitions}]]',
 		range: attributes[`${row}_range`],
-		endurance: `[[${endDmg} [weapon] + ?{Munitions} [munitions] + ${focus} [focus]]]`,
+		endurance: `[[${endDmg} [weapon] + ?{Munitions} [munitions] + ${focus} [focus] + ${bodies} [bodies]]]`,
 		critical: attributes[`${row}_critical_damage`],
 		description: attributes[`${row}_features`]
 		}, skillDetails);
@@ -86,7 +88,7 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 		title:skillName,
 		source:rollAttribute,
 		acquisition:acquisition,
-		roll: `[[3d6cf<0sd + ${skillDetails.trained} [trained] ${insertModifiers} + ${skillDetails.modifier} [modifier]]]`,
+		roll: `[[3d6cf0sd + ${skillDetails.trained} [trained] ${insertModifiers} + ${skillDetails.modifier} [modifier]]]`,
 		strong_hits: '[[0]]'
 		}, skillDetails);
 	console.log ("rollSkill()", skillName, rollAttr, rollTransKey, skillDetails, rollObj);
@@ -115,12 +117,14 @@ const getSkillRollModifiers = (skillName,attributes) => {
 		workshop: attributes[`${skillName}_workshop`]
 	};
 	const value = Object.assign({
-		trained: attributes[`${skillName}_trained`] ? 1 : attributes['untrained'],
+		trained: skillName
+			? attributes[`${skillName}_trained`] ? 1 : attributes['untrained']
+			: 0,
 		attributeModifier: attributes[`${skillName}_attribute_modifier`],
 		modifier: attributes[`${skillName}_modifier`],
 		total: attributes[skillName]
 	}, attributes[`${skillName}_toolbox`] === undefined ? {} : primary);
-	// console.log ("getSkillRollModifiers()", skillName, attributes[`${skillName}_toolbox`], value);
+	//console.log ("getSkillRollModifiers()", skillName, attributes[`${skillName}_toolbox`], value);
 	return value;
 };
 
