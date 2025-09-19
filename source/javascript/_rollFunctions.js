@@ -21,7 +21,7 @@ const rollAttack = async function({trigger,attributes,sections,casc}){
 	const rollObj = Object.assign({
 		title:rollName,
 		source:skillName,
-		roll: `[[${hitDice}d6sd + ${hitBonus} [weapon] + ?{Munitions|0}d6sd [munitions] + ${skillDetails.trained} [trained] + ${skillDetails.modifier} [modifier]]]`,
+		roll: `[[${hitDice}d6cf<0sd + ${hitBonus} [weapon] + ?{Munitions|0}d6cf<0sd [munitions] + ${skillDetails.trained} [trained] + ${skillDetails.modifier} [modifier]]]`,
 		strong_hits: '[[0]]',
 		munitions: '[[?{Munitions}]]',
 		range: attributes[`${row}_range`],
@@ -80,12 +80,13 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 	const rollAttribute = attributes[`${skillName}_attribute`];
 	const isCombatSkill = rollAttribute == '';
 	const insertModifiers = isCombatSkill ? '' : ` + ${skillDetails.toolbox} [toolbox] + ${skillDetails.workshop} [workshop] + ${skillDetails.attributeModifier} [attribute]`;
-	console.log ("rollSkill()", attributes['acquisition_apply'], attributes['acquisition_modifier']);
-	const acquisition = attributes['acquisition_apply'] ? ` + ${attributes['acquisition_modifier']} [acquisition]` : '';
+	//console.log ("rollSkill()", attributes['acquisition_apply'], attributes['acquisition_modifier']);
+	const acquisition = attributes['acquisition_modifier'];
 	const rollObj = Object.assign({
 		title:skillName,
 		source:rollAttribute,
-		roll: `[[3d6cf<0sd + ${skillDetails.trained} [trained] ${insertModifiers} + ${skillDetails.modifier} [modifier] ${acquisition}]]`,
+		acquisition:acquisition,
+		roll: `[[3d6cf<0sd + ${skillDetails.trained} [trained] ${insertModifiers} + ${skillDetails.modifier} [modifier]]]`,
 		strong_hits: '[[0]]'
 		}, skillDetails);
 	console.log ("rollSkill()", skillName, rollAttr, rollTransKey, skillDetails, rollObj);

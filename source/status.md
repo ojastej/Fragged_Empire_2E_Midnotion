@@ -25,6 +25,7 @@
   * armour
   * at 0 endurance
   * type
+* consider Bodies when making a combat roll
 
 ## In progress
 
@@ -37,7 +38,11 @@
 * hexagonal checkboxes ⬡⬢＋
   * material School, Build, Home Work/Store
 
-## Release 3
+## Release 4 2025-09-19
+
+* always display acquisition bonus instead of conditionally adding it in
+
+## Release 3 2025-09-12
 
 * Outpost Wealth not calculating properly; getting confused with player skill Wealth
 
@@ -46,7 +51,7 @@
 * fixed attribute trait display
 * fixed weapon hit bonus not showing up in rolls
 
-## Release 1 (2025-08-22)
+## Release 1 2025-08-22
 
 * fixed munitions per weapon instead of per-char
 * renamed weapon hitDice to hit_dice for consistency

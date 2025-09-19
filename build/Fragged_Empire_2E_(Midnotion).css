@@ -2341,6 +2341,9 @@ ul.nav-tabs.nav {
   border: var(--inlineRollImportantBorder);
   margin: var(--inlineRollImportantMargin);
 }
+.sheet-rolltemplate-fe2 .sheet-template .sheet-center {
+  text-align: center;
+}
 .sheet-rolltemplate-fe2 .sheet-template .hexagon {
   height: 100px; /* adjust to control the size  */
   aspect-ratio: 1/0.8660254038;

@@ -299,6 +299,9 @@
 @mixin roll{
 	@include generic;
 	// Put any generic roll template styling you have here
+	.sheet-center {
+		text-align: center;
+	}
 	/* HTML: div class="hexagon"/div */
 	.hexagon {
 		height: 100px; /* adjust to control the size  */

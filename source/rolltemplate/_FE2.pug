@@ -9,7 +9,10 @@
 			//- {{attribute}}
 	+templateConditionalDisplay('requirements')
 		.template-row.requirements
-			span(style="text-align:left") {{requirements}}
+			|{{requirements}}
+	+templateConditionalDisplay('acquisition')
+		.template-row.acquisition.center
+			|Acquisition: {{acquisition}}
 	+templateConditionalDisplay('range')
 		.template-row
 			.attack
