@@ -25,6 +25,11 @@
   * armour
   * at 0 endurance
   * type
+* remove Attribute Limit for Outpost
+* hide Bodies field for PCs
+* Equipment Slots should be 6 + Str + bonus
+* Outpost Trade Goods section is misaligned now, the dropdown icon is misplaced
+* Need an Other species with text box
 
 ## In progress
 
@@ -36,6 +41,10 @@
   * mass combat stuff
 * hexagonal checkboxes ⬡⬢＋
   * material School, Build, Home Work/Store
+
+## Release 5 2025-10-11+
+
+* moved all PC calculations into constants file
 
 ## Release 4 2025-09-19
 

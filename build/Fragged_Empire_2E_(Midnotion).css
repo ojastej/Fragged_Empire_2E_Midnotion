@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200|Material Icons|PT Sans Narrow&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap");
 ul.tabs__nav-list {
   margin-bottom: 0px;
 }
@@ -4038,4 +4038,4 @@ body.sheet-darkmode {
   --checkboxBorderColor:white;
   --checkColor:var(--fontColor);
   --checkedBackColor:#444;
-}
+}                              

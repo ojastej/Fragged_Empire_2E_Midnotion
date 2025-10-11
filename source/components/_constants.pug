@@ -7,6 +7,16 @@
 		intelligence:{name:'intelligence',affects:['combat_order']},
 		grit:{name:'grit',affects:['grit_rolls_max','recovery']}
 	};
+	const characterCalculated= {
+		combat_order:{name:'combat_order',formula:'@{intelligence_max} + (@{reflexes_max}/10) + @{combat_order_modifier}',formulaText:'= Int + Ref/10 +'},
+		defence:{name:'defence',formula:'10 + @{reflexes} + @{defence_modifier}',formulaText:'= 10 + Ref +'},
+		endurance_max:{name:'endurance_max',formula:'10 + 5 * @{strength_max} + @{endurance_max_modifier}',formulaText:'= 10 + 5 * Str +'},
+		equipment_slots:{name:'equipment_slots',formula:'@{strength} + 6 + @{equipment_slots_modifier}',formulaText:'= Str + 6 + '},
+		grit_rolls_max:{name:'grit_rolls_max',formula:'@{grit} + @{grit_rolls_max_modifier}',formulaText:'= Grit +'},
+		influence_max:{name:'influence_max',formula:'@{level} + 3 + @{influence_max_modifier}',formulaText:'= Level + 3 +'},
+		recovery:{name:'recovery',formula:'@{grit} + @{recovery_modifier}',formulaText:'= Grit +'},
+		resources_max:{name:'resources_max',formula:'@{level} + 3 + @{resources_max_modifier}',formulaText:'= Level + 3 +'}
+	};
 	const outpostAttributes = {
 		farms:{name:'farms',affects:[]},
 		mines:{name:'mines',affects:[]},

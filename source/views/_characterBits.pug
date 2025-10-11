@@ -12,22 +12,14 @@ label(for='resources').input-label
 	span(data-i18n='resources')
 .span-1
 	+number({name:'resources'})
-	+calculation({
-		name:'resources_max',
-		formula:`@{level} + 3 + @{resources_max_modifier}`,
-		formulaText:' = Level + 3 +'
-		})
+	+calculation(characterCalculated.resources_max)
 +trait({name:'resources_trait'})
 
 label(for='influence').input-label
 	span(data-i18n='influence')
 .span-1
 	+number({name:'influence'})
-	+calculation({
-		name:'influence_max',
-		formula:`@{level} + 3 + @{influence_max_modifier}`,
-		formulaText:' = Level + 3 +'
-		})
+	+calculation(characterCalculated.influence_max)
 +trait({name:'influence_trait'})
 
 label(for='spare_time').input-label
@@ -38,20 +30,12 @@ label(for='grit_rolls').input-label
 	span(data-i18n='grit re-rolls')
 .span-2
 	+number({name:'grit_rolls'})
-	+calculation({
-		name:'grit_rolls_max',
-		formula:`@{grit} + @{grit_rolls_max_modifier}`,
-		formulaText:' = Grit +'
-		})
+	+calculation(characterCalculated.grit_rolls_max)
 
 label(for='equipment_slots').input-label
 	span(data-i18n='equipment_slots')
 .nowrap.span-2
-	+calculation({
-		name:'equipment_slots',
-		formula:`@{strength} + @{equipment_slots_modifier}`,
-		formulaText:' = Str +'
-		})
+	+calculation(characterCalculated.equipment_slots)
 
 label(for='bodies').input-label
 	span(data-i18n='bodies')
