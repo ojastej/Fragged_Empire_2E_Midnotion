@@ -27,8 +27,6 @@
   * type
 * remove Attribute Limit for Outpost
 * hide Bodies field for PCs
-* Equipment Slots should be 6 + Str + bonus
-* Outpost Trade Goods section is misaligned now, the dropdown icon is misplaced
 * Need an Other species with text box
 
 ## In progress
@@ -44,7 +42,9 @@
 
 ## Release 5 2025-10-11+
 
+* fixed Equipment Slots calculation
 * moved all PC calculations into constants file
+* fixed misaligned dropdown chevrons
 
 ## Release 4 2025-09-19
 

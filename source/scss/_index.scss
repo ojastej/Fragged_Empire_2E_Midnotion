@@ -104,17 +104,11 @@
 		display: inline-block;
 	}
 	.select::after {
-		display: inline-block;
 		content: 'keyboard_arrow_down';
 		font-family: 'Material Icons';
-		//position: relative;
-		margin-left: -20px;
-		margin-bottom: -5px;
-		vertical-align: baseline;
-		//padding-top: 10px;
+		vertical-align: text-top;
+		margin-left: -1.3em;
 		pointer-events: none;
-		transform:translateY(2.5px);
-		//transform: rotate(-30deg);
 	}
 	.small {
 		font-size: 80%;

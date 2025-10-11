@@ -3819,14 +3819,11 @@ body .ui-dialog .tab-content .charsheet .select {
   display: inline-block;
 }
 body .ui-dialog .tab-content .charsheet .select::after {
-  display: inline-block;
   content: "keyboard_arrow_down";
   font-family: "Material Icons";
-  margin-left: -20px;
-  margin-bottom: -5px;
-  vertical-align: baseline;
+  vertical-align: text-top;
+  margin-left: -1.3em;
   pointer-events: none;
-  transform: translateY(2.5px);
 }
 body .ui-dialog .tab-content .charsheet .small {
   font-size: 80%;
