@@ -192,15 +192,13 @@
 	}
 	.attributes > .grid {
 		text-transform: capitalize;
-		// attribute, cur/max, skill mod, limit, trait
 		grid-auto-columns: max-content;
-
-		.name {
-			grid-column-start: 1;
-		}
-		.trait-container {
-			grid-column-end: 6;
-		}
+	}
+	.tabs--sheet-tabs__container--outpost .attributes > .grid {
+		grid-template-columns: [name] auto [current] auto [trait] auto;
+	}
+	.tabs--sheet-tabs__container--pc .attributes > .grid {
+		grid-template-columns: [name] auto [mod] auto [current] auto [limit] auto [trait] auto;
 	}
 	.calculated, .production {
 		 > .grid {

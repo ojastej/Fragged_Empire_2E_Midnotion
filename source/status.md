@@ -25,26 +25,26 @@
   * armour
   * at 0 endurance
   * type
-* remove Attribute Limit for Outpost
 * hide Bodies field for PCs
 * Need an Other species with text box
+* hexagonal checkboxes ⬡⬢＋ ?
+  * material School, Build, Home Work/Store ?
 
-## In progress
+## Up next
 
-* acquisition modifier and checkbox to apply or not
-  * fix checkbox appearance
-* updater script to copy weapon hitDice to hit_dice
 * Outpost sheet
   * cargo space contents
   * mass combat stuff
-* hexagonal checkboxes ⬡⬢＋
-  * material School, Build, Home Work/Store
+  * buildings
+  * calculate cargo space used
+  * calculate influence cost
 
 ## Release 5 2025-10-11+
 
 * fixed Equipment Slots calculation
 * moved all PC calculations into constants file
 * fixed misaligned dropdown chevrons
+* fixed column headers for Outpost attributes
 
 ## Release 4 2025-09-19
 

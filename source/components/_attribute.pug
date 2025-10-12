@@ -1,19 +1,31 @@
-mixin attributeHeader(showModifier=true)
-	.name.column
-	if showModifier
+mixin attributeHeader(showColumns)
+	if showColumns == null
+		- showColumns = { modifier: true, name: true, current: true, limit: true, trait: true }
+
+	if showColumns.name
+		.name.column
+	
+	if showColumns.modifier
 		+label({label:"mod",
 			divObj:{class:"column"},
 			spanObj:{class:"column",'data-i18n-title':'Skill modifier'}
 			})
-	+label({label:"current", divObj:{class:"column"}, spanObj:{class:"column"}})
-	+label({label:"limit", divObj:{class:"column"}, spanObj:{class:"column"}})
-	+label({label:"trait", divObj:{class:""}, spanObj:{class:""}})
+	if showColumns.current
+		+label({label:"current", divObj:{class:"column"}, spanObj:{class:"column"}})
+	if showColumns.limit
+		+label({label:"limit", divObj:{class:"column"}, spanObj:{class:"column"}})
+	if showColumns.trait
+		+label({label:"trait", divObj:{class:""}, spanObj:{class:""}})
 
 //- build an attribute row
-mixin attributeRow(attr, showModifier=true)
-	+label({label:attr.name}).name
+mixin attributeRow(attr, showColumns)
+	if showColumns == null
+		- showColumns = { modifier: true, name: true, current: true, limit: true, trait: true }
 
-	if showModifier
+	if showColumns.name
+		+label({label:attr.name}).name
+
+	if showColumns.modifier
 		-
 			const trigger = {
 				calculation:'calcAttributeSkillMod',
@@ -26,14 +38,18 @@ mixin attributeRow(attr, showModifier=true)
 			trigger: trigger
 			})
 
-	//-	console.log ("skillsByAttribute{}", name, skillsByAttribute[name]);
-	- const mod = [`${attr.name}_skill_modifier`];
-	- const affecting = [...mod, ...attr.affects];
-	
-	+currentMaxLimit({name:attr.name,trigger:{affects:affecting}})
-	//- console.log ("+attributeRow", attr, affecting);
+		//-	console.log ("skillsByAttribute{}", name, skillsByAttribute[name]);
+		- const mod = [`${attr.name}_skill_modifier`];
+		- const affecting = [...mod, ...attr.affects];
 
-	+trait({name:`${attr.name}_trait`})
+	if showColumns.limit	
+		+currentMaxLimit({name:attr.name,trigger:{affects:affecting}})
+	else
+		+currentMax({name:attr.name,trigger:{affects:affecting}})
+
+	if showColumns.trait
+		+trait({name:`${attr.name}_trait`})
+
 //- End mixin
 
 //- setup a field to store the skill mod numerically while displaying something fancier

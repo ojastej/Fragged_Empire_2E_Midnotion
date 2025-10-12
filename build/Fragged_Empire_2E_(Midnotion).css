@@ -3907,11 +3907,11 @@ body .ui-dialog .tab-content .charsheet .attributes > .grid {
   text-transform: capitalize;
   grid-auto-columns: max-content;
 }
-body .ui-dialog .tab-content .charsheet .attributes > .grid .name {
-  grid-column-start: 1;
+body .ui-dialog .tab-content .charsheet .tabs--sheet-tabs__container--outpost .attributes > .grid {
+  grid-template-columns: [name] auto [current] auto [trait] auto;
 }
-body .ui-dialog .tab-content .charsheet .attributes > .grid .trait-container {
-  grid-column-end: 6;
+body .ui-dialog .tab-content .charsheet .tabs--sheet-tabs__container--pc .attributes > .grid {
+  grid-template-columns: [name] auto [mod] auto [current] auto [limit] auto [trait] auto;
 }
 body .ui-dialog .tab-content .charsheet .calculated > .grid, body .ui-dialog .tab-content .charsheet .production > .grid {
   grid-auto-columns: max-content;

@@ -1,7 +1,8 @@
 section(data-i18n-aria-label="attributes")
-	.attributes.column-4
+	- showColumns = {name:true, modifier:false, current: true, limit:false, trait:true}
+	.attributes.outpost
 		h2(data-i18n='attributes')
 		.grid.tiny-gap
-			+attributeHeader(false)
+			+attributeHeader(showColumns)
 			each attr in outpostAttributes
-				+attributeRow(attr, false)
+				+attributeRow(attr, showColumns)
