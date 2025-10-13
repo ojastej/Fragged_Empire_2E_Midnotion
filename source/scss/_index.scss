@@ -42,6 +42,12 @@
 	abbr[title] {
 		border-bottom: inherit;
 	}
+	button[data-action=post]:after {
+		content: 'chat_bubble_outline';
+	}
+	button[data-action=post]:hover:after {
+		content: 'chat_bubble';
+	}
 	#skills, #combatSkills {
 		flex-grow: 2;
 	}
@@ -51,6 +57,13 @@
 	}
 	.flow > label {
 		margin-right: 0.5rem;
+	}
+	.grid > span {
+		display: grid;
+		place-items: center;
+	}
+	input {
+		vertical-align: top;
 	}
 	.input-label > span {
 		padding-right: var(--tiny-gap);

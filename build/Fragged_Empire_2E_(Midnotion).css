@@ -3761,6 +3761,12 @@ body .ui-dialog .tab-content .charsheet article section.narrow {
 body .ui-dialog .tab-content .charsheet abbr[title] {
   border-bottom: inherit;
 }
+body .ui-dialog .tab-content .charsheet button[data-action=post]:after {
+  content: "chat_bubble_outline";
+}
+body .ui-dialog .tab-content .charsheet button[data-action=post]:hover:after {
+  content: "chat_bubble";
+}
 body .ui-dialog .tab-content .charsheet #skills, body .ui-dialog .tab-content .charsheet #combatSkills {
   flex-grow: 2;
 }
@@ -3770,6 +3776,13 @@ body .ui-dialog .tab-content .charsheet .flex.vertical {
 }
 body .ui-dialog .tab-content .charsheet .flow > label {
   margin-right: 0.5rem;
+}
+body .ui-dialog .tab-content .charsheet .grid > span {
+  display: grid;
+  place-items: center;
+}
+body .ui-dialog .tab-content .charsheet input {
+  vertical-align: top;
 }
 body .ui-dialog .tab-content .charsheet .input-label > span {
   padding-right: var(--tiny-gap);

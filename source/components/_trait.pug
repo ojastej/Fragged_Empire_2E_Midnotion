@@ -6,14 +6,15 @@ mixin trait ({name, trigger})
 				type:'text',
 				trigger
 				})
+				//- class:'pictos',
+				//- 'data-i18n':'w',
 			+button({
 				name:name,
 				type:'action',
-				class:'pictos',
-				'data-i18n':'w',
-				trigger: {
-					triggeredFuncs: ['postTrait']
-					}
+				class:'material-icons',
+				'data-18n':'w',
+				'data-action':'post',
+				trigger: { triggeredFuncs: ['postTrait'] }
 				})
 		.expanded
 			+input({

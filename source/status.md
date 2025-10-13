@@ -6,7 +6,7 @@
   * NPC type?
 * Spacecraft sheet
 * languages? workaround: racial details
-* racial details? workaround: perks
+* species details? workaround: perks
 * outfit/weapon variations and mods? workaround: description
 * default values missing (skill total, blue)
 * send perk to chat
@@ -36,8 +36,8 @@
   * cargo space contents
   * mass combat stuff
   * buildings
-  * calculate cargo space used
-  * calculate influence cost
+  * calculate cargo space used: trade boxes/4 + buildings
+  * calculate influence cost: sum over attributes of n*(n+1)/2, +2*traits
 
 ## Release 5 2025-10-11+
 
