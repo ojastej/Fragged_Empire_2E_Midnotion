@@ -39,7 +39,13 @@
   * calculate cargo space used: trade boxes/4 + buildings
   * calculate influence cost: sum over attributes of n*(n+1)/2, +2*traits
 
-## Release 5 2025-10-11+
+## Release 6 2025-10-31
+
+* Fixed attribute modifier calculations
+* Fixed calculation of Outpost Wealth conflicting with PC calcSkill()
+* Renamed PC Trade Goods section to Acquisitions
+
+## Release 5 2025-10-24
 
 * fixed Equipment Slots calculation
 * moved all PC calculations into constants file

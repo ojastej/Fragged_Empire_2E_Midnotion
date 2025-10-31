@@ -22,15 +22,20 @@ mixin attributeRow(attr, showColumns)
 	if showColumns == null
 		- showColumns = { modifier: true, name: true, current: true, limit: true, trait: true }
 
+	//- - console.log ("attributeRow()", attr.name, showColumns.modifier);
+
 	if showColumns.name
 		+label({label:attr.name}).name
 
+	-
+		const trigger = {
+			calculation:'calcAttributeSkillMod',
+			affects: skillsByAttribute[attr.name]
+			};
+	- let mod = [];
+
 	if showColumns.modifier
-		-
-			const trigger = {
-				calculation:'calcAttributeSkillMod',
-				affects: skillsByAttribute[attr.name]
-				};
+		- mod.push(`${attr.name}_skill_modifier`);
 		+attributeSkillMod({
 			name:`${attr.name}_skill_modifier`,
 			value:0,
@@ -38,11 +43,12 @@ mixin attributeRow(attr, showColumns)
 			trigger: trigger
 			})
 
-		//-	console.log ("skillsByAttribute{}", name, skillsByAttribute[name]);
-		- const mod = [`${attr.name}_skill_modifier`];
-		- const affecting = [...mod, ...attr.affects];
+	//-	console.log ("skillsByAttribute{}", name, skillsByAttribute[name]);
+	- const affecting = [...mod, ...attr.affects];
+	//- - console.log (trigger);
+	//- - console.log (affecting);
 
-	if showColumns.limit	
+	if showColumns.limit
 		+currentMaxLimit({name:attr.name,trigger:{affects:affecting}})
 	else
 		+currentMax({name:attr.name,trigger:{affects:affecting}})

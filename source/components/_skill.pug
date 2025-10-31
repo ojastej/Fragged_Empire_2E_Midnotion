@@ -38,11 +38,13 @@ mixin skillRow (skill, isCombat)
 
 	.value.column
 		//- it's easier to copy attribute mods here than to look them up later
+		//- expects an attribute name (e.g. "reflexes")
 		+input({
 			name:`${skillName}_attribute`,
 			type:'hidden',
 			value:skill.attribute
 		})
+		//- a numeric value
 		+input({
 			name:`${skillName}_attribute_modifier`,
 			type:'hidden',

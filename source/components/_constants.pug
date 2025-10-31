@@ -26,10 +26,10 @@
 		order:{name:'order',affects:['wealth','workforce']}
 	};
 	const outpostCalculated = {
-		cargo_space:{name:'cargo_space',formula:`2*@{prosperity}+@{cargo_space_modifier}`,formulaText:'= 2 * Pro +'},
-		wealth:{name:'wealth',formula:`@{prosperity}+@{order}+@{wealth_modifier}`,formulaText:'= Pro + Ord +'},
-		workforce:{name:'workforce',formula:`@{security}+@{order}+@{workforce_modifier}`,formulaText:'= Sec + Ord +'},
-		soldiers:{name:'soldiers',formula:`@{prosperity}+@{security}+@{soldiers_modifier}`,formulaText:'= Pro + Sec +'}
+		cargo_space:{name:'cargo_space',formula:'2*@{prosperity}+@{cargo_space_modifier}',formulaText:'= 2 * Pro +'},
+		wealth:{name:'wealth',formula:'@{prosperity}+@{order}+@{wealth_modifier}',formulaText:'= Pro + Ord +'},
+		workforce:{name:'workforce',formula:'@{security}+@{order}+@{workforce_modifier}',formulaText:'= Sec + Ord +'},
+		soldiers:{name:'soldiers',formula:'@{prosperity}+@{security}+@{soldiers_modifier}',formulaText:'= Pro + Sec +'}
 	};
 	const outpostProduction = {
 		produce_food:{name:'produce_food',formula:`2*@{farms}+@{produce_food_modifier}`,formulaText:'= 2 * Farms +'},

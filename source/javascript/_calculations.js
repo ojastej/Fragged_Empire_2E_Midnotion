@@ -8,7 +8,7 @@
 const calcAttributeSkillMod = function({trigger,attributes,sections,casc}){
 	// baseName == "intelligence_skill_mod", so split off first part
 	const baseName = `${trigger.name}`.split("_")[0] + '_max';
-	console.log ('calcAttributeSkillMod()', trigger, attributes, sections, casc);
+	//console.log ('calcAttributeSkillMod()', trigger, attributes, sections, casc);
 
 	// An Attribute value of 1 or less gives -1 to specific Skills.
 	// An Attribute value of 4 or more gives +1 to specific Skills.
@@ -46,9 +46,15 @@ k.registerFuncs({calcBulk});
  * @param {object} casc - Expanded cascade object
  */
 const calcSkill = function({trigger,attributes,sections,casc}){
+	console.log ("calcSkill()", trigger, attributes['character_type']);
 	if (attributes['character_type'] != 'pc' && attributes['character_type'] != 'npc')
 	{
-		return;
+		// quick hack to fix outpost wealth calculation
+		if (trigger.name == 'wealth')
+		{
+			return attributes['prosperity'] + attributes['order'] + attributes['wealth_modifier'];
+		}
+		return attributes[trigger.name];
 	}
 	//console.log ('calcSkill()', trigger, attributes, sections, casc);
 	const skillName = trigger.name;
