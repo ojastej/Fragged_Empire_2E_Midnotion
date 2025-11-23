@@ -20,3 +20,14 @@ section(data-i18n-aria-label="outpost")#outpost
 				+option({value:'Remnant','data-i18n':'remnant'})
 				+option({value:'Twi-Far','data-i18n':'twifar'})
 				+option({value:'Zhou','data-i18n':'zhou'})
+
+		label(for='influence_cost').input-label
+			span(data-i18n='influence cost')
+		+readOnly({
+			name:'influence_cost',
+			trigger:{calculation:'calcOutpostInfluence'}
+			})
+
+		label(for='cargo').input-label
+			span(data-i18n='cargo')
+		+readOnly({name:'cargo'})

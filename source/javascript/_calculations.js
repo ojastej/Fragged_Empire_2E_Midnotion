@@ -37,6 +37,52 @@ const calcBulk = function({trigger,attributes,sections,casc}){
 };
 k.registerFuncs({calcBulk});
 
+/**
+ * Function to calculate total equipment bulk
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
+const calcOutpostCargo = function({trigger,attributes,sections,casc}){
+	console.log ('calcOutpostCargo()', trigger, attributes, sections, casc);
+	// loop over trade goods
+};
+k.registerFuncs({calcOutpostCargo});
+
+/**
+ * Calculate a triangular number
+ * @param {integer} num 
+ * @returns integer
+ */
+function triangle (num)
+{
+	const result = num * (num + 1) / 2;
+	return result;
+}
+
+/**
+ * Function to calculate total equipment bulk
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
+const calcOutpostInfluence = function({trigger,attributes,sections,casc}){
+	console.log ('calcOutpostInfluence()', trigger, attributes, sections, casc);
+	// loop over outpost attributes
+	// cost is triangular, +2 per trait
+	let cost = 0;
+	const fields = ['farms','mines','industry','prosperity','security','order'];
+	for (const value of fields)
+	{
+		console.log ("key", value, attributes[value]);
+		cost += triangle(attributes[value]) +
+			(attributes[`${value}_trait`] == '' ? 0 : 2);
+	}
+	return cost;
+};
+k.registerFuncs({calcOutpostInfluence});
 
 /**
  * Function to calculate the attribute modifier

@@ -37,7 +37,11 @@
   * mass combat stuff
   * buildings
   * calculate cargo space used: trade boxes/4 + buildings
-  * calculate influence cost: sum over attributes of n*(n+1)/2, +2*traits
+  * influence cost doesn't update after trait edit
+
+## Release 7
+
+* calculate outpost influence cost: sum over attributes of n*(n+1)/2, +2*traits
 
 ## Release 6 2025-10-31
 

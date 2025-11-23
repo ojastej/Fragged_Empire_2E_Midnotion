@@ -18,15 +18,15 @@
 		resources_max:{name:'resources_max',formula:'@{level} + 3 + @{resources_max_modifier}',formulaText:'= Level + 3 +'}
 	};
 	const outpostAttributes = {
-		farms:{name:'farms',affects:[]},
-		mines:{name:'mines',affects:[]},
-		industry:{name:'industry',affects:[]},
-		prosperity:{name:'prosperity',affects:['cargo_space','wealth','soldiers']},
-		security:{name:'security',affects:['workforce','soldiers']},
-		order:{name:'order',affects:['wealth','workforce']}
+		farms:{name:'farms',affects:['influence_cost']},
+		mines:{name:'mines',affects:['influence_cost']},
+		industry:{name:'industry',affects:['influence_cost']},
+		prosperity:{name:'prosperity',affects:['influence_cost','cargo_space','wealth','soldiers']},
+		security:{name:'security',affects:['influence_cost','workforce','soldiers']},
+		order:{name:'order',affects:['influence_cost','wealth','workforce']}
 	};
 	const outpostCalculated = {
-		cargo_space:{name:'cargo_space',formula:'2*@{prosperity}+@{cargo_space_modifier}',formulaText:'= 2 * Pro +'},
+		cargo_space_max:{name:'cargo_space_max',formula:'2*@{prosperity}+@{cargo_space_max_modifier}',formulaText:'= 2 * Pro +'},
 		wealth:{name:'wealth',formula:'@{prosperity}+@{order}+@{wealth_modifier}',formulaText:'= Pro + Ord +'},
 		workforce:{name:'workforce',formula:'@{security}+@{order}+@{workforce_modifier}',formulaText:'= Sec + Ord +'},
 		soldiers:{name:'soldiers',formula:'@{prosperity}+@{security}+@{soldiers_modifier}',formulaText:'= Pro + Sec +'}

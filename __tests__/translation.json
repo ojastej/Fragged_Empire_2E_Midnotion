@@ -12,7 +12,8 @@
   "calculated": "calculated",
   "Calculated value": "Calculated value",
   "calculation": "calculation",
-  "cargo_space": "cargo space",
+  "cargo": "cargo",
+  "cargo_space_max": "cargo_space_max",
   "character": "character",
   "character type": "character type",
   "combat": "combat",
@@ -54,6 +55,7 @@
   "Hit": "Hit",
   "industry": "industry",
   "influence": "influence",
+  "influence cost": "influence cost",
   "innate": "innate",
   "intelligence": "intelligence",
   "Item": "Item",
@@ -165,5 +167,6 @@
   "whisper rolls to gm": "whisper rolls to gm",
   "workforce": "workforce",
   "WS": "WS",
-  "zhou": "zhou"
+  "zhou": "zhou",
+  "cargo_space": "cargo space"
 }
