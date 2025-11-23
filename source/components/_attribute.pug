@@ -54,7 +54,7 @@ mixin attributeRow(attr, showColumns)
 		+currentMax({name:attr.name,trigger:{affects:affecting}})
 
 	if showColumns.trait
-		+trait({name:`${attr.name}_trait`})
+		+trait({name:`${attr.name}_trait`, trigger:{affects:affecting}})
 
 //- End mixin
 
