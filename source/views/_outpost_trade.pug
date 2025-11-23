@@ -1,7 +1,7 @@
 section(data-i18n-aria-label='trade')
 	h2(data-i18n='trade') Trade Goods
 	+customControlFieldset({
-		name:'outpostTradeGoods'
+		name:'outposttradegoods'
 		})
 		//- trigger:{triggeredFuncs:['removeTradeGoods']}
 		.row
@@ -15,4 +15,10 @@ section(data-i18n-aria-label='trade')
 					+option({'data-i18n':'machinery'})
 					+option({'data-i18n':'tech'})
 			+text({name:'detail', 'data-i18n-placeholder':'Detail'})
-			+input({name:'quantity',type:'number','data-i18n-placeholder':'#'})
+			+number({
+				name:'quantity',
+				'data-i18n-placeholder':'#',
+				trigger:{
+					affects:['cargo_space']
+					}
+				})

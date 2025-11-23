@@ -12,8 +12,8 @@
   "calculated": "calculated",
   "Calculated value": "Calculated value",
   "calculation": "calculation",
-  "cargo": "cargo",
-  "cargo_space_max": "cargo_space_max",
+  "cargo space used": "cargo space used",
+  "cargo_space_max": "cargo space",
   "character": "character",
   "character type": "character type",
   "combat": "combat",
@@ -167,6 +167,5 @@
   "whisper rolls to gm": "whisper rolls to gm",
   "workforce": "workforce",
   "WS": "WS",
-  "zhou": "zhou",
-  "cargo_space": "cargo space"
+  "zhou": "zhou"
 }
