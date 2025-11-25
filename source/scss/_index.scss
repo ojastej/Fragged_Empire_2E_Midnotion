@@ -25,15 +25,12 @@
 		flex-wrap: wrap;
 		justify-content: flex-start;
 		align-items: flex-start;
-		gap: 10px;
+		gap: var(--full-gap);
+		line-height: normal;
 
 		section {
 			min-width: 15rem;
-			padding: var(--tiny-gap);
-			h2 {
-				margin-left: -5px;
-				margin-right: -5px;
-			}
+			margin-bottom: 1ex;
 		}
 		section.narrow {
 			max-width: 20rem;
@@ -54,6 +51,9 @@
 	.flex.vertical {
 		display: flex;
 		flex-direction: column;
+		& section {
+			width: 100%;
+		}
 	}
 	.flow > label {
 		margin-right: 0.5rem;
@@ -128,8 +128,9 @@
 	}
 	.collapse-container > .collapse
 	{
-		margin-top: 2px;
-		right: 23px;
+		margin-top: 1px;
+		right: 2.1rem;
+		font-size: 125%;
 	}
 	.current-max
 	{
@@ -146,6 +147,12 @@
 		width: calc(2 * var(--numberWidth) + 2);
 		text-align: center;
 
+		&>input {
+			padding: 0;
+			// margin-top: -10px;
+			// margin-bottom: -10px;
+		}
+
 		input:where([type=number])
 		{
 			display: block;
@@ -156,7 +163,6 @@
 		:first-child {
 			border-right: 1px solid;
 			border-radius: 0;
-			padding-right: 2px;
 		}
 	}
 	.limit, .column {

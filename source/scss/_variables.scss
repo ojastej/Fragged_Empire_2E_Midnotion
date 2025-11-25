@@ -8,6 +8,7 @@
 %universalVariables{
 	// Layout variables
 	--grid-gap: 1rem;//Variable to define our basic gap between layout elements. Followed by several gaps that are mathematically related to it.
+	--full-gap: 1rem;
 	--half-gap: calc(var(--grid-gap) / 2);
 	--tiny-gap: calc(var(--half-gap) / 2);
 	--big-gap: calc(var(--grid-gap) * 2);
@@ -62,6 +63,8 @@
 
 	// border colour for calculated fields
 	--calculationColor: lightskyblue;
+
+	--full-gap: 1rem;
 
 	--numberWidth: 1.25rem;
 

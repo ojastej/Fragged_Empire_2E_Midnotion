@@ -1242,6 +1242,7 @@ ul.nav-tabs.nav {
   --checkContent: "+1";
   --checkSize: 10pt;
   --calculationColor: lightskyblue;
+  --full-gap: 1rem;
   --numberWidth: 1.25rem;
   --column-gap: 5px;
   --topHeadFont: "PT Sans Narrow", sans-serif;
@@ -2579,6 +2580,7 @@ body {
   --checkContent: "+1";
   --checkSize: 10pt;
   --calculationColor: lightskyblue;
+  --full-gap: 1rem;
   --numberWidth: 1.25rem;
   --column-gap: 5px;
   --topHeadFont: "PT Sans Narrow", sans-serif;
@@ -2765,6 +2767,7 @@ body .ui-dialog .tab-content .charsheet {
   --checkContent: "+1";
   --checkSize: 10pt;
   --calculationColor: lightskyblue;
+  --full-gap: 1rem;
   --numberWidth: 1.25rem;
   --column-gap: 5px;
   --topHeadFont: "PT Sans Narrow", sans-serif;
@@ -3745,15 +3748,12 @@ body .ui-dialog .tab-content .charsheet article {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 10px;
+  gap: var(--full-gap);
+  line-height: normal;
 }
 body .ui-dialog .tab-content .charsheet article section {
   min-width: 15rem;
-  padding: var(--tiny-gap);
-}
-body .ui-dialog .tab-content .charsheet article section h2, body .ui-dialog .tab-content .charsheet article section .input-label:not(.stacked).large > [name] {
-  margin-left: -5px;
-  margin-right: -5px;
+  margin-bottom: 1ex;
 }
 body .ui-dialog .tab-content .charsheet article section.narrow {
   max-width: 20rem;
@@ -3773,6 +3773,9 @@ body .ui-dialog .tab-content .charsheet #skills, body .ui-dialog .tab-content .c
 body .ui-dialog .tab-content .charsheet .flex.vertical {
   display: flex;
   flex-direction: column;
+}
+body .ui-dialog .tab-content .charsheet .flex.vertical section {
+  width: 100%;
 }
 body .ui-dialog .tab-content .charsheet .flow > label {
   margin-right: 0.5rem;
@@ -3842,8 +3845,9 @@ body .ui-dialog .tab-content .charsheet .small {
   font-size: 80%;
 }
 body .ui-dialog .tab-content .charsheet .collapse-container > .collapse {
-  margin-top: 2px;
-  right: 23px;
+  margin-top: 1px;
+  right: 2.1rem;
+  font-size: 125%;
 }
 body .ui-dialog .tab-content .charsheet .current-max {
   display: inline-grid;
@@ -3858,6 +3862,9 @@ body .ui-dialog .tab-content .charsheet .current-max {
   width: calc(2 * var(--numberWidth) + 2);
   text-align: center;
 }
+body .ui-dialog .tab-content .charsheet .current-max > input {
+  padding: 0;
+}
 body .ui-dialog .tab-content .charsheet .current-max input:where([type=number]) {
   display: block;
   border-width: 0;
@@ -3866,7 +3873,6 @@ body .ui-dialog .tab-content .charsheet .current-max input:where([type=number]) 
 body .ui-dialog .tab-content .charsheet .current-max :first-child {
   border-right: 1px solid;
   border-radius: 0;
-  padding-right: 2px;
 }
 body .ui-dialog .tab-content .charsheet .limit input:where([type=number]), body .ui-dialog .tab-content .charsheet .column input:where([type=number]) {
   width: calc(1.25 * var(--numberWidth));
