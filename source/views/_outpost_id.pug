@@ -30,7 +30,12 @@ section(data-i18n-aria-label="outpost")#outpost
 
 		label(for='cargo_space').input-label
 			span(data-i18n='cargo')
-		+readOnly({
-			name:'cargo_space',
-			trigger:{calculation:'calcOutpostCargo'}
-			})
+		div 
+			+readOnly({
+				name:'cargo_space',
+				trigger:{calculation:'calcOutpostCargo'}
+				})
+			+readOnly({
+				name:'cargo_space_max',
+				trigger:{calculation:'calcOutpostCargoSpaceMax'}
+				})

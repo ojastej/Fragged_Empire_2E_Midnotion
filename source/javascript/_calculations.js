@@ -63,6 +63,13 @@ const calcOutpostCargo = function({trigger,attributes,sections,casc}){
 };
 k.registerFuncs({calcOutpostCargo});
 
+// Workaround
+const calcOutpostCargoSpaceMax = function({trigger,attributes,sections,casc}){
+	let total = 2 * attributes.prosperity + attributes.cargo_space_max_modifier;
+	return total;
+};
+k.registerFuncs({calcOutpostCargoSpaceMax});
+
 /**
  * Function to calculate total outpost influence cost
  * @param {object} trigger - The trigger that caused the function to be called
@@ -92,7 +99,7 @@ k.registerFuncs({calcOutpostInfluence});
  * @param {object} casc - Expanded cascade object
  */
 const calcSkill = function({trigger,attributes,sections,casc}){
-	console.log ("calcSkill()", trigger, attributes['character_type']);
+	//console.log ("calcSkill()", trigger, attributes['character_type']);
 	if (attributes['character_type'] != 'pc' && attributes['character_type'] != 'npc')
 	{
 		// quick hack to fix outpost wealth calculation
@@ -117,4 +124,4 @@ const calcSkill = function({trigger,attributes,sections,casc}){
 };
 k.registerFuncs({calcSkill});
 
-console.log ("calculations workers registered");
+console.log ("FE2 calculations workers registered");
