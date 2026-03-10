@@ -1,0 +1,8 @@
+section(data-i18n-aria-label="attributes")
+	- showColumns = {name:true, modifier:false, current: true, limit:false, trait:true}
+	.attributes.spacecraft
+		h2(data-i18n='attributes')
+		.grid.spacecraft.attributes
+			+attributeHeader(showColumns)
+			each attr in spacecraftAttributes
+				+attributeRow(attr, showColumns)

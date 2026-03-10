@@ -3897,7 +3897,7 @@ body .ui-dialog .tab-content .charsheet .grid.column-2 {
   grid-template-columns: auto auto;
   grid-gap: var(--tiny-gap);
 }
-body .ui-dialog .tab-content .charsheet .grid.column-3 {
+body .ui-dialog .tab-content .charsheet .grid.column-3, body .ui-dialog .tab-content .charsheet .grid.rooms {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: var(--tiny-gap);
@@ -3927,6 +3927,9 @@ body .ui-dialog .tab-content .charsheet .attributes > .grid {
   grid-auto-columns: max-content;
 }
 body .ui-dialog .tab-content .charsheet .tabs--sheet-tabs__container--outpost .attributes > .grid {
+  grid-template-columns: [name] auto [current] auto [trait] auto;
+}
+body .ui-dialog .tab-content .charsheet .grid.spacecraft.attributes {
   grid-template-columns: [name] auto [current] auto [trait] auto;
 }
 body .ui-dialog .tab-content .charsheet .tabs--sheet-tabs__container--pc .attributes > .grid {

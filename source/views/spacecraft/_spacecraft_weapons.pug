@@ -1,0 +1,57 @@
+section(data-i18n-aria-label="spacecraft weapons")
+	h2(data-i18n='spacecraft weapons')
+
+	.row
+		label(for='munitions').input-label
+			span(data-i18n='munitions')
+		+currentMax({name:'munitions'})
+
+	+customControlFieldset({
+		name:'spacecraft_weapons'
+		})
+		.grid.weapon
+			+label({label:'Weapon'})
+			+label({label:'Skill'})
+			+label({label:'Type'})
+			+label({label:'d6'}).column
+			+label({label:'Hit'}).column
+			+label({label:'Rng'}).column
+			+label({label:'Shld'}).column
+			+label({label:'Crit'}).column
+			+label({label:'Mnt'}).column
+			+label({label:'Inf'}).column
+
+			.nowrap
+				+roller({
+					name:'roll',
+					trigger:{triggeredFuncs:['rollAttack']}
+					})
+				+text({
+					name:'weapon',
+					'data-i18n-placeholder':'Weapon'
+					})
+			.select
+				+select({name:'skill'})
+					+option({value:'','data-i18n':'skill'})
+					+option({'data-i18n':'command',value:'command'})
+					+option({'data-i18n':'engineering',value:'engineering'})
+					+option({'data-i18n':'operations',value:'operations'})
+					+option({'data-i18n':'gunnery',value:'gunnery'})
+			.select
+				+select({name:'type'})
+					+option({value:'','data-i18n':'type'})
+					+option({'data-i18n':'ordnance, fighter'})
+					+option({'data-i18n':'ordnance, node'})
+					+option({'data-i18n':'ordnance, warhead'})
+					+option({'data-i18n':'battery'})
+			+number({name:'hit_dice'})
+			+number({name:'hit'})
+			+number({name:'range'})
+			+number({name:'shield_damage'})
+			+number({name:'critical_damage'})
+			+number({name:'mount'})
+			+number({name:'influence'})
+			+textarea({
+				name:'features',
+				'data-i18n-placeholder':'Features'
+				}).span-10

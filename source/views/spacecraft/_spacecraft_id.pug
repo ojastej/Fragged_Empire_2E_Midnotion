@@ -1,0 +1,41 @@
+section(data-i18n-aria-label="spacecraft")#spacecraft
+	h2(data-i18n='spacecraft')
+
+	.grid.column-2
+		label(for='character_name').input-label
+			span(data-i18n='name')
+		+text({name:'character_name'})
+
+		label(for='build').input-label
+			span(data-i18n='build')
+		+text({name:'build'})
+
+		label(for='buildCost').input-label
+			span(data-i18n='build cost')
+		+number({name:'buildCost'})
+
+		label(for='influence_cost').input-label
+			span(data-i18n='influence cost')
+		+readOnly({
+			name:'influence_cost',
+			trigger:{calculation:'calcSpacecraftInfluence'}
+			})
+
+		label(for='systems_influence_cost').input-label
+			span(data-i18n='systems cost')
+		+readOnly({
+			name:'systems_influence_cost',
+			trigger:{calculation:'calcSpacecraftSystemsInfluence'}
+			})
+
+		label(for='cargo_space').input-label
+			span(data-i18n='cargo')
+		div 
+			+readOnly({
+				name:'cargo_space',
+				trigger:{calculation:'calcSpacecraftCargo'}
+				})
+			+readOnly({
+				name:'cargo_space_max',
+				trigger:{calculation:'calcSpacecraftCargoSpaceMax'}
+				})

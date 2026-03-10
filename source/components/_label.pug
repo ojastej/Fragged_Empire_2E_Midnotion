@@ -20,7 +20,22 @@ mixin labelAbbr({label,fullText,divObj,spanObj})
 		- divObj.class = divObj.class ? replaceProblems(divObj.class) : undefined;
 	if spanObj
 		- spanObj.class = spanObj.class ? replaceProblems(spanObj.class) : undefined;
-	label.input-label&attributes(divObj)&attributes(attributes)
-		if spanObj
-			- spanObj.class = spanObj.class ? `${spanObj.class} input-label__text` : 'input-label__text';
-		abbr(data-i18n=label,title=fullText)&attributes(spanObj)
+	//- label.input-label&attributes(divObj)&attributes(attributes)
+	//- 	if spanObj
+	//- 		- spanObj.class = spanObj.class ? `${spanObj.class} input-label__text` : 'input-label__text';
+
+	+label({
+			label:label,
+			divObj:{class:"column"},
+			spanObj:{class:"column",
+			'data-i18n-title':fullText
+		}})&attributes(divObj)&attributes(attributes)
+
+/// Show a set of labels formatted for a grid
+mixin gridHeader({headers,divObj,spanObj})
+	//- - console.log ("gridHeader()", headers);
+	each attr in headers
+		//- - console.log (".attr", attr, attr.label, attr.fullText);
+		+labelAbbr({label: attr.label, fullText: attr.fullText, divObj, spanObj})
+			//- &attributes(divObj)&attributes(attributes)
+			//- spanObj:{class:'foo','data-i18n-title':attr}

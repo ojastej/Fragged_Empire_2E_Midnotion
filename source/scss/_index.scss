@@ -192,7 +192,7 @@
 		grid-template-columns: auto auto;
 		grid-gap: var(--tiny-gap);
 	}
-	.grid.column-3 {
+	.grid.column-3, .grid.rooms {
 		display: grid;
 		grid-template-columns: auto auto auto;
 		grid-gap: var(--tiny-gap);
@@ -214,6 +214,9 @@
 		grid-auto-columns: max-content;
 	}
 	.tabs--sheet-tabs__container--outpost .attributes > .grid {
+		grid-template-columns: [name] auto [current] auto [trait] auto;
+	}
+	.grid.spacecraft.attributes {
 		grid-template-columns: [name] auto [current] auto [trait] auto;
 	}
 	.tabs--sheet-tabs__container--pc .attributes > .grid {

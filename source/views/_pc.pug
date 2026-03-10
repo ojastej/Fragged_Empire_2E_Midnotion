@@ -1,33 +1,11 @@
-section(data-i18n-aria-label="pc")
-	h2(data-i18n='character')
-	.grid.column-3
-		label(for='character_name').input-label
-			span(data-i18n='name')
-		+text({name:'character_name'}).span-2
-
-		label(for='species').input-label
-			span(data-i18n='species')
-		.select.span-2
-			+select({name:'species'})
-				+option({value:'','data-i18n':'select'})
-				+option({value:'Corporation','data-i18n':'corporation'})
-				+option({value:'Kaltoran','data-i18n':'kaltoran'})
-				+option({value:'Legion','data-i18n':'legion'})
-				+option({value:'Nephilim','data-i18n':'nephilim'})
-				+option({value:'Palantor','data-i18n':'palantor'})
-				+option({value:'Remnant','data-i18n':'remnant'})
-				+option({value:'Twi-Far','data-i18n':'twifar'})
-				+option({value:'Zhou','data-i18n':'zhou'})
-
-		include ./_characterBits.pug
-
-include ./_attributes.pug
-include ./_combat.pug
-include ./_weapons.pug
-include ./_skills.pug
-include ./_combatSkills.pug
-include ./_equipment.pug
-include ./_perks.pug
-include ./_trade.pug
-include ./_specialization.pug
+include ./character/_character_id.pug
+include ./character/_attributes.pug
+include ./character/_combat.pug
+include ./character/_weapons.pug
+include ./character/_skills.pug
+include ./character/_combatSkills.pug
+include ./character/_equipment.pug
+include ./character/_perks.pug
+include ./character/_trade.pug
+include ./character/_specialization.pug
 include ./_notes.pug

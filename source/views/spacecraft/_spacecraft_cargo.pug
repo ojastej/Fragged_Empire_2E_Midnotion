@@ -1,0 +1,14 @@
+section(data-i18n-aria-label="cargo")
+	h2(data-i18n='cargo')
+	+customControlFieldset({
+		name:'tradeGoods'
+		})
+		.row
+			.select
+				+select({name:'type'})
+					+option({'data-i18n':'type',selected:''})
+					+option({'data-i18n':'freight'})
+					+option({'data-i18n':'loot'})
+					+option({'data-i18n':'money'})
+			+text({name:'detail', 'data-i18n-placeholder':'Detail'})
+			+input({name:'quantity',type:'number','data-i18n-placeholder':'#'})

@@ -1,0 +1,15 @@
+section(data-i18n-aria-label="rooms")
+	h2(data-i18n='rooms')
+	.grid.rooms
+		+gridHeader({headers:[
+				{label:'cargo'},
+				{label:'room'},
+				{label:'inf',fullText:'influence cost'}
+			]}).header
+		+customControlFieldset({
+			name:'rooms'
+			})
+			.row
+				+number({name:'cargoUsed', 'data-i18n-placeholder':'#'})
+				+text({name:'room', 'data-i18n-placeholder':'Room'})
+				+input({name:'influenceCost',type:'number','data-i18n-placeholder':'#'})

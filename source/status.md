@@ -32,8 +32,25 @@
 
 ## Up next
 
+* Ship sheet
+  * Build
+  * 6 stats: Hull, Engines, Crew, Power, CPU, Sensors
+  * Influence cost
+  * Sub-stats:
+    * Max Velocity 6
+    * Travel Time 100%
+    * Cargo Space = 2 + Hull
+    * Defence = 10 + Engines
+    * Shield = 5 + (Power * 5)
+    * Armour = 3
+    * Munition = 3
+    * Regen = Power
+    * 1st Phase Order = your current velocity . CPU
+    * 2nd Phase Order = CPU . velocity
+    * room damage
+    * subsystem damage
+
 * Outpost sheet
-  * cargo space contents
   * mass combat stuff
   * buildings
 
