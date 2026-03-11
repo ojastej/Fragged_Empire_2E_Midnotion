@@ -1,12 +1,20 @@
 section(data-i18n-aria-label="subsystems & rooms")
 	h2(data-i18n='subsystems & rooms')
 	+customControlFieldset({
-		name:'systems'
+		name:'spacecraftsystems'
 		})
 		.row
-			+number({name:'cargoUsed', 'data-i18n-placeholder':'#'})
+			+input({name:'cargo_used',
+				type:'number',
+				'data-i18n-placeholder':'Car',
+				trigger:{affects:['cargo_space']}
+				})
 			+text({name:'name', 'data-i18n-placeholder':'Name'})
-			+input({name:'influenceCost',type:'number','data-i18n-placeholder':'#'})
+			+input({name:'influence_cost',
+				type:'number',
+				'data-i18n-placeholder':'Inf',
+				trigger:{affects:['systems_influence_cost']}
+				})
 		+textarea({
 			name:'description',
 			class:'span-3',

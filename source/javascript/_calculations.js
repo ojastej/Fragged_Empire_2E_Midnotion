@@ -49,6 +49,63 @@ const calcBulk = function({trigger,attributes,sections,casc}){
 k.registerFuncs({calcBulk});
 
 /**
+ * Function to calculate total influence cost
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
+const calcInfluenceCost = function({trigger,attributes,sections,casc}){
+	// switch on character type
+	switch (attributes.character_type)
+	{
+		case 'outpost':
+			return calcOutpostInfluence({trigger,attributes,sections,casc});
+		case 'spacecraft':
+			return calcSpacecraftInfluence({trigger,attributes,sections,casc});
+	}
+}
+k.registerFuncs({calcInfluenceCost});
+
+/**
+ * Function to calculate total cargo space used
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
+const calcCargoUsed = function({trigger,attributes,sections,casc}){
+	// switch on character type
+	switch (attributes.character_type)
+	{
+		case 'outpost':
+			return calcOutpostCargo({trigger,attributes,sections,casc});
+		case 'spacecraft':
+			return calcSpacecraftCargo({trigger,attributes,sections,casc});
+	}
+}
+k.registerFuncs({calcCargoUsed});
+
+/**
+ * Function to calculate total cargo space available
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
+const calcCargoSpaceMax = function({trigger,attributes,sections,casc}){
+	// switch on character type
+	switch (attributes.character_type)
+	{
+		case 'outpost':
+			return calcOutpostCargoSpaceMax({trigger,attributes,sections,casc});
+		case 'spacecraft':
+			return calcSpacecraftCargoSpaceMax({trigger,attributes,sections,casc});
+	}
+}
+k.registerFuncs({calcCargoSpaceMax});
+
+/**
  * Function to calculate total outpost cargo space used
  * @param {object} trigger - The trigger that caused the function to be called
  * @param {object} attributes - The attribute values of the character
@@ -90,6 +147,66 @@ const calcOutpostInfluence = function({trigger,attributes,sections,casc}){
 	return cost;
 };
 k.registerFuncs({calcOutpostInfluence});
+
+/**
+ * Function to calculate total spacecraft cargo space used, based on cargo + systems
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
+const calcSpacecraftCargo = function({trigger,attributes,sections,casc}){
+	let tradeGoods = attributes.repeating_spacecrafttradegoods.reduce((total,row) => {
+		return total + row.quantity;
+	},0);
+	let systemsSpace = attributes.repeating_spacecraftsystems.reduce((total,row) => {
+		return total + row.cargo_used;
+	},0);
+	return Math.ceil(tradeGoods / 4) + systemsSpace;
+};
+k.registerFuncs({calcSpacecraftCargo});
+
+const calcSpacecraftCargoSpaceMax = function({trigger,attributes,sections,casc}){
+	let total = 2 + attributes.hull + attributes.cargo_space_max_modifier;
+	return total;
+};
+k.registerFuncs({calcSpacecraftCargoSpaceMax});
+
+/**
+ * Function to calculate total spacecraft influence cost payable by all PCs
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
+const calcSpacecraftInfluence = function({trigger,attributes,sections,casc}){
+	// cost is build + traits, where each trait has its own cost [-1..2], grr.
+	// for now, just use the build and manually adjust
+	console.log ("calcSpacecraftInfluence()", attributes.build_cost);
+	let cost = attributes.build_cost;
+	// loop over weapons and add in those costs
+	cost += attributes.repeating_spacecraftweapons.reduce((total,row) => {
+		return total + row.influence_cost;
+	},0);
+	return cost;
+};
+k.registerFuncs({calcSpacecraftInfluence});
+
+/**
+ * Function to calculate total spacecraft sytems influence cost payable, split by PCs
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
+const calcSpacecraftSystemsInfluence = function({trigger,attributes,sections,casc}){
+	// loop over spacecraft systems
+	let systemsCost = attributes.repeating_spacecraftsystems.reduce((total,row) => {
+		return total + row.influence_cost;
+	},0);
+	return systemsCost;
+};
+k.registerFuncs({calcSpacecraftSystemsInfluence});
 
 /**
  * Function to calculate the attribute modifier

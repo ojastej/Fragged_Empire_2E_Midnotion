@@ -7,7 +7,7 @@ section(data-i18n-aria-label="spacecraft weapons", class="weapons")
 		+currentMax({name:'munitions'})
 
 	+customControlFieldset({
-		name:'spacecraft_weapons'
+		name:'spacecraftweapons'
 		})
 		.grid.weapon
 			+label({label:'Weapon'})
@@ -50,7 +50,7 @@ section(data-i18n-aria-label="spacecraft weapons", class="weapons")
 			+number({name:'shield_damage'})
 			+number({name:'critical_damage'})
 			+number({name:'mount'})
-			+number({name:'influence'})
+			+number({name:'influence_cost',trigger:{affects:['influence_cost']}})
 			+textarea({
 				name:'features',
 				'data-i18n-placeholder':'Features'

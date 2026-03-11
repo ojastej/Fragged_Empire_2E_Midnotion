@@ -25,7 +25,7 @@ section(data-i18n-aria-label="outpost")#outpost
 			span(data-i18n='influence cost')
 		+readOnly({
 			name:'influence_cost',
-			trigger:{calculation:'calcOutpostInfluence'}
+			trigger:{calculation:'calcInfluenceCost'}
 			})
 
 		label(for='cargo_space').input-label
@@ -33,9 +33,9 @@ section(data-i18n-aria-label="outpost")#outpost
 		div 
 			+readOnly({
 				name:'cargo_space',
-				trigger:{calculation:'calcOutpostCargo'}
+				trigger:{calculation:'calcCargoUsed'}
 				})
 			+readOnly({
 				name:'cargo_space_max',
-				trigger:{calculation:'calcOutpostCargoSpaceMax'}
+				trigger:{calculation:'calcCargoSpaceMax'}
 				})
