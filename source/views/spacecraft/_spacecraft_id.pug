@@ -16,26 +16,24 @@ section(data-i18n-aria-label="spacecraft")#spacecraft
 
 		label(for='influence_cost').input-label
 			span(data-i18n='influence cost')
-		+readOnly({
-			name:'influence_cost',
-			trigger:{calculation:'calcInfluenceCost'}
-			})
-
-		label(for='systems_influence_cost').input-label
-			span(data-i18n='systems cost')
-		+readOnly({
-			name:'systems_influence_cost',
-			trigger:{calculation:'calcSpacecraftSystemsInfluence'}
-			})
+		div
+			+readOnly({
+				name:'influence_cost',
+				trigger:{calculation:'calcInfluenceCost'}
+				})
+			| +
+			+readOnly({
+				name:'systems_influence_cost',
+				trigger:{calculation:'calcSpacecraftSystemsInfluence'}
+				})
+			label(for='systems_influence_cost').input-label
+				span(data-i18n='systems')
 
 		label(for='cargo_space').input-label
 			span(data-i18n='cargo')
-		div 
+		.span-1
 			+readOnly({
 				name:'cargo_space',
 				trigger:{calculation:'calcCargoUsed'}
 				})
-			+readOnly({
-				name:'cargo_space_max',
-				trigger:{calculation:'calcCargoSpaceMax'}
-				})
+			+calculation(spacecraftCalculated.cargo_space_max)

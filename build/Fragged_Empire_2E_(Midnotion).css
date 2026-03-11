@@ -3984,6 +3984,9 @@ body .ui-dialog .tab-content .charsheet .grid.weapon {
 body .ui-dialog .tab-content .charsheet .grid.weapon textarea {
   width: 31rem;
 }
+body .ui-dialog .tab-content .charsheet .indent {
+  padding-left: var(--full-gap);
+}
 body .ui-dialog .tab-content .charsheet .parentheses::before {
   content: "(";
 }

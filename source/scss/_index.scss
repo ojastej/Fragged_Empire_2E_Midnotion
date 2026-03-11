@@ -279,6 +279,9 @@
 			width: 31rem;
 		}
 	}
+	.indent {
+		padding-left: var(--full-gap);
+	}
 	.parentheses::before { content: "("; }
 	.parentheses::after { content: ")"; }
 	.parentheses {

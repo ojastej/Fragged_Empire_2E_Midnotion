@@ -103,7 +103,12 @@
 		sensors:{name:'sensors',affects:[]}
 	};
 	const spacecraftCalculated = {
-		cargo_space_max:{name:'cargo_space_max',formula:'2*@{hull_max}+@{cargo_space_max_modifier}',formulaText:'= 2 * Hull +'},
+		cargo_space_max:{name:'cargo space max',formula:'2*@{hull_max}+@{cargo_space_max_modifier}',formulaText:'= 2 * Hull +'},
 		defense:{name:'defense',formula:'10+@{engines}+@{defense_modifier}',formulaText:'= 10 + Engines +'},
-		shield_max:{name:'shield_max',formula:'5+(5*@{power_max})+@{shield_max_modifier}',formulaText:'= 5 + 5 * Power +'}
+		shield_max:{name:'shield max',formula:'5+(5*@{power_max})+@{shield_max_modifier}',formulaText:'= 5 + 5 * Power +'},
+		armour:{name:'armour',formula:'3+@{armour_modifier}',formulaText:'= 3 +'},
+		regen:{name:'regen',formula:'@{power}+@{regen_modifier}',formulaText:'= Power +'},
+		velocity_max:{name:'velocity max',formula:'6+@{velocity_max_modifier}',formulaText:'= 6 +'},
+		first_phase_order:{name:'1st phase order',formula:'@{velocity}+@{first_phase_order_modifier}',formulaText:'= Velocity +'},
+		second_phase_order:{name:'2nd phase order',formula:'@{cpu}+@{second_phase_order_modifier}',formulaText:'= CPU +'}
 	};

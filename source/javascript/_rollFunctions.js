@@ -16,6 +16,7 @@ const rollAttack = async function({trigger,attributes,sections,casc}){
 	const hitBonus = attributes[`${row}_hit`];
 	const hitDice = attributes[`${row}_hit_dice`];
 	const endDmg = attributes[`${row}_endurance_damage`];
+	const shieldDmg = attributes[`${row}_shield_damage`];
 	const bodies = attributes['bodies'] > 0 ? `?{Attacking Bodies|${attributes['bodies']}}`: '0';
 	const focus = attributes['focus'];
 	//console.log (skillDetails);
@@ -28,6 +29,7 @@ const rollAttack = async function({trigger,attributes,sections,casc}){
 		munitions: '[[?{Munitions}]]',
 		range: attributes[`${row}_range`],
 		endurance: `[[${endDmg} [weapon] + ?{Munitions} [munitions] + ${focus} [focus] + ${bodies} [bodies]]]`,
+		shield: `[[${shieldDmg} [weapon] + ?{Munitions} [munitions] + ${sensors} [sensors] + ${bodies} [bodies]]]`,
 		critical: attributes[`${row}_critical_damage`],
 		description: attributes[`${row}_features`]
 		}, skillDetails);

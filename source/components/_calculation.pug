@@ -12,11 +12,11 @@ mixin calculatedRow(attr)
 	//-console.log ("calculatedRow()", attr);
 
 mixin calculation({name,formula,formulaText})
-	+readOnly({
-		name,
-		trigger: {formula}
-		}).column
 	.inline
+		+readOnly({
+			name,
+			trigger: {formula}
+			}).column
 		span.small.padded= formulaText
 		+number({
 			name:`${name}_modifier`,

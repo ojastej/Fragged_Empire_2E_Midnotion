@@ -32,27 +32,37 @@
 
 ## Up next
 
-* Ship sheet
-  * Build
-  * 6 stats: Hull, Engines, Crew, Power, CPU, Sensors
-  * Influence cost
-  * Sub-stats:
-    * Max Velocity 6
-    * Travel Time 100%
-    * Cargo Space = 2 + Hull
-    * Defence = 10 + Engines
-    * Shield = 5 + (Power * 5)
-    * Armour = 3
-    * Munition = 3
-    * Regen = Power
-    * 1st Phase Order = your current velocity . CPU
-    * 2nd Phase Order = CPU . velocity
-    * room damage
-    * subsystem damage
+* Spacecraft sheet
+  * Max Velocity 6
+  * Travel Time 100%
+  * Armour = 3
+  * Regen = Power
+  * 1st Phase Order = your current velocity . CPU
+  * 2nd Phase Order = CPU . velocity
+  * room damage
+  * subsystem damage
+  * attribute trait influence cost
+  * weapons roll template failing (probably either the mun. or end. refs)
+    * a spacecraft weapons roll involves both the spacecraft stats & char stats
 
 * Outpost sheet
   * mass combat stuff
   * buildings
+
+## Release 8
+
+* added Spacecraft sheet
+  * Build
+  * 6 stats: Hull, Engines, Crew, Power, CPU, Sensors
+  * Influence cost
+  * Sub-stats:
+    * Cargo Space = 2 + Hull max
+    * Defence = 10 + Engines
+    * Shield = 5 + (Power max * 5)
+    * Munition counter (max 3)
+  * weapons
+  * cargo
+  * subsystems & rooms
 
 ## Release 7 2025-12-05
 

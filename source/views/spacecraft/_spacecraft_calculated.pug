@@ -1,7 +1,30 @@
-section(data-i18n-aria-label="calculated")
-	.calculated
-		h2(data-i18n='calculated')
-		.grid.tiny-gap
-			+calculatedHeader
-			each attr in spacecraftCalculated
-				+calculatedRow(attr)
+section(data-i18n-aria-label="combat turn")
+	h2(data-i18n='combat turn')
+	.grid.column-2.spacecraft.combat
+		//- +calculatedHeader
+		//- each attr in spacecraftCalculated
+		//- 	+calculatedRow(attr)
+		label(for='velocity').input-label
+			span(data-i18n='velocity')
+		.span-1
+			+number({name:'velocity',trigger:{affects:['first_phase_order','second_phase_order']}})
+			+calculation(spacecraftCalculated.velocity_max)
+
+		+calculatedRow(spacecraftCalculated.first_phase_order)
+		.span-2.indent Command
+		+calculatedRow(spacecraftCalculated.second_phase_order)
+		.span-2.indent Ordnance
+		.span-2.indent Engineering, Operations, Gunnery
+
+	h2(data-i18n='defence')
+	.grid.column-2.spacecraft.combat
+		+calculatedRow(spacecraftCalculated.defense)
+
+		label(for='shield').input-label
+			span(data-i18n='shield')
+		.span-1
+			+number({name:'shield'})
+			+calculation(spacecraftCalculated.shield_max)
+
+		+calculatedRow(spacecraftCalculated.regen)
+		+calculatedRow(spacecraftCalculated.armour)
