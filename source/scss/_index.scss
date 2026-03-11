@@ -35,6 +35,9 @@
 		section.narrow {
 			max-width: 20rem;
 		}
+		section.weapons {
+			min-width: 30rem;
+		}
 	}
 	abbr[title] {
 		border-bottom: inherit;
@@ -192,7 +195,8 @@
 		grid-template-columns: auto auto;
 		grid-gap: var(--tiny-gap);
 	}
-	.grid.column-3, .grid.rooms {
+	.grid.column-3, .grid.systems
+	{
 		display: grid;
 		grid-template-columns: auto auto auto;
 		grid-gap: var(--tiny-gap);
@@ -213,11 +217,12 @@
 		text-transform: capitalize;
 		grid-auto-columns: max-content;
 	}
-	.tabs--sheet-tabs__container--outpost .attributes > .grid {
-		grid-template-columns: [name] auto [current] auto [trait] auto;
-	}
+	.tabs--sheet-tabs__container--outpost .attributes > .grid,
 	.grid.spacecraft.attributes {
 		grid-template-columns: [name] auto [current] auto [trait] auto;
+	}
+	.grid.systems {
+		grid-template-columns: [cargo] auto [name] auto [influence] auto;
 	}
 	.tabs--sheet-tabs__container--pc .attributes > .grid {
 		grid-template-columns: [name] auto [mod] auto [current] auto [limit] auto [trait] auto;
@@ -225,7 +230,7 @@
 	.calculated, .production {
 		 > .grid {
 			grid-auto-columns: max-content;
-			grid-template-columns: auto auto auto;
+			grid-template-columns: [type] auto [detail] auto [quantity] auto;
 		}
 	}
 	.skills > .grid 
@@ -269,6 +274,7 @@
 	.grid.weapon {
 		grid-auto-columns: max-content;
 		grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+		min-width: 31rem;
 		textarea {
 			width: 31rem;
 		}

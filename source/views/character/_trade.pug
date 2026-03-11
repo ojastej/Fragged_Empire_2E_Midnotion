@@ -3,16 +3,15 @@ section(data-i18n-aria-label="trade")
 	+customControlFieldset({
 		name:'tradeGoods'
 		})
-		//- trigger:{triggeredFuncs:['removeTradeGoods']}
-		.row
-			.select
-				+select({name:'type'})
-					+option({'data-i18n':'type',selected:''})
-					+option({'data-i18n':'freight'})
-					+option({'data-i18n':'loot'})
-					+option({'data-i18n':'money'})
-					+option({'data-i18n':'network'})
-					+option({'data-i18n':'knowledge'})
-					+option({'data-i18n':'research'})
-			+text({name:'detail', 'data-i18n-placeholder':'Detail'})
-			+input({name:'quantity',type:'number','data-i18n-placeholder':'#'})
+	.row
+		.select
+			+select({name:'type'})
+				+option({'data-i18n':'type',selected:''})
+				+option({'data-i18n':'freight'})
+				+option({'data-i18n':'loot'})
+				+option({'data-i18n':'money'})
+				+option({'data-i18n':'network'})
+				+option({'data-i18n':'knowledge'})
+				+option({'data-i18n':'research'})
+		+text({name:'detail', 'data-i18n-placeholder':'Detail'})
+		+input({name:'quantity',type:'number','data-i18n-placeholder':'#'})

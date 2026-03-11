@@ -3758,6 +3758,9 @@ body .ui-dialog .tab-content .charsheet article section {
 body .ui-dialog .tab-content .charsheet article section.narrow {
   max-width: 20rem;
 }
+body .ui-dialog .tab-content .charsheet article section.weapons {
+  min-width: 30rem;
+}
 body .ui-dialog .tab-content .charsheet abbr[title] {
   border-bottom: inherit;
 }
@@ -3897,7 +3900,7 @@ body .ui-dialog .tab-content .charsheet .grid.column-2 {
   grid-template-columns: auto auto;
   grid-gap: var(--tiny-gap);
 }
-body .ui-dialog .tab-content .charsheet .grid.column-3, body .ui-dialog .tab-content .charsheet .grid.rooms {
+body .ui-dialog .tab-content .charsheet .grid.column-3, body .ui-dialog .tab-content .charsheet .grid.systems {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: var(--tiny-gap);
@@ -3926,18 +3929,19 @@ body .ui-dialog .tab-content .charsheet .attributes > .grid {
   text-transform: capitalize;
   grid-auto-columns: max-content;
 }
-body .ui-dialog .tab-content .charsheet .tabs--sheet-tabs__container--outpost .attributes > .grid {
-  grid-template-columns: [name] auto [current] auto [trait] auto;
-}
+body .ui-dialog .tab-content .charsheet .tabs--sheet-tabs__container--outpost .attributes > .grid,
 body .ui-dialog .tab-content .charsheet .grid.spacecraft.attributes {
   grid-template-columns: [name] auto [current] auto [trait] auto;
+}
+body .ui-dialog .tab-content .charsheet .grid.systems {
+  grid-template-columns: [cargo] auto [name] auto [influence] auto;
 }
 body .ui-dialog .tab-content .charsheet .tabs--sheet-tabs__container--pc .attributes > .grid {
   grid-template-columns: [name] auto [mod] auto [current] auto [limit] auto [trait] auto;
 }
 body .ui-dialog .tab-content .charsheet .calculated > .grid, body .ui-dialog .tab-content .charsheet .production > .grid {
   grid-auto-columns: max-content;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: [type] auto [detail] auto [quantity] auto;
 }
 body .ui-dialog .tab-content .charsheet .skills > .grid {
   grid-auto-columns: max-content;
@@ -3975,6 +3979,7 @@ body .ui-dialog .tab-content .charsheet .flex, body .ui-dialog .tab-content .cha
 body .ui-dialog .tab-content .charsheet .grid.weapon {
   grid-auto-columns: max-content;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+  min-width: 31rem;
 }
 body .ui-dialog .tab-content .charsheet .grid.weapon textarea {
   width: 31rem;

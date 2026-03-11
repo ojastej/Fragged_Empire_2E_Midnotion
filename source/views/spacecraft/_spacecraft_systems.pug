@@ -1,0 +1,14 @@
+section(data-i18n-aria-label="subsystems & rooms")
+	h2(data-i18n='subsystems & rooms')
+	+customControlFieldset({
+		name:'systems'
+		})
+		.row
+			+number({name:'cargoUsed', 'data-i18n-placeholder':'#'})
+			+text({name:'name', 'data-i18n-placeholder':'Name'})
+			+input({name:'influenceCost',type:'number','data-i18n-placeholder':'#'})
+		+textarea({
+			name:'description',
+			class:'span-3',
+			'data-i18n-placeholder':'Description'
+			})
