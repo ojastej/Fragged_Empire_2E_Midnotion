@@ -46,7 +46,7 @@
   * mass combat stuff
   * buildings
 
-## Release 8
+## Release 8 2026-03-13
 
 * added Spacecraft sheet
   * Build
