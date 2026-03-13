@@ -33,17 +33,14 @@
 ## Up next
 
 * Spacecraft sheet
-  * Max Velocity 6
   * Travel Time 100%
-  * Armour = 3
-  * Regen = Power
-  * 1st Phase Order = your current velocity . CPU
-  * 2nd Phase Order = CPU . velocity
   * room damage
   * subsystem damage
   * attribute trait influence cost
   * weapons roll template failing (probably either the mun. or end. refs)
     * a spacecraft weapons roll involves both the spacecraft stats & char stats
+  * Armour isn't setting properly due to conflict with the PC sheet
+  * Defence has the same problem, though I cheated by calling it "Defense" instead
 
 * Outpost sheet
   * mass combat stuff
@@ -63,6 +60,11 @@
   * weapons
   * cargo
   * subsystems & rooms
+  * Max Velocity 6
+  * Armour = 3
+  * Regen = Power
+  * 1st Phase Order = your current velocity . CPU
+  * 2nd Phase Order = CPU . velocity
 
 ## Release 7 2025-12-05
 

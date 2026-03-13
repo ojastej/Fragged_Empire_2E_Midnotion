@@ -15,6 +15,14 @@ section(data-i18n-aria-label="subsystems & rooms")
 				'data-i18n-placeholder':'Inf',
 				trigger:{affects:['systems_influence_cost']}
 				})
+			+button({
+				name:'post',
+				type:'action',
+				class:'material-icons',
+				'data-18n':'w',
+				'data-action':'post',
+				trigger: { triggeredFuncs: ['postRepeating'] }
+				})
 		+textarea({
 			name:'description',
 			class:'span-3',
