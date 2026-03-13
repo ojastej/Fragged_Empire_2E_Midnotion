@@ -1,3 +1,11 @@
 section(data-i18n-aria-label="notes").wide
 	h2(data-i18n='notes')
 	+textarea({name:'general_notes'})
+	+button({
+		name:'post',
+		type:'action',
+		class:'material-icons',
+		'data-18n':'w',
+		'data-action':'post',
+		trigger: { triggeredFuncs: ['postNotes'] }
+		})

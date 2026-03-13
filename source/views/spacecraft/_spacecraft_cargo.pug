@@ -16,3 +16,11 @@ section(data-i18n-aria-label="cargo")
 				'data-i18n-placeholder':'#',
 				trigger:{affects:['cargo_space']}
 				})
+			+button({
+				name:'post',
+				type:'action',
+				class:'material-icons',
+				'data-18n':'w',
+				'data-action':'post',
+				trigger: { triggeredFuncs: ['postRepeating'] }
+				})

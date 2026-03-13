@@ -4,5 +4,13 @@ section(data-i18n-aria-label="specializations").narrow
 	+customControlFieldset({
 		name:'specializations'
 		})
-		//- trigger:{triggeredFuncs:['removeSpecialization']}
-		+text({name:'specialization', 'data-i18n-placeholder':'Specialization'})
+		.row
+			+text({name:'specialization', 'data-i18n-placeholder':'Specialization'})
+			+button({
+				name:'post',
+				type:'action',
+				class:'material-icons',
+				'data-18n':'w',
+				'data-action':'post',
+				trigger: { triggeredFuncs: ['postRepeating'] }
+				})

@@ -65,6 +65,7 @@
   * Regen = Power
   * 1st Phase Order = your current velocity . CPU
   * 2nd Phase Order = CPU . velocity
+* Added "post to chat" buttons to notes, PC sheet
 
 ## Release 7 2025-12-05
 

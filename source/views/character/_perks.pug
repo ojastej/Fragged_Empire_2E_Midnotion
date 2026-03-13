@@ -1,14 +1,23 @@
 section(data-i18n-aria-label="perks").narrow
 	h2(data-i18n='perks & complications')
 	+customControlFieldset({
-		name:'perkComplication'
+		name:'perkcomplication'
 		})
-		//- trigger:{triggeredFuncs:['removePerkComplication']}
-		+text({
-			name:'perk',
-			'data-i18n-placeholder':'Name'
-			})
-		+textarea({
-			name:'description',
-			'data-i18n-placeholder':'Description'
-			})
+		.row
+			+text({
+				name:'perk',
+				'data-i18n-placeholder':'Name'
+				})
+			+button({
+				name:'post',
+				type:'action',
+				class:'material-icons',
+				'data-18n':'w',
+				'data-action':'post',
+				trigger: { triggeredFuncs: ['postRepeating'] }
+				})
+		.row
+			+textarea({
+				name:'description',
+				'data-i18n-placeholder':'Description'
+				})

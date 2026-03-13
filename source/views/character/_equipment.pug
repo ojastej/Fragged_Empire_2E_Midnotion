@@ -35,3 +35,11 @@ section(data-i18n-aria-label="equipment")
 			+number({name:'resources','data-i18n-placeholder':'Res'})
 		.row
 			+textarea({name:'description','data-i18n-placeholder':'Description'})
+			+button({
+				name:'post',
+				type:'action',
+				class:'material-icons',
+				'data-18n':'w',
+				'data-action':'post',
+				trigger: { triggeredFuncs: ['postRepeating'] }
+				})
