@@ -10,6 +10,9 @@
 	+templateConditionalDisplay('requirements')
 		.template-row.requirements
 			|{{requirements}}
+	+templateConditionalDisplay('subheading')
+		.template-row.subheading
+			|{{subheading}}
 	+templateConditionalDisplay('acquisition')
 		.template-row.acquisition.center
 			|Acquisition: {{acquisition}}
@@ -26,9 +29,14 @@
 				.munitions
 					|Munitions
 				|{{munitions}}
-				.endurance
-					|End
-				|{{endurance}}
+				+templateConditionalDisplay('endurance')
+					.endurance
+						|End
+					|{{endurance}}
+				+templateConditionalDisplay('shield')
+					.shield
+						|Shield
+					|{{shield}}
 				.critical
 					|Crit
 				|{{critical}}

@@ -39,7 +39,7 @@
 			display: inline-block;
 			margin-left: auto;	
 		}
-		.sheet-requirements {
+		.sheet-requirements, .sheet-subheading {
 			border-bottom: 1px solid;
 			padding: var(--half-gap);
 			padding-top: var(--tiny-gap);
@@ -62,7 +62,7 @@
 			border-bottom: 1px solid var(--fontColor);
 			display: grid;
 			grid-template-columns: auto auto auto;
-			.sheet-range, .sheet-munitions, .sheet-endurance, .sheet-critical {
+			.sheet-range, .sheet-munitions, .sheet-endurance, .sheet-shield, .sheet-critical {
 				display: block;
 				width: auto;
 				justify-self: start;

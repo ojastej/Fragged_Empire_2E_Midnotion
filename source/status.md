@@ -37,14 +37,23 @@
   * room damage
   * subsystem damage
   * attribute trait influence cost
-  * weapons roll template failing (probably either the mun. or end. refs)
-    * a spacecraft weapons roll involves both the spacecraft stats & char stats
   * Armour isn't setting properly due to conflict with the PC sheet
   * Defence has the same problem, though I cheated by calling it "Defense" instead
+  * Perks & Complications?
 
 * Outpost sheet
   * mass combat stuff
   * buildings
+
+## Release 9
+
+* Spacecraft sheet
+  * fixed Cargo equation
+  * Weapon rolls now appear; they require selecting a PC token to activate
+* PC sheet
+  * Knowledge, Network, and Research no longer take up space
+  * fixed Acquisitions typos
+  * fixed Weapon rolls
 
 ## Release 8 2026-03-13
 

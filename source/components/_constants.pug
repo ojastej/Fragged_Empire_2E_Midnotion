@@ -103,7 +103,7 @@
 		sensors:{name:'sensors',affects:[]}
 	};
 	const spacecraftCalculated = {
-		cargo_space_max:{name:'cargo space max',formula:'2*@{hull_max}+@{cargo_space_max_modifier}',formulaText:'= 2 * Hull +'},
+		cargo_space_max:{name:'cargo space max',formula:'2*@{hull_max}+@{cargo_space_max_modifier}',formulaText:'= 2 + Hull +'},
 		defense:{name:'defense',formula:'10+@{engines}+@{defense_modifier}',formulaText:'= 10 + Engines +'},
 		shield_max:{name:'shield max',formula:'5+(5*@{power_max})+@{shield_max_modifier}',formulaText:'= 5 + 5 * Power +'},
 		armour:{name:'armour',formula:'3+@{armour_modifier}',formulaText:'= 3 +'},

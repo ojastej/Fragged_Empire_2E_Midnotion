@@ -2375,7 +2375,7 @@ ul.nav-tabs.nav {
   display: inline-block;
   margin-left: auto;
 }
-.sheet-rolltemplate-fe2 .sheet-template .sheet-requirements {
+.sheet-rolltemplate-fe2 .sheet-template .sheet-requirements, .sheet-rolltemplate-fe2 .sheet-template .sheet-subheading {
   border-bottom: 1px solid;
   padding: var(--half-gap);
   padding-top: var(--tiny-gap);
@@ -2399,7 +2399,7 @@ ul.nav-tabs.nav {
   display: grid;
   grid-template-columns: auto auto auto;
 }
-.sheet-rolltemplate-fe2 .sheet-template .sheet-attack .sheet-range, .sheet-rolltemplate-fe2 .sheet-template .sheet-attack .sheet-munitions, .sheet-rolltemplate-fe2 .sheet-template .sheet-attack .sheet-endurance, .sheet-rolltemplate-fe2 .sheet-template .sheet-attack .sheet-critical {
+.sheet-rolltemplate-fe2 .sheet-template .sheet-attack .sheet-range, .sheet-rolltemplate-fe2 .sheet-template .sheet-attack .sheet-munitions, .sheet-rolltemplate-fe2 .sheet-template .sheet-attack .sheet-endurance, .sheet-rolltemplate-fe2 .sheet-template .sheet-attack .sheet-shield, .sheet-rolltemplate-fe2 .sheet-template .sheet-attack .sheet-critical {
   display: block;
   width: auto;
   justify-self: start;

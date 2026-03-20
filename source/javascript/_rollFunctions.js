@@ -12,35 +12,56 @@ const rollAttack = async function({trigger,attributes,sections,casc}){
 	const row = `${section}_${rowID}`;
 	const rollName = attributes[`${row}_weapon`];
 	const skillName = attributes[`${row}_skill`];
-	const skillDetails = getSkillRollModifiers(skillName,attributes);
 	const hitBonus = attributes[`${row}_hit`];
 	const hitDice = attributes[`${row}_hit_dice`];
-	const endDmg = attributes[`${row}_endurance_damage`];
-	const shieldDmg = attributes[`${row}_shield_damage`];
-	const bodies = attributes['bodies'] > 0 ? `?{Attacking Bodies|${attributes['bodies']}}`: '0';
-	const focus = attributes['focus'];
+	const bodies = attributes.bodies > 0 ? `?{Attacking Bodies|${attributes.bodies}}`: '0';
+
+	var addon = {};
+	var skillDetails = {};
+	var skillStuff = "";
+	if (attributes.character_type == "spacecraft")
+	{
+		const sensors = attributes.sensors;
+		const shieldDmg = attributes[`${row}_shield_damage`];
+		addon.scale = 'spacecraft';
+		addon.shield = `[[${shieldDmg} [weapon] + ?{Munitions} [munitions] + ${sensors} [sensors] + ${bodies} [bodies]]]`;
+
+		// have the PC select a target character to operate the weapon
+		skillStuff = `@{target|Character|${skillName}} [@{target|Character|character_name}]`;
+		addon.subheading = `@{target|Character|character_name} (@{target|Character|${skillName}} ${skillName})`;
+	}
+	else
+	{
+		// PC or NPC
+		const focus = attributes.focus;
+		const endDmg = attributes[`${row}_endurance_damage`];
+		addon.scale = 'personal';
+		addon.endurance = `[[${endDmg} [weapon] + ?{Munitions} [munitions] + ${focus} [focus] + ${bodies} [bodies]]]`;
+		skillDetails = getSkillRollModifiers (skillName, attributes);
+		skillStuff = `${skillDetails.trained} [trained] + ${skillDetails.modifier} [skill modifier]`;
+	}
+
 	//console.log (skillDetails);
 	//console.log ('bodies', bodies, attributes['bodies'], attributes);
 	const rollObj = Object.assign({
 		title:rollName,
 		source:skillName,
-		roll: `[[${hitDice}d6cf0sd + ${hitBonus} [weapon] + ?{Munitions|0}d6cf0sd [munitions] + ${bodies}d6cf0sd [bodies] + ${skillDetails.trained} [trained] + ${skillDetails.modifier} [skill modifier]]]`,
+		roll: `[[${hitDice}d6cf0sd + ${hitBonus} [weapon] + ?{Munitions|0}d6cf0sd [munitions] + ${bodies}d6cf0sd [bodies] + ${skillStuff}]]`,
 		strong_hits: '[[0]]',
 		munitions: '[[?{Munitions}]]',
 		range: attributes[`${row}_range`],
-		endurance: `[[${endDmg} [weapon] + ?{Munitions} [munitions] + ${focus} [focus] + ${bodies} [bodies]]]`,
-		shield: `[[${shieldDmg} [weapon] + ?{Munitions} [munitions] + ${sensors} [sensors] + ${bodies} [bodies]]]`,
 		critical: attributes[`${row}_critical_damage`],
 		description: attributes[`${row}_features`]
-		}, skillDetails);
+		}, addon, skillDetails);
 
+	console.log ('rollObj', rollObj);
 	const roll = await executeRoll({rollObj,attributes,sections});
-
 	//console.log("rollAttack().roll", roll);
+
 	const computedResults = {
 		strong_hits: countStrongHits(roll)
 	}
-	finishRoll(roll.rollId, computedResults); //, computedResults
+	finishRoll(roll.rollId, computedResults);
 	console.groupEnd();
 };
 k.registerFuncs({rollAttack});
@@ -82,10 +103,14 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 	const rollTransKey = skillName.replace(/-/g,' ');
 	//${attributes[rollAttr]}[${k.capitalize(getTranslationByKey(rollTransKey))}]]]
 	const rollAttribute = attributes[`${skillName}_attribute`];
+
+	// combat rolls don't get the bonuses for toolbox, workshop, or attribute
 	const isCombatSkill = rollAttribute == '';
 	const insertModifiers = isCombatSkill ? '' : ` + ${skillDetails.toolbox} [toolbox] + ${skillDetails.workshop} [workshop] + ${skillDetails.attributeModifier} [attribute]`;
-	//console.log ("rollSkill()", attributes['acquisition_apply'], attributes['acquisition_modifier']);
+
+	// the acquisition modifier will be displayed rather than rolled in
 	const acquisition = attributes['acquisition_modifier'];
+
 	const rollObj = Object.assign({
 		title:skillName,
 		source:rollAttribute,
@@ -93,8 +118,10 @@ const rollSkill = async function({trigger,attributes,sections,casc}){
 		roll: `[[3d6cf0sd + ${skillDetails.trained} [trained] ${insertModifiers} + ${skillDetails.modifier} [modifier]]]`,
 		strong_hits: '[[0]]'
 		}, skillDetails);
+	
 	console.log ("rollSkill()", skillName, rollAttr, rollTransKey, skillDetails, rollObj);
 	const roll = await executeRoll({rollObj,attributes,sections});
+
 	// see https://wiki.roll20.net/Custom_Roll_Parsing
 	// replaces the 'roll' key above with "Result", where the hover shows the roll results
 	const computedResults = {
